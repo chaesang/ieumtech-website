@@ -23,6 +23,12 @@
 - LinkedIn: https://linkedin.com/in/chaesang
 - Inflearn: https://www.inflearn.com/en/users/1292051
 
+## 브랜드 키워드 (이음 = Connecting)
+- Connecting ideas with technology
+- Connecting people
+- Connecting history and future
+- Connecting generations
+
 ## 결정 사항
 - 구조: 회사 중심 (A안) — 본인 = 회사, About 페이지에 대표 프로필
 - 언어: 한/영 토글 (페이지 내 전환 버튼)
