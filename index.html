@@ -165,21 +165,43 @@
       padding: 0 24px;
     }
 
-    header {
-      padding: 60px 0 48px;
+    /* Hero section */
+    .hero {
+      background: #fff;
+      border-bottom: 1px solid var(--color-border);
+      padding: 88px 24px 80px;
+      text-align: center;
     }
 
-    header h1 {
-      font-size: 1.75rem;
+    .hero-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-title {
+      font-size: 2.625rem;
       font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 20px;
     }
 
-    header p {
+    .hero-sub {
       font-size: 1rem;
       color: var(--color-muted);
       font-weight: 300;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
     section {
@@ -254,12 +276,12 @@
     }
 
     @media (max-width: 480px) {
-      header {
-        padding: 40px 0 32px;
+      .hero {
+        padding: 60px 24px 52px;
       }
 
-      header h1 {
-        font-size: 1.5rem;
+      .hero-title {
+        font-size: 1.875rem;
       }
     }
   </style>
@@ -281,12 +303,15 @@
     </div>
   </div>
 
-  <div class="container">
-    <header id="home">
-      <h1>Ieum Tech</h1>
-      <p>Connecting ideas with technology.</p>
-    </header>
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <p class="hero-label">Ieum Tech · 이음 테크</p>
+      <h1 class="hero-title">Connecting ideas<br>with technology.</h1>
+      <p class="hero-sub">Tech consulting, technical writing, and digital education.<br>Based in the US, serving teams worldwide.</p>
+    </div>
+  </section>
 
+  <div class="container">
     <section>
       <h2>Services</h2>
       <div class="services">
