@@ -173,13 +173,34 @@
       font-size: 1.75rem;
       font-weight: 600;
       letter-spacing: -0.02em;
-      margin-bottom: 12px;
+      margin-bottom: 28px;
     }
 
-    header p {
+    .taglines {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tagline {
       font-size: 1rem;
       color: var(--color-muted);
       font-weight: 300;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: tagline-in 0.5s ease forwards;
+    }
+
+    .tagline:nth-child(1) { animation-delay: 0.1s; }
+    .tagline:nth-child(2) { animation-delay: 0.3s; }
+    .tagline:nth-child(3) { animation-delay: 0.5s; }
+    .tagline:nth-child(4) { animation-delay: 0.7s; }
+
+    @keyframes tagline-in {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     section {
@@ -283,8 +304,13 @@
 
   <div class="container">
     <header id="home">
-      <h1>Ieum Tech</h1>
-      <p>Connecting ideas with technology.</p>
+      <h1>Ieum Tech · 이음 테크</h1>
+      <div class="taglines">
+        <p class="tagline">Connecting ideas with technology.</p>
+        <p class="tagline">Connecting people.</p>
+        <p class="tagline">Connecting history and future.</p>
+        <p class="tagline">Connecting generations.</p>
+      </div>
     </header>
 
     <section>
