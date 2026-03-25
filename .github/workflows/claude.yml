@@ -60,10 +60,10 @@ jobs:
             BRANCH="${{ github.head_ref }}"
           fi
           git checkout "$BRANCH" 2>/dev/null || true
-          npm install puppeteer
+          npm install puppeteer serve
           mkdir -p .github/preview
           npx serve . -l 3000 &
-          sleep 2
+          sleep 5
           node -e "
           const puppeteer = require('puppeteer');
           (async () => {
