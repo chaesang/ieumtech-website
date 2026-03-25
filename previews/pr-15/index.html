@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ieum Tech LLC</title>
+  <meta name="description" content="Ieum Tech — Tech Consulting, Technical Writing, Speaking, and Digital Content.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-bg: #fafafa;
+      --color-text: #1a1a1a;
+      --color-muted: #6b6b6b;
+      --color-accent: #2563eb;
+      --color-border: #e5e5e5;
+      --header-height: 56px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-height);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Sticky site header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      height: var(--header-height);
+    }
+
+    .header-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--color-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-text);
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: var(--color-text);
+      transition: transform 0.25s, opacity 0.25s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    /* Mobile nav overlay */
+    @media (max-width: 480px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+        padding: 8px 24px 16px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 10px 0;
+        font-size: 0.9375rem;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .nav-links li:last-child a {
+        border-bottom: none;
+      }
+    }
+
+    /* Main content */
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 60px 0 48px;
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: var(--color-muted);
+      font-weight: 300;
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    section h2 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-muted);
+      margin-bottom: 24px;
+    }
+
+    .services {
+      display: grid;
+      gap: 20px;
+    }
+
+    .service {
+      padding: 20px 0;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .service h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .service p {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      font-weight: 300;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-links a {
+      font-size: 0.9375rem;
+      color: var(--color-text);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .contact-links a:hover {
+      color: var(--color-accent);
+    }
+
+    .contact-links span {
+      color: var(--color-muted);
+      font-size: 0.8125rem;
+      margin-left: 8px;
+    }
+
+    footer {
+      padding: 60px 0 40px;
+      border-top: 1px solid var(--color-border);
+      margin-top: 40px;
+    }
+
+    footer p {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      font-weight: 300;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 40px 0 32px;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="logo">Ieum Tech</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <header id="home">
+      <h1>Ieum Tech</h1>
+      <p>Connecting ideas with technology.</p>
+    </header>
+
+    <section>
+      <h2>Services</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Tech Consulting</h3>
+          <p>Strategic technology guidance for teams and organizations.</p>
+        </div>
+        <div class="service">
+          <h3>Technical Writing &amp; Books</h3>
+          <p>Clear, well-crafted documentation and published works.</p>
+        </div>
+        <div class="service">
+          <h3>Speaking</h3>
+          <p>Conference talks and workshops on modern technology practices.</p>
+        </div>
+        <div class="service">
+          <h3>Digital Content</h3>
+          <p>Educational video content on YouTube.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-links">
+        <span style="font-size: 0.9375rem; font-weight: 500;">Chaesang Jung</span>
+        <a href="mailto:hello@ieumtech.net">hello@ieumtech.net</a>
+        <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer">LinkedIn<span>linkedin.com/in/chaesang</span></a>
+        <a href="https://www.inflearn.com/en/users/1292051" target="_blank" rel="noopener noreferrer">Inflearn<span>inflearn.com/en/users/1292051</span></a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Ieum Tech. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
