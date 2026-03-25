@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ieum Tech LLC</title>
+  <meta name="description" content="Ieum Tech — Tech Consulting, Technical Writing, Speaking, and Digital Content.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-bg: #fafafa;
+      --color-text: #1a1a1a;
+      --color-muted: #6b6b6b;
+      --color-accent: #2563eb;
+      --color-border: #e5e5e5;
+      --header-height: 56px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-height);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Sticky site header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      height: var(--header-height);
+    }
+
+    .header-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--color-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-text);
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: var(--color-text);
+      transition: transform 0.25s, opacity 0.25s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    /* Mobile nav overlay */
+    @media (max-width: 480px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+        padding: 8px 24px 16px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 10px 0;
+        font-size: 0.9375rem;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .nav-links li:last-child a {
+        border-bottom: none;
+      }
+    }
+
+    /* Main content */
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero section */
+    .hero {
+      background: #fff;
+      border-bottom: 1px solid var(--color-border);
+      padding: 88px 24px 80px;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-muted);
+      margin-bottom: 28px;
+    }
+
+    .connecting-list {
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .connecting-item {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.4;
+      color: var(--color-text);
+    }
+
+    .connecting-item:not(:first-child) {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--color-muted);
+      margin-top: 6px;
+    }
+
+    .connecting-word {
+      color: var(--color-accent);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--color-muted);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    section h2 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-muted);
+      margin-bottom: 24px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .service-card h3 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .service-card p {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 480px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CTA section */
+    .cta-section {
+      background: #f0f4ff;
+      border-top: 1px solid #d6e0ff;
+      border-bottom: 1px solid #d6e0ff;
+      padding: 72px 24px;
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-heading {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: var(--color-text);
+      margin-bottom: 12px;
+    }
+
+    .cta-sub {
+      font-size: 1rem;
+      color: var(--color-muted);
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      font-family: inherit;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      background: var(--color-accent);
+      color: #fff;
+      border: 1.5px solid var(--color-accent);
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--color-border);
+      padding: 60px 24px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 48px;
+    }
+
+    .footer-logo {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-nav a {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+      color: var(--color-text);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .footer-social a {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: var(--color-text);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--color-border);
+      padding-top: 24px;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      font-weight: 300;
+    }
+
+    @media (max-width: 600px) {
+      .footer-top {
+        flex-direction: column;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 60px 24px 52px;
+      }
+
+      .connecting-item {
+        font-size: 1.375rem;
+      }
+
+      .connecting-item:not(:first-child) {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="logo">Ieum Tech</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <p class="hero-label">Ieum Tech · 이음 테크</p>
+      <div class="connecting-list">
+        <h1 class="connecting-item"><span class="connecting-word">Connecting</span> ideas with technology.</h1>
+        <p class="connecting-item"><span class="connecting-word">Connecting</span> people.</p>
+        <p class="connecting-item"><span class="connecting-word">Connecting</span> history and future.</p>
+        <p class="connecting-item"><span class="connecting-word">Connecting</span> generations.</p>
+      </div>
+      <p class="hero-sub">Tech consulting, technical writing, and digital education.<br>Based in the US, serving teams worldwide.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <section>
+      <h2>Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Tech Consulting</h3>
+          <p>기술 전략, 아키텍처, 클라우드</p>
+        </div>
+        <div class="service-card">
+          <h3>Leadership Consulting</h3>
+          <p>엔지니어링 리더십, 조직 구성, 팀 빌딩</p>
+        </div>
+        <div class="service-card">
+          <h3>Technical Writing</h3>
+          <p>기술 문서, 블로그, 콘텐츠 작성</p>
+        </div>
+        <div class="service-card">
+          <h3>교육 Contents</h3>
+          <p>Inflearn 강의, YouTube, 세미나/워크숍</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="cta-section" id="contact">
+    <div class="cta-inner">
+      <h2 class="cta-heading">Let's work together.</h2>
+      <p class="cta-sub">Have a project in mind? I'd love to connect.</p>
+      <div class="cta-buttons">
+        <a href="mailto:hello@ieumtech.net" class="btn">Email</a>
+        <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
+        <a href="https://www.inflearn.com/users/1292051/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Inflearn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo">Ieum Tech</a>
+          <nav class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+        <div class="footer-social">
+          <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.inflearn.com/en/users/1292051" target="_blank" rel="noopener noreferrer">Inflearn</a>
+          <a href="mailto:hello@ieumtech.net">Email</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ieum Tech. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
