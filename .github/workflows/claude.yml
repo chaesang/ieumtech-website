@@ -35,15 +35,108 @@ jobs:
           label_trigger: "claude"
 
       - name: Auto-create PR from issue
+        id: create-pr
         if: github.event_name == 'issues' && steps.claude.outputs.branch_name != ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr create \
+          PR_URL=$(gh pr create \
             --repo "${{ github.repository }}" \
             --head "${{ steps.claude.outputs.branch_name }}" \
             --base main \
             --title "${{ github.event.issue.title }}" \
             --body "Closes #${{ github.event.issue.number }}
 
-          Generated with [Claude Code](https://claude.ai/code)"
+          Generated with [Claude Code](https://claude.ai/code)")
+          echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
+          PR_NUMBER=$(echo "$PR_URL" | grep -o '[0-9]*$')
+          echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+
+      - name: Resolve PR branch and number
+        id: resolve
+        if: always() && steps.claude.conclusion == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="${{ steps.claude.outputs.branch_name }}"
+          PR_NUMBER="${{ steps.create-pr.outputs.pr_number }}"
+
+          # For PR comment triggers, look up the PR
+          if [ -z "$BRANCH" ]; then
+            if [ -n "${{ github.event.issue.number }}" ] && gh pr view "${{ github.event.issue.number }}" --repo "${{ github.repository }}" > /dev/null 2>&1; then
+              PR_NUMBER="${{ github.event.issue.number }}"
+              BRANCH=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json headRefName --jq '.headRefName')
+            fi
+          fi
+
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+          echo "Resolved branch=$BRANCH pr=$PR_NUMBER"
+
+      - name: Deploy preview
+        if: always() && steps.resolve.outputs.branch != '' && steps.resolve.outputs.pr_number != ''
+        run: |
+          BRANCH="${{ steps.resolve.outputs.branch }}"
+          PR_NUMBER="${{ steps.resolve.outputs.pr_number }}"
+          git fetch origin "$BRANCH"
+          git checkout "$BRANCH"
+
+          # Clone gh-pages branch
+          git clone --branch gh-pages --single-branch "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" /tmp/gh-pages
+
+          # Copy PR content to preview directory
+          mkdir -p "/tmp/gh-pages/previews/pr-${PR_NUMBER}"
+          cp index.html "/tmp/gh-pages/previews/pr-${PR_NUMBER}/"
+          [ -f CNAME ] && cp CNAME "/tmp/gh-pages/previews/pr-${PR_NUMBER}/" || true
+
+          # Commit and push
+          cd /tmp/gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --staged --quiet || (git commit -m "Deploy preview for PR #${PR_NUMBER}" && git push)
+
+      - name: Comment preview URL
+        if: always() && steps.resolve.outputs.pr_number != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = parseInt('${{ steps.resolve.outputs.pr_number }}');
+            if (!prNumber) return;
+
+            const previewUrl = `https://ieumtech.net/previews/pr-${prNumber}/`;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+            });
+
+            const botComment = comments.find(c =>
+              c.body && c.body.includes('<!-- pr-preview -->')
+            );
+
+            const body = [
+              '<!-- pr-preview -->',
+              '## Preview',
+              '',
+              `**[Open preview](${previewUrl})**`,
+              '',
+              `> Commit: \`${process.env.GITHUB_SHA?.slice(0, 7)}\` • Updated: ${new Date().toISOString()}`,
+            ].join('\n');
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body,
+              });
+            }
