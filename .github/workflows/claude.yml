@@ -52,14 +52,36 @@ jobs:
           PR_NUMBER=$(echo "$PR_URL" | grep -o '[0-9]*$')
           echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
 
-      - name: Take preview screenshots
-        if: steps.claude.outputs.branch_name != ''
+      - name: Resolve PR branch
+        id: resolve
+        if: always() && steps.claude.conclusion == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           BRANCH="${{ steps.claude.outputs.branch_name }}"
-          if [ -z "$BRANCH" ]; then
-            BRANCH="${{ github.head_ref }}"
+          PR_NUMBER="${{ steps.create-pr.outputs.pr_number }}"
+
+          # If triggered from a PR comment, get branch from PR
+          if [ -z "$BRANCH" ] && [ -n "${{ github.event.issue.pull_request.url || github.event.pull_request.head.ref }}" ]; then
+            if [ -n "${{ github.event.pull_request.head.ref }}" ]; then
+              BRANCH="${{ github.event.pull_request.head.ref }}"
+              PR_NUMBER="${{ github.event.pull_request.number }}"
+            else
+              # issue_comment on a PR
+              PR_NUMBER="${{ github.event.issue.number }}"
+              BRANCH=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json headRefName --jq '.headRefName')
+            fi
           fi
-          git checkout "$BRANCH" 2>/dev/null || true
+
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+          echo "Resolved branch: $BRANCH, PR: $PR_NUMBER"
+
+      - name: Take preview screenshots
+        if: always() && steps.resolve.outputs.branch != ''
+        run: |
+          git fetch origin "${{ steps.resolve.outputs.branch }}"
+          git checkout "${{ steps.resolve.outputs.branch }}"
           npm install puppeteer serve
           mkdir -p .github/preview
           npx serve . -l 3000 &
@@ -80,51 +102,29 @@ jobs:
           "
 
       - name: Commit and push screenshots
-        if: steps.claude.outputs.branch_name != ''
+        if: always() && steps.resolve.outputs.branch != ''
         run: |
-          BRANCH="${{ steps.claude.outputs.branch_name }}"
-          if [ -z "$BRANCH" ]; then
-            BRANCH="${{ github.head_ref }}"
-          fi
-          git checkout "$BRANCH" 2>/dev/null || true
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .github/preview/
-          git diff --staged --quiet || (git commit -m "Update preview screenshots" && git push origin "$BRANCH")
+          git diff --staged --quiet || (git commit -m "Update preview screenshots" && git push origin "${{ steps.resolve.outputs.branch }}")
 
       - name: Post preview comment on PR
-        if: steps.claude.outputs.branch_name != ''
+        if: always() && steps.resolve.outputs.pr_number != ''
         uses: actions/github-script@v7
         with:
           script: |
-            const branch = '${{ steps.claude.outputs.branch_name }}' || context.payload.pull_request?.head?.ref;
+            const branch = '${{ steps.resolve.outputs.branch }}';
+            const prNumber = parseInt('${{ steps.resolve.outputs.pr_number }}');
+            if (!branch || !prNumber) {
+              console.log('No branch or PR number found');
+              return;
+            }
+
             const repo = `${context.repo.owner}/${context.repo.repo}`;
             const ts = Date.now();
             const desktopUrl = `https://raw.githubusercontent.com/${repo}/${branch}/.github/preview/desktop.png?t=${ts}`;
             const mobileUrl = `https://raw.githubusercontent.com/${repo}/${branch}/.github/preview/mobile.png?t=${ts}`;
-
-            // Find the PR number
-            let prNumber = parseInt('${{ steps.create-pr.outputs.pr_number }}') || null;
-            if (!prNumber && context.payload.pull_request) {
-              prNumber = context.payload.pull_request.number;
-            }
-            if (!prNumber && context.payload.issue?.pull_request) {
-              prNumber = context.payload.issue.number;
-            }
-            if (!prNumber) {
-              // Find PR by branch name
-              const { data: prs } = await github.rest.pulls.list({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                head: `${context.repo.owner}:${branch}`,
-                state: 'open',
-              });
-              if (prs.length > 0) prNumber = prs[0].number;
-            }
-            if (!prNumber) {
-              console.log('No PR found to comment on');
-              return;
-            }
 
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
