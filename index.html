@@ -165,21 +165,61 @@
       padding: 0 24px;
     }
 
-    header {
-      padding: 60px 0 48px;
+    /* Hero section */
+    .hero {
+      background: #fff;
+      border-bottom: 1px solid var(--color-border);
+      padding: 88px 24px 80px;
+      text-align: center;
     }
 
-    header h1 {
+    .hero-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-muted);
+      margin-bottom: 28px;
+    }
+
+    .connecting-list {
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .connecting-item {
       font-size: 1.75rem;
       font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
+      letter-spacing: -0.025em;
+      line-height: 1.4;
+      color: var(--color-text);
     }
 
-    header p {
+    .connecting-item:not(:first-child) {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--color-muted);
+      margin-top: 6px;
+    }
+
+    .connecting-word {
+      color: var(--color-accent);
+    }
+
+    .hero-sub {
       font-size: 1rem;
       color: var(--color-muted);
       font-weight: 300;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
     section {
@@ -254,12 +294,16 @@
     }
 
     @media (max-width: 480px) {
-      header {
-        padding: 40px 0 32px;
+      .hero {
+        padding: 60px 24px 52px;
       }
 
-      header h1 {
-        font-size: 1.5rem;
+      .connecting-item {
+        font-size: 1.375rem;
+      }
+
+      .connecting-item:not(:first-child) {
+        font-size: 1rem;
       }
     }
   </style>
@@ -281,12 +325,20 @@
     </div>
   </div>
 
-  <div class="container">
-    <header id="home">
-      <h1>Ieum Tech</h1>
-      <p>Connecting ideas with technology.</p>
-    </header>
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <p class="hero-label">Ieum Tech · 이음 테크</p>
+      <div class="connecting-list">
+        <h1 class="connecting-item"><span class="connecting-word">Connecting</span> ideas with technology.</h1>
+        <p class="connecting-item"><span class="connecting-word">Connecting</span> people.</p>
+        <p class="connecting-item"><span class="connecting-word">Connecting</span> history and future.</p>
+        <p class="connecting-item"><span class="connecting-word">Connecting</span> generations.</p>
+      </div>
+      <p class="hero-sub">Tech consulting, technical writing, and digital education.<br>Based in the US, serving teams worldwide.</p>
+    </div>
+  </section>
 
+  <div class="container">
     <section>
       <h2>Services</h2>
       <div class="services">
