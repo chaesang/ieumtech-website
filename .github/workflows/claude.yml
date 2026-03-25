@@ -29,6 +29,21 @@ jobs:
         with:
           fetch-depth: 0
       - uses: anthropics/claude-code-action@v1
+        id: claude
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           label_trigger: "claude"
+
+      - name: Auto-create PR from issue
+        if: github.event_name == 'issues' && steps.claude.outputs.branch_name != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --repo "${{ github.repository }}" \
+            --head "${{ steps.claude.outputs.branch_name }}" \
+            --base main \
+            --title "${{ github.event.issue.title }}" \
+            --body "Closes #${{ github.event.issue.number }}
+
+          Generated with [Claude Code](https://claude.ai/code)"
