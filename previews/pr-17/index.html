@@ -187,12 +187,30 @@
       margin-bottom: 28px;
     }
 
-    .hero-title {
-      font-size: 2.625rem;
+    .connecting-list {
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .connecting-item {
+      font-size: 1.75rem;
       font-weight: 600;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 20px;
+      letter-spacing: -0.025em;
+      line-height: 1.4;
+      color: var(--color-text);
+    }
+
+    .connecting-item:not(:first-child) {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--color-muted);
+      margin-top: 6px;
+    }
+
+    .connecting-word {
+      color: var(--color-accent);
     }
 
     .hero-sub {
@@ -280,8 +298,12 @@
         padding: 60px 24px 52px;
       }
 
-      .hero-title {
-        font-size: 1.875rem;
+      .connecting-item {
+        font-size: 1.375rem;
+      }
+
+      .connecting-item:not(:first-child) {
+        font-size: 1rem;
       }
     }
   </style>
@@ -306,7 +328,12 @@
   <section class="hero" id="home">
     <div class="hero-inner">
       <p class="hero-label">Ieum Tech · 이음 테크</p>
-      <h1 class="hero-title">Connecting ideas<br>with technology.</h1>
+      <div class="connecting-list">
+        <h1 class="connecting-item"><span class="connecting-word">Connecting</span> ideas with technology.</h1>
+        <p class="connecting-item"><span class="connecting-word">Connecting</span> people.</p>
+        <p class="connecting-item"><span class="connecting-word">Connecting</span> history and future.</p>
+        <p class="connecting-item"><span class="connecting-word">Connecting</span> generations.</p>
+      </div>
       <p class="hero-sub">Tech consulting, technical writing, and digital education.<br>Based in the US, serving teams worldwide.</p>
     </div>
   </section>
