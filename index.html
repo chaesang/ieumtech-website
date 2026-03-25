@@ -274,28 +274,70 @@
       }
     }
 
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    /* CTA section */
+    .cta-section {
+      background: #f0f4ff;
+      border-top: 1px solid #d6e0ff;
+      border-bottom: 1px solid #d6e0ff;
+      padding: 72px 24px;
+      text-align: center;
     }
 
-    .contact-links a {
-      font-size: 0.9375rem;
+    .cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-heading {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
       color: var(--color-text);
-      text-decoration: none;
-      font-weight: 400;
-      transition: color 0.2s;
+      margin-bottom: 12px;
     }
 
-    .contact-links a:hover {
-      color: var(--color-accent);
-    }
-
-    .contact-links span {
+    .cta-sub {
+      font-size: 1rem;
       color: var(--color-muted);
-      font-size: 0.8125rem;
-      margin-left: 8px;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      font-family: inherit;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      background: var(--color-accent);
+      color: #fff;
+      border: 1.5px solid var(--color-accent);
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--color-accent);
+      color: #fff;
     }
 
     footer {
@@ -378,16 +420,21 @@
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-links">
-        <span style="font-size: 0.9375rem; font-weight: 500;">Chaesang Jung</span>
-        <a href="mailto:hello@ieumtech.net">hello@ieumtech.net</a>
-        <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer">LinkedIn<span>linkedin.com/in/chaesang</span></a>
-        <a href="https://www.inflearn.com/en/users/1292051" target="_blank" rel="noopener noreferrer">Inflearn<span>inflearn.com/en/users/1292051</span></a>
-      </div>
-    </section>
+  </div>
 
+  <section class="cta-section" id="contact">
+    <div class="cta-inner">
+      <h2 class="cta-heading">Let's work together.</h2>
+      <p class="cta-sub">Have a project in mind? I'd love to connect.</p>
+      <div class="cta-buttons">
+        <a href="mailto:hello@ieumtech.net" class="btn">Email</a>
+        <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
+        <a href="https://www.inflearn.com/users/1292051/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Inflearn</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
     <footer>
       <p>&copy; 2026 Ieum Tech. All rights reserved.</p>
     </footer>
