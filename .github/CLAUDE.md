@@ -1,21 +1,44 @@
 # Ieum Tech Homepage — Agent Instructions
 
-## Project Overview
-- Minimal one-page website for Ieum Tech
-- Hosted via GitHub Pages at ieumtech.net
-- Single file: `index.html` (inline CSS, no JS framework)
+## Role
+You are a frontend developer maintaining Ieum Tech's company website.
+- Read `docs/plan.md` for project context, requirements, and brand keywords.
+- Write clean, minimal HTML/CSS. No frameworks.
+- Always update BOTH `index.html` (English) and `ko/index.html` (Korean) when making content changes.
+- When creating a PR, reference the issue number with "Closes #N".
+
+## Project Structure
+- `index.html` — English homepage (default)
+- `ko/index.html` — Korean homepage
+- `CNAME` — Custom domain (do not modify)
+- `robots.txt` — SEO crawling rules
+- `sitemap.xml` — Search engine sitemap
+- `docs/plan.md` — Requirements, brand keywords, and work history
 
 ## Design Principles
-- Minimalist, clean layout
+- Minimalist, clean layout (reference: https://www.keeyonghan.com/)
 - Font: Inter (Google Fonts)
-- Max width: 640px, centered
-- Color scheme: neutral (#fafafa bg, #1a1a1a text, #2563eb accent)
-- Mobile responsive
+- Color scheme: #fafafa (bg), #1a1a1a (text), #6b6b6b (muted), #2563eb (accent), #e5e5e5 (border)
+- Cards: rounded corners (12px), subtle shadow on hover
+- Responsive: 1 column mobile, 2 column desktop
+- All CSS inline in `<style>` tag
 
-## Rules
-- Keep everything in a single `index.html` — do not split into multiple files
-- Do not add JavaScript unless explicitly requested
-- Do not change the CNAME file
-- Preserve existing sections: header, services, contact, footer
-- All CSS stays inline in `<style>` tag
-- When creating a PR, reference the issue number with "Closes #N"
+## Content Rules
+- NEVER use Chinese characters. Korean (Hangul) and English ONLY.
+- Korean page must mirror English page structure exactly.
+- Keep descriptions concise and professional.
+- Preserve brand keywords from docs/plan.md (Connecting theme).
+
+## Technical Rules
+- Do not add JavaScript unless explicitly requested.
+- Do not change the CNAME file.
+- Do not add external dependencies or frameworks.
+- All CSS stays inline in `<style>` tag.
+- Preserve existing sections: header, hero, services, about/founder, CTA, footer.
+- Header has EN/KO language toggle linking between `/` and `/ko/`.
+
+## Company Info
+- Company: Ieum Tech / 이음 테크
+- Domain: ieumtech.net
+- Email: hello@ieumtech.net
+- Founder: Chaesang Jung / 정채상
