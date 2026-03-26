@@ -100,6 +100,34 @@ jobs:
           git add .
           git diff --staged --quiet || (git commit -m "Deploy preview for PR #${PR_NUMBER}" && git push)
 
+      - name: Deploy main to gh-pages after merge
+        if: always() && steps.resolve.outputs.pr_number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER="${{ steps.resolve.outputs.pr_number }}"
+          # Check if PR was just merged
+          PR_STATE=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json state --jq '.state' 2>/dev/null || echo "")
+          if [ "$PR_STATE" = "MERGED" ]; then
+            echo "PR #${PR_NUMBER} is merged, deploying main to gh-pages..."
+            git fetch origin main
+            git checkout main
+
+            git clone --branch gh-pages --single-branch "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" /tmp/gh-pages-main
+
+            # Copy main site files (not previews)
+            cp index.html /tmp/gh-pages-main/
+            [ -f CNAME ] && cp CNAME /tmp/gh-pages-main/ || true
+
+            cd /tmp/gh-pages-main
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add .
+            git diff --staged --quiet || (git commit -m "Deploy main site after PR #${PR_NUMBER} merge" && git push)
+          else
+            echo "PR #${PR_NUMBER} not merged yet, skipping main deploy"
+          fi
+
       - name: Comment preview URL
         if: always() && steps.resolve.outputs.pr_number != ''
         uses: actions/github-script@v7
