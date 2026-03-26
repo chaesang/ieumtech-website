@@ -516,13 +516,13 @@
 
     .timeline {
       border-left: 2px solid var(--color-border);
-      padding-left: 20px;
+      padding-left: 24px;
       display: flex;
       flex-direction: column;
     }
 
     .timeline-item {
-      padding: 12px 0;
+      padding: 20px 0;
       border-bottom: 1px solid var(--color-border);
       position: relative;
     }
@@ -534,33 +534,70 @@
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -25px;
-      top: 18px;
-      width: 8px;
-      height: 8px;
+      left: -30px;
+      top: 26px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      background: var(--color-border);
+      background: var(--color-accent);
+      border: 2px solid var(--color-bg);
+      box-shadow: 0 0 0 2px var(--color-border);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
     }
 
     .timeline-company {
-      display: block;
-      font-size: 0.9375rem;
-      font-weight: 500;
+      font-size: 1rem;
+      font-weight: 600;
       color: var(--color-text);
-      margin-bottom: 2px;
     }
 
-    .timeline-meta {
+    .timeline-period {
       font-size: 0.8125rem;
-      font-weight: 300;
       color: var(--color-muted);
+      font-weight: 300;
+      white-space: nowrap;
     }
 
     .timeline-role {
       display: block;
+      font-size: 0.875rem;
+      color: var(--color-accent);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .timeline-details {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .timeline-details li {
       font-size: 0.8125rem;
       color: var(--color-muted);
-      font-weight: 300;
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .timeline-details li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.5;
     }
 
     .simple-list {
@@ -685,30 +722,133 @@
       <div class="about-block">
         <h2>경력</h2>
         <div class="timeline">
+
           <div class="timeline-item">
-            <span class="timeline-company">MEGAZONECLOUD</span>
+            <div class="timeline-header">
+              <span class="timeline-company">MEGAZONECLOUD</span>
+              <span class="timeline-period">2025.04 – 현재</span>
+            </div>
             <span class="timeline-role">Distinguished Software Engineer</span>
+            <ul class="timeline-details">
+              <li>CEO 오피스, 전략적 기술 자문</li>
+              <li>진행 중인 프로젝트의 기술적 공백 검토</li>
+              <li>"by Megazone" 제품군의 SDLC 및 관리 지침 수립</li>
+              <li>임직원 약 2,000명, 국내 최대 클라우드 MSP</li>
+            </ul>
           </div>
+
           <div class="timeline-item">
-            <span class="timeline-company">KAIST 경영대학</span>
+            <div class="timeline-header">
+              <span class="timeline-company">KAIST 경영대학</span>
+              <span class="timeline-period">2023.08 – 현재</span>
+            </div>
             <span class="timeline-role">겸임교수</span>
+            <ul class="timeline-details">
+              <li>디지털금융 MBA 대상 "AI와 추천 시스템" 강의 (수강생 약 80명)</li>
+              <li>3년 연속 (2023–2025)</li>
+              <li>커리큘럼: 협업 필터링, MovieLens, AI 현황, OpenAI API 실습, Google Play Store 사례 분석</li>
+            </ul>
           </div>
+
           <div class="timeline-item">
-            <span class="timeline-company">INEEJI</span>
-            <span class="timeline-role">CTO</span>
+            <div class="timeline-header">
+              <span class="timeline-company">INEEJI</span>
+              <span class="timeline-period">2024.03 – 2025.09</span>
+            </div>
+            <span class="timeline-role">CTO / 연구소장</span>
+            <ul class="timeline-details">
+              <li>파트타임 CTO, AI/SW 엔지니어 20명 이상 관리</li>
+              <li>XAI(심층 시계열 신경망)를 활용한 산업 공정 최적화</li>
+              <li>주요 성과: 철강 회사 연간 연료비 약 700억 원 절감</li>
+            </ul>
           </div>
+
           <div class="timeline-item">
-            <span class="timeline-company">Banksalad</span>
+            <div class="timeline-header">
+              <span class="timeline-company">Aisle Street, Inc.</span>
+              <span class="timeline-period">2024.01 – 현재</span>
+            </div>
+            <span class="timeline-role">공동 창업자 / 기술 총괄</span>
+            <ul class="timeline-details">
+              <li>교육 AI 스타트업, exemplar.ai</li>
+              <li>교사와 학생을 위한 RAG 기반 폐쇄형 채팅 서비스</li>
+              <li>기술 스택: React, AWS, Pinecone, RAG, LLM 연동</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <span class="timeline-company">프리랜서 / 개인사업자</span>
+              <span class="timeline-period">2023.11 – 현재</span>
+            </div>
+            <span class="timeline-role">자문, 교육, 멘토링</span>
+            <ul class="timeline-details">
+              <li>온라인 강의: Inflearn (시니어 개발자 성장, 매니저 전환), Class101 (EM 리더십), FastCampus (모두를 위한 CS), 한빛N (Google Play Store)</li>
+              <li>강연: "왜 관리가 이렇게 힘든가?", "코딩이 가장 쉬웠다", "실리콘밸리 개발자 생존기"</li>
+              <li>멘토링: Kernel360 4기</li>
+              <li>외래교수: 국민대학교 (풀스택 서비스 개발)</li>
+              <li>컨설팅: P사 SEO 컨설팅</li>
+              <li>NIA 월간 칼럼: 클라우드 서비스 동향 보고서</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <span class="timeline-company">Banksalad</span>
+              <span class="timeline-period">2022.01 – 2023.07</span>
+            </div>
             <span class="timeline-role">VP of Engineering</span>
+            <ul class="timeline-details">
+              <li>엔지니어 40명 이상 관리 (SWE, DS, DA, DevOps, EM)</li>
+              <li>6개월 만에 클라우드 비용 75% 절감 (리사이징, API 최적화, Redis 효율화)</li>
+              <li>마이데이터 서비스: 금융기관 258곳 연동, Go + gRPC 마이크로서비스, 약 2초 실시간 자산 업데이트</li>
+              <li>1.5년간 엔지니어 약 20명 채용</li>
+            </ul>
           </div>
+
           <div class="timeline-item">
-            <span class="timeline-company">Google <span class="timeline-meta">· 12.5년</span></span>
-            <span class="timeline-role">Staff SWE, TLM, Product Owner — 검색, Lens, Play Store, Nest</span>
+            <div class="timeline-header">
+              <span class="timeline-company">Google</span>
+              <span class="timeline-period">2007 – 2021 · 12년 6개월</span>
+            </div>
+            <ul class="timeline-details">
+              <li><strong>헤드 오브 엔지니어링 / 프로덕트 오너 — Search App Indexing</strong> (2012.09–2016.03): 앱 인덱싱을 처음부터 주도; 50명 조직(4개 팀) 구축; Google 실적 발표 및 Google IO 2015 발표; 팀원 약 90% 승진</li>
+              <li><strong>TLM / 프로덕트 오너 — Play Store 한국 및 일본</strong> (2016.03–2017.12): Google 최초의 지역 소비자 제품; 지역화 검색 및 추천; 사전 등록 기능, 홈페이지 개편</li>
+              <li><strong>Staff SWE — Google Lens</strong> (2018.09–2019.12): Pixel 4용 한국어 온디바이스 OCR; Lens 검색 통합 분석 파이프라인</li>
+              <li><strong>Staff SWE — Nest Store</strong> (2017.12–2018.09): store.nest.com 결제 서비스 (Hybris SAP, AWS+GCP); Affirm BNPL 연동, 100% 단독 구현</li>
+              <li><strong>TLM — Core Systems &amp; Experiences</strong> (2020.12–2021.10): Cloud Logging 팀, 대규모 디버그 로그 인프라</li>
+              <li><strong>TLM — Search App Search</strong> (2011.09–2012.08): Google 검색 내 앱 탐색 기능 론칭, 5명 SWE</li>
+              <li><strong>TLM — Search Korean Mobile</strong> (2010.09–2011.08): 첫 매니저 역할; SWE 8명, 1년간 모바일 기능 10개 이상 출시</li>
+              <li><strong>Senior SWE — Search Rich Snippets</strong> (2009.09–2010.08): Rich Snippets 영화 버티컬; schema.org 표준 기여</li>
+              <li><strong>Senior SWE — Search Korea</strong> (2007.07–2009.08): 서울 오피스 초기 멤버; google.co.kr 검색 결과 페이지 개편; 결과 그룹 도입 (Universal Search 레이아웃의 전신)</li>
+            </ul>
           </div>
+
           <div class="timeline-item">
-            <span class="timeline-company">Samsung Semiconductor</span>
-            <span class="timeline-role">Principal SWE / Technical Advisor</span>
+            <div class="timeline-header">
+              <span class="timeline-company">Samsung Semiconductor</span>
+              <span class="timeline-period">2019.12 – 2020.12</span>
+            </div>
+            <span class="timeline-role">Principal SWE / 기술 자문</span>
+            <ul class="timeline-details">
+              <li>데이터 센터 비즈니스 요구 사항 분석</li>
+              <li>메모리/스토리지 관련 대규모 서비스 요구 사항을 연구자들에게 교육</li>
+            </ul>
           </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <span class="timeline-company">초기 경력</span>
+              <span class="timeline-period">1999 – 2007</span>
+            </div>
+            <ul class="timeline-details">
+              <li><strong>ETRI</strong> (2006–2007): Eclipse 기반 디바이스 드라이버 소스 생성기 개발</li>
+              <li><strong>Teleca Korea</strong> (2004–2006): Symbian/Series 60 베이스 포팅 (Samsung Z600)</li>
+              <li><strong>Palmpalm Technology</strong> (2000–2004): 리눅스 스마트폰 (ALL-about), 커널 및 미들웨어</li>
+              <li><strong>iCube</strong> (1999–2000): RTOS 기반 셋톱박스 ECMAScript 엔진 개발</li>
+            </ul>
+          </div>
+
         </div>
       </div>
 

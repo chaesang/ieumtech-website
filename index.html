@@ -516,13 +516,13 @@
 
     .timeline {
       border-left: 2px solid var(--color-border);
-      padding-left: 20px;
+      padding-left: 24px;
       display: flex;
       flex-direction: column;
     }
 
     .timeline-item {
-      padding: 12px 0;
+      padding: 20px 0;
       border-bottom: 1px solid var(--color-border);
       position: relative;
     }
@@ -534,33 +534,70 @@
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -25px;
-      top: 18px;
-      width: 8px;
-      height: 8px;
+      left: -30px;
+      top: 26px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      background: var(--color-border);
+      background: var(--color-accent);
+      border: 2px solid var(--color-bg);
+      box-shadow: 0 0 0 2px var(--color-border);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
     }
 
     .timeline-company {
-      display: block;
-      font-size: 0.9375rem;
-      font-weight: 500;
+      font-size: 1rem;
+      font-weight: 600;
       color: var(--color-text);
-      margin-bottom: 2px;
     }
 
-    .timeline-meta {
+    .timeline-period {
       font-size: 0.8125rem;
-      font-weight: 300;
       color: var(--color-muted);
+      font-weight: 300;
+      white-space: nowrap;
     }
 
     .timeline-role {
       display: block;
+      font-size: 0.875rem;
+      color: var(--color-accent);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .timeline-details {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .timeline-details li {
       font-size: 0.8125rem;
       color: var(--color-muted);
-      font-weight: 300;
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .timeline-details li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.5;
     }
 
     .simple-list {
@@ -685,30 +722,133 @@
       <div class="about-block">
         <h2>Experience</h2>
         <div class="timeline">
+
           <div class="timeline-item">
-            <span class="timeline-company">MEGAZONECLOUD</span>
+            <div class="timeline-header">
+              <span class="timeline-company">MEGAZONECLOUD</span>
+              <span class="timeline-period">2025.04 – Present</span>
+            </div>
             <span class="timeline-role">Distinguished Software Engineer</span>
+            <ul class="timeline-details">
+              <li>CEO Office, strategic technical advisor</li>
+              <li>Reviewing technical gaps in ongoing projects</li>
+              <li>Establishing SDLC and management guidelines for "by Megazone" products</li>
+              <li>~2,000 employees, largest cloud MSP in Korea</li>
+            </ul>
           </div>
+
           <div class="timeline-item">
-            <span class="timeline-company">KAIST College of Business</span>
+            <div class="timeline-header">
+              <span class="timeline-company">KAIST College of Business</span>
+              <span class="timeline-period">2023.08 – Present</span>
+            </div>
             <span class="timeline-role">Adjunct Professor</span>
+            <ul class="timeline-details">
+              <li>"AI and Recommendation Systems" for Digital Finance MBA (~80 students)</li>
+              <li>3 consecutive years (2023–2025)</li>
+              <li>Curriculum: collaborative filtering, MovieLens, State of AI, OpenAI API hands-on, Google Play Store case study</li>
+            </ul>
           </div>
+
           <div class="timeline-item">
-            <span class="timeline-company">INEEJI</span>
-            <span class="timeline-role">CTO</span>
+            <div class="timeline-header">
+              <span class="timeline-company">INEEJI</span>
+              <span class="timeline-period">2024.03 – 2025.09</span>
+            </div>
+            <span class="timeline-role">CTO / Director of Research Institute</span>
+            <ul class="timeline-details">
+              <li>Part-time CTO, managed 20+ AI/SW engineers</li>
+              <li>Industrial process optimization using XAI (Deep Temporal Neural Networks)</li>
+              <li>Key result: annual fuel cost savings of ~$50M for a steel company</li>
+            </ul>
           </div>
+
           <div class="timeline-item">
-            <span class="timeline-company">Banksalad</span>
+            <div class="timeline-header">
+              <span class="timeline-company">Aisle Street, Inc.</span>
+              <span class="timeline-period">2024.01 – Present</span>
+            </div>
+            <span class="timeline-role">Co-Founder / Tech</span>
+            <ul class="timeline-details">
+              <li>Education AI startup, exemplar.ai</li>
+              <li>RAG-based closed chatting service for teachers and students</li>
+              <li>Tech: React, AWS, Pinecone, RAG, LLM integration</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <span class="timeline-company">Self-employed</span>
+              <span class="timeline-period">2023.11 – Present</span>
+            </div>
+            <span class="timeline-role">Advisor, Educator, and Mentor</span>
+            <ul class="timeline-details">
+              <li>Online courses: Inflearn (Senior Developer Growth, Manager Transition), Class101 (EM Leadership), FastCampus (CS for Everyone), HanbitN (Google Play Store)</li>
+              <li>Speaking: "Why Managing Feels So Hard?", "Coding Was the Easiest Part", "A Developer's Survival Story in Silicon Valley"</li>
+              <li>Mentoring: Kernel360 4th cohort</li>
+              <li>Visiting Lecturer: Kookmin University (Full-Stack Service Dev)</li>
+              <li>Consulting: SEO consulting for Company P</li>
+              <li>NIA Monthly Columnist: Cloud Service Trend Report</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <span class="timeline-company">Banksalad</span>
+              <span class="timeline-period">2022.01 – 2023.07</span>
+            </div>
             <span class="timeline-role">VP of Engineering</span>
+            <ul class="timeline-details">
+              <li>Managed 40+ engineers (SWE, DS, DA, DevOps, EM)</li>
+              <li>75% cloud cost reduction in 6 months (right-sizing, API optimization, Redis efficiency)</li>
+              <li>Mydata service: 258 financial institutions, Go + gRPC microservices, ~2s real-time asset updates</li>
+              <li>Hired ~20 engineers in 1.5 years</li>
+            </ul>
           </div>
+
           <div class="timeline-item">
-            <span class="timeline-company">Google <span class="timeline-meta">· 12.5 years</span></span>
-            <span class="timeline-role">Staff SWE, TLM, Product Owner — Search, Lens, Play Store, Nest</span>
+            <div class="timeline-header">
+              <span class="timeline-company">Google</span>
+              <span class="timeline-period">2007 – 2021 · 12 yrs 6 mos</span>
+            </div>
+            <ul class="timeline-details">
+              <li><strong>Head of Engineering / Product Owner — Search App Indexing</strong> (2012.09–2016.03): Initiated and led App Indexing from 0 to scale; built 50-person org (4 teams); featured in Google earnings calls and Google IO 2015; ~90% of team promoted</li>
+              <li><strong>TLM / Product Owner — Play Store Korea &amp; Japan</strong> (2016.03–2017.12): First regional consumer product at Google; locality-aware search &amp; recommendation; pre-registration feature and homepage redesign</li>
+              <li><strong>Staff SWE — Google Lens</strong> (2018.09–2019.12): Korean on-device OCR for Pixel 4; Lens search integration analysis pipeline</li>
+              <li><strong>Staff SWE — Nest Store</strong> (2017.12–2018.09): Payment service for store.nest.com (Hybris SAP, AWS+GCP); Affirm BNPL integration, implemented 100% solo</li>
+              <li><strong>TLM — Core Systems &amp; Experiences</strong> (2020.12–2021.10): Cloud Logging team, planet-scale debug log infrastructure</li>
+              <li><strong>TLM — Search App Search</strong> (2011.09–2012.08): Launched App discovery in Google Search, 5 SWEs</li>
+              <li><strong>TLM — Search Korean Mobile</strong> (2010.09–2011.08): First manager role; 8 SWEs, 10+ mobile features in 1 year</li>
+              <li><strong>Senior SWE — Search Rich Snippets</strong> (2009.09–2010.08): Movie vertical with Rich Snippets; contributed to schema.org standard</li>
+              <li><strong>Senior SWE — Search Korea</strong> (2007.07–2009.08): Early Seoul office member; google.co.kr redesign; introduced result groups (precursor to Universal Search)</li>
+            </ul>
           </div>
+
           <div class="timeline-item">
-            <span class="timeline-company">Samsung Semiconductor</span>
+            <div class="timeline-header">
+              <span class="timeline-company">Samsung Semiconductor</span>
+              <span class="timeline-period">2019.12 – 2020.12</span>
+            </div>
             <span class="timeline-role">Principal SWE / Technical Advisor</span>
+            <ul class="timeline-details">
+              <li>Data center business requirements analysis</li>
+              <li>Trained researchers on large-scale service requirements for memory/storage</li>
+            </ul>
           </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <span class="timeline-company">Early Career</span>
+              <span class="timeline-period">1999 – 2007</span>
+            </div>
+            <ul class="timeline-details">
+              <li><strong>ETRI</strong> (2006–2007): Eclipse-based device driver source generator</li>
+              <li><strong>Teleca Korea</strong> (2004–2006): Symbian/Series 60 base-porting (Samsung Z600)</li>
+              <li><strong>Palmpalm Technology</strong> (2000–2004): Linux smartphone (ALL-about), kernel &amp; middleware</li>
+              <li><strong>iCube</strong> (1999–2000): Set-top-box ECMAScript engine on RTOS</li>
+            </ul>
+          </div>
+
         </div>
       </div>
 
