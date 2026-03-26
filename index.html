@@ -404,6 +404,181 @@
         font-size: 1rem;
       }
     }
+
+    /* About section */
+    .about-section {
+      border-top: 1px solid var(--color-border);
+      padding: 64px 24px;
+    }
+
+    .about-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .about-profile {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .profile-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .profile-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      margin-bottom: 4px;
+    }
+
+    .profile-korean {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      margin-bottom: 6px;
+    }
+
+    .profile-headline {
+      font-size: 0.9375rem;
+      color: var(--color-muted);
+    }
+
+    .about-summary {
+      margin-bottom: 40px;
+      padding: 20px 24px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+    }
+
+    .about-summary ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .about-summary li {
+      font-size: 0.9375rem;
+      color: var(--color-muted);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .about-summary li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+
+    .about-block {
+      margin-bottom: 36px;
+    }
+
+    .timeline {
+      border-left: 2px solid var(--color-border);
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-item {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 18px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-border);
+    }
+
+    .timeline-company {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--color-text);
+      margin-bottom: 2px;
+    }
+
+    .timeline-meta {
+      font-size: 0.8125rem;
+      font-weight: 300;
+      color: var(--color-muted);
+    }
+
+    .timeline-role {
+      display: block;
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      font-weight: 300;
+    }
+
+    .simple-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .simple-list-item {
+      font-size: 0.9375rem;
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+
+    .simple-list-item .label {
+      font-weight: 500;
+    }
+
+    .simple-list-item .detail {
+      color: var(--color-muted);
+      font-weight: 300;
+      font-size: 0.875rem;
+    }
+
+    .about-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 480px) {
+      .about-profile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .about-section {
+        padding: 48px 24px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -460,6 +635,115 @@
     </section>
 
   </div>
+
+  <section id="about" class="about-section">
+    <div class="about-inner">
+
+      <div class="about-profile">
+        <div class="profile-avatar">CJ</div>
+        <div>
+          <h1 class="profile-name">Chaesang Jung</h1>
+          <p class="profile-korean">정채상</p>
+          <p class="profile-headline">Tech · Problem Solver · ex-Google</p>
+        </div>
+      </div>
+
+      <div class="about-summary">
+        <ul>
+          <li>30 years of experience across embedded systems to consumer services</li>
+          <li>15+ years of people management, 7 years of product management</li>
+          <li>Tech leader, engineering manager, software engineer, product owner, coach and mentor</li>
+        </ul>
+      </div>
+
+      <div class="about-block">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-company">MEGAZONECLOUD</span>
+            <span class="timeline-role">Distinguished Software Engineer</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-company">KAIST College of Business</span>
+            <span class="timeline-role">Adjunct Professor</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-company">INEEJI</span>
+            <span class="timeline-role">CTO</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-company">Banksalad</span>
+            <span class="timeline-role">VP of Engineering</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-company">Google <span class="timeline-meta">· 12.5 years</span></span>
+            <span class="timeline-role">Staff SWE, TLM, Product Owner — Search, Lens, Play Store, Nest</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-company">Samsung Semiconductor</span>
+            <span class="timeline-role">Principal SWE / Technical Advisor</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <h2>Teaching &amp; Speaking</h2>
+        <div class="simple-list">
+          <div class="simple-list-item">
+            <span class="label">Inflearn</span>
+            <span class="detail">— Growing into a Senior Developer · From Senior Developer to Manager</span>
+          </div>
+          <div class="simple-list-item">
+            <span class="label">Class101</span>
+            <span class="detail">— Engineering Manager Leadership Guide</span>
+          </div>
+          <div class="simple-list-item">
+            <span class="label">Speaker</span>
+            <span class="detail">— Why Managing Feels So Hard? · Coding Was the Easiest Part · A Developer's Survival Story in Silicon Valley</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <h2>Education</h2>
+        <div class="simple-list">
+          <div class="simple-list-item">
+            <span class="label">Seoul National University</span>
+            <span class="detail">— MS, Computer Engineering</span>
+          </div>
+          <div class="simple-list-item">
+            <span class="label">Seoul National University</span>
+            <span class="detail">— BS, Computer Engineering</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <h2>Certifications &amp; Patents</h2>
+        <div class="simple-list">
+          <div class="simple-list-item"><span class="detail">Machine Learning</span></div>
+          <div class="simple-list-item"><span class="detail">Generative AI with Large Language Models</span></div>
+          <div class="simple-list-item"><span class="detail">Cloud Architecture with Google Cloud</span></div>
+          <div class="simple-list-item"><span class="detail">Data Engineering with Google Cloud</span></div>
+          <div class="simple-list-item"><span class="detail">TensorFlow Developer Certificate</span></div>
+          <div class="simple-list-item" style="margin-top: 8px;">
+            <span class="label">5 US Patents</span>
+            <span class="detail">— Google Search / App Indexing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <h2>Links</h2>
+        <div class="about-links">
+          <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
+          <a href="https://www.inflearn.com/en/users/1292051" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Inflearn</a>
+          <a href="https://brunch.co.kr/@chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Brunch</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <section class="cta-section" id="contact">
     <div class="cta-inner">
