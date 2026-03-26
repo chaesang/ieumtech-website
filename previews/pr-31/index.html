@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ieum Tech LLC</title>
+  <meta name="description" content="Ieum Tech — Tech Consulting, Technical Writing, Speaking, and Digital Content.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-bg: #fafafa;
+      --color-text: #1a1a1a;
+      --color-muted: #6b6b6b;
+      --color-accent: #2563eb;
+      --color-border: #e5e5e5;
+      --header-height: 56px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-height);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Sticky site header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      height: var(--header-height);
+    }
+
+    .header-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--color-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-text);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .lang-toggle {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-muted);
+      text-decoration: none;
+      padding: 4px 10px;
+      border: 1.5px solid var(--color-border);
+      border-radius: 6px;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .lang-toggle:hover {
+      color: var(--color-text);
+      border-color: var(--color-muted);
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: var(--color-text);
+      transition: transform 0.25s, opacity 0.25s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    /* Mobile nav overlay */
+    @media (max-width: 480px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+        padding: 8px 24px 16px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 10px 0;
+        font-size: 0.9375rem;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .nav-links li:last-child a {
+        border-bottom: none;
+      }
+    }
+
+    /* Main content */
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero section */
+    .hero {
+      background: #fff;
+      border-bottom: 1px solid var(--color-border);
+      padding: 88px 24px 80px;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-muted);
+      margin-bottom: 28px;
+    }
+
+    .connecting-list {
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .connecting-item {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.4;
+      color: var(--color-text);
+    }
+
+    .connecting-item:not(:first-child) {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--color-muted);
+      margin-top: 6px;
+    }
+
+    .connecting-word {
+      color: var(--color-accent);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--color-muted);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    section h2 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-muted);
+      margin-bottom: 24px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .service-card h3 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .service-card p {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 480px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CTA section */
+    .cta-section {
+      background: #f0f4ff;
+      border-top: 1px solid #d6e0ff;
+      border-bottom: 1px solid #d6e0ff;
+      padding: 72px 24px;
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-heading {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: var(--color-text);
+      margin-bottom: 12px;
+    }
+
+    .cta-sub {
+      font-size: 1rem;
+      color: var(--color-muted);
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      font-family: inherit;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      background: var(--color-accent);
+      color: #fff;
+      border: 1.5px solid var(--color-accent);
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--color-border);
+      padding: 32px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-nav a {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+      color: var(--color-text);
+    }
+
+    .footer-copy {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      font-weight: 300;
+    }
+
+    @media (max-width: 600px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 60px 24px 52px;
+      }
+
+      .connecting-item {
+        font-size: 1.375rem;
+      }
+
+      .connecting-item:not(:first-child) {
+        font-size: 1rem;
+      }
+    }
+
+    /* About section */
+    .about-section {
+      border-top: 1px solid var(--color-border);
+      padding: 64px 24px;
+    }
+
+    .about-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .about-profile {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .profile-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .profile-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      margin-bottom: 4px;
+    }
+
+    .profile-korean {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      margin-bottom: 6px;
+    }
+
+    .profile-headline {
+      font-size: 0.9375rem;
+      color: var(--color-muted);
+    }
+
+    .about-summary {
+      margin-bottom: 40px;
+      padding: 20px 24px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+    }
+
+    .about-summary ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .about-summary li {
+      font-size: 0.9375rem;
+      color: var(--color-muted);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .about-summary li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+
+    .about-block {
+      margin-bottom: 36px;
+    }
+
+    .timeline {
+      border-left: 2px solid var(--color-border);
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-item {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 18px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-border);
+    }
+
+    .timeline-company {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--color-text);
+      margin-bottom: 2px;
+    }
+
+    .timeline-meta {
+      font-size: 0.8125rem;
+      font-weight: 300;
+      color: var(--color-muted);
+    }
+
+    .timeline-role {
+      display: block;
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      font-weight: 300;
+    }
+
+    .simple-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .simple-list-item {
+      font-size: 0.9375rem;
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+
+    .simple-list-item .label {
+      font-weight: 500;
+    }
+
+    .simple-list-item .detail {
+      color: var(--color-muted);
+      font-weight: 300;
+      font-size: 0.875rem;
+    }
+
+    .about-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 480px) {
+      .about-profile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .about-section {
+        padding: 48px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="logo">Ieum Tech</a>
+      <div class="header-right">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#founder">Founder</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="/ko/" class="lang-toggle">KO</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <p class="hero-label">Ieum Tech · 이음 테크</p>
+      <div class="connecting-list">
+        <h1 class="connecting-item"><span class="connecting-word">Connecting</span> ideas with technology.</h1>
+        <p class="connecting-item"><span class="connecting-word">Connecting</span> people.</p>
+        <p class="connecting-item"><span class="connecting-word">Connecting</span> history and future.</p>
+        <p class="connecting-item"><span class="connecting-word">Connecting</span> generations.</p>
+      </div>
+      <p class="hero-sub">Tech consulting, technical writing, and digital education.<br>Based in the US, serving teams worldwide.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <section>
+      <h2>Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Tech Consulting</h3>
+          <p>Tech strategy, architecture, and cloud</p>
+        </div>
+        <div class="service-card">
+          <h3>Leadership Consulting</h3>
+          <p>Engineering leadership, team building, and org design</p>
+        </div>
+        <div class="service-card">
+          <h3>Technical Writing</h3>
+          <p>Technical docs, blog posts, and content creation</p>
+        </div>
+        <div class="service-card">
+          <h3>Education</h3>
+          <p>Inflearn courses, YouTube, seminars, and workshops</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <section id="founder" class="about-section">
+    <div class="about-inner">
+
+      <div class="about-profile">
+        <div class="profile-avatar">CJ</div>
+        <div>
+          <h1 class="profile-name">Chaesang Jung</h1>
+          <p class="profile-korean">정채상</p>
+          <p class="profile-headline">Tech · Problem Solver · ex-Google</p>
+        </div>
+      </div>
+
+      <div class="about-summary">
+        <ul>
+          <li>30 years of experience across embedded systems to consumer services</li>
+          <li>15+ years of people management, 7 years of product management</li>
+          <li>Tech leader, engineering manager, software engineer, product owner, coach and mentor</li>
+        </ul>
+      </div>
+
+      <div class="about-block">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-company">MEGAZONECLOUD</span>
+            <span class="timeline-role">Distinguished Software Engineer</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-company">KAIST College of Business</span>
+            <span class="timeline-role">Adjunct Professor</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-company">INEEJI</span>
+            <span class="timeline-role">CTO</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-company">Banksalad</span>
+            <span class="timeline-role">VP of Engineering</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-company">Google <span class="timeline-meta">· 12.5 years</span></span>
+            <span class="timeline-role">Staff SWE, TLM, Product Owner — Search, Lens, Play Store, Nest</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-company">Samsung Semiconductor</span>
+            <span class="timeline-role">Principal SWE / Technical Advisor</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <h2>Teaching &amp; Speaking</h2>
+        <div class="simple-list">
+          <div class="simple-list-item">
+            <span class="label">Inflearn</span>
+            <span class="detail">— Growing into a Senior Developer · From Senior Developer to Manager</span>
+          </div>
+          <div class="simple-list-item">
+            <span class="label">Class101</span>
+            <span class="detail">— Engineering Manager Leadership Guide</span>
+          </div>
+          <div class="simple-list-item">
+            <span class="label">Speaker</span>
+            <span class="detail">— Why Managing Feels So Hard? · Coding Was the Easiest Part · A Developer's Survival Story in Silicon Valley</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <h2>Education</h2>
+        <div class="simple-list">
+          <div class="simple-list-item">
+            <span class="label">Seoul National University</span>
+            <span class="detail">— MS, Computer Engineering</span>
+          </div>
+          <div class="simple-list-item">
+            <span class="label">Seoul National University</span>
+            <span class="detail">— BS, Computer Engineering</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <h2>Certifications &amp; Patents</h2>
+        <div class="simple-list">
+          <div class="simple-list-item"><span class="detail">Machine Learning</span></div>
+          <div class="simple-list-item"><span class="detail">Generative AI with Large Language Models</span></div>
+          <div class="simple-list-item"><span class="detail">Cloud Architecture with Google Cloud</span></div>
+          <div class="simple-list-item"><span class="detail">Data Engineering with Google Cloud</span></div>
+          <div class="simple-list-item"><span class="detail">TensorFlow Developer Certificate</span></div>
+          <div class="simple-list-item" style="margin-top: 8px;">
+            <span class="label">5 US Patents</span>
+            <span class="detail">— Google Search / App Indexing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-block">
+        <h2>Links</h2>
+        <div class="about-links">
+          <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
+          <a href="https://www.inflearn.com/en/users/1292051" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Inflearn</a>
+          <a href="https://brunch.co.kr/@chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Brunch</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section" id="contact">
+    <div class="cta-inner">
+      <h2 class="cta-heading">Let's work together.</h2>
+      <p class="cta-sub">Have a project in mind? I'd love to connect.</p>
+      <div class="cta-buttons">
+        <a href="mailto:hello@ieumtech.net" class="btn">Email</a>
+        <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="#home" class="footer-logo">Ieum Tech</a>
+      <nav class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#founder">Founder</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Ieum Tech. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
