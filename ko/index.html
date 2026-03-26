@@ -600,6 +600,28 @@
       line-height: 1.5;
     }
 
+    .timeline-nested {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 12px;
+      border-left: 2px solid var(--color-border);
+      padding-left: 16px;
+    }
+
+    .timeline-nested-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .timeline-nested-header .timeline-role {
+      margin-bottom: 0;
+    }
+
     .simple-list {
       display: flex;
       flex-direction: column;
@@ -809,109 +831,108 @@
           <div class="timeline-item">
             <div class="timeline-header">
               <span class="timeline-company">Google</span>
-              <span class="timeline-period">2020.12 – 2021.10</span>
+              <span class="timeline-period">2007.07 – 2021.10</span>
             </div>
-            <span class="timeline-role">TLM — Core Systems &amp; Experiences</span>
-            <ul class="timeline-details">
-              <li>Cloud Logging 팀, 대규모 디버그 로그 인프라</li>
-            </ul>
-          </div>
+            <div class="timeline-nested">
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">TLM — Core Systems &amp; Experiences</span>
+                  <span class="timeline-period">2020.12 – 2021.10</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>Cloud Logging 팀, 대규모 디버그 로그 인프라</li>
+                </ul>
+              </div>
 
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <span class="timeline-company">Google</span>
-              <span class="timeline-period">2018.09 – 2019.12</span>
-            </div>
-            <span class="timeline-role">Staff SWE — Google Lens</span>
-            <ul class="timeline-details">
-              <li>Pixel 4용 한국어 온디바이스 OCR</li>
-              <li>Lens 검색 통합 분석 파이프라인</li>
-            </ul>
-          </div>
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">Staff SWE — Google Lens</span>
+                  <span class="timeline-period">2018.09 – 2019.12</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>Pixel 4용 한국어 온디바이스 OCR</li>
+                  <li>Lens 검색 통합 분석 파이프라인</li>
+                </ul>
+              </div>
 
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <span class="timeline-company">Google</span>
-              <span class="timeline-period">2017.12 – 2018.09</span>
-            </div>
-            <span class="timeline-role">Staff SWE — Nest Store</span>
-            <ul class="timeline-details">
-              <li>store.nest.com 결제 서비스 (Hybris SAP, AWS+GCP)</li>
-              <li>Affirm BNPL 연동, 100% 단독 구현</li>
-            </ul>
-          </div>
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">Staff SWE — Nest Store</span>
+                  <span class="timeline-period">2017.12 – 2018.09</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>store.nest.com 결제 서비스 (Hybris SAP, AWS+GCP)</li>
+                  <li>Affirm BNPL 연동, 100% 단독 구현</li>
+                </ul>
+              </div>
 
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <span class="timeline-company">Google</span>
-              <span class="timeline-period">2016.03 – 2017.12</span>
-            </div>
-            <span class="timeline-role">TLM / 프로덕트 오너 — Play Store 한국 및 일본</span>
-            <ul class="timeline-details">
-              <li>Google 최초의 지역 소비자 제품, SWE 8명</li>
-              <li>지역화 검색 및 추천</li>
-              <li>사전 등록 기능, 홈페이지 개편</li>
-            </ul>
-          </div>
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">TLM / 프로덕트 오너 — Play Store 한국 및 일본</span>
+                  <span class="timeline-period">2016.03 – 2017.12</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>Google 최초의 지역 소비자 제품, SWE 8명</li>
+                  <li>지역화 검색 및 추천</li>
+                  <li>사전 등록 기능, 홈페이지 개편</li>
+                </ul>
+              </div>
 
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <span class="timeline-company">Google</span>
-              <span class="timeline-period">2012.09 – 2016.03</span>
-            </div>
-            <span class="timeline-role">헤드 오브 엔지니어링 / 프로덕트 오너 — Search App Indexing</span>
-            <ul class="timeline-details">
-              <li>앱 인덱싱을 처음부터 주도</li>
-              <li>50명 조직(4개 팀) 구축; 새로운 패러다임: Android 시뮬레이터를 통한 앱 콘텐츠 크롤링</li>
-              <li>Google 실적 발표, Android K 출시, Google IO 2015 발표</li>
-              <li>팀원 약 90%(45명) 승진</li>
-            </ul>
-          </div>
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">헤드 오브 엔지니어링 / 프로덕트 오너 — Search App Indexing</span>
+                  <span class="timeline-period">2012.09 – 2016.03</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>앱 인덱싱을 처음부터 주도</li>
+                  <li>50명 조직(4개 팀) 구축; 새로운 패러다임: Android 시뮬레이터를 통한 앱 콘텐츠 크롤링</li>
+                  <li>Google 실적 발표, Android K 출시, Google IO 2015 발표</li>
+                  <li>팀원 약 90%(45명) 승진</li>
+                </ul>
+              </div>
 
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <span class="timeline-company">Google</span>
-              <span class="timeline-period">2011.09 – 2012.08</span>
-            </div>
-            <span class="timeline-role">TLM — Search App Search</span>
-            <ul class="timeline-details">
-              <li>Google 검색 내 앱 탐색 기능 론칭, SWE 5명</li>
-            </ul>
-          </div>
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">TLM — Search App Search</span>
+                  <span class="timeline-period">2011.09 – 2012.08</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>Google 검색 내 앱 탐색 기능 론칭, SWE 5명</li>
+                </ul>
+              </div>
 
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <span class="timeline-company">Google</span>
-              <span class="timeline-period">2010.09 – 2011.08</span>
-            </div>
-            <span class="timeline-role">TLM — Search Korean Mobile</span>
-            <ul class="timeline-details">
-              <li>첫 매니저 역할, SWE 8명, 1년간 모바일 기능 10개 이상 출시</li>
-            </ul>
-          </div>
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">TLM — Search Korean Mobile</span>
+                  <span class="timeline-period">2010.09 – 2011.08</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>첫 매니저 역할, SWE 8명, 1년간 모바일 기능 10개 이상 출시</li>
+                </ul>
+              </div>
 
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <span class="timeline-company">Google</span>
-              <span class="timeline-period">2009.09 – 2010.08</span>
-            </div>
-            <span class="timeline-role">Senior SWE — Search Rich Snippets</span>
-            <ul class="timeline-details">
-              <li>Rich Snippets 영화 버티컬</li>
-              <li>schema.org 표준 기여</li>
-            </ul>
-          </div>
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">Senior SWE — Search Rich Snippets</span>
+                  <span class="timeline-period">2009.09 – 2010.08</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>Rich Snippets 영화 버티컬</li>
+                  <li>schema.org 표준 기여</li>
+                </ul>
+              </div>
 
-          <div class="timeline-item">
-            <div class="timeline-header">
-              <span class="timeline-company">Google</span>
-              <span class="timeline-period">2007.07 – 2009.08</span>
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">Senior SWE — Search Korea</span>
+                  <span class="timeline-period">2007.07 – 2009.08</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>서울 오피스 초기 멤버; google.co.kr 검색 결과 페이지 개편</li>
+                  <li>결과 그룹 도입 (Universal Search 레이아웃의 전신)</li>
+                </ul>
+              </div>
             </div>
-            <span class="timeline-role">Senior SWE — Search Korea</span>
-            <ul class="timeline-details">
-              <li>서울 오피스 초기 멤버; google.co.kr 검색 결과 페이지 개편</li>
-              <li>결과 그룹 도입 (Universal Search 레이아웃의 전신)</li>
-            </ul>
           </div>
 
           <div class="timeline-item">
