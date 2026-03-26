@@ -600,6 +600,28 @@
       line-height: 1.5;
     }
 
+    .timeline-nested {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 12px;
+      border-left: 2px solid var(--color-border);
+      padding-left: 16px;
+    }
+
+    .timeline-nested-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .timeline-nested-header .timeline-role {
+      margin-bottom: 0;
+    }
+
     .simple-list {
       display: flex;
       flex-direction: column;
@@ -809,19 +831,108 @@
           <div class="timeline-item">
             <div class="timeline-header">
               <span class="timeline-company">Google</span>
-              <span class="timeline-period">2007 – 2021 · 12 yrs 6 mos</span>
+              <span class="timeline-period">2007.07 – 2021.10</span>
             </div>
-            <ul class="timeline-details">
-              <li><strong>Head of Engineering / Product Owner — Search App Indexing</strong> (2012.09–2016.03): Initiated and led App Indexing from 0 to scale; built 50-person org (4 teams); featured in Google earnings calls and Google IO 2015; ~90% of team promoted</li>
-              <li><strong>TLM / Product Owner — Play Store Korea &amp; Japan</strong> (2016.03–2017.12): First regional consumer product at Google; locality-aware search &amp; recommendation; pre-registration feature and homepage redesign</li>
-              <li><strong>Staff SWE — Google Lens</strong> (2018.09–2019.12): Korean on-device OCR for Pixel 4; Lens search integration analysis pipeline</li>
-              <li><strong>Staff SWE — Nest Store</strong> (2017.12–2018.09): Payment service for store.nest.com (Hybris SAP, AWS+GCP); Affirm BNPL integration, implemented 100% solo</li>
-              <li><strong>TLM — Core Systems &amp; Experiences</strong> (2020.12–2021.10): Cloud Logging team, planet-scale debug log infrastructure</li>
-              <li><strong>TLM — Search App Search</strong> (2011.09–2012.08): Launched App discovery in Google Search, 5 SWEs</li>
-              <li><strong>TLM — Search Korean Mobile</strong> (2010.09–2011.08): First manager role; 8 SWEs, 10+ mobile features in 1 year</li>
-              <li><strong>Senior SWE — Search Rich Snippets</strong> (2009.09–2010.08): Movie vertical with Rich Snippets; contributed to schema.org standard</li>
-              <li><strong>Senior SWE — Search Korea</strong> (2007.07–2009.08): Early Seoul office member; google.co.kr redesign; introduced result groups (precursor to Universal Search)</li>
-            </ul>
+            <div class="timeline-nested">
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">TLM — Core Systems &amp; Experiences</span>
+                  <span class="timeline-period">2020.12 – 2021.10</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>Cloud Logging team, planet-scale debug log infrastructure</li>
+                </ul>
+              </div>
+
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">Staff SWE — Google Lens</span>
+                  <span class="timeline-period">2018.09 – 2019.12</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>Korean on-device OCR for Pixel 4</li>
+                  <li>Lens search integration analysis pipeline</li>
+                </ul>
+              </div>
+
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">Staff SWE — Nest Store</span>
+                  <span class="timeline-period">2017.12 – 2018.09</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>Payment service for store.nest.com (Hybris SAP, AWS+GCP)</li>
+                  <li>Affirm BNPL integration, implemented 100% solo</li>
+                </ul>
+              </div>
+
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">TLM / Product Owner — Play Store Korea &amp; Japan</span>
+                  <span class="timeline-period">2016.03 – 2017.12</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>First regional consumer product in Google, 8 SWEs</li>
+                  <li>Locality-aware search &amp; recommendation</li>
+                  <li>Pre-registration feature, homepage redesign</li>
+                </ul>
+              </div>
+
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">Head of Engineering / Product Owner — Search App Indexing</span>
+                  <span class="timeline-period">2012.09 – 2016.03</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>Initiated and led App Indexing from 0 to scale</li>
+                  <li>Built 50-person org (4 teams); new paradigm: crawling app content via Android simulator</li>
+                  <li>Featured in Google earnings calls, Android K release, Google IO 2015 speaker</li>
+                  <li>~90% of team (45 people) promoted during project</li>
+                </ul>
+              </div>
+
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">TLM — Search App Search</span>
+                  <span class="timeline-period">2011.09 – 2012.08</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>Launched App discovery in Google Search, 5 SWEs</li>
+                </ul>
+              </div>
+
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">TLM — Search Korean Mobile</span>
+                  <span class="timeline-period">2010.09 – 2011.08</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>First manager role, 8 SWEs, 10+ mobile features in 1 year</li>
+                </ul>
+              </div>
+
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">Senior SWE — Search Rich Snippets</span>
+                  <span class="timeline-period">2009.09 – 2010.08</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>Movie vertical with Rich Snippets</li>
+                  <li>Contributed to schema.org standard</li>
+                </ul>
+              </div>
+
+              <div class="timeline-nested-item">
+                <div class="timeline-nested-header">
+                  <span class="timeline-role">Senior SWE — Search Korea</span>
+                  <span class="timeline-period">2007.07 – 2009.08</span>
+                </div>
+                <ul class="timeline-details">
+                  <li>Early Seoul office member; google.co.kr search result page redesign</li>
+                  <li>Introduced result groups (precursor to Universal Search layout)</li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div class="timeline-item">
@@ -838,14 +949,46 @@
 
           <div class="timeline-item">
             <div class="timeline-header">
-              <span class="timeline-company">Early Career</span>
-              <span class="timeline-period">1999 – 2007</span>
+              <span class="timeline-company">ETRI</span>
+              <span class="timeline-period">2006 – 2007</span>
             </div>
+            <span class="timeline-role">Software Engineer</span>
             <ul class="timeline-details">
-              <li><strong>ETRI</strong> (2006–2007): Eclipse-based device driver source generator</li>
-              <li><strong>Teleca Korea</strong> (2004–2006): Symbian/Series 60 base-porting (Samsung Z600)</li>
-              <li><strong>Palmpalm Technology</strong> (2000–2004): Linux smartphone (ALL-about), kernel &amp; middleware</li>
-              <li><strong>iCube</strong> (1999–2000): Set-top-box ECMAScript engine on RTOS</li>
+              <li>Eclipse-based device driver source generator</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <span class="timeline-company">Teleca Korea</span>
+              <span class="timeline-period">2004 – 2006</span>
+            </div>
+            <span class="timeline-role">Software Engineer</span>
+            <ul class="timeline-details">
+              <li>Symbian/Series 60 base-porting, Samsung Z600</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <span class="timeline-company">Palmpalm Technology</span>
+              <span class="timeline-period">2000 – 2004</span>
+            </div>
+            <span class="timeline-role">Software Engineer</span>
+            <ul class="timeline-details">
+              <li>Linux smartphone (ALL-about), kernel &amp; middleware</li>
+              <li>Linux-based smartphone development 7–8 years ahead of Android</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <span class="timeline-company">iCube</span>
+              <span class="timeline-period">1999 – 2000</span>
+            </div>
+            <span class="timeline-role">Software Engineer</span>
+            <ul class="timeline-details">
+              <li>Set-top-box software, ECMAScript engine on RTOS (pSOS)</li>
             </ul>
           </div>
 
@@ -893,9 +1036,13 @@
           <div class="simple-list-item"><span class="detail">Data Engineering with Google Cloud</span></div>
           <div class="simple-list-item"><span class="detail">TensorFlow Developer Certificate</span></div>
           <div class="simple-list-item" style="margin-top: 8px;">
-            <span class="label">5 US Patents</span>
-            <span class="detail">— Google Search / App Indexing</span>
+            <span class="label">US Patents</span>
           </div>
+          <div class="simple-list-item"><span class="detail">Ranking of presentation modes for particular content (US9146972)</span></div>
+          <div class="simple-list-item"><span class="detail">Indexing application pages of native applications (US9002821B2)</span></div>
+          <div class="simple-list-item"><span class="detail">Automatically implementing an application in response to a search query (US9524347B1)</span></div>
+          <div class="simple-list-item"><span class="detail">Triggering and ranking of native applications (US9514195B2)</span></div>
+          <div class="simple-list-item"><span class="detail">Ranking of native application content (US8996520B2)</span></div>
         </div>
       </div>
 
