@@ -38,7 +38,7 @@ jobs:
         id: create-pr
         if: github.event_name == 'issues' && steps.claude.outputs.branch_name != ''
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           PR_URL=$(gh pr create \
             --repo "${{ github.repository }}" \
@@ -60,7 +60,7 @@ jobs:
         id: resolve
         if: always() && steps.claude.conclusion == 'success'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           BRANCH="${{ steps.claude.outputs.branch_name }}"
           PR_NUMBER="${{ steps.create-pr.outputs.pr_number }}"
@@ -86,7 +86,7 @@ jobs:
           git checkout "$BRANCH"
 
           # Clone gh-pages branch
-          git clone --branch gh-pages --single-branch "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" /tmp/gh-pages
+          git clone --branch gh-pages --single-branch "https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git" /tmp/gh-pages
 
           # Copy PR content to preview directory
           mkdir -p "/tmp/gh-pages/previews/pr-${PR_NUMBER}"
@@ -103,7 +103,7 @@ jobs:
       - name: Deploy main to gh-pages after merge
         if: always() && steps.resolve.outputs.pr_number != ''
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           PR_NUMBER="${{ steps.resolve.outputs.pr_number }}"
           # Wait for auto-merge to complete (up to 60s)
