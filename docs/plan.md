@@ -76,17 +76,24 @@
 ### Phase 2: About 페이지 ✅
 - [x] 대표 프로필 + 경력/학력/자격증/특허/소셜 링크 (PR #25)
 
-### Phase 3: 다듬기
-- [ ] 한/영 토글 구현 (결정: 페이지 내 토글 버튼)
-- [ ] 한문(漢字) 제거 — 한글/영어만 사용
+### Phase 3: 다듬기 (진행 중)
+- [x] 한/영 토글 — index.html(EN) + ko/index.html(KO), Header에 EN/KO 토글 (PR #27)
+- [x] 경력 상세 — Google 역할 펼치기, 초기 경력 개별 항목, 특허 full name (PR #29, #33)
+- [x] robots.txt + sitemap.xml (이슈 #34 진행 중)
+- [ ] 프로필 문구 수정 — headline, summary, CTA 등 (이슈 #34 진행 중)
+- [ ] Samsung 시간순 수정 (이슈 #34 진행 중)
+- [ ] Designer 리뷰 피드백 반영 — 간격, footer 소셜 링크, avatar 크기 등
 - [ ] 반응형 검증
-- [ ] 호버 효과, 트랜지션
-- [ ] SEO 메타 태그
 - [ ] 파비콘
 - [ ] 프로필 사진 교체 (현재 placeholder)
 
+### Phase 4: Agent Teams 기반 개선
+- [ ] Agent Teams로 designer → frontend-dev → webmaster 리뷰 흐름 테스트
+- [ ] design-system.md 기준으로 전체 페이지 디자인 리뷰 + 수정
+- [ ] SEO/접근성 webmaster 리뷰 반영
+
 ## 주의사항
-- 사이트에 한문(漢字/중국어 한자) 사용 금지. 한글과 영어만 사용할 것.
+- 사이트에 한문(중국어 한자) 사용 금지. 한글과 영어만 사용할 것.
 - 이슈 작성 시 이 점을 명시할 것.
 
 ## 작업 이력
@@ -96,4 +103,6 @@
 - 2026-03-25: 요구사항 정리 — 서비스 4개, 한/영 토글, 회사 중심 구조
 - 2026-03-25: Phase 1 완료 (Header, Hero, Services, CTA, Footer)
 - 2026-03-26: Phase 2 완료 (About 페이지)
-- 2026-03-26: 한문 표시 문제 발견 → Phase 3에서 수정 필요
+- 2026-03-26: Phase 3 시작 — 한/영 토글, 경력 상세, 문구 수정
+- 2026-03-26: Agent Teams 설정 (designer, frontend-dev, webmaster) + design-system.md
+- 2026-03-26: PAT_TOKEN 설정으로 이슈 자동 close + deploy 자동화 해결
