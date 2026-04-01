@@ -47,7 +47,7 @@
 
 - **다양한 도메인** — 임베디드 → 검색 → 커머스 → 핀테크 → 클라우드 → AI
 - **다양한 역할** — SWE, Staff, TLM, PO, VPE, CTO, Strategic Advisor
-- **글로벌 + 한국** — Google 13년(미국) + Banksalad/MEGAZONE/KAIST(한국)
+- **글로벌 + 한국** — Google 13년(미국) + Banksalad/Megazone/KAIST(한국)
 - **0→1→스케일** — 데모에서 50명 조직(App Indexing), 40+명 VPE(Banksalad)
 - **교육과 나눔** — KAIST 겸임교수, 온라인 강의, 멘토링
 
@@ -58,7 +58,7 @@
 **정채상 (Chaesang Jung)**
 
 SWE, Staff, TLM, PO, VPE, CTO, Strategic Advisor
-Google 13년 · Banksalad · MEGAZONECLOUD · KAIST · INEEJI
+Google 13년 · Banksalad · MegazoneCloud · KAIST · INEEJI
 서울대 컴퓨터공학 학사·석사 | 미국 특허 5건
 
 ---
