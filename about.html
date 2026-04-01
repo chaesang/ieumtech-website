@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Chaesang Jung — Ieum Tech</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="description" content="Full career profile of Chaesang Jung — Google, Banksalad, KAIST, and more.">
+  <link rel="canonical" href="https://ieumtech.net/about.html">
+  <link rel="alternate" hreflang="en" href="https://ieumtech.net/about.html">
+  <link rel="alternate" hreflang="ko" href="https://ieumtech.net/ko/about.html">
+  <link rel="alternate" hreflang="x-default" href="https://ieumtech.net/about.html">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://ieumtech.net/about.html">
+  <meta property="og:title" content="About Chaesang Jung — Ieum Tech">
+  <meta property="og:description" content="Full career profile of Chaesang Jung — Google, Banksalad, KAIST, and more.">
+  <meta property="og:site_name" content="Ieum Tech">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About Chaesang Jung — Ieum Tech">
+  <meta name="twitter:description" content="Full career profile of Chaesang Jung — Google, Banksalad, KAIST, and more.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Chaesang Jung",
+    "url": "https://ieumtech.net/about.html",
+    "jobTitle": "Founder, Ieum Tech",
+    "sameAs": "https://linkedin.com/in/chaesang",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Ieum Tech LLC"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Seoul National University"
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-bg: #fafafa;
+      --color-text: #1a1a1a;
+      --color-muted: #6b6b6b;
+      --color-accent: #2563eb;
+      --color-border: #e5e5e5;
+      --header-height: 56px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-height);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Sticky site header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      height: var(--header-height);
+    }
+
+    .header-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--color-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-text);
+    }
+
+    .nav-links a.active {
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .lang-toggle {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-muted);
+      text-decoration: none;
+      padding: 4px 10px;
+      border: 1.5px solid var(--color-border);
+      border-radius: 6px;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .lang-toggle:hover {
+      color: var(--color-text);
+      border-color: var(--color-muted);
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: var(--color-text);
+      transition: transform 0.25s, opacity 0.25s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    /* Mobile nav overlay */
+    @media (max-width: 480px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+        padding: 8px 24px 16px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 10px 0;
+        font-size: 0.9375rem;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .nav-links li:last-child a {
+        border-bottom: none;
+      }
+    }
+
+    /* Main content */
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero section */
+    .hero {
+      background: #ffffff;
+      border-bottom: 1px solid var(--color-border);
+      padding: 88px 24px 80px;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-muted);
+      margin-bottom: 28px;
+    }
+
+    .connecting-list {
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .connecting-item {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.4;
+      color: var(--color-text);
+    }
+
+    .connecting-item:not(:first-child) {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--color-muted);
+      margin-top: 6px;
+    }
+
+    .connecting-word {
+      color: var(--color-accent);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--color-muted);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .hero-vision {
+      font-size: 0.875rem;
+      color: var(--color-accent);
+      font-weight: 400;
+      font-style: italic;
+      margin-top: 20px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Highlights section */
+    .highlights {
+      padding: 40px 24px;
+      background: #fff;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .highlights-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .highlight-card {
+      text-align: center;
+      padding: 20px 12px;
+    }
+
+    .highlight-number {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    .highlight-label {
+      font-size: 0.75rem;
+      color: var(--color-muted);
+      font-weight: 400;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 480px) {
+      .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Content links section */
+    .content-section {
+      margin-bottom: 36px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .content-link {
+      display: block;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .content-link:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .content-link-title {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+
+    .content-link-platform {
+      font-size: 0.75rem;
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+
+    .content-link-desc {
+      font-size: 0.75rem;
+      color: var(--color-muted);
+      font-weight: 300;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 480px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    section h2 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-muted);
+      margin-bottom: 24px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .service-card h3 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .service-card p {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 480px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CTA section */
+    .cta-section {
+      background: #f0f4ff;
+      border-top: 1px solid #d6e0ff;
+      border-bottom: 1px solid #d6e0ff;
+      padding: 72px 24px;
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .cta-heading {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: var(--color-text);
+      margin-bottom: 12px;
+    }
+
+    .cta-sub {
+      font-size: 1rem;
+      color: var(--color-muted);
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      font-family: inherit;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      background: var(--color-accent);
+      color: #fff;
+      border: 1.5px solid var(--color-accent);
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    .btn-sm {
+      padding: 7px 16px;
+      font-size: 0.8125rem;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--color-border);
+      padding: 32px 24px;
+    }
+
+    .footer-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-nav a {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+      color: var(--color-text);
+    }
+
+    .footer-copy {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      font-weight: 300;
+    }
+
+    @media (max-width: 480px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 60px 24px 52px;
+      }
+
+      .connecting-item {
+        font-size: 1.375rem;
+      }
+
+      .connecting-item:not(:first-child) {
+        font-size: 1rem;
+      }
+    }
+
+    /* About section */
+    .about-section {
+      border-top: 1px solid var(--color-border);
+      padding: 40px 24px;
+    }
+
+    .about-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .about-profile {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .profile-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      font-size: 1.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .profile-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      margin-bottom: 4px;
+    }
+
+    .profile-secondary-name {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      margin-bottom: 6px;
+    }
+
+    .profile-headline {
+      font-size: 0.9375rem;
+      color: var(--color-muted);
+    }
+
+    .about-summary {
+      margin-bottom: 40px;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+    }
+
+    .about-summary ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .about-summary li {
+      font-size: 0.9375rem;
+      color: var(--color-muted);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .about-summary li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+
+    .about-block {
+      margin-bottom: 36px;
+    }
+
+    .about-block + .about-block {
+      border-top: 1px solid var(--color-border);
+      padding-top: 32px;
+    }
+
+    .timeline {
+      border-left: 2px solid var(--color-border);
+      padding-left: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 26px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      border: 2px solid var(--color-bg);
+      box-shadow: 0 0 0 2px var(--color-border);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+
+    .timeline-company {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .timeline-period {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      font-weight: 300;
+      white-space: nowrap;
+    }
+
+    .timeline-role {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--color-accent);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .timeline-details {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .timeline-details li {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .timeline-details li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .timeline-nested {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 12px;
+      border-left: 2px solid var(--color-border);
+      padding-left: 16px;
+    }
+
+    .timeline-nested-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .timeline-nested-header .timeline-role {
+      margin-bottom: 0;
+    }
+
+    .simple-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .simple-list-item {
+      font-size: 0.9375rem;
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+
+    .simple-list-item .label {
+      font-weight: 500;
+    }
+
+    .simple-list-item .detail {
+      color: var(--color-muted);
+      font-weight: 300;
+      font-size: 0.875rem;
+    }
+
+    .about-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 480px) {
+      .about-profile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .about-section {
+        padding: 40px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">Ieum Tech</a>
+      <div class="header-right">
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html" class="active" aria-current="page">About</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <a href="/ko/about.html" class="lang-toggle">KO</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="about-section" id="about" style="border-top: none; padding-top: 56px;">
+      <div class="about-inner">
+
+        <div class="about-profile">
+          <div class="profile-avatar" aria-hidden="true">CJ</div>
+          <div>
+            <h1 class="profile-name">Chaesang Jung</h1>
+            <p class="profile-secondary-name">정채상</p>
+            <p class="profile-headline">Behind every technology, there were people — I carry those stories forward.</p>
+          </div>
+        </div>
+
+        <div class="about-summary">
+          <ul>
+            <li>Diverse domains — embedded, search, commerce, fintech, cloud, AI</li>
+            <li>Google 13 years (US) + Banksalad / MEGAZONECLOUD / KAIST (Korea)</li>
+            <li>0 to scale — grew App Indexing from a demo to 50-person org; VPE at Banksalad (40+ engineers)</li>
+            <li>Teaching &amp; sharing — KAIST adjunct professor, online courses, mentoring</li>
+          </ul>
+        </div>
+
+        <div class="about-block">
+          <h2>Experience</h2>
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-company">MEGAZONECLOUD</span>
+                <span class="timeline-period">2025.04 – 2026.03</span>
+              </div>
+              <span class="timeline-role">Distinguished Software Engineer</span>
+              <ul class="timeline-details">
+                <li>Strategic technical advisor at CEO Office, largest cloud MSP in Korea (~2,000 employees)</li>
+                <li>Reviewing technical gaps and establishing SDLC guidelines for "by Megazone" products</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-company">KAIST College of Business</span>
+                <span class="timeline-period">2023.08 – Present</span>
+              </div>
+              <span class="timeline-role">Adjunct Professor</span>
+              <ul class="timeline-details">
+                <li>"AI and Recommendation Systems" for Digital Finance MBA (~80 students/semester)</li>
+                <li>3 consecutive years (2023–2025), 15-week course, hands-on labs</li>
+                <li>Curriculum: recommender systems, OpenAI API, Google Play Store case study from personal experience</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-company">INEEJI</span>
+                <span class="timeline-period">2024.03 – 2025.09</span>
+              </div>
+              <span class="timeline-role">CTO / Director of Research Institute</span>
+              <ul class="timeline-details">
+                <li>Part-time CTO, managed 20+ AI/SW engineers</li>
+                <li>Explainable AI (XAI) for industrial process optimization using Deep Temporal Neural Networks</li>
+                <li>Key result: ~$50M annual fuel cost savings for a steel company (25% reduction in temperature prediction error)</li>
+                <li>Industries: steel, cement, glass, petrochemicals, power generation</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-company">Aisle Street, Inc.</span>
+                <span class="timeline-period">2024.01 – Present</span>
+              </div>
+              <span class="timeline-role">Co-Founder / Tech</span>
+              <ul class="timeline-details">
+                <li>Education AI startup, exemplar.ai</li>
+                <li>RAG-based private chatting service for teachers and students</li>
+                <li>Tech: React, AWS, Pinecone, RAG, LLM integration</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-company">Self-employed</span>
+                <span class="timeline-period">2023.11 – Present</span>
+              </div>
+              <span class="timeline-role">Advisor, Educator, and Mentor</span>
+              <ul class="timeline-details">
+                <li>Online courses: Inflearn (Senior Developer Growth, Manager Transition), Class101 (EM Leadership), FastCampus (CS for Everyone), HanbitN (Google Play Store)</li>
+                <li>Speaking: "Why Managing Feels So Hard?", "Coding Was the Easiest Part", "A Developer's Survival Story in Silicon Valley"</li>
+                <li>Mentoring: Kernel360 4th cohort</li>
+                <li>Visiting Lecturer: Kookmin University (Full-Stack Service Dev)</li>
+                <li>Consulting: SEO consulting for Company P</li>
+                <li>NIA Monthly Columnist: Cloud Service Trend Report</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-company">Banksalad</span>
+                <span class="timeline-period">2022.01 – 2023.07</span>
+              </div>
+              <span class="timeline-role">VP of Engineering</span>
+              <ul class="timeline-details">
+                <li>Managed 40+ engineers (SWE, DS, DA, DevOps, EM) out of ~80-person tech org</li>
+                <li>75% cloud cost reduction in 6 months (right-sizing, API optimization, Redis efficiency)</li>
+                <li>Mydata service: 258 financial institutions, Go + gRPC microservices, ~2s real-time asset updates (20x improvement)</li>
+                <li>Hired ~20 engineers in 1.5 years; recovered user trust in core product</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-company">Samsung Semiconductor</span>
+                <span class="timeline-period">2019.12 – 2020.12</span>
+              </div>
+              <span class="timeline-role">Principal SWE / Technical Advisor</span>
+              <ul class="timeline-details">
+                <li>Analyzed application-side requirements from the Data Center business</li>
+                <li>Trained researchers on large-scale service requirements for memory/storage pathfinding</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-company">Google</span>
+                <span class="timeline-period">2007.07 – 2021.10</span>
+              </div>
+              <div class="timeline-nested">
+                <div class="timeline-nested-item">
+                  <div class="timeline-nested-header">
+                    <span class="timeline-role">TLM — Core Systems &amp; Experiences</span>
+                    <span class="timeline-period">2020.12 – 2021.10</span>
+                  </div>
+                  <ul class="timeline-details">
+                    <li>Cloud Logging team, planet-scale debug log infrastructure for Google engineers</li>
+                  </ul>
+                </div>
+
+                <div class="timeline-nested-item">
+                  <div class="timeline-nested-header">
+                    <span class="timeline-role">Staff SWE — Google Lens</span>
+                    <span class="timeline-period">2018.09 – 2019.12</span>
+                  </div>
+                  <ul class="timeline-details">
+                    <li>Korean on-device OCR for Pixel 4</li>
+                    <li>Lens search integration analysis pipeline</li>
+                  </ul>
+                </div>
+
+                <div class="timeline-nested-item">
+                  <div class="timeline-nested-header">
+                    <span class="timeline-role">Staff SWE — Nest Store</span>
+                    <span class="timeline-period">2017.12 – 2018.09</span>
+                  </div>
+                  <ul class="timeline-details">
+                    <li>Payment service for store.nest.com (Hybris SAP, AWS+GCP)</li>
+                    <li>Affirm BNPL integration, 100% solo — Google's first product with subscription sales</li>
+                  </ul>
+                </div>
+
+                <div class="timeline-nested-item">
+                  <div class="timeline-nested-header">
+                    <span class="timeline-role">TLM / Product Owner — Play Store Korea &amp; Japan</span>
+                    <span class="timeline-period">2016.03 – 2017.12</span>
+                  </div>
+                  <ul class="timeline-details">
+                    <li>Google's first region-specific consumer product, 8 SWEs — Korea &amp; Japan = 70% of global Play Store revenue</li>
+                    <li>Locality-aware search &amp; recommendation, pre-registration campaigns</li>
+                    <li>Prevented major game title migration to competing stores</li>
+                  </ul>
+                </div>
+
+                <div class="timeline-nested-item">
+                  <div class="timeline-nested-header">
+                    <span class="timeline-role">Head of Engineering / Product Owner — Search App Indexing</span>
+                    <span class="timeline-period">2012.09 – 2016.03</span>
+                  </div>
+                  <ul class="timeline-details">
+                    <li>Initiated and led App Indexing from a single demo to global scale</li>
+                    <li>Built 50-person org (4 teams); new paradigm: crawling native app content via Android simulator</li>
+                    <li>Featured in Google earnings calls, Android K release, Google IO 2015 main session speaker</li>
+                    <li>~90% of team (45 of 50 people) promoted during 3-year project</li>
+                  </ul>
+                </div>
+
+                <div class="timeline-nested-item">
+                  <div class="timeline-nested-header">
+                    <span class="timeline-role">TLM — Search App Search</span>
+                    <span class="timeline-period">2011.09 – 2012.08</span>
+                  </div>
+                  <ul class="timeline-details">
+                    <li>Launched App discovery in Google Search, 5 SWEs</li>
+                  </ul>
+                </div>
+
+                <div class="timeline-nested-item">
+                  <div class="timeline-nested-header">
+                    <span class="timeline-role">TLM — Search Korean Mobile</span>
+                    <span class="timeline-period">2010.09 – 2011.08</span>
+                  </div>
+                  <ul class="timeline-details">
+                    <li>First manager role, 8 SWEs, 10+ mobile features in 1 year</li>
+                  </ul>
+                </div>
+
+                <div class="timeline-nested-item">
+                  <div class="timeline-nested-header">
+                    <span class="timeline-role">Senior SWE — Search Rich Snippets</span>
+                    <span class="timeline-period">2009.09 – 2010.08</span>
+                  </div>
+                  <ul class="timeline-details">
+                    <li>Movie vertical with Rich Snippets — contributed to schema.org standard definition</li>
+                    <li>Foundation for what became Google's Knowledge Panel</li>
+                  </ul>
+                </div>
+
+                <div class="timeline-nested-item">
+                  <div class="timeline-nested-header">
+                    <span class="timeline-role">Senior SWE — Search Korea</span>
+                    <span class="timeline-period">2007.07 – 2009.08</span>
+                  </div>
+                  <ul class="timeline-details">
+                    <li>Early Seoul office member (~10 people); google.co.kr search result page redesign</li>
+                    <li>Introduced result groups architecture — precursor to Universal Search and Knowledge Panel</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-company">ETRI</span>
+                <span class="timeline-period">2006 – 2007</span>
+              </div>
+              <span class="timeline-role">Software Engineer</span>
+              <ul class="timeline-details">
+                <li>Eclipse-based device driver source generator</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-company">Teleca Korea</span>
+                <span class="timeline-period">2004 – 2006</span>
+              </div>
+              <span class="timeline-role">Software Engineer</span>
+              <ul class="timeline-details">
+                <li>Symbian/Series 60 base-porting, Samsung Z600</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-company">Palmpalm Technology</span>
+                <span class="timeline-period">2000 – 2004</span>
+              </div>
+              <span class="timeline-role">Software Engineer</span>
+              <ul class="timeline-details">
+                <li>Linux smartphone (ALL-about), kernel &amp; middleware — 7–8 years ahead of Android</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <span class="timeline-company">iCube</span>
+                <span class="timeline-period">1999 – 2000</span>
+              </div>
+              <span class="timeline-role">Software Engineer</span>
+              <ul class="timeline-details">
+                <li>Set-top-box software, ECMAScript engine on RTOS (pSOS)</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="about-block">
+          <h2>Teaching &amp; Speaking</h2>
+          <div class="simple-list">
+            <div class="simple-list-item">
+              <span class="label">Inflearn</span>
+              <span class="detail">— Growing into a Senior Developer · From Senior Developer to Manager</span>
+            </div>
+            <div class="simple-list-item">
+              <span class="label">Class101</span>
+              <span class="detail">— Engineering Manager Leadership Guide</span>
+            </div>
+            <div class="simple-list-item">
+              <span class="label">FastCampus</span>
+              <span class="detail">— Computer Engineering for Everyone</span>
+            </div>
+            <div class="simple-list-item">
+              <span class="label">HanbitN</span>
+              <span class="detail">— Inspecting Google Play Store</span>
+            </div>
+            <div class="simple-list-item">
+              <span class="label">Speaker</span>
+              <span class="detail">— Why Managing Feels So Hard? · Coding Was the Easiest Part · A Developer's Survival Story in Silicon Valley</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-block">
+          <h2>Education</h2>
+          <div class="simple-list">
+            <div class="simple-list-item">
+              <span class="label">Seoul National University</span>
+              <span class="detail">— MS, Computer Engineering</span>
+            </div>
+            <div class="simple-list-item">
+              <span class="label">Seoul National University</span>
+              <span class="detail">— BS, Computer Engineering</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-block">
+          <h2>Certifications &amp; Patents</h2>
+          <div class="simple-list">
+            <div class="simple-list-item"><span class="detail">Machine Learning</span></div>
+            <div class="simple-list-item"><span class="detail">Generative AI with Large Language Models</span></div>
+            <div class="simple-list-item"><span class="detail">Cloud Architecture with Google Cloud</span></div>
+            <div class="simple-list-item"><span class="detail">Data Science Professional Certificate</span></div>
+            <div class="simple-list-item"><span class="detail">Data Engineering with Google Cloud</span></div>
+            <div class="simple-list-item"><span class="detail">TensorFlow Developer Certificate</span></div>
+            <div class="simple-list-item" style="margin-top: 8px;">
+              <span class="label">US Patents</span>
+            </div>
+            <div class="simple-list-item"><span class="detail">Ranking of presentation modes for particular content (US9146972)</span></div>
+            <div class="simple-list-item"><span class="detail">Indexing application pages of native applications (US9002821B2)</span></div>
+            <div class="simple-list-item"><span class="detail">Automatically implementing an application in response to a search query (US9524347B1)</span></div>
+            <div class="simple-list-item"><span class="detail">Triggering and ranking of native applications (US9514195B2)</span></div>
+            <div class="simple-list-item"><span class="detail">Ranking of native application content (US8996520B2)</span></div>
+          </div>
+        </div>
+
+        <div class="about-block content-section">
+          <h2>Content &amp; Portfolio</h2>
+          <div class="content-grid">
+            <a href="https://www.inflearn.com/en/users/1292051" target="_blank" rel="noopener noreferrer" class="content-link">
+              <div class="content-link-platform">Inflearn</div>
+              <div class="content-link-title">Growing into a Senior Developer</div>
+              <div class="content-link-desc">Online course on engineering career growth</div>
+            </a>
+            <a href="https://www.inflearn.com/en/users/1292051" target="_blank" rel="noopener noreferrer" class="content-link">
+              <div class="content-link-platform">Inflearn</div>
+              <div class="content-link-title">From Senior Developer to Manager</div>
+              <div class="content-link-desc">Transition guide for new engineering managers</div>
+            </a>
+            <a href="https://brunch.co.kr/@chaesang" target="_blank" rel="noopener noreferrer" class="content-link">
+              <div class="content-link-platform">Brunch</div>
+              <div class="content-link-title">Tech &amp; Leadership Blog</div>
+              <div class="content-link-desc">Articles on engineering, management, and career</div>
+            </a>
+            <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="content-link">
+              <div class="content-link-platform">LinkedIn</div>
+              <div class="content-link-title">Professional Profile</div>
+              <div class="content-link-desc">Connect and follow updates</div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <section class="cta-section" id="contact">
+    <div class="cta-inner">
+      <h2 class="cta-heading">Let's work together.</h2>
+      <p class="cta-sub">Connecting real-world experience to your team's real problems.</p>
+      <div class="cta-buttons">
+        <a href="mailto:hello@ieumtech.net" class="btn">Email</a>
+        <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">Ieum Tech</a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://brunch.co.kr/@chaesang" target="_blank" rel="noopener noreferrer">Brunch</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Ieum Tech. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
