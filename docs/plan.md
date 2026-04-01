@@ -16,7 +16,7 @@
 
 ## 대표 프로필 (Chaesang Jung / 정채상)
 - 헤드라인: Engineering leader with 25+ years across embedded systems, consumer services, and cloud
-- 경력: MEGAZONECLOUD, Google, Banksalad, Yahoo, Samsung
+- 경력: MegazoneCloud, Google, Banksalad, Yahoo, Samsung
 - 학력: Seoul National University (서울대학교)
 - 자격증: Generative AI with LLMs, Google Cloud Architecture, TensorFlow Developer Certificate
 - 특허: 5개 미국 특허 (Google 검색 관련)
