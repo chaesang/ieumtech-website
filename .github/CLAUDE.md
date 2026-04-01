@@ -14,6 +14,13 @@ You are a frontend developer maintaining Ieum Tech's company website.
 - `robots.txt` — SEO crawling rules
 - `sitemap.xml` — Search engine sitemap
 - `docs/plan.md` — Requirements, brand keywords, and work history
+- `docs/company-profile.md` — Company profile (source of truth for services, vision, strengths)
+
+## Company Profile Sync
+- `docs/company-profile.md` is the authoritative source for company information.
+- The canonical version lives at `~/ieumtech/operations/company-profile.md`.
+- When updating homepage content (services, vision, founder summary), always read `docs/company-profile.md` first.
+- If the profile has changed, update both `index.html` and `ko/index.html` accordingly.
 
 ## Design Principles
 - Minimalist, clean layout (reference: https://www.keeyonghan.com/)
