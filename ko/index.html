@@ -41,7 +41,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
       margin: 0;
@@ -64,11 +64,13 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--color-bg);
       color: var(--color-text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
 
     /* Sticky site header */
@@ -254,7 +256,7 @@
     .connecting-item {
       font-size: 1.75rem;
       font-weight: 600;
-      letter-spacing: -0.025em;
+      letter-spacing: -0.01em;
       line-height: 1.4;
       color: var(--color-text);
     }
@@ -283,7 +285,7 @@
       font-size: 0.875rem;
       color: var(--color-accent);
       font-weight: 400;
-      font-style: italic;
+      font-style: normal;
       margin-top: 20px;
       max-width: 480px;
       margin-left: auto;
@@ -818,7 +820,7 @@
         </button>
         <ul class="nav-links" id="nav-menu">
           <li><a href="#home">홈</a></li>
-          <li><a href="#founder">창업자</a></li>
+          <li><a href="#founder">대표</a></li>
           <li><a href="/ko/about.html">소개</a></li>
           <li><a href="#contact">연락처</a></li>
         </ul>
@@ -851,7 +853,7 @@
           <div class="highlight-text">Google 13년</div>
         </div>
         <div class="highlight-card">
-          <div class="highlight-text">50명 이상의 엔지니어 조직 운영</div>
+          <div class="highlight-text">50인 이상 조직 리더십</div>
         </div>
         <div class="highlight-card">
           <div class="highlight-text">펌웨어에서 AI까지, 엔지니어에서 경영까지</div>
@@ -874,7 +876,7 @@
           <p>기술 전략, 아키텍처, 시장 분석 — 실리콘밸리와 서울의 현장 경험을 바탕으로</p>
         </div>
       </div>
-      <h3 style="margin-top: 24px; margin-bottom: 12px; color: var(--color-muted); font-size: 0.875rem; font-weight: 500;">나눔</h3>
+      <h3 style="margin-top: 24px; margin-bottom: 12px; color: var(--color-muted); font-size: 0.875rem; font-weight: 500;">나눔 · Sharing</h3>
       <div class="services-grid">
         <div class="service-card">
           <h3>기고 및 블로그</h3>
@@ -931,7 +933,7 @@
         </div>
         <p style="font-size: 0.75rem; color: var(--color-muted); font-weight: 300; margin-top: 12px;">수강생 90명 이상 · 평점 4.78 (Inflearn)</p>
         <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
-          <p style="font-size: 0.8125rem; color: var(--color-muted); font-weight: 300; font-style: italic; line-height: 1.6;">"구체적인 사례와 경험을 함께 설명해주셔서 맥락을 이해하기에도 좋았고, 제가 처할 상황을 상상하며 미리 연습해보는 기회가 되었어요." <span style="font-style: normal; font-weight: 400;">— mira jo</span></p>
+          <p style="font-size: 0.8125rem; color: var(--color-muted); font-weight: 300; font-style: italic; line-height: 1.6;">"구체적인 사례와 경험이 녹아 있어서, 제가 처할 상황을 미리 연습해보는 기회가 되었어요." <span style="font-style: normal; font-weight: 400;">— mira jo</span></p>
           <p style="font-size: 0.8125rem; color: var(--color-muted); font-weight: 300; font-style: italic; line-height: 1.6;">"제가 생각하지 못하는 얘기를 많이 해 주셨습니다. 나중에 다시 들어 보자라는 생각을 하게 되네요." <span style="font-style: normal; font-weight: 400;">— sunny75</span></p>
         </div>
       </div>
@@ -1029,12 +1031,12 @@
       <a href="#home" class="footer-logo">이음 테크</a>
       <nav class="footer-nav">
         <a href="#home">홈</a>
-        <a href="#founder">창업자</a>
+        <a href="#founder">대표</a>
         <a href="#contact">연락처</a>
         <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://brunch.co.kr/@chaesang" target="_blank" rel="noopener noreferrer">Brunch</a>
       </nav>
-      <p class="footer-copy">&copy; 2026 이음 테크. 모든 권리 보유.</p>
+      <p class="footer-copy">&copy; 2026 이음 테크. All rights reserved.</p>
     </div>
   </footer>
 
