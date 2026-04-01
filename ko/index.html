@@ -246,6 +246,114 @@
       margin: 0 auto;
     }
 
+    .hero-vision {
+      font-size: 0.875rem;
+      color: var(--color-accent);
+      font-weight: 400;
+      font-style: italic;
+      margin-top: 20px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Highlights section */
+    .highlights {
+      padding: 40px 24px;
+      background: #fff;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .highlights-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .highlight-card {
+      text-align: center;
+      padding: 20px 12px;
+    }
+
+    .highlight-number {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    .highlight-label {
+      font-size: 0.75rem;
+      color: var(--color-muted);
+      font-weight: 400;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 480px) {
+      .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Content links section */
+    .content-section {
+      margin-bottom: 36px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .content-link {
+      display: block;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .content-link:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .content-link-title {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+
+    .content-link-platform {
+      font-size: 0.75rem;
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+
+    .content-link-desc {
+      font-size: 0.75rem;
+      color: var(--color-muted);
+      font-weight: 300;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 480px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     section {
       padding: 40px 0;
     }
@@ -704,8 +812,32 @@
         <p class="connecting-item">세대와 세대를 <span class="connecting-word">이음</span>.</p>
       </div>
       <p class="hero-sub">교육, 코칭, 멘토링, 컨설팅 — 30년간의 기술 경험을 나누고 함께 문제를 풉니다.<br>미국 기반, 전 세계에 서비스.</p>
+      <p class="hero-vision">기술은 이어질 때 의미가 생기고, 얽힐 때 깊어지고, 소통할 때 비로소 가치가 된다.</p>
     </div>
   </section>
+
+  <div class="highlights">
+    <div class="highlights-inner">
+      <div class="highlights-grid">
+        <div class="highlight-card">
+          <div class="highlight-number">30+</div>
+          <div class="highlight-label">IT 경력</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">13</div>
+          <div class="highlight-label">Google 근무</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">50+</div>
+          <div class="highlight-label">엔지니어 리드</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-number">5</div>
+          <div class="highlight-label">미국 특허</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="container">
     <section id="services" style="border-top: 1px solid var(--color-border); margin-top: 0;">
@@ -776,10 +908,8 @@
             </div>
             <span class="timeline-role">Distinguished Software Engineer</span>
             <ul class="timeline-details">
-              <li>CEO 오피스, 전략적 기술 자문</li>
-              <li>진행 중인 프로젝트의 기술적 공백 검토</li>
-              <li>"by Megazone" 제품군의 SDLC 및 관리 지침 수립</li>
-              <li>임직원 약 2,000명, 국내 최대 클라우드 MSP</li>
+              <li>CEO 오피스 전략적 기술 자문, 국내 최대 클라우드 MSP (임직원 약 2,000명)</li>
+              <li>진행 중인 프로젝트 기술 검토 및 "by Megazone" 제품군 SDLC 지침 수립</li>
             </ul>
           </div>
 
@@ -790,9 +920,9 @@
             </div>
             <span class="timeline-role">겸임교수</span>
             <ul class="timeline-details">
-              <li>디지털금융 MBA 대상 "AI와 추천 시스템" 강의 (수강생 약 80명)</li>
-              <li>3년 연속 (2023–2025)</li>
-              <li>커리큘럼: 협업 필터링, MovieLens, AI 현황, OpenAI API 실습, Google Play Store 사례 분석</li>
+              <li>디지털금융 MBA "AI와 추천 시스템" 강의 (매학기 수강생 약 80명)</li>
+              <li>3년 연속 (2023–2025), 15주 과정, 실습 포함</li>
+              <li>커리큘럼: 추천 시스템, OpenAI API 실습, 개인 경험 기반 Google Play Store 사례 분석</li>
             </ul>
           </div>
 
@@ -804,8 +934,9 @@
             <span class="timeline-role">CTO / 연구소장</span>
             <ul class="timeline-details">
               <li>파트타임 CTO, AI/SW 엔지니어 20명 이상 관리</li>
-              <li>XAI(심층 시계열 신경망)를 활용한 산업 공정 최적화</li>
-              <li>주요 성과: 철강 회사 연간 연료비 약 700억 원 절감</li>
+              <li>심층 시계열 신경망(Deep Temporal NN) 기반 설명 가능 AI(XAI)로 산업 공정 최적화</li>
+              <li>주요 성과: 철강 회사 연간 연료비 약 700억 원 절감 (온도 예측 오차 25% 감소)</li>
+              <li>적용 산업: 철강, 시멘트, 유리, 석유화학, 발전</li>
             </ul>
           </div>
 
@@ -845,10 +976,10 @@
             </div>
             <span class="timeline-role">VP of Engineering</span>
             <ul class="timeline-details">
-              <li>엔지니어 40명 이상 관리 (SWE, DS, DA, DevOps, EM)</li>
+              <li>약 80명 기술 조직 중 엔지니어 40명 이상 관리 (SWE, DS, DA, DevOps, EM)</li>
               <li>6개월 만에 클라우드 비용 75% 절감 (리사이징, API 최적화, Redis 효율화)</li>
-              <li>마이데이터 서비스: 금융기관 258곳 연동, Go + gRPC 마이크로서비스, 약 2초 실시간 자산 업데이트</li>
-              <li>1.5년간 엔지니어 약 20명 채용</li>
+              <li>마이데이터 서비스: 금융기관 258곳 연동, Go + gRPC 마이크로서비스, 약 2초 실시간 자산 업데이트 (20배 개선)</li>
+              <li>1.5년간 엔지니어 약 20명 채용; 핵심 제품 사용자 신뢰 회복</li>
             </ul>
           </div>
 
@@ -859,8 +990,8 @@
             </div>
             <span class="timeline-role">Principal SWE / 기술 자문</span>
             <ul class="timeline-details">
-              <li>데이터 센터 비즈니스 요구 사항 분석</li>
-              <li>메모리/스토리지 관련 대규모 서비스 요구 사항을 연구자들에게 교육</li>
+              <li>데이터 센터 비즈니스 애플리케이션 요구 사항 분석</li>
+              <li>메모리/스토리지 분야 대규모 서비스 요구 사항을 연구자들에게 교육</li>
             </ul>
           </div>
 
@@ -876,7 +1007,7 @@
                   <span class="timeline-period">2020.12 – 2021.10</span>
                 </div>
                 <ul class="timeline-details">
-                  <li>Cloud Logging 팀, 대규모 디버그 로그 인프라</li>
+                  <li>Cloud Logging 팀, Google 엔지니어를 위한 대규모 디버그 로그 인프라</li>
                 </ul>
               </div>
 
@@ -898,7 +1029,7 @@
                 </div>
                 <ul class="timeline-details">
                   <li>store.nest.com 결제 서비스 (Hybris SAP, AWS+GCP)</li>
-                  <li>Affirm BNPL 연동, 100% 단독 구현</li>
+                  <li>Affirm BNPL 연동, 100% 단독 구현 — Google 최초 구독 판매 포함 제품</li>
                 </ul>
               </div>
 
@@ -908,9 +1039,9 @@
                   <span class="timeline-period">2016.03 – 2017.12</span>
                 </div>
                 <ul class="timeline-details">
-                  <li>Google 최초의 지역 소비자 제품, SWE 8명</li>
-                  <li>지역화 검색 및 추천</li>
-                  <li>사전 등록 기능, 홈페이지 개편</li>
+                  <li>Google 최초의 지역 소비자 제품, SWE 8명 — 한국/일본 = 글로벌 Play Store 매출 70%</li>
+                  <li>지역 맞춤 검색 및 추천, 사전 등록 캠페인</li>
+                  <li>주요 게임 타이틀의 경쟁 스토어 이탈 방지</li>
                 </ul>
               </div>
 
@@ -920,10 +1051,10 @@
                   <span class="timeline-period">2012.09 – 2016.03</span>
                 </div>
                 <ul class="timeline-details">
-                  <li>앱 인덱싱을 처음부터 주도</li>
-                  <li>50명 조직(4개 팀) 구축; 새로운 패러다임: Android 시뮬레이터를 통한 앱 콘텐츠 크롤링</li>
-                  <li>Google 실적 발표, Android K 출시, Google IO 2015 발표</li>
-                  <li>팀원 약 90%(45명) 승진</li>
+                  <li>단일 데모에서 글로벌 스케일까지 앱 인덱싱 주도</li>
+                  <li>50명 조직(4개 팀) 구축; 새로운 패러다임: Android 시뮬레이터를 통한 네이티브 앱 콘텐츠 크롤링</li>
+                  <li>Google 실적 발표에 언급, Android K 출시 포함, Google IO 2015 메인 세션 발표</li>
+                  <li>3년간 팀원 약 90%(50명 중 45명) 승진</li>
                 </ul>
               </div>
 
@@ -953,8 +1084,8 @@
                   <span class="timeline-period">2009.09 – 2010.08</span>
                 </div>
                 <ul class="timeline-details">
-                  <li>Rich Snippets 영화 버티컬</li>
-                  <li>schema.org 표준 기여</li>
+                  <li>Rich Snippets 영화 버티컬 — schema.org 표준 정의에 직접 참여</li>
+                  <li>현재 Google Knowledge Panel의 기초가 된 작업</li>
                 </ul>
               </div>
 
@@ -964,8 +1095,8 @@
                   <span class="timeline-period">2007.07 – 2009.08</span>
                 </div>
                 <ul class="timeline-details">
-                  <li>서울 오피스 초기 멤버; google.co.kr 검색 결과 페이지 개편</li>
-                  <li>결과 그룹 도입 (Universal Search 레이아웃의 전신)</li>
+                  <li>서울 오피스 초기 멤버 (약 10명); google.co.kr 검색 결과 페이지 개편</li>
+                  <li>결과 그룹 아키텍처 도입 — Universal Search와 Knowledge Panel의 전신</li>
                 </ul>
               </div>
             </div>
@@ -1000,8 +1131,7 @@
             </div>
             <span class="timeline-role">소프트웨어 엔지니어</span>
             <ul class="timeline-details">
-              <li>리눅스 스마트폰 (ALL-about), 커널 및 미들웨어</li>
-              <li>Android보다 7~8년 앞선 리눅스 스마트폰 개발</li>
+              <li>리눅스 스마트폰 (ALL-about), 커널 및 미들웨어 — Android보다 7~8년 앞선 개발</li>
             </ul>
           </div>
 
@@ -1079,12 +1209,29 @@
         </div>
       </div>
 
-      <div class="about-block">
-        <h2>링크</h2>
-        <div class="about-links">
-          <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">LinkedIn</a>
-          <a href="https://www.inflearn.com/en/users/1292051" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Inflearn</a>
-          <a href="https://brunch.co.kr/@chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Brunch</a>
+      <div class="about-block content-section">
+        <h2>콘텐츠 및 포트폴리오</h2>
+        <div class="content-grid">
+          <a href="https://www.inflearn.com/en/users/1292051" target="_blank" rel="noopener noreferrer" class="content-link">
+            <div class="content-link-platform">Inflearn</div>
+            <div class="content-link-title">시니어 개발자로 성장하기</div>
+            <div class="content-link-desc">엔지니어 커리어 성장 온라인 강의</div>
+          </a>
+          <a href="https://www.inflearn.com/en/users/1292051" target="_blank" rel="noopener noreferrer" class="content-link">
+            <div class="content-link-platform">Inflearn</div>
+            <div class="content-link-title">시니어 개발자에서 매니저로</div>
+            <div class="content-link-desc">신임 엔지니어링 매니저를 위한 전환 가이드</div>
+          </a>
+          <a href="https://brunch.co.kr/@chaesang" target="_blank" rel="noopener noreferrer" class="content-link">
+            <div class="content-link-platform">Brunch</div>
+            <div class="content-link-title">기술 및 리더십 블로그</div>
+            <div class="content-link-desc">엔지니어링, 매니지먼트, 커리어에 대한 글</div>
+          </a>
+          <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="content-link">
+            <div class="content-link-platform">LinkedIn</div>
+            <div class="content-link-title">프로필</div>
+            <div class="content-link-desc">연결 및 최신 소식 팔로우</div>
+          </a>
         </div>
       </div>
 
