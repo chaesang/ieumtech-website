@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typography Test — Variant A (Tight)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-bg: #fafafa;
+      --color-text: #1a1a1a;
+      --color-muted: #6b6b6b;
+      --color-accent: #2563eb;
+      --color-border: #e5e5e5;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .page-wrapper {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    /* Variant label */
+    .variant-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--color-accent);
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    .variant-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 6px;
+    }
+
+    .variant-meta {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    .variant-meta code {
+      font-family: 'Courier New', monospace;
+      background: #f0f0f0;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 0.75rem;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin-bottom: 40px;
+    }
+
+    /* Section styles — Variant A: Tight hierarchy */
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-text);
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .group-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      border-left: 2px solid var(--color-accent);
+      padding-left: 8px;
+      margin-bottom: 10px;
+    }
+
+    .item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .item-list:last-child {
+      margin-bottom: 0;
+    }
+
+    .item {
+      line-height: 1.5;
+    }
+
+    .item .label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text);
+    }
+
+    .item .detail {
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: var(--color-muted);
+    }
+
+    .item .detail a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .item .detail a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <div>
+      <span class="variant-label">Variant A</span>
+      <h1 class="variant-title">Tight Hierarchy</h1>
+      <p class="variant-meta">
+        h2: <code>1.25rem / 600</code> &nbsp;
+        h3: <code>1rem / 600</code> &nbsp;
+        label: <code>0.875rem / 500</code> &nbsp;
+        detail: <code>0.8125rem / 400 muted</code>
+      </p>
+    </div>
+
+    <hr class="divider">
+
+    <section>
+      <h2 class="section-title">강의 및 강연</h2>
+
+      <h3 class="group-label">온라인 강의</h3>
+      <div class="item-list">
+        <div class="item">
+          <span class="label">Inflearn</span>
+          <span class="detail">— <a href="https://www.inflearn.com/course/%EC%8B%9C%EB%8B%88%EC%96%B4-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A1%9C-%EC%84%B1%EC%9E%A5%ED%95%98%EA%B8%B0-%EA%B0%95%EC%9D%98?cid=333674" target="_blank" rel="noopener noreferrer">시니어 개발자로 성장하기</a></span>
+        </div>
+        <div class="item">
+          <span class="label">Inflearn</span>
+          <span class="detail">— <a href="https://www.inflearn.com/course/%EC%8B%9C%EB%8B%88%EC%96%B4%EA%B0%9C%EB%B0%9C%EC%9E%90-%EB%A7%A4%EB%8B%88%EC%A0%80%EB%A1%9C-%EC%83%88%EB%A1%9C%EC%9A%B4%EB%8F%84%EC%A0%84-%EC%84%B1%EC%9E%A5-%EA%B0%95%EC%9D%98?cid=333777" target="_blank" rel="noopener noreferrer">시니어 개발자에서 매니저로</a></span>
+        </div>
+        <div class="item">
+          <span class="label">Class101</span>
+          <span class="detail">— <a href="https://class101.net/ko/pages/embootcamp-demand-2401-65a76a6250c526000e21ceec" target="_blank" rel="noopener noreferrer">엔지니어링 매니저 리더십 가이드</a></span>
+        </div>
+        <div class="item">
+          <span class="label">FastCampus</span>
+          <span class="detail">— <a href="https://fastcampus.co.kr/dev_online_newcomputer" target="_blank" rel="noopener noreferrer">모두를 위한 컴퓨터공학</a></span>
+        </div>
+        <div class="item">
+          <span class="label">한빛N</span>
+          <span class="detail">— <a href="https://www.hanbit.co.kr/product/C2734327343" target="_blank" rel="noopener noreferrer">Google Play Store 파헤치기</a></span>
+        </div>
+      </div>
+
+      <h3 class="group-label">대학 강의</h3>
+      <div class="item-list">
+        <div class="item">
+          <span class="label">KAIST 강의 노트</span>
+          <span class="detail">— <a href="https://brunch.co.kr/magazine/dfmba-recom" target="_blank" rel="noopener noreferrer">2023</a> · <a href="https://brunch.co.kr/magazine/kaist-dfmba-24" target="_blank" rel="noopener noreferrer">2024</a> · <a href="https://brunch.co.kr/magazine/kaist-dfmba-25" target="_blank" rel="noopener noreferrer">2025</a></span>
+        </div>
+        <div class="item">
+          <span class="label">국민대학교</span>
+          <span class="detail">— 풀스택 서비스 개발 (외래교수)</span>
+        </div>
+      </div>
+
+      <h3 class="group-label">강연 및 인터뷰</h3>
+      <div class="item-list">
+        <div class="item">
+          <span class="label">OKKY 세미나</span>
+          <span class="detail">— <a href="https://www.youtube.com/watch?v=pQEUqoZRKpw" target="_blank" rel="noopener noreferrer">개발조직 관리, 나만 이렇게 힘든거야?</a> (2024.01)</span>
+        </div>
+        <div class="item">
+          <span class="label">강연</span>
+          <span class="detail">— 코딩이 제일 쉬웠어요 — N년차 개발자의 코딩 이외의 경험들</span>
+        </div>
+        <div class="item">
+          <span class="label">강연</span>
+          <span class="detail">— 어느 개발자의 실리콘 밸리(구글) 생존 이야기</span>
+        </div>
+        <div class="item">
+          <span class="label">은종쌤의 IT 이야기들</span>
+          <span class="detail">— <a href="https://www.youtube.com/watch?v=Y910lNR4iIU" target="_blank" rel="noopener noreferrer">전 구글 개발자, 개발 매니저로 일하신 정채상님 인터뷰</a> (1/4)</span>
+        </div>
+        <div class="item">
+          <span class="label">은종쌤의 IT 이야기들</span>
+          <span class="detail">— <a href="https://www.youtube.com/watch?v=VN4B83pqiIo" target="_blank" rel="noopener noreferrer">AI 세상에서 개발자는 어떻게 해야 할까요?</a> (2/4)</span>
+        </div>
+        <div class="item">
+          <span class="label">은종쌤의 IT 이야기들</span>
+          <span class="detail">— <a href="https://www.youtube.com/watch?v=I349y-6nkgw" target="_blank" rel="noopener noreferrer">핀테크 회사 경험과 KAIST 강의 이야기</a> (3/4)</span>
+        </div>
+        <div class="item">
+          <span class="label">은종쌤의 IT 이야기들</span>
+          <span class="detail">— <a href="https://www.youtube.com/watch?v=_rDwSZo2I1o" target="_blank" rel="noopener noreferrer">개발자는 어떤 생각을 가지고 일을 하면 좋은지</a> (4/4)</span>
+        </div>
+      </div>
+
+      <h3 class="group-label">글 · 멘토링</h3>
+      <div class="item-list">
+        <div class="item">
+          <span class="label">칼럼</span>
+          <span class="detail">— <a href="https://www.nia.or.kr/site/nia_kor/ex/bbs/List.do?cbIdx=99863" target="_blank" rel="noopener noreferrer">NIA 디지털서비스 동향</a> (월간)</span>
+        </div>
+        <div class="item">
+          <span class="label">멘토</span>
+          <span class="detail">— Kernel360 4기</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
