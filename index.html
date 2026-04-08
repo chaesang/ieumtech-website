@@ -402,6 +402,35 @@
       transform: translateY(-2px);
     }
 
+    .service-card.audience-card {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      padding: 18px 24px;
+    }
+
+    .service-card.audience-card h3 {
+      flex-shrink: 0;
+      min-width: 220px;
+      margin-bottom: 0;
+    }
+
+    .service-card.audience-card p {
+      margin: 0;
+      flex: 1;
+    }
+
+    @media (max-width: 480px) {
+      .service-card.audience-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .service-card.audience-card h3 {
+        min-width: auto;
+      }
+    }
+
     .service-card h3 {
       font-size: 0.9375rem;
       font-weight: 600;
@@ -857,15 +886,15 @@
 
       <h2>Who I'm Here For</h2>
       <div class="services-grid" style="grid-template-columns: 1fr;">
-        <div class="service-card">
+        <div class="service-card audience-card">
           <h3>First-time managers</h3>
           <p>Nobody told you what comes next.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card audience-card">
           <h3>Leaders navigating growth</h3>
           <p>When technical answers stop being enough.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card audience-card">
           <h3>Bridging Silicon Valley &amp; Korea</h3>
           <p>For when both sides need to be understood.</p>
         </div>

@@ -404,6 +404,35 @@
       transform: translateY(-2px);
     }
 
+    .service-card.audience-card {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      padding: 18px 24px;
+    }
+
+    .service-card.audience-card h3 {
+      flex-shrink: 0;
+      min-width: 220px;
+      margin-bottom: 0;
+    }
+
+    .service-card.audience-card p {
+      margin: 0;
+      flex: 1;
+    }
+
+    @media (max-width: 480px) {
+      .service-card.audience-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+      .service-card.audience-card h3 {
+        min-width: auto;
+      }
+    }
+
     .service-card h3 {
       font-size: 0.9375rem;
       font-weight: 600;
@@ -859,15 +888,15 @@
 
       <h2>함께하고 싶은 사람들</h2>
       <div class="services-grid" style="grid-template-columns: 1fr;">
-        <div class="service-card">
+        <div class="service-card audience-card">
           <h3>처음 매니저가 된 분</h3>
           <p>아무도 그 다음을 알려주지 않았을 때.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card audience-card">
           <h3>성장통을 겪는 리더</h3>
           <p>기술만으로는 풀리지 않을 때.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card audience-card">
           <h3>실리콘밸리와 한국 사이에서</h3>
           <p>양쪽을 다 이해해야 할 때.</p>
         </div>
