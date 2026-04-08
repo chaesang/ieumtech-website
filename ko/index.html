@@ -305,27 +305,20 @@
     }
 
     .highlights-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
     .highlight-card {
       text-align: center;
-      padding: 16px 12px;
     }
 
     .highlight-text {
-      font-size: 0.875rem;
+      font-size: 0.9375rem;
       font-weight: 500;
       color: var(--color-text);
       line-height: 1.5;
-    }
-
-    @media (max-width: 480px) {
-      .highlights-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
     /* Content links section */
