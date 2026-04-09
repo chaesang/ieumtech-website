@@ -76,21 +76,31 @@
 ### Phase 2: About 페이지 ✅
 - [x] 대표 프로필 + 경력/학력/자격증/특허/소셜 링크 (PR #25)
 
-### Phase 3: 다듬기 (진행 중)
+### Phase 3: 다듬기 ✅
 - [x] 한/영 토글 — index.html(EN) + ko/index.html(KO), Header에 EN/KO 토글 (PR #27)
 - [x] 경력 상세 — Google 역할 펼치기, 초기 경력 개별 항목, 특허 full name (PR #29, #33)
-- [x] robots.txt + sitemap.xml (이슈 #34 진행 중)
-- [ ] 프로필 문구 수정 — headline, summary, CTA 등 (이슈 #34 진행 중)
-- [ ] Samsung 시간순 수정 (이슈 #34 진행 중)
-- [ ] Designer 리뷰 피드백 반영 — 간격, footer 소셜 링크, avatar 크기 등
-- [ ] 반응형 검증
-- [ ] 파비콘
-- [ ] 프로필 사진 교체 (현재 placeholder)
+- [x] robots.txt + sitemap.xml
+- [x] 프로필 문구 수정 — headline, summary, CTA 전면 리라이트
+- [x] 파비콘 (I-beam SVG)
+- [x] 프로필 사진 교체
 
-### Phase 4: Agent Teams 기반 개선
-- [ ] Agent Teams로 designer → frontend-dev → webmaster 리뷰 흐름 테스트
-- [ ] design-system.md 기준으로 전체 페이지 디자인 리뷰 + 수정
-- [ ] SEO/접근성 webmaster 리뷰 반영
+### Phase 4: 브랜드 리디자인 ✅
+- [x] Company profile 반영 (서비스, 비전, 강점)
+- [x] 브랜드 카피 확정 (tagline, hero, CTA, section headers)
+- [x] SEO 메타 태그 (OG, hreflang, canonical, JSON-LD, 타이틀 person-first)
+- [x] About 페이지 분리 (EN/KO) — 전체 이력, Teaching 4그룹, 추천사
+- [x] 관계 중심 서비스 재설계 (Where I've Been / Who I'm Here For / Ways We Can Work Together)
+- [x] 한글 디자인 수정 (Noto Sans KR, word-break, letter-spacing)
+- [x] Typography Variant C 적용
+- [x] 전문가 리뷰 15+ 회 반영 (designer, frontend, webmaster, marketer, copywriter, strategist)
+- [x] CSS 공유 파일 추출 (style.css)
+- [x] Frontend 시맨틱 정리 (header, main, aria)
+
+### Phase 5: 향후
+- [ ] services.html 상세 페이지
+- [ ] OG image (1200x630 전용 이미지)
+- [ ] Cloudflare HTTP→HTTPS 리다이렉트
+- [ ] 추가 추천사 수집
 
 ## 주의사항
 - 사이트에 한문(중국어 한자) 사용 금지. 한글과 영어만 사용할 것.
@@ -106,3 +116,4 @@
 - 2026-03-26: Phase 3 시작 — 한/영 토글, 경력 상세, 문구 수정
 - 2026-03-26: Agent Teams 설정 (designer, frontend-dev, webmaster) + design-system.md
 - 2026-03-26: PAT_TOKEN 설정으로 이슈 자동 close + deploy 자동화 해결
+- 2026-04-01~09: Phase 3-4 완료 — 브랜드 리디자인, 카피 전면 리라이트, About 분리, SEO, 프로필 사진, CSS 추출, 시맨틱 정리
