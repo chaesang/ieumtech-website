@@ -77,6 +77,13 @@ jobs:
           echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
           echo "Resolved branch=$BRANCH pr=$PR_NUMBER"
 
+      - name: Set up Node
+        if: always() && steps.resolve.outputs.branch != '' && steps.resolve.outputs.pr_number != ''
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
       - name: Deploy preview
         if: always() && steps.resolve.outputs.branch != '' && steps.resolve.outputs.pr_number != ''
         run: |
@@ -85,13 +92,16 @@ jobs:
           git fetch origin "$BRANCH"
           git checkout "$BRANCH"
 
+          # Build Astro site with preview base path
+          npm ci
+          npx astro build --base "/previews/pr-${PR_NUMBER}"
+
           # Clone gh-pages branch
           git clone --branch gh-pages --single-branch "https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git" /tmp/gh-pages
 
-          # Copy PR content to preview directory
+          # Copy built dist to preview directory
           mkdir -p "/tmp/gh-pages/previews/pr-${PR_NUMBER}"
-          cp index.html "/tmp/gh-pages/previews/pr-${PR_NUMBER}/"
-          [ -f CNAME ] && cp CNAME "/tmp/gh-pages/previews/pr-${PR_NUMBER}/" || true
+          cp -r dist/* "/tmp/gh-pages/previews/pr-${PR_NUMBER}/"
 
           # Commit and push
           cd /tmp/gh-pages

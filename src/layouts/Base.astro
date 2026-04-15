@@ -1,0 +1,74 @@
+---
+import '~/styles/global.css';
+import type { Lang } from '~/i18n/ui';
+import SEO from '~/components/SEO.astro';
+import Header from '~/components/Header.astro';
+import Footer from '~/components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: Lang;
+  path: string;
+  ogType?: 'website' | 'article' | 'profile';
+  ogImage?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  canonicalOverride?: string;
+  jsonLd?: Record<string, unknown>;
+  altLangPath?: string;
+}
+
+const {
+  title,
+  description,
+  lang,
+  path,
+  ogType,
+  ogImage,
+  ogTitle,
+  ogDescription,
+  canonicalOverride,
+  jsonLd,
+  altLangPath,
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SEO
+      title={title}
+      description={description}
+      lang={lang}
+      path={path}
+      ogType={ogType}
+      ogImage={ogImage}
+      ogTitle={ogTitle}
+      ogDescription={ogDescription}
+      canonicalOverride={canonicalOverride}
+      jsonLd={jsonLd}
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {lang === 'ko' ? (
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+      />
+    ) : (
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+      />
+    )}
+    <slot name="head" />
+  </head>
+  <body>
+    <Header lang={lang} currentPath={path} altLangPath={altLangPath} />
+    <slot />
+    <Footer lang={lang} currentPath={path} />
+  </body>
+</html>

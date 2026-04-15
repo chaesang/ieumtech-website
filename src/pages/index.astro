@@ -1,0 +1,132 @@
+---
+import Base from '~/layouts/Base.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Ieum Tech LLC',
+  url: 'https://ieumtech.net',
+  description: 'Chaesang Jung connects ideas, people, and technology.',
+  founder: {
+    '@type': 'Person',
+    name: 'Chaesang Jung',
+    jobTitle: 'Founder',
+    sameAs: 'https://linkedin.com/in/chaesang',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'hello@ieumtech.net',
+  },
+};
+---
+<Base
+  title="Chaesang Jung — Connecting Technology and People | Ieum Tech"
+  description="Chaesang Jung connects ideas, people, and technology. Tech direction, team challenges, what comes next — let's think it through together."
+  ogTitle="Connecting Technology and People | Chaesang Jung"
+  ogDescription="The things you've been thinking through alone — let's figure it out together."
+  lang="en"
+  path="/"
+  ogType="website"
+  jsonLd={jsonLd}
+  altLangPath="/ko/"
+>
+  <style slot="head" is:inline>
+    .highlights-grid { display: flex; flex-direction: column; gap: 14px; }
+    .highlight-card { text-align: center; }
+    .highlight-text { font-size: 0.9375rem; font-weight: 500; color: var(--color-text); line-height: 1.5; }
+    .service-card.audience-card { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 18px 24px; }
+    .service-card.audience-card h3 { flex-shrink: 0; margin-bottom: 0; }
+    .service-card.audience-card p { margin: 0; text-align: right; }
+    @media (max-width: 480px) {
+      .service-card.audience-card { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .service-card.audience-card h3 { min-width: auto; }
+    }
+  </style>
+
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <p class="hero-sublabel">The threads Chaesang, an engineer, keeps weaving</p>
+      <div class="connecting-list">
+        <h1 class="connecting-item"><span class="connecting-word">Connecting</span> ideas with technology.</h1>
+        <p class="connecting-item"><span class="connecting-word">Connecting</span> people, generations, and what's ahead.</p>
+      </div>
+      <p class="hero-sub">The things you've been mulling over alone — tech direction, team dynamics, what comes next.<br />Let's think it through together.</p>
+      <p class="hero-vision">Technology deepens only when it passes between people.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="highlights">
+      <div class="highlights-inner">
+        <div class="highlights-grid">
+          <div class="highlight-card"><div class="highlight-text">A couple of decades in the field</div></div>
+          <div class="highlight-card"><div class="highlight-text">13 years at Google</div></div>
+          <div class="highlight-card"><div class="highlight-text">Leading teams of dozens</div></div>
+          <div class="highlight-card"><div class="highlight-text">Firmware to AI, engineer to executive</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <section id="services" style="border-top: 1px solid var(--color-border); margin-top: 0;">
+        <h2>Where I've Been</h2>
+        <p style="font-size: 0.9375rem; color: var(--color-muted); font-weight: 300; line-height: 1.8; margin-bottom: 28px;">
+          From writing set-top box firmware, to refining search results one line at a time, to building an app ecosystem from scratch, to wiring up a payment system solo, to slashing cloud costs, to watching AI predict furnace temperatures — each chapter looked completely different.<br /><br />
+          As an engineer, a manager, a VP, a CTO, an advisor — every role shift revealed something new.
+        </p>
+
+        <h2>Who I'm Here For</h2>
+        <div class="services-grid" style="grid-template-columns: 1fr;">
+          <div class="service-card audience-card">
+            <h3>First-time managers</h3>
+            <p>For the part nobody prepared you for.</p>
+          </div>
+          <div class="service-card audience-card">
+            <h3>Leaders facing the next wall</h3>
+            <p>When growing pains turn into harder questions.</p>
+          </div>
+          <div class="service-card audience-card">
+            <h3>Silicon Valley meets Korea</h3>
+            <p>For when both sides need a bridge.</p>
+          </div>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--color-muted); font-weight: 400; margin-top: 16px; text-align: center;">If you have a good question, that's usually enough. Let's talk.</p>
+
+        <h2 style="margin-top: 32px;">Ways We Can Work Together</h2>
+        <div class="services-grid" style="grid-template-columns: 1fr;">
+          <div class="service-card audience-card"><h3>Teaching</h3><p>KAIST DFMBA — AI & Recommendation Systems</p></div>
+          <div class="service-card audience-card"><h3>Mentoring</h3><p>1:1 mentoring, Kernel360</p></div>
+          <div class="service-card audience-card"><h3>Speaking</h3><p>Talks, interviews, podcasts</p></div>
+          <div class="service-card audience-card"><h3>Online Courses</h3><p>Inflearn, Class101, FastCampus, HanbitN</p></div>
+          <div class="service-card audience-card"><h3>Writing</h3><p>Brunch · NIA monthly column</p></div>
+        </div>
+      </section>
+    </div>
+
+    <section id="founder" class="about-section">
+      <div class="about-inner">
+        <div class="about-profile">
+          <div class="profile-avatar"><img src="/profile.jpg" alt="Chaesang Jung" width="96" height="96" loading="lazy" /></div>
+          <div>
+            <h2 class="profile-name">Chaesang Jung</h2>
+            <p class="profile-secondary-name">정채상</p>
+            <p class="profile-headline">Behind every technology, there were people — and some of those stories took years to understand. Hoping to shorten that road for others.</p>
+          </div>
+        </div>
+        <div style="margin-top: 24px;">
+          <a href="/about" class="btn btn-outline btn-sm">More about Chaesang →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact" aria-labelledby="cta-heading">
+      <div class="cta-inner">
+        <h2 class="cta-heading" id="cta-heading">If you have a story to connect, reach out.</h2>
+        <div class="cta-buttons">
+          <a href="mailto:hello@ieumtech.net" class="btn">Email</a>
+          <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

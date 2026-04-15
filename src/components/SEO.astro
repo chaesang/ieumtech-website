@@ -1,0 +1,63 @@
+---
+import type { Lang } from '~/i18n/ui';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: Lang;
+  path: string;
+  ogType?: 'website' | 'article' | 'profile';
+  ogImage?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  canonicalOverride?: string;
+  jsonLd?: Record<string, unknown>;
+}
+
+const {
+  title,
+  description,
+  lang,
+  path,
+  ogType = 'website',
+  ogImage = '/profile.jpg',
+  ogTitle,
+  ogDescription,
+  canonicalOverride,
+  jsonLd,
+} = Astro.props;
+
+const effectiveOgTitle = ogTitle ?? title;
+const effectiveOgDescription = ogDescription ?? description;
+
+const siteUrl = 'https://ieumtech.net';
+const currentUrl = canonicalOverride ?? `${siteUrl}${path}`;
+const absOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+const enPath = lang === 'en' ? path : path.replace(/^\/ko/, '') || '/';
+const koPath = lang === 'ko' ? path : (path === '/' ? '/ko/' : `/ko${path}`);
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={currentUrl} />
+<link rel="alternate" hreflang="en" href={`${siteUrl}${enPath}`} />
+<link rel="alternate" hreflang="ko" href={`${siteUrl}${koPath}`} />
+<link rel="alternate" hreflang="x-default" href={`${siteUrl}${enPath}`} />
+
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={currentUrl} />
+<meta property="og:title" content={effectiveOgTitle} />
+<meta property="og:description" content={effectiveOgDescription} />
+<meta property="og:site_name" content={lang === 'ko' ? '이음 테크' : 'Ieum Tech'} />
+<meta property="og:locale" content={lang === 'ko' ? 'ko_KR' : 'en_US'} />
+<meta property="og:locale:alternate" content={lang === 'ko' ? 'en_US' : 'ko_KR'} />
+<meta property="og:image" content={absOgImage} />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={effectiveOgTitle} />
+<meta name="twitter:description" content={effectiveOgDescription} />
+<meta name="twitter:image" content={absOgImage} />
+
+{jsonLd && (
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+)}

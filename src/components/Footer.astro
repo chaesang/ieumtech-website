@@ -1,0 +1,29 @@
+---
+import type { Lang } from '~/i18n/ui';
+import { useTranslations, localizedPath } from '~/i18n/ui';
+
+interface Props {
+  lang: Lang;
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+const t = useTranslations(lang);
+
+const homePath = localizedPath('/', lang);
+const aboutPath = localizedPath('/about', lang);
+const contactHref = currentPath === homePath ? '#contact' : `${homePath}#contact`;
+---
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href={homePath} class="footer-logo">{lang === 'ko' ? '이음 테크' : 'Ieum Tech'}</a>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href={homePath}>{t('nav.home')}</a>
+      <a href={aboutPath}>{t('nav.about')}</a>
+      <a href={contactHref}>{t('nav.contact')}</a>
+      <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://brunch.co.kr/@chaesang" target="_blank" rel="noopener noreferrer">Brunch</a>
+    </nav>
+    <p class="footer-copy">{t('footer.copy')}</p>
+  </div>
+</footer>
