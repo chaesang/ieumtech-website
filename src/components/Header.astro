@@ -1,0 +1,61 @@
+---
+import type { Lang } from '~/i18n/ui';
+import { useTranslations, localizedPath } from '~/i18n/ui';
+
+interface Props {
+  lang: Lang;
+  currentPath: string;
+  altLangPath?: string;
+}
+
+const { lang, currentPath, altLangPath } = Astro.props;
+const t = useTranslations(lang);
+
+const homePath = localizedPath('/', lang);
+const aboutPath = localizedPath('/about', lang);
+const contactHref = currentPath === homePath ? '#contact' : `${homePath}#contact`;
+
+const otherLang: Lang = lang === 'en' ? 'ko' : 'en';
+const toggleHref = altLangPath ?? (otherLang === 'ko' ? '/ko/' : '/');
+const toggleLabel = otherLang === 'ko' ? 'KO' : 'EN';
+---
+{/* Logo text order flips by language */}
+<header class="site-header">
+  <div class="header-inner">
+    {lang === 'ko' ? (
+      <a href={homePath} class="logo">이음 테크 <span class="logo-ko">Ieum Tech</span></a>
+    ) : (
+      <a href={homePath} class="logo">Ieum Tech <span class="logo-ko">이음 테크</span></a>
+    )}
+    <div class="header-right">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href={homePath}>{t('nav.home')}</a></li>
+        <li><a href={aboutPath} class={currentPath === aboutPath ? 'active' : ''} aria-current={currentPath === aboutPath ? 'page' : undefined}>{t('nav.about')}</a></li>
+        <li><a href={contactHref}>{t('nav.contact')}</a></li>
+      </ul>
+      <a href={toggleHref} class="lang-toggle">{toggleLabel}</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      navMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+    navMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>
