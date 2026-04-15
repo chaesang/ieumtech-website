@@ -1,0 +1,66 @@
+---
+import type { SeriesEntry } from '~/lib/collections';
+import type { Lang } from '~/i18n/ui';
+
+interface Props {
+  series: SeriesEntry;
+  count: number;
+  lang: Lang;
+}
+
+const { series, count, lang } = Astro.props;
+const href = lang === 'en'
+  ? `/writing/series/${series.data.slug}`
+  : `/ko/writing/series/${series.data.slug}`;
+const title = series.data.titles[lang] ?? series.data.slug;
+const description = series.data.descriptions[lang];
+const countLabel = lang === 'ko' ? `${count}편` : `${count} ${count === 1 ? 'entry' : 'entries'}`;
+---
+<a class="series-card" href={href}>
+  <div class="series-card-head">
+    <h3 class="series-card-title">{title}</h3>
+    <span class="series-card-count">{countLabel}</span>
+  </div>
+  {description && <p class="series-card-desc">{description}</p>}
+</a>
+
+<style>
+  .series-card {
+    display: block;
+    padding: 20px 22px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .series-card:hover {
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 4%, transparent);
+  }
+  .series-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .series-card-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.4;
+  }
+  .series-card-count {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    flex-shrink: 0;
+  }
+  .series-card-desc {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>

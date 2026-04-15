@@ -78,4 +78,21 @@ const talks = defineCollection({
     }),
 });
 
-export const collections = { writing, portfolio, talks };
+const series = defineCollection({
+  type: 'data',
+  schema: z.object({
+    slug: z.string(),
+    titles: z.object({
+      en: z.string(),
+      ko: z.string(),
+    }),
+    descriptions: z.object({
+      en: z.string().optional(),
+      ko: z.string().optional(),
+    }).default({}),
+    order: z.number().default(100), // display order on /writing
+    featured: z.boolean().default(false),
+  }),
+});
+
+export const collections = { writing, portfolio, talks, series };

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '~/layouts/Base.astro';
+import { seriesDisplayTitle } from '~/lib/collections';
 
 export async function getStaticPaths() {
   const entries = await getCollection('writing', (e) => !e.data.draft && e.data.lang === 'en');
@@ -22,6 +23,7 @@ const sourceLabel =
   entry.data.source === 'nia' ? 'NIA' :
   entry.data.source === 'dbr' ? 'DBR' :
   entry.data.source === 'linkedin' ? 'LinkedIn' : null;
+const seriesTitle = entry.data.series ? await seriesDisplayTitle(entry.data.series, 'en') : null;
 ---
 <Base
   title={`${entry.data.title} — Chaesang Jung`}
@@ -42,9 +44,9 @@ const sourceLabel =
           <div class="writing-article-meta">
             <time datetime={entry.data.date.toISOString()}>{dateLabel}</time>
             {sourceLabel && <span class="writing-article-source">{sourceLabel}</span>}
-            {entry.data.series && (
+            {entry.data.series && seriesTitle && (
               <a class="writing-article-series" href={`/writing/series/${entry.data.series}`}>
-                {entry.data.series}
+                {seriesTitle}
               </a>
             )}
           </div>
@@ -99,17 +101,26 @@ const sourceLabel =
     color: var(--color-muted);
     margin-bottom: 16px;
   }
-  .writing-article-source,
-  .writing-article-series {
+  .writing-article-source {
     font-size: 0.75rem;
     padding: 2px 8px;
     border-radius: 4px;
     background: var(--color-border);
     color: var(--color-muted);
     font-weight: 500;
+  }
+  .writing-article-series {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+    color: var(--color-accent);
+    font-weight: 500;
     text-decoration: none;
   }
-  .writing-article-series:hover { color: var(--color-accent); }
+  .writing-article-series:hover {
+    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  }
   .writing-article-title {
     font-size: 2rem;
     font-weight: 600;
