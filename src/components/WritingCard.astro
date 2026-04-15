@@ -1,0 +1,95 @@
+---
+import type { WritingEntry } from '~/lib/collections';
+import type { Lang } from '~/i18n/ui';
+
+interface Props {
+  entry: WritingEntry;
+  lang: Lang;
+}
+
+const { entry, lang } = Astro.props;
+const slug = entry.slug.split('/').pop()!;
+const href = lang === 'en' ? `/writing/${slug}` : `/ko/writing/${slug}`;
+const dateLabel = entry.data.date.toLocaleDateString(lang === 'ko' ? 'ko-KR' : 'en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+const sourceLabel =
+  entry.data.source === 'brunch' ? 'Brunch' :
+  entry.data.source === 'nia' ? 'NIA' :
+  entry.data.source === 'dbr' ? 'DBR' :
+  entry.data.source === 'linkedin' ? 'LinkedIn' : null;
+---
+<article class="writing-card">
+  <a href={href} class="writing-card-link">
+    <div class="writing-card-meta">
+      <time datetime={entry.data.date.toISOString()}>{dateLabel}</time>
+      {sourceLabel && <span class="writing-card-source">{sourceLabel}</span>}
+      {entry.data.series && <span class="writing-card-series">{entry.data.series}</span>}
+    </div>
+    <h3 class="writing-card-title">{entry.data.title}</h3>
+    <p class="writing-card-summary">{entry.data.summary}</p>
+    {entry.data.tags.length > 0 && (
+      <div class="writing-card-tags">
+        {entry.data.tags.map((t) => <span class="writing-card-tag">#{t}</span>)}
+      </div>
+    )}
+  </a>
+</article>
+
+<style>
+  .writing-card {
+    border-top: 1px solid var(--color-border);
+    padding: 24px 0;
+  }
+  .writing-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  .writing-card-link:hover .writing-card-title {
+    color: var(--color-accent);
+  }
+  .writing-card-meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    margin-bottom: 8px;
+  }
+  .writing-card-source,
+  .writing-card-series {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--color-border);
+    color: var(--color-muted);
+    font-weight: 500;
+  }
+  .writing-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 8px;
+    line-height: 1.4;
+    transition: color 0.15s ease;
+  }
+  .writing-card-summary {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin: 0 0 12px;
+  }
+  .writing-card-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .writing-card-tag {
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    font-weight: 400;
+  }
+</style>

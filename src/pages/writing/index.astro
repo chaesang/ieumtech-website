@@ -1,0 +1,83 @@
+---
+import Base from '~/layouts/Base.astro';
+import WritingCard from '~/components/WritingCard.astro';
+import { getPublishedWriting } from '~/lib/collections';
+
+const entries = await getPublishedWriting('en');
+// Fallback: if no English entries, show Korean ones with a notice.
+const fallbackKo = entries.length === 0 ? await getPublishedWriting('ko') : [];
+const displayEntries = entries.length > 0 ? entries : fallbackKo;
+const isKoFallback = entries.length === 0 && fallbackKo.length > 0;
+---
+<Base
+  title="Writing — Chaesang Jung | Ieum Tech"
+  description="Notes from thirty years between Silicon Valley and Seoul — on products, teams, and the words Korean tech has invented. By Chaesang Jung."
+  lang="en"
+  path="/writing"
+  ogType="website"
+  altLangPath="/ko/writing"
+>
+  <main>
+    <section class="writing-hero">
+      <div class="container">
+        <h1>Writing</h1>
+        <p class="writing-lead">
+          Essays on products I use, teams I've built, and the vocabulary Korean tech has
+          invented along the way. Most pieces were first published on Brunch (in Korean);
+          English translations are gradually being added.
+        </p>
+        {isKoFallback && (
+          <p class="writing-notice">
+            Currently in Korean. English translations are planned but not yet published.
+          </p>
+        )}
+      </div>
+    </section>
+
+    <section class="writing-list">
+      <div class="container">
+        {displayEntries.length === 0 ? (
+          <p class="writing-empty">No entries yet.</p>
+        ) : (
+          displayEntries.map((entry) => (
+            <WritingCard entry={entry} lang={isKoFallback ? 'ko' : 'en'} />
+          ))
+        )}
+      </div>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .writing-hero {
+    padding: 64px 0 32px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .writing-hero h1 {
+    font-size: 2.25rem;
+    margin: 0 0 12px;
+  }
+  .writing-lead {
+    font-size: 1rem;
+    color: var(--color-muted);
+    line-height: 1.7;
+    max-width: 640px;
+  }
+  .writing-notice {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: var(--color-border);
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .writing-list {
+    padding: 32px 0 80px;
+  }
+  .writing-empty {
+    color: var(--color-muted);
+    padding: 32px 0;
+    text-align: center;
+  }
+</style>

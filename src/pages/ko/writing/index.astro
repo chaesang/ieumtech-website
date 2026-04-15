@@ -1,0 +1,69 @@
+---
+import Base from '~/layouts/Base.astro';
+import WritingCard from '~/components/WritingCard.astro';
+import { getPublishedWriting } from '~/lib/collections';
+
+const entries = await getPublishedWriting('ko');
+---
+<Base
+  title="글 — 정채상 | 이음 테크"
+  description="미국과 한국을 오가며 일한 30년의 현장에서 눈에 들어온 것들을 짧게 적은 글 모음. 서비스, 조직, 그리고 반복해서 듣는 단어들."
+  lang="ko"
+  path="/ko/writing"
+  ogType="website"
+  altLangPath="/writing"
+>
+  <style slot="head" is:inline>
+    body {
+      font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+  </style>
+  <main>
+    <section class="writing-hero">
+      <div class="container">
+        <h1>글</h1>
+        <p class="writing-lead">
+          서비스 하나, 조직 하나, 그리고 한국 IT 현장에서 반복해서 듣는 단어 하나 —
+          그때그때 눈에 들어온 것들을 메모처럼 적어 둡니다. 대부분 Brunch에 먼저 올렸던 글입니다.
+        </p>
+      </div>
+    </section>
+
+    <section class="writing-list">
+      <div class="container">
+        {entries.length === 0 ? (
+          <p class="writing-empty">글이 아직 없습니다.</p>
+        ) : (
+          entries.map((entry) => <WritingCard entry={entry} lang="ko" />)
+        )}
+      </div>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .writing-hero {
+    padding: 64px 0 32px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .writing-hero h1 {
+    font-size: 2.25rem;
+    margin: 0 0 12px;
+  }
+  .writing-lead {
+    font-size: 1rem;
+    color: var(--color-muted);
+    line-height: 1.7;
+    max-width: 640px;
+  }
+  .writing-list {
+    padding: 32px 0 80px;
+  }
+  .writing-empty {
+    color: var(--color-muted);
+    padding: 32px 0;
+    text-align: center;
+  }
+</style>
