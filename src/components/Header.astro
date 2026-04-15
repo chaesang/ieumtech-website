@@ -13,7 +13,9 @@ const t = useTranslations(lang);
 
 const homePath = localizedPath('/', lang);
 const aboutPath = localizedPath('/about', lang);
+const writingPath = localizedPath('/writing', lang);
 const contactHref = currentPath === homePath ? '#contact' : `${homePath}#contact`;
+const isWritingActive = currentPath === writingPath || currentPath.startsWith(`${writingPath}/`);
 
 const otherLang: Lang = lang === 'en' ? 'ko' : 'en';
 const toggleHref = altLangPath ?? (otherLang === 'ko' ? '/ko/' : '/');
@@ -34,6 +36,7 @@ const toggleLabel = otherLang === 'ko' ? 'KO' : 'EN';
       <ul class="nav-links" id="nav-menu">
         <li><a href={homePath}>{t('nav.home')}</a></li>
         <li><a href={aboutPath} class={currentPath === aboutPath ? 'active' : ''} aria-current={currentPath === aboutPath ? 'page' : undefined}>{t('nav.about')}</a></li>
+        <li><a href={writingPath} class={isWritingActive ? 'active' : ''} aria-current={isWritingActive ? 'page' : undefined}>{t('nav.writing')}</a></li>
         <li><a href={contactHref}>{t('nav.contact')}</a></li>
       </ul>
       <a href={toggleHref} class="lang-toggle">{toggleLabel}</a>

@@ -1,0 +1,92 @@
+---
+import Base from '~/layouts/Base.astro';
+import WritingCard from '~/components/WritingCard.astro';
+import { getActiveSeries, getWritingBySeries } from '~/lib/collections';
+
+export async function getStaticPaths() {
+  const series = await getActiveSeries('en');
+  return series.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const entries = await getWritingBySeries(slug!, 'en');
+// Fallback to Korean if English empty
+const koEntries = entries.length === 0 ? await getWritingBySeries(slug!, 'ko') : [];
+const displayEntries = entries.length > 0 ? entries : koEntries;
+const isKoFallback = entries.length === 0 && koEntries.length > 0;
+---
+<Base
+  title={`${slug} — Writing — Chaesang Jung`}
+  description={`Writing series: ${slug}`}
+  lang="en"
+  path={`/writing/series/${slug}`}
+  ogType="website"
+  altLangPath={`/ko/writing/series/${slug}`}
+>
+  <main>
+    <section class="writing-hero">
+      <div class="container">
+        <nav class="writing-breadcrumb">
+          <a href="/writing">← Writing</a>
+        </nav>
+        <p class="writing-eyebrow">Series</p>
+        <h1>{slug}</h1>
+        <p class="writing-count">{displayEntries.length} {displayEntries.length === 1 ? 'entry' : 'entries'}</p>
+      </div>
+    </section>
+
+    <section class="writing-list">
+      <div class="container">
+        {displayEntries.length === 0 ? (
+          <p class="writing-empty">No entries in this series.</p>
+        ) : (
+          displayEntries.map((entry) => (
+            <WritingCard entry={entry} lang={isKoFallback ? 'ko' : 'en'} />
+          ))
+        )}
+      </div>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .writing-hero {
+    padding: 64px 0 32px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .writing-breadcrumb {
+    margin-bottom: 16px;
+    font-size: 0.875rem;
+  }
+  .writing-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+  .writing-breadcrumb a:hover { color: var(--color-accent); }
+  .writing-eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    margin: 0 0 6px;
+    font-weight: 600;
+  }
+  .writing-hero h1 {
+    font-size: 2rem;
+    margin: 0 0 8px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .writing-count {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    margin: 0;
+  }
+  .writing-list {
+    padding: 32px 0 80px;
+  }
+  .writing-empty {
+    color: var(--color-muted);
+    padding: 32px 0;
+    text-align: center;
+  }
+</style>
