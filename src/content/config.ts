@@ -13,6 +13,7 @@ const writing = defineCollection({
       lang,
       summary: z.string().min(10).max(280),
       tags: z.array(tag).default([]),
+      series: z.string().optional(),          // e.g. magazine slug ('svc-analysis') or brunchbook slug
       source: z.enum(['brunch', 'nia', 'dbr', 'linkedin', 'original']),
       externalUrl: z.string().url().optional(),
       cover: image().optional(),

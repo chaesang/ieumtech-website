@@ -1,0 +1,210 @@
+---
+title: "사이트 트래픽 읽기 - similarweb"
+date: 2024-07-19
+lang: ko
+summary: "여러 업체들이 같은 공간에서 같은 사용자들을 대상으로 경쟁할 때 \"시장 점유율\"은 꽤 어려운 주제이고, 마케팅, PR 등으로 과장되기 쉬운 분야이다. 자기 서비스를 이용하는 숫자들은 다양한 내용들을 안다고 해도 정확하게 다른 곳과 비교하기도 어렵거니와, 특히 다들 자기 숫자들 중 마음에 드는 좋은 것들만 이야기하게 된다. quantity 와 quality"
+tags: ["service-analysis"]
+series: "svc-analysis"
+source: brunch
+externalUrl: https://brunch.co.kr/@chaesang/71
+draft: false
+---
+
+여러 업체들이 같은 공간에서 같은 사용자들을 대상으로 경쟁할 때 "시장 점유율"은 꽤 어려운 주제이고, 마케팅, PR 등으로 과장되기 쉬운 분야이다. 자기 서비스를 이용하는 숫자들은 다양한 내용들을 안다고 해도 정확하게 다른 곳과 비교하기도 어렵거니와, 특히 다들 자기 숫자들 중 마음에 드는 좋은 것들만 이야기하게 된다. quantity 와 quality 둘 다 이슈일 거고, 하나의 사용자에게 둘을 써 보게 하는 이른바 quality 측면의 접근이 그 나름대로 의미가 있는 거라고 한다면 웹 세상에서 시장 전체의 내용들을 보는데 아주 오래 전부터 similarweb 을 이용해 왔었다.
+
+  
+
+### **Similarweb**
+
+[https://en.wikipedia.org/wiki/Similarweb](https://en.wikipedia.org/wiki/Similarweb)
+
+간단하게는 이스라엘에서 2007년에 설립되어 2021년에 상장한 업력이 17년차인 회사이다. 샘플링을 시작으로 다양한 방법으로 웹페이지 혹은 앱의 사용량에 대해 '객관적'인 내용을 보여준다. 아래는 지난 십여년간 경험에서 얻는 몇 가지 이슈들.
+
+  
+
+\- 뱅크샐러드 다니던 시절 banksalad.com 의 숫자를 firebase analytics , Google Analytics , Amplitude 등으로 모았었는데, similarweb 에서 보이던 숫자와 10-20% 정도 차이가 있었다. 위의 세 방법들도 각각 spam filtering logic 이 다른지 5-10% 정도의 차이들이 나던 것으로 보아 나름의 로직들이 있겠다만, 이 경우 경쟁 업체들과 비교할 때는 같은 방식의 비교라 하겠다.
+
+  
+
+\- 회사들마다 전략적으로 앱에 진심인 경우 similarweb 에서 본의아니게 penalty 를 맞게 된다. 하지만 웹에서 먼저 서비스를 시작한 회사들은 그 중 아주 일부만 대개 앱으로 전환되는 결과들이 있어 대개 대세에는 지장이 없어 왔었다. 역사적으로 web 에서 app 으로 가다 다시 둘이 합쳐지는 형태로 진행되어 오는 걸 보면 대세를 훑는 데는 지장이 없겠다고 주장할 수도 있겠고, 진심으로 app 으로만 진행하는 경우 다른 해석이 될 수도 있겠다.
+
+  
+
+\- similarweb 의 무료 버전만 써 왔는데, 하루에 15개 정도의 검색만 할 수 있는 듯의 제약이 있다. 인내심이 꽤 필요하고, 최대 3개월 정도의 데이터만 잡히는 제약이 있다. 그리고 사용자 수보다는 visits ( page views ) 가 보인다. 역시 100% 정확하겠냐에 대해서는 논쟁의 여지가 있겠지만, 특히 경쟁 업체들과 비교하게 되는 경우 그 숫자들의 분포 들이 이해하는 데 도움이 된다 하겠다.
+
+  
+
+아래는 몇 개의 서비스들을 비교해 보며 알게 된 내용들
+
+\- 야놀자 vs 여기어때
+
+\- chatgpt vs chat.openai.com
+
+\- chatgpt vs gemini vs claude.ai vs perplexity
+
+\- flipster.io
+
+\- wrtn , liner
+
+  
+
+개인적인 해석이고, similarweb의 무료 데이터들을 바탕으로 최근의 2-3달 정도의 비교를 해 본다.
+
+  
+
+### **야놀자 vs 여기어때**
+
+  
+
+한국 여행계의 양대 산맥인 두 회사는 업종과 수익 구조 등이 많이 다르지만, 대표 서비스의 사용량에 있어서 앱의 세상에서는 아주 비슷한 MAU 를 유지하고 있다. 모바일인덱스를 보면 조금 더 비슷한 숫자가 나오겠지만, 대략 3-400만 DAU 를 비슷하게 가지고 있다고 알려지고 있다 ( [https://www.techm.kr/news/articleView.html?idxno=122804](https://www.techm.kr/news/articleView.html?idxno=122804) ). 다만 문제라면 사용자의 입장에서는 이미 포화된 시장에 가까워서 둘을 동시에 켜고 같은 가게에 한 푼이라도 싼 곳을 이용하는 듯 일반적인 마케팅이 잘 통하지 않는 세상이라는 점 정도..
+
+![야놀자여기어때-1.png](/writing/chaesang-71/01.png)
+
+야놀자는 오래전부터 yanolja.com 을 써 왔고, 여기어때는 도메인 때문에 꽤 고생을 해 왔는데, 서비스는 goodchoice.kr에서 작년 말에 yeogi.com 으로 바꿔 왔는데 ( [https://brunch.co.kr/@chaesang/33](https://brunch.co.kr/@chaesang/33) ),
+
+[**goodchoice.kr -> yeogi.com**
+
+SEO 괜찮을까...? | 지인들이 여러 회사들에 있지만, 사용자의 입장 혹은 참관인의 입장에서 '내맘대로 제품 분석'의 글들을 모아 보려 합니다. 사소한 걱정, 지적질에서 시작하겠고, 가급적 제안
+
+https://brunch.co.kr/@chaesang/33](https://brunch.co.kr/@chaesang/33) 
+
+이전에 75% 정도의 파워에 비하자면 지금은 두 사이트를 합쳐도 절반도 못 미치는 숫자가 나온다.
+
+![야놀자여기어때-3.png](/writing/chaesang-71/02.png)
+
+여기어때 측에서 기대하기로는 goodchoice.kr 로 들어가는 숫자들이 0 로 수렴하거나 빠지는 만큼이 새로운 도메인인 yeogi.com 으로 올라가기를 기대하겠지만, 오래된 도메인의 흔적들을 다 지워 나가기는 어려울 테고, 거기에 redirect 를 추가하는 데 있어 제대로 동작한 부분이 적어진 건지, 아쉬움이 보인다.
+
+  
+
+마지막으로 웹에서의 압도적인 차이에도 불구하고 여기어때는 베트남과 일본에서 접근하는 사용자들에게는 꽤 선전하고 있는 모습이다. 숫자가 잘 보이지는 않지만, 일본 사람들이 한국에 오게 될 때 참조하는 서비스로 자리잡으려는 듯하고, 야놀자의 입장에서 글로벌로 벌리는 메시지에 비해 뾰족한 숫자가 뒷받침되지 않는 모습이고, 이는 나스닥 상장에 꽤 챌린지가 될 듯하다.
+
+  
+
+![야놀자여기어때-2.png](/writing/chaesang-71/03.png)
+
+  
+
+### **chatgpt.com vs chat.openai.com**
+
+  
+
+앞에서 URL migration 이 제대로 잡혔을까..? 에 대해서는 꽤 좋은 사례가 있다. 최근에 별다른 소리소문없이 chat.openai.com 이 chatgpt.com 으로 바뀌었는데, HTTP 308 permanent redirect 로 구현되어 있었고, 아래와 같이 예쁜 그래프가 나온다.
+
+![chatgpt-openai.png](/writing/chaesang-71/04.png)
+
+page view가 이후가 더 높게 나오는 건 어떤 사연이 있는 것일까 궁금하긴 한데, 신기한 기능이 추가되며 숫자가 늘어났을 수도 있겠다 싶지만, 아마 unique user 의 기준으로 더 늘어나진 않을 거 같다.
+
+  
+
+하나 더, 아주 예쁜 weekly pattern 을 보이는 것으로 보아 chatgpt는 검색과 같은 업무용 툴임은 명확하다 하겠고, 여름은 학생들이 살짝 방학이라 빠진 듯하다. 광고 없이 어떻게 비지니스를 영위할 수 있을 것인지가 큰 숙제이겠다.
+
+  
+
+### **chatgpt vs gemini vs claude vs perplexity**
+
+  
+
+개인적으로 자주 쓰는 네 개의 툴을 비교해 보았다.
+
+![chatgpt-openai.png](/writing/chaesang-71/05.png)
+
+chatgpt 와 gemini 정도가 비벼 볼 만 하겠고, claude 와 perplexity 는 쏟아지는 신문 기사들의 양에 비해서는 숫자가 너무 적다. gemini 는 제품 자체의 entrypoint 에 애로사항이 있는 거 같다. 구글이 검색창 이외의 entrypoint 를 가지고 고민하는 것과 궤가 같을텐데, 별도의 앱을 만들지도 못하고 Google App 에 어색하게 합쳐지는 정도로는 편의성에서 chatgpt를 따라가기 힘들어 보인다.
+
+  
+
+참고로 2024년 6월 현재 most visted website 에서 google.com 은 1등, chatgpt.com 은 11등이다.
+
+[https://en.wikipedia.org/wiki/List\_of\_most-visited\_websites](https://en.wikipedia.org/wiki/List_of_most-visited_websites)
+
+[**List of most-visited websites - Wikipedia**
+
+https://en.wikipedia.org/wiki/List\_of\_most-visited\_websites](https://en.wikipedia.org/wiki/List_of_most-visited_websites) 
+
+  
+
+Top 2 는 넘사벽이라 한다 치면, 아래는 나머지 둘의 비교와 단상들.
+
+![claude-perplexity-1.png](/writing/chaesang-71/06.png)
+
+![claude-perplexity-2.png](/writing/chaesang-71/07.png)
+
+\- perflixity 를 갑자기 claude 가 역전 ?
+
+\- 미국, 인도는 박빙.
+
+\- 인도네시아는 perplexity friendly 나라인가.?
+
+\- 5 위 정도로 콜럼비아가 오는 게 맞는 건가..? 그럴 거 같기도...
+
+  
+
+### **flipster.io**
+
+  
+
+봄에 지인들이 운영하는 flipster.io 의 SEO 를 거들어 주며 체크 해 보았었다. 코인 거래소와 관련 정보 유통하는 사이트로 싱가폴과 동남아시아에서 꽤 여러 고객들이 사용하고 있는 서비스였는데, 이슈는 flipster.xyz 를 쓰고 있었는데, 이유를 모른 채 구글 SEO 에서 penalty를 맞는 모습들이어서 flipster.io 로 옮기는 과정에 대한 일반적인 구글 SEO 컨설팅이었다. 구글 검색 관련된 내용들은 구글 검색 콘솔에서 데이터들이 보이니.. 여기서는 similarweb 에서 보이는 여러 일들을 체크하자면...  
+
+  
+
+먼저 4월의 그래프는 아래와 같다. redirect 들을 걸어 놓았지만, 꽤나 더디게 refresh 되고 있고, flipster라는 키워드는 미국에서는 아주 오랫동안 public 도서관 솔루션으로 이용되고 있는 경쟁 제품이 있는 편이어서 시간이 좀 더 걸리는 상황이다. 참고로 지금은 그래도 동남아쪽에서 쿼리의 navigation destination 으로 사용되고 있다 한다.
+
+![flipster.io-xyz.png](/writing/chaesang-71/08.png)
+
+아래는 지난 3개월. 뭔가 엄청난 일이 벌어졌다..
+
+![flipster-io-3month.png](/writing/chaesang-71/09.png)
+
+5월 말, 순간적인 스파이크가 엄청나게 일어났다. 이는 평범(?)한 가입하면 얼마 드립니다.. 의 이벤트였을텐데, 저 정도면 최소 시스템 장애 혹은 예상치 못한 엄청난 부대비용이 드는 나쁜 일이었을 것이다.
+
+  
+
+아래 나라 분포를 보면 나이지리아, 러시아 등의 예상치 못한 나라에서 어두운 일들이 벌어졌음을 알 수 있다. 같은 $1 라도 아프리카 몇 나라에서는 아주 큰 일이고, 대규모 cherry picking 이 벌어졌을 수도 있겠고, 아니면 내가 모르는 아주 수많은 코인 사용자들이 '실제로' 나이지리아에서 살고 있거나.. 여러 모로 새 시대에는 아프리카의 진격이 일어나는 것에 대해 긴장해야 할 듯하다. 이 사례는 대규모 cherry picking 에 가까웠다 하는데, 웹에 대한 제약임을 감안하더라도, 여전히 나이지리아, 러시아, 프랑스 등이 상위 나라에 있는 것은 풀어야 할 문제이겠다.
+
+  
+
+### **wrtn vs Liner**  
+
+
+위 업체들과 가까이 가기 위해 노력하는 한국계 회사들. 한편으로 응원하지만, 상대들이 상대들인지라 응원하는 만큼 다른 한 편으로는 걱정이 많다. 제품 자체가 품질이 앞서니 뒷서니 하는 건 여기서는 논외로 하자 싶고...
+
+  
+
+먼저 wrtn.ai
+
+![wrtn-ai.png](/writing/chaesang-71/10.png)
+
+주중 주말 그래프가 딱 나타나지 않는 건, 아직 사용 패턴이 주 고객을 제대로 만나지 못한 거 같은 해석이고.. 생각보다 다른 나라의 트래픽이 많이 보이는 건, 도메인이 짧은 걸로 잡힌 채로 딱히 막지 않아서일 수도 있겠다. 과테말라부터 조금 낯설지만, 뭐 이 정도는 그래도 괜찮다 싶고.
+
+  
+
+다음은 wrtn.jp
+
+![wrtn-jp.png](/writing/chaesang-71/11.png)
+
+일본 서비스를 별도로 운영하기로 결정하면서 wrtn.jp 로 서비스하는 모양인데, 역시 .jp 도메인은 일본 내 새용자들이 뽑혀 올라온다. 한국의 절반 정도까지 올라왔고, 생각보다는 많이 선전하는 모습이다.
+
+  
+
+마지막으로 아래 기사에서 유명하다고 하는 라이너. 제품 이름과 딱 맞지 못하는 도메인을 가지고 운영하는데, ( www.getliner.com ) 이전에는 크롬 extension으로 highlighter 를 운영하면서 영어권 study 하는 고객들에게 쓰임이 있어 왔었다 한다. GenAI 시대에 LLM wrapper+ service를 운영한다고 하고, 좋은 기사도 나왔더랬다. [https://www.aitimes.com/news/articleView.html?idxno=158082](https://www.aitimes.com/news/articleView.html?idxno=158082)
+
+[**라이너, ‘생성 AI 웹 서비스 톱 50’서 전 세계 4위 기록 - AI타임스**
+
+개인화 인공지능(AI) 에이전트 전문 라이너(대표 김진우)는 글로벌 벤처캐피탈 앤드리슨 호로비츠가 발표한 ‘생성 AI 톱 100 소비자 앱(The Top 100 Gen AI Consumer Apps)’ 순위에서 전 세계 월간 웹 방문
+
+https://www.aitimes.com/news/articleView.html?idxno=158082](https://www.aitimes.com/news/articleView.html?idxno=158082) 
+
+  
+
+![getliner.png](/writing/chaesang-71/12.png)
+
+뭔가 많이 잘못되어 보인다.
+
+저 정도의 PV면 사용자의 형태에 따라 기대하는 weekly graph가 보여야 하겠다. 인기가 사글어 들어가며 숫자가 내려오는 것은 안타깝지만 그럴 수 있다고 생각하더라도.. 무엇보다 나라 분포가 매우 의심스럽다. 영어권에 쓰임이 많다고 하면서 top5에 미국이 없는 거나, 특히 global traffic 에 top 5 에 Iraq, Russia 가 있는 거면 생각보다 큰 일읠 수도 있겠다는 생각이다. 개인적인 견해로는 VPN 등으로 위장된 트래픽들이 wrtn 서비스를 이용해서 LLM service를 무상으로 쓰고 있는 걸로 의심된다. 특히 Iraq 가 탑에 있는 건 더 어두운 세력들이 있는 거 같아 걱정이 된다.
+
+  
+
+내부자가 아니라 반박의 여지가 있겠지만, 예를 들면 GA4 나 자체 event logger 에서는 특별한 일이 없다 할 수 있겠지만, VPN을 통과한 트래픽을 감지하지 못하고 serving 한 후라면 다른 리소스와 체크가 필요하다 하겠다. 개인적인 bias는 15년 넘은 업력의 similarweb이 유독 여기만 잘못 처리하고 있기가 설명이 더 힘들겠다. 만의 하나 그럴 수도 있으니, similarweb 측과 double check, (아마도) 무료인 Firebase Analytics event logger, 유료인 Amplitude event logger, 그리고 무엇보다 쿼리를 분석해서 설명이 가능하게 되기를 기대한다. 마케팅 없이 이라크에서 수십만의 트래픽이 오고 있다는 건 뭐가 이상해도 이상한 거다.
+
+  
+
+예기치 못한 사용자 혹은 MGQ ( machine generated query ) 의 공격은 resource 를 잡아 먹게 만들고, 특히 LLM 시대에 자원의 효율이 화두인 지금 혹시 먹잇감으로 나쁜 세력들에 이용당하고 있는 모습일까 걱정이고... 남의 회사에 걱정은 여기까지 하도록 하자..
