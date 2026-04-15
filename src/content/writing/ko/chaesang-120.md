@@ -22,7 +22,9 @@ draft: true
 
   
 
-![IMG\_2351.jpg](/writing/chaesang-120/01.jpg) 구름이 잔뜩 낀, 하지만 매력적인 서울 하늘
+![구름이 잔뜩 낀, 하지만 매력적인 서울 하늘](/writing/chaesang-120/01.jpg)
+
+*구름이 잔뜩 낀, 하지만 매력적인 서울 하늘*
 
   
 
@@ -40,7 +42,7 @@ draft: true
 
   
 
-![week2-1.png](/writing/chaesang-120/02.png)
+![](/writing/chaesang-120/02.png)
 
 이번 주에 있었던 일들로는 굵직굵직한 OpenAI 의 한국 행보와 구글 검색의 AI 모드 전면 배치 등이 있었다. 사상 최고를 경신하고 있는 코스피 자체도 관심 있게 챙겨야 하겠다.
 

@@ -17,7 +17,7 @@ draft: true
 자의 반, 타의 반으로 감투를 쓰고 새로운 환경에 떠넘겨지는 경우가 많을텐데, 그들에게 전하고 싶은 내용들을 아래의 주제들로 묶어 이야기를 담았다.  
   
 
-![manager-2.png](/writing/chaesang-66/01.png)
+![](/writing/chaesang-66/01.png)
 
 아래는 강의 링크.
 

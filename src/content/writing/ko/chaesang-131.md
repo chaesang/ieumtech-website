@@ -15,13 +15,13 @@ draft: true
 
 가까이, 멀리 단풍이 꽤 잘 보이는 몇번 없는 맑은 가을 날씨이고, 길거리에 두꺼운 외투들이 보이는 것으로 보아 금방 겨울이 될 것이리라 싶다. 캘리포니아에는 이제 우기가 시작되며 짧은 낮이 시작되었겠다.
 
-![IMG\_2861.jpg](/writing/chaesang-131/01.jpg)
+![](/writing/chaesang-131/01.jpg)
 
-![IMG\_2862.jpg](/writing/chaesang-131/02.jpg)
+![](/writing/chaesang-131/02.jpg)
 
-![IMG\_2863.jpg](/writing/chaesang-131/03.jpg)
+![](/writing/chaesang-131/03.jpg)
 
-![IMG\_2864.jpg](/writing/chaesang-131/04.jpg)
+![](/writing/chaesang-131/04.jpg)
 
   
 
@@ -36,7 +36,7 @@ draft: true
 
 [**Lessons from Google Search - part 2.pptx**](https://docs.google.com/presentation/d/1BhO656VwMfutlb3YmmOxEnWvpfsUEBA5/edit?slide=id.p1#slide=id.p1)
 
-![week11-1.png](/writing/chaesang-131/05.png)
+![](/writing/chaesang-131/05.png)
 
   
 

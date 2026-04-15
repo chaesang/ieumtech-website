@@ -19,11 +19,13 @@ draft: false
 
 제일 먼저 신기했던 건 오늘의 집의 도메인이 [https://ohou.se/](https://ohou.se/) 라는 것.. 처음에는 어색했지만, .co.kr / .com 보다 세련되어 보이는 거 인정. 혹시 country 때문에 부작용이 있을까 싶긴 하지만, 그건 Search console 에서 보이게 될테고, 일단 구글에서 잡히는 total results 는 1.48M, 구글봇이 열심히 읽어간 듯하고, houzz.com 이 5-6M indexed 인것과 비교해서 훌륭한 숫자라는 생각.
 
-![ohouse-total.jpg](/writing/chaesang-37/01.jpg) incognito window 에서 확인한 ohou.se 문서의 수
+![incognito window 에서 확인한 ohou.se 문서의 수](/writing/chaesang-37/01.jpg)
+
+*incognito window 에서 확인한 ohou.se 문서의 수*
 
 아래는 robots.txt.. 이 세상이 표준이 없다고 하지만, disallow all 로 시작하는 건 많이 어색한데, 그래도 구글봇이 가져가는 건 별 문제 없었나 보다 싶고... sitemap 이 따로 보이진 않는데.. 새로 URL 이 추가될 때마다 손을 봐야 하는 귀찮음 정도라면 뭐 이것도 나쁘지 않고...
 
-![ohouse.robots.jpg](/writing/chaesang-37/02.jpg)
+![](/writing/chaesang-37/02.jpg)
 
   
 
@@ -32,7 +34,9 @@ draft: false
 
 구글 검색에 빨간 이미지들이 나오고, 이어 나오는 G마켓과 오늘의 집의 SERP. 선전한 듯..
 
-![red-couch-google.jpg](/writing/chaesang-37/03.jpg) Google 검색 - "빨간 쇼파"
+![Google 검색 - "빨간 쇼파"](/writing/chaesang-37/03.jpg)
+
+*Google 검색 - "빨간 쇼파"*
 
 오래전부터 G마켓은 점유율 대비 구글 SEO 가 꽤 괜찮아 왔었고, 그에 비하면 몇 가지 체크 포인트.. 미국식 검색의 고인물의 시각이라는 점을 감안하시길..
 
@@ -46,7 +50,7 @@ draft: false
 
 **a)** ohou.se 에서 검색 결과 페이지는 아래와 같은 이른바 통합 검색 화면이다. 그런데, 구글이 선택한 것은 **사진 검색 결과 페이지.** 오늘의 집이 사진과 리뷰로 유명한 곳이긴 하지만, 이 덕에 쇼핑 페이지가 dup host elimination 된 거라고 하면, 담당자 입장에서 원하는 그림이 아니라 하겠다.
 
-![red-couch-ohouse.jpg](/writing/chaesang-37/04.jpg)
+![](/writing/chaesang-37/04.jpg)
 
 **b) title 에 있는 "219개"** - 여기에 있는 숫자는 아주 높은 확률로 정확하지 않은 숫자로, SEO 용 타이틀에 권장하지 않는다.
 
@@ -54,7 +58,7 @@ draft: false
 
 **d) 여기 타이틀을 오늘의집 으로 바뀌면 좋겠다.** 아마 방법이 있을 듯...
 
-![ohouse-result-title.jpg](/writing/chaesang-37/05.jpg)
+![](/writing/chaesang-37/05.jpg)
 
   
 
@@ -68,7 +72,7 @@ draft: false
 
 억지로 하면 이 정도... 소파/쇼파도 안 보이고, 빨갛지도 않고... 일부러 네이버가 싫어하는 것처럼 보인다...
 
-![red-couch-naver.jpg](/writing/chaesang-37/06.jpg)
+![](/writing/chaesang-37/06.jpg)
 
   
 

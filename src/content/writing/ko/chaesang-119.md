@@ -15,11 +15,11 @@ draft: true
 
 올해부터는 IFC 16, 17층을 서울 파이낸셜 허브에서 쓰고, 이 곳의 여의도 교육장을 빌려서 강의가 진행되고 있다. 작년과 달라진 환경이지만, 이게 여의치 않았을 경우 홍릉에서 수업이 진행될 뻔 했다고 하는데, 대기하는 공간이 조금 불편해 지긴 했지만, 수업 하는 환경은 그대로 진행하게 되었다. 다만 토요일이라 IFC 로 출입하는 에스컬레이터가 동작을 하지 않는 정도의 사소한 불편함은 감수해야 하겠다.
 
-![IMG\_2284.jpg](/writing/chaesang-119/01.jpg)
+![](/writing/chaesang-119/01.jpg)
 
-![IMG\_2286.jpg](/writing/chaesang-119/02.jpg)
+![](/writing/chaesang-119/02.jpg)
 
-![IMG\_2279.jpg](/writing/chaesang-119/03.jpg)
+![](/writing/chaesang-119/03.jpg)
 
 첫 주 여의도 강의장 주변 모습
 
@@ -44,9 +44,9 @@ draft: true
 
   
 
-![week1-1.png](/writing/chaesang-119/04.png)
+![](/writing/chaesang-119/04.png)
 
-![week1-2.png](/writing/chaesang-119/05.png)
+![](/writing/chaesang-119/05.png)
 
 첫 수업에 나눈 내용들
 
@@ -72,8 +72,8 @@ ps.
 
 수업 후에는 스타필드에서 AWS 와 메가존클라우드가 같이 진행하는 해커쏜 결과 발표를 참관,응원,지원하러 다녀 왔다. 코딩 어시스턴트 영역으로 Q developer, 재미난 아이디어들이 playable 데모로 보이는 등 여러 생각들이 드는 조금 긴 하루였다.
 
-![week1-4.png](/writing/chaesang-119/06.png)
+![](/writing/chaesang-119/06.png)
 
-![week1-3.png](/writing/chaesang-119/07.png)
+![](/writing/chaesang-119/07.png)
 
-![week1-5.png](/writing/chaesang-119/08.png)
+![](/writing/chaesang-119/08.png)

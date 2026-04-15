@@ -16,11 +16,11 @@ draft: true
 
 연휴 이후 첫 수업인데, 토요일에 강의장에서 일정이 있어 금요일 저녁으로 이동해서 수업을 진행하였다. 꽤 오랫동안 잊고 있었는데, 금요일 오후의 여의도는 토요일 오전보다 훨씬 북적이는 동네였다.
 
-![IMG\_2662.jpg](/writing/chaesang-126/01.jpg)
+![](/writing/chaesang-126/01.jpg)
 
-![IMG\_2663.jpg](/writing/chaesang-126/02.jpg)
+![](/writing/chaesang-126/02.jpg)
 
-![IMG\_2665.jpg](/writing/chaesang-126/03.jpg)
+![](/writing/chaesang-126/03.jpg)
 
   
 
@@ -40,11 +40,11 @@ draft: true
 
 ## **나눈 이야기들**
 
-![week7-1.png](/writing/chaesang-126/04.png)
+![](/writing/chaesang-126/04.png)
 
 한시간 분량의 수업을 준비하는 내용은 양에서는 적었지만, 추천 시스템 항목에서 MovieLens 데이터의 EDA 를 조금 진지하게 하게 되었는데, 학교에 있는 Chrome + colab 등으로 입코딩과 클릭 클릭을 해야 하는 수업이었다. 학교 PC 에 뭘 설치하기도 애매하기에 여러 방법을 고려해 봤지만, 이 정도가 맞는 거 같은데, 해 본 사람들에게는 아무 것도 아닌 일일 수도, 여전히 처음 해 본 사람들한테는 진입 장벽일 수 있겠다.
 
-![week7-2.png](/writing/chaesang-126/05.png)
+![](/writing/chaesang-126/05.png)
 
 학생들 각자 보고 싶은 데이터는 직접 보며 분석했으면 하는 마음에 pre-requisite 으로 Python 을 놓았고, 자유 방식의 EDA를 과제로 내었는데, 한 학생은 이 벽을 넘지 못하고 혹은 넘지 않고 과제를 drop 하였다. 코딩 자체를 평가 잣대로 놓지는 않기에 용기를 내기에 나쁘지 않은 환경이라 생각하는데 이래저래 아쉬움이 있다.
 
@@ -52,7 +52,7 @@ draft: true
 
 이후 근처의 식당에서 간담회를 진행했는데, 조금 자유로운 분위기에서 여러 이야기들을 나누며 명함들을 수집하였다. 절반 정도의 학생들이 참석을 하였고, 미래야 모른다지만, 이것도 인연인데 싶다.
 
-![IMG\_2672.jpg](/writing/chaesang-126/06.jpg)
+![](/writing/chaesang-126/06.jpg)
 
   
 

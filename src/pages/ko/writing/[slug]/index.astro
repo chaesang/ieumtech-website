@@ -33,13 +33,6 @@ const seriesTitle = entry.data.series ? await seriesDisplayTitle(entry.data.seri
   ogType="article"
   altLangPath={`/writing/${entry.slug}`}
 >
-  <style slot="head" is:inline>
-    body {
-      font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-      word-break: keep-all;
-      overflow-wrap: break-word;
-    }
-  </style>
   <main>
     <article class="writing-article">
       <div class="writing-article-inner">
@@ -79,7 +72,7 @@ const seriesTitle = entry.data.series ? await seriesDisplayTitle(entry.data.seri
 
 <style>
   .writing-article { padding: 48px 0 80px; }
-  .writing-article-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .writing-article-inner { max-width: 640px; margin: 0 auto; padding: 0 24px; }
   .writing-breadcrumb { margin-bottom: 24px; font-size: 0.875rem; }
   .writing-breadcrumb a { color: var(--color-muted); text-decoration: none; }
   .writing-breadcrumb a:hover { color: var(--color-accent); }

@@ -33,7 +33,9 @@ draft: false
 
   
 
-![image.png](/writing/chaesang-155/01.png) https://www.youtube.com/watch?v=luxS6jnPaDY&t=119s
+![https://www.youtube.com/watch?v=luxS6jnPaDY&t=119s](/writing/chaesang-155/01.png)
+
+*https://www.youtube.com/watch?v=luxS6jnPaDY&t=119s*
 
   
 

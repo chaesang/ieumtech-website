@@ -20,7 +20,7 @@ draft: true
 
 ### [**9주) 강의 update**](https://docs.google.com/presentation/d/164loDCluHQlKKrE0KFx89GW3PDfX1nuS0Rwwi8dr7wY/edit#slide=id.g1168ad8df56_0_7)
 
-![week9-2.png](/writing/chaesang-91/01.png)
+![](/writing/chaesang-91/01.png)
 
 SearchGPT 가 출시되었지만, 모두가 써 본 건 아니고, 현재까지는 기존의 ChatGPT 보다 썩 더 나아졌나 궁금한 정도의 사용성이고, 한편으로는 MS / Github / OpenAI 가 오랫동안 파트너를 할 것처럼 했지만, Claude 가 Github 에서 사용 가능하겠다 하였으며, 미 대선 결과 발표 전인데 빅테크들은 건실함을 자랑하고 있는 듯했다.
 

@@ -18,7 +18,9 @@ draft: true
 
 [3주) 강의 update](https://docs.google.com/presentation/d/1gxUGpOJZjC0fgSG5nY26HUHeeYsdYCnK54dQG81Y7vY/edit#slide=id.g1168ad8df56_0_7)  
 
-![week 3.png](/writing/chaesang-78/01.png) 금융권에서는 금리 인하만큼 큰 일이 드물 듯.
+![금융권에서는 금리 인하만큼 큰 일이 드물 듯.](/writing/chaesang-78/01.png)
+
+*금융권에서는 금리 인하만큼 큰 일이 드물 듯.*
 
 아래는 수업 시간에 같이 훑은 토막 비디오들. 채팅 창에서 소통을 하듯 이야기를 하고 싶었고, 아래는 script를 붙여 놓았다. 채팅을 통해 질문도 하나 들어와서 조금 더 이야기할 수 있었다.
 

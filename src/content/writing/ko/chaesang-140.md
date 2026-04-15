@@ -32,7 +32,7 @@ draft: false
 
 이 불편함은 아마도 낮선 미국 생활에서 만났던 "X" 들 때문일 것이다. 생활 기억 속에서 "X"는 도로에서의 "PED XING"마크에서 처음 시작했다. 이게 "보행자 건넘 주의", "warning for pedestrian crossing" 이라는 걸 꽤 나중에 알게 되었고, X는 cross 처럼 보이기도 해서 공간을 잘 활용하는 사례라 고개 끄덕인 기억들도 있다.
 
-![Ped-Xing-Sign-K-6536.gif](/writing/chaesang-140/01.gif)
+![](/writing/chaesang-140/01.gif)
 
   
 

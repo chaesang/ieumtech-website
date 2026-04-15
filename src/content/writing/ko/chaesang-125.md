@@ -32,7 +32,7 @@ draft: true
 
 [**5주) 강의 update**](https://docs.google.com/presentation/d/13ir7t3StwNEbw2jtLDwA7OTdGNshRG1qHXP2HCUn3qQ/edit?slide=id.g1168ad8df56_0_7#slide=id.g1168ad8df56_0_7)
 
-![week5-1.png](/writing/chaesang-125/01.png)
+![](/writing/chaesang-125/01.png)
 
   
 
@@ -68,7 +68,7 @@ draft: true
 
 ## **준비한 내용들 - 6주**
 
-![week6-1.png](/writing/chaesang-125/02.png)
+![](/writing/chaesang-125/02.png)
 
   
 

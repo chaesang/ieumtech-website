@@ -26,7 +26,7 @@ draft: true
 
 [**https://www.stateof.ai/**](https://www.stateof.ai/)
 
-![week8.png](/writing/chaesang-86/01.png)
+![](/writing/chaesang-86/01.png)
 
 앤트로픽의 컴퓨터 위에서 동작하는 Agent 가 신기했고, nature 지에 소개된 구글의 Synth ID 도 구글스러운 접근이라 생각이었다. 어떻게 접근해야 할 지 아직은 막막한 AI 각서까지..
 

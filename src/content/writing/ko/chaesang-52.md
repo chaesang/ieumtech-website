@@ -12,7 +12,9 @@ draft: true
 
 학부 2학년 때 전공 필수 과목으로 실험이 있었고, 당시 논리설계 과목의 실습 버젼으로 하드웨어를 만지는 시간이었었다. AND / OR / NOT 등의 [**논리 게이트**](https://namu.wiki/w/%EB%85%BC%EB%A6%AC%20%ED%9A%8C%EB%A1%9C?from=%EB%85%BC%EB%A6%AC%20%EA%B2%8C%EC%9D%B4%ED%8A%B8#s-3) 를 전선에 연결해서 되는지 안 되는지의 실습 버젼이었고, [**플립플롭**](https://namu.wiki/w/%ED%94%8C%EB%A6%BD%ED%94%8C%EB%A1%AD#s-2.4) , [**PLA / PAL**](https://testbook.com/digital-electronics/programmable-logic-devices) 등까지 cover 할 수 있었다. 컴퓨터 이외의 것으로 진행하는 실험이 처음이었어서 신기한 경험이었다. 선배들이 빵판이라 불렀고, 영어로 진짜 breadboard..
 
-![breadboard.jpg](/writing/chaesang-52/01.jpg) 구글 검색 결과 빵판
+![구글 검색 결과 빵판](/writing/chaesang-52/01.jpg)
+
+*구글 검색 결과 빵판*
 
   
 
@@ -49,7 +51,9 @@ draft: true
 
 실험 제출용 부품들을 sheet 에서 펼쳐 놓고, flip flop 같은 것들 살 것들을 적어 놓고, 가서 하나씩 뒤지고, 전선과 wrapping socket은 다른 친구들과 공동구매하고, 꽤 비쌌어서 가격 네고도 꽤 하고 했던 기억이다. [74AC74](https://docs.rs-online.com/1e03/0900766b8002aeaf.pdf) - Dual D Flip-Flop 4개 사는 대신 [74AC374](https://www.ti.com/lit/ds/symlink/cd74ac374.pdf?ts=1708123161349&ref_url=https%253A%252F%252Fwww.google.com%252F) - Octal D-Type Flip-Flop 하나를 산다든지 등의 비용 효율화도 일어나고 있었고, 아래는 지금 봐도 여전히 비싼 소켓들이다.
 
-![socket.jpg](/writing/chaesang-52/02.jpg) 여전히 비싼 소켓들. 다리 하나에 100원 이상
+![여전히 비싼 소켓들. 다리 하나에 100원 이상](/writing/chaesang-52/02.jpg)
+
+*여전히 비싼 소켓들. 다리 하나에 100원 이상*
 
   
 

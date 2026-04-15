@@ -28,11 +28,11 @@ https://fastcampus.co.kr/dev\_online\_newcomputer](https://fastcampus.co.kr/dev_
 
 6-7명의 강사들이 서로 역할을 나누어 하는 강의이고, 다른 전문가 분들과 겹치지 않는 내용들을 담고 싶은 욕심에 제목과 커리큘럼 짜는데 애를 많이 먹었다. 강의의 제목도 자극적이지만, PM 과 많은 논의 끝에 만든 커리큘럼의 파트 이름은 "**실무에서 만나는 이슈들"** 이고, **1) 데이터 기반 의사 결정** **2) 운영과 모니터링** **3) 서비스 설계 및 개발** 의 세 부분으로 나누어 준비했었다. 일반 입문에서 빠트리기 쉬운 내용들을 포함하기 위해 노력을 많이 했는데, 공을 들일 만큼 커리큘럼은 꽤 잘 나온 거 같아 꽤 뿌듯했다.
 
-![fastcampus-1.jpg](/writing/chaesang-45/01.jpg)
+![](/writing/chaesang-45/01.jpg)
 
-![fastcampus-2.jpg](/writing/chaesang-45/02.jpg)
+![](/writing/chaesang-45/02.jpg)
 
-![fastcampus-3.jpg](/writing/chaesang-45/03.jpg)
+![](/writing/chaesang-45/03.jpg)
 
   
 

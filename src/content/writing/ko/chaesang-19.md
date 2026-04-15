@@ -18,7 +18,7 @@ draft: true
 
 ### [10주) 강의 update](https://docs.google.com/presentation/d/1hXUhjg3r7DzSFv8LQWItlwRNYyq2_7v3HsA_IX_WZ_Y/edit#slide=id.g1168ad8df56_0_7)
 
-![1\*F2Yxg2EPpvzEZr-tiKxraQ.png](/writing/chaesang-19/01.png)
+![](/writing/chaesang-19/01.png)
 
 한국 업체들의 이야기들이 몇 개 있었고, 어느덧 LLM 이 일반 명사처럼 쓰이고 있다는 사실이 신기하다. 이 기사를 읽는 사람들한테는 이제 설명 해 주지 않아도 되는 개념 ?
 

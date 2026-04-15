@@ -18,7 +18,7 @@ draft: true
 
 ### [12주 강의 update](https://docs.google.com/presentation/d/1UolFo4bbDpA-kKPESex6oJNB_o9BBelcI_jwmsxoD8I/edit#slide=id.g1168ad8df56_0_7)
 
-![1\*N\_Fp76rKmNTTahwW8omQEw.png](/writing/chaesang-21/01.png)
+![](/writing/chaesang-21/01.png)
 
 지난 주 OpenAI 의 발표 이후 Meta 와 Google 의 update들.
 

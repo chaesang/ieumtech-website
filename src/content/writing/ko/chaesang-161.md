@@ -40,7 +40,9 @@ https://www.youtube.com/channel/UCbmNph6atAoGfqLoCL\_duAg](https://www.youtube.c
 
 1층에 자리잡으려면 코스튬이 필요했거나 아주 긴 줄을 기다렸어야 했는데, 당시 일하던 곳이 근처여서 귀퉁이에서 운 좋게 볼 수 있었다. 할로윈도 아닌데 아래의 기괴한 옷을 입은 사람들이 줄을 서 있었고, 용감한 몇몇은 콘서트 티켓을 받았던 걸로..
 
-![gaga-1.png](/writing/chaesang-161/01.png) 의상을 갖춰 입은 관객들.
+![의상을 갖춰 입은 관객들.](/writing/chaesang-161/01.png)
+
+*의상을 갖춰 입은 관객들.*
 
   
 

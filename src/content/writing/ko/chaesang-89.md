@@ -38,11 +38,11 @@ Tesla commonly refers to two major entities: ( Claude )
 
 그리고 셋 다 사람에 대해 차분하게 설명해 준다. 화면 구성도 군더더기 없음.
 
-![google-teslta.png](/writing/chaesang-89/01.png)
+![](/writing/chaesang-89/01.png)
 
-![gemini-tesla.png](/writing/chaesang-89/02.png)
+![](/writing/chaesang-89/02.png)
 
-![claude-tesla.png](/writing/chaesang-89/03.png)
+![](/writing/chaesang-89/03.png)
 
   
 
@@ -54,9 +54,9 @@ Tesla commonly refers to two major entities: ( Claude )
 
 일단 사람이라고 힘주어 말하고 있음.
 
-![bing-tesla.png](/writing/chaesang-89/04.png)
+![](/writing/chaesang-89/04.png)
 
-![liner-tesla.png](/writing/chaesang-89/05.png)
+![](/writing/chaesang-89/05.png)
 
   
 
@@ -72,11 +72,11 @@ Bing 은 wikipedia 인물 페이지를 올려 힘주어 말하려 하지만, 오
 
 일단 회사라고 힘주어 말하고 있음.
 
-![chatgpt-tesla.png](/writing/chaesang-89/06.png)
+![](/writing/chaesang-89/06.png)
 
-![wrtn-tesla.png](/writing/chaesang-89/07.png)
+![](/writing/chaesang-89/07.png)
 
-![perplexity-tesla.png](/writing/chaesang-89/08.png)
+![](/writing/chaesang-89/08.png)
 
 ChatGPT 는 깔끔하게 사람 이야기가 없음. 네가 사람을 찾을 리가 없어 라는 듯한 군더더기 없는 답변. 뭔가 불만이면 다시 물어 보든가... 라고 묻는 듯하다.
 
@@ -94,9 +94,9 @@ perplexity 는 글은 회사인데, 이미지들은 사람. 가장 헷갈렸음.
 
   
 
-![naver-tesla-2.png](/writing/chaesang-89/09.png)
+![](/writing/chaesang-89/09.png)
 
-![naver-tesla1.png](/writing/chaesang-89/10.png)
+![](/writing/chaesang-89/10.png)
 
   
 

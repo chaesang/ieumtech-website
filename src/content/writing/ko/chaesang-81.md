@@ -26,7 +26,9 @@ draft: true
 
 [5주) 강의 update](https://docs.google.com/presentation/d/1lu95jj_LDKE-i6tmOeSIT4--Ika0SrcvKB_qXPiQF5Y/edit#slide=id.g1168ad8df56_0_7)
 
-![week5.png](/writing/chaesang-81/01.png) 모든 이슈들은 openai 를 중심으로 펼쳐지는 듯.
+![모든 이슈들은 openai 를 중심으로 펼쳐지는 듯.](/writing/chaesang-81/01.png)
+
+*모든 이슈들은 openai 를 중심으로 펼쳐지는 듯.*
 
 [추천시스템 - 3](https://docs.google.com/presentation/d/10o9MnUzsIdBWGnNPm8o7Q5_Mr9fjsVpDVEHoHtn2UlE/edit#slide=id.g1168ad8df56_0_7)
 
@@ -40,7 +42,9 @@ draft: true
 
   
 
-![Collaborative\_Filtering\_in\_Recommender\_Systems.jpg](/writing/chaesang-81/02.jpg) https://en.wikipedia.org/wiki/Collaborative\_filtering
+![https://en.wikipedia.org/wiki/Collaborative\_filtering](/writing/chaesang-81/02.jpg)
+
+*https://en.wikipedia.org/wiki/Collaborative\_filtering*
 
 제품의 구성 따라 아래의 예제들처럼 접근하시라.. 라는 잠정적인 결론.
 

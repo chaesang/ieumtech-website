@@ -14,7 +14,9 @@ draft: false
 
   
 
-![clir-1.png](/writing/chaesang-162/01.png) WBC 2026 에 대해 Claude 의 설명들
+![WBC 2026 에 대해 Claude 의 설명들](/writing/chaesang-162/01.png)
+
+*WBC 2026 에 대해 Claude 의 설명들*
 
 영어로 다녀 오는 이 방법은 꽤 오래 전부터 사용되던 CLIR(Cross Language Information Retrieval) 이라 불러 왔던 기법이고, 오늘의 주제는 구글 검색에서 이 내용을 직접적으로 구현하려 했던 당시의 기록, 기억들. '기억' 부류의 글이지만, 요즘 드는 생각도 한 스푼.
 

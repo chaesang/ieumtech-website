@@ -33,7 +33,7 @@ Learn more about leveraging AI responsibly, committing to security, and keeping 
 
 https://www.microsoft.com/en-us/startups/blog/microsoft-ignite-2024-wrap-up-highlights-and-resources/](https://www.microsoft.com/en-us/startups/blog/microsoft-ignite-2024-wrap-up-highlights-and-resources/) 
 
-![image.png](/writing/chaesang-154/01.png)
+![](/writing/chaesang-154/01.png)
 
   
 

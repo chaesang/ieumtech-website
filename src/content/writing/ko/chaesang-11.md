@@ -32,7 +32,9 @@ draft: true
 
 ## 강의 전
 
-![1\*E-1APBcAAVph4PZqTASKlw.jpeg](/writing/chaesang-11/01.jpeg) 라운지에서 보이는 여의도의 한강 뷰
+![라운지에서 보이는 여의도의 한강 뷰](/writing/chaesang-11/01.jpeg)
+
+*라운지에서 보이는 여의도의 한강 뷰*
 
 KAIST 이지만, 강의장은 여의도 IFC에 있었고, 늘 보던 뷰의 살짝 변형된 곳이지만, 맑은 날의 한강뷰는 역시 확 트이는 공간이었다.
 

@@ -23,7 +23,9 @@ draft: true
 
 작은 일들을 주로 하는 센서, 컨트롤러 세상에 C 언어를 이용해서 고급 프로그래밍을 할 수 있고, 더 복잡한 일을 한다.. 등의 내용이었고, 가장 큰 고민거리는 이걸 한글로 어떻게 표현할 것인가 라는 것이었다. 참고로 네이버와 인터넷이 없던 시절에 내가 가지고 있던 영한 사전은 1980년대 출판되었던 것이었을 것이다.
 
-![naver-dict-embedded.jpg](/writing/chaesang-40/01.jpg) naver 사전 - embedded
+![naver 사전 - embedded](/writing/chaesang-40/01.jpg)
+
+*naver 사전 - embedded*
 
 도서관을 드나들며 꽤 오랫동안 고민 끝에 '내장형 시스템'이라 번역을 했고, 가장 큰 고민은 반대를 '외장형' 이라 한다면 그것에 해당하는 영어는?? 이었더랬다. 다행히도 이후 기억은 검수하시던 선배가 흐뭇해 하셨던 것과 완성된 번역의 나름대로의 해피엔딩이다. 글 하나 읽고 번역했다고 견문이 얼마나 넓어졌겠냐마는, 그또한 새로운 경험이었고 이후 '임베디드 시스템'이 한 시대를 훑고 지나갈 때 든든했던 경험이다.
 
@@ -39,7 +41,9 @@ draft: true
 
 [나무위키 - 임베디드 시스템](https://namu.wiki/w/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C%20%EC%8B%9C%EC%8A%A4%ED%85%9C) 에 당당하게 한 분야를 차지한 것은 물론이고, 어느순간부터 '내장형'이라고 부르는 것은 없어진 기억이다. 실제로 회사 다닐 때 ARM7 같은 거 만지면서는 Linux 가 올라가는데 어딜 봐서 이게 내장형... 이라며 툴툴거렸던 기억들도 있다. 이후 스마트폰 등이 나오면서 다른 시대와 다른 제품군으로 변화하며 기억 속으로 들어가게 되나보다.
 
-![embedded-chatgpt.jpg](/writing/chaesang-40/02.jpg) 불친절한 chatgpt - embedded
+![불친절한 chatgpt - embedded](/writing/chaesang-40/02.jpg)
+
+*불친절한 chatgpt - embedded*
 
   
 
@@ -48,6 +52,8 @@ draft: true
 
 한동안 한글도 영어도 잊고 지내다가 회사에서 AI/ML 공부와 일들을 하면서 embedding 이라는 것을 만나게 되었다. 어원이 같은 현재분사와 과거분사의 차이이니 비슷할 만도 한데, 많이 달랐더랬다. 하드웨어 따위는 묻지 않은 순수한 수학과 벡터 세상의 물건이랄까... NLP 등으로 오더라도 수학에서 차원을 줄이는 노력으로 변환되고 나면, 뭐 나름의 이유가 있겠지... 이건 한글로 번역하기도 버겁고.. 굳이 안 해도... 등등..
 
-![embedding-chatgpt.jpg](/writing/chaesang-40/03.jpg) 불친절한 chatgpt - embedding... 이건 봐 주자.
+![불친절한 chatgpt - embedding... 이건 봐 주자.](/writing/chaesang-40/03.jpg)
+
+*불친절한 chatgpt - embedding... 이건 봐 주자.*
 
 요즘에 ChatGPT 이후 LLM 을 쓰면서 다시 나타났다. embed\_model 처럼 쓰이는 걸 보면 아주 잠깐 흠칫 하긴 하지만, 다행히 꼬박꼬박 embedding 이라고 쓰고 있어 익숙해 지곤 한다. Pretraining 같은 거 안 하면 쓸 일이 있을까 잠깐 생각했었다지만, fine tuning , RAG 등으로 오면서 가장 핫한 이슈들 중에 하나가 되고, [https://deepinfra.com/models?type=embeddings](https://deepinfra.com/models?type=embeddings) 같은 데서 하나 잘 고르는 것도 경쟁력이 되기도...

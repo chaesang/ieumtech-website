@@ -14,11 +14,11 @@ draft: true
 
 아직 더위가 한창인 여의도 강의장을 9개월만에 다시 방문하였다. 전임교수 등록이 말소되었다가 다시 신청하는 등 사소한 해프닝이 있었지만, 위치도 그대로고 강의장도 여전했다. 이번 학기의 회사, 숙소인 분당 정자역에서 여의도까지 금요일 오후의 출퇴근 길은 꽤 어려운 일이 되었지만, 작년에 한 번 해 봤다고 금방 익숙해 지는 느낌도 있고, 지원팀 분들의 친절함마저도 익숙하게 느껴졌다.
 
-![IMG\_9458.jpg](/writing/chaesang-76/01.jpg)
+![](/writing/chaesang-76/01.jpg)
 
-![IMG\_9461.jpg](/writing/chaesang-76/02.jpg)
+![](/writing/chaesang-76/02.jpg)
 
-![IMG\_9462.jpg](/writing/chaesang-76/03.jpg)
+![](/writing/chaesang-76/03.jpg)
 
 흐리지만 탁 트인 여의도 강의장과 넙죽이
 
@@ -40,7 +40,9 @@ draft: true
 
 [1주) 추천 시스템 - 시작하며](https://docs.google.com/presentation/d/16_-95ccof7gwgkwt0_cDs5087TPJxbYnKn8XHgYJOck/edit#slide=id.g1168ad8df56_0_7)
 
-![day1.png](/writing/chaesang-76/04.png) 한 학기 동안 다루게 될 내용들
+![한 학기 동안 다루게 될 내용들](/writing/chaesang-76/04.png)
+
+*한 학기 동안 다루게 될 내용들*
 
 ## 나눈 이야기들
 

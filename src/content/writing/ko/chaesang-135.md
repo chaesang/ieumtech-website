@@ -16,11 +16,11 @@ draft: true
 
 토요일 새벽에 공항에 도착했고, 간밤에 큰 눈이 왔다던 겨울의 서울 풍경이었다. 바로 여의도로 출근해서 이야기들을 진행했다.
 
-![IMG\_3055.jpg](/writing/chaesang-135/01.jpg)
+![](/writing/chaesang-135/01.jpg)
 
-![IMG\_3056.jpg](/writing/chaesang-135/02.jpg)
+![](/writing/chaesang-135/02.jpg)
 
-![IMG\_3060.jpg](/writing/chaesang-135/03.jpg)
+![](/writing/chaesang-135/03.jpg)
 
 마지막 학기에는 학생들의 과제 발표를 나누는 시간으로 기획했었는데 시간이 비게 되어서 그 공간을 이번 학기 최근에 진행한 여러 대가들의 공개 강의들을 준비했다. 미처 준비가 되지 못한 시간들을 유튜브로 때우는 거 같은 미안함도 있었지만, 나름 돌발 변수가 생긴 상황에 어중간한 내용들을 보여 주기보다는 꽤 공들여서 최신의 의미 있는 내용들을 준비했다.
 
@@ -31,7 +31,7 @@ draft: true
 
 [**14주) 강의 update**](https://docs.google.com/presentation/d/1pProO36lOVpi5X-fQztlk1Xl3oQwX1jOOdhgdD92ccs/edit?slide=id.g1168ad8df56_0_7#slide=id.g1168ad8df56_0_7)
 
-![14-1.png](/writing/chaesang-135/04.png)
+![](/writing/chaesang-135/04.png)
 
 여느 주와 다름 없이 다양한 영역에서 꽤 여러 일들이 일어난 한 주였고, Ilya Sutskever 를 비롯한 대가들의 다른 방식으로 AGI 에 접근하는 것에 대한 이야기들이 관심을 끌었으며, 은근히 SW 적으로 치고 나오는 NVidia 이야기들도 주목할 만하겠다.
 
@@ -39,7 +39,7 @@ draft: true
 
 [**Stanford AI Club: Jeff Dean on Important AI Trends**](https://www.youtube.com/watch?v=AnTw_t21ayE)
 
-![14-2.png](/writing/chaesang-135/05.png)
+![](/writing/chaesang-135/05.png)
 
 얼마전 Jeff Dean 이 구글에서 일어났던 프로젝트들 중심으로 AI trend 를 설명해 준 내용들이 담겨 있다. ‘내가 해 봐서 아는’ 것들 위주로만 모아 놓은 것인데도 깊이가 깊고, 덤으로 최근 Gemini 가 적용되는 제품들이 소개된다.
 

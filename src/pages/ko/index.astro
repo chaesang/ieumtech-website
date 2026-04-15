@@ -1,8 +1,8 @@
 ---
 import Base from '~/layouts/Base.astro';
-import { getRecentWriting } from '~/lib/collections';
+import { getSeriesHighlights } from '~/lib/collections';
 
-const recentEntries = await getRecentWriting(3, 'ko');
+const highlights = await getSeriesHighlights('ko');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -34,27 +34,20 @@ const jsonLd = {
   altLangPath="/"
 >
   <style slot="head" is:inline>
-    body {
-      font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-      word-break: keep-all;
-      overflow-wrap: break-word;
-    }
     .recent-writing { padding: 48px 0; border-top: 1px solid var(--color-border); }
-    .recent-writing-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; }
+    .recent-writing-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 24px; }
     .recent-writing-header h2 { margin: 0; font-size: 1.25rem; }
     .recent-writing-all { font-size: 0.875rem; color: var(--color-muted); text-decoration: none; }
     .recent-writing-all:hover { color: var(--color-accent); }
-    .recent-writing-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }
-    .recent-writing-list a {
-      display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
-      padding: 12px 0; color: var(--color-text); text-decoration: none;
-      border-bottom: 1px solid var(--color-border);
-    }
-    .recent-writing-list a:hover .recent-writing-title { color: var(--color-accent); }
-    .recent-writing-title { font-size: 0.9375rem; font-weight: 500; flex: 1; }
-    .recent-writing-date { font-size: 0.8125rem; color: var(--color-muted); flex-shrink: 0; }
-    .connecting-item { letter-spacing: -0.01em; }
-    .hero-vision { font-style: normal; }
+    .recent-writing-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 24px; }
+    .recent-writing-item { padding: 16px 0; border-top: 1px solid var(--color-border); }
+    .recent-writing-series { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; text-decoration: none; color: var(--color-text); }
+    .recent-writing-series:hover .recent-writing-series-title { color: var(--color-accent); }
+    .recent-writing-series-title { font-size: 1rem; font-weight: 600; }
+    .recent-writing-count { font-size: 0.8125rem; color: var(--color-muted); flex-shrink: 0; }
+    .recent-writing-desc { font-size: 0.875rem; color: var(--color-muted); margin: 6px 0 10px; line-height: 1.6; }
+    .recent-writing-latest { font-size: 0.9375rem; color: var(--color-text); text-decoration: none; display: inline-block; }
+    .recent-writing-latest:hover { color: var(--color-accent); }
     .highlights-grid { display: flex; flex-direction: column; gap: 14px; }
     .highlight-card { text-align: center; }
     .highlight-text { font-size: 0.9375rem; font-weight: 500; color: var(--color-text); line-height: 1.5; }
@@ -118,22 +111,27 @@ const jsonLd = {
       </section>
     </div>
 
-    {recentEntries.length > 0 && (
+    {highlights.length > 0 && (
       <section class="recent-writing">
         <div class="container">
           <div class="recent-writing-header">
-            <h2>최근 글</h2>
+            <h2>글 — 세 갈래의 기록</h2>
             <a href="/ko/writing" class="recent-writing-all">전체 보기 →</a>
           </div>
           <ul class="recent-writing-list">
-            {recentEntries.map((entry) => {
-              const slug = entry.slug.split('/').pop()!;
-              const d = entry.data.date.toLocaleDateString('ko-KR', { year: 'numeric', month: 'short', day: 'numeric' });
+            {highlights.map(({ meta, count, latest }) => {
+              const latestSlug = latest.slug.split('/').pop()!;
               return (
-                <li>
-                  <a href={`/ko/writing/${slug}`}>
-                    <span class="recent-writing-title">{entry.data.title}</span>
-                    <span class="recent-writing-date">{d}</span>
+                <li class="recent-writing-item">
+                  <a class="recent-writing-series" href={`/ko/writing/series/${meta.data.slug}`}>
+                    <span class="recent-writing-series-title">{meta.data.titles.ko}</span>
+                    <span class="recent-writing-count">{count}편</span>
+                  </a>
+                  {meta.data.descriptions.ko && (
+                    <p class="recent-writing-desc">{meta.data.descriptions.ko}</p>
+                  )}
+                  <a class="recent-writing-latest" href={`/ko/writing/${latestSlug}`}>
+                    → {latest.data.title}
                   </a>
                 </li>
               );
