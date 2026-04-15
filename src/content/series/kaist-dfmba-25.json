@@ -1,0 +1,10 @@
+{
+  "slug": "kaist-dfmba-25",
+  "titles": { "ko": "KAIST DFMBA 2025", "en": "KAIST DFMBA 2025" },
+  "descriptions": {
+    "ko": "KAIST 경영대학 디지털금융 MBA — AI와 추천 시스템 강의 노트 (2025).",
+    "en": "Lecture notes for KAIST DFMBA — AI and Recommendation Systems (2025)."
+  },
+  "order": 60,
+  "featured": false
+}

@@ -1,0 +1,13 @@
+{
+  "slug": "svc-analysis",
+  "titles": {
+    "ko": "혼자 해 보는 서비스 분석",
+    "en": "Solo Service Analyses"
+  },
+  "descriptions": {
+    "ko": "사용자의 입장 혹은 참관인의 입장에서 '내맘대로 제품 분석' 글을 모아 둡니다. 사소한 걱정과 지적에서 시작해 가급적 제안까지 담아 봅니다.",
+    "en": "Product reviews from a user's or bystander's vantage point — small worries and critiques, usually with a concrete suggestion."
+  },
+  "order": 10,
+  "featured": true
+}

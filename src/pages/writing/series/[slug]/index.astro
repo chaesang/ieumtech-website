@@ -1,23 +1,28 @@
 ---
 import Base from '~/layouts/Base.astro';
 import WritingCard from '~/components/WritingCard.astro';
-import { getActiveSeries, getWritingBySeries } from '~/lib/collections';
+import { getActiveSeries, getWritingBySeries, getSeriesMeta } from '~/lib/collections';
 
 export async function getStaticPaths() {
-  const series = await getActiveSeries('en');
-  return series.map((slug) => ({ params: { slug } }));
+  // Cover both EN and KO series slugs so /writing/series/* works even when falling back to KO entries
+  const en = await getActiveSeries('en');
+  const ko = await getActiveSeries('ko');
+  const all = Array.from(new Set([...en, ...ko]));
+  return all.map((slug) => ({ params: { slug } }));
 }
 
 const { slug } = Astro.params;
-const entries = await getWritingBySeries(slug!, 'en');
-// Fallback to Korean if English empty
-const koEntries = entries.length === 0 ? await getWritingBySeries(slug!, 'ko') : [];
-const displayEntries = entries.length > 0 ? entries : koEntries;
-const isKoFallback = entries.length === 0 && koEntries.length > 0;
+const enEntries = await getWritingBySeries(slug!, 'en');
+const isKoFallback = enEntries.length === 0;
+const entries = isKoFallback ? await getWritingBySeries(slug!, 'ko') : enEntries;
+const displayLang = isKoFallback ? 'ko' : 'en';
+const meta = await getSeriesMeta(slug!);
+const title = meta?.data.titles[displayLang] ?? slug!;
+const description = meta?.data.descriptions[displayLang];
 ---
 <Base
-  title={`${slug} — Writing — Chaesang Jung`}
-  description={`Writing series: ${slug}`}
+  title={`${title} — Writing — Chaesang Jung`}
+  description={description ?? `Writing series: ${title}`}
   lang="en"
   path={`/writing/series/${slug}`}
   ogType="website"
@@ -30,19 +35,18 @@ const isKoFallback = entries.length === 0 && koEntries.length > 0;
           <a href="/writing">← Writing</a>
         </nav>
         <p class="writing-eyebrow">Series</p>
-        <h1>{slug}</h1>
-        <p class="writing-count">{displayEntries.length} {displayEntries.length === 1 ? 'entry' : 'entries'}</p>
+        <h1>{title}</h1>
+        {description && <p class="writing-lead">{description}</p>}
+        <p class="writing-count">{entries.length} {entries.length === 1 ? 'entry' : 'entries'}</p>
       </div>
     </section>
 
     <section class="writing-list">
       <div class="container">
-        {displayEntries.length === 0 ? (
+        {entries.length === 0 ? (
           <p class="writing-empty">No entries in this series.</p>
         ) : (
-          displayEntries.map((entry) => (
-            <WritingCard entry={entry} lang={isKoFallback ? 'ko' : 'en'} />
-          ))
+          entries.map((entry) => <WritingCard entry={entry} lang={displayLang} />)
         )}
       </div>
     </section>
@@ -50,18 +54,9 @@ const isKoFallback = entries.length === 0 && koEntries.length > 0;
 </Base>
 
 <style>
-  .writing-hero {
-    padding: 64px 0 32px;
-    border-bottom: 1px solid var(--color-border);
-  }
-  .writing-breadcrumb {
-    margin-bottom: 16px;
-    font-size: 0.875rem;
-  }
-  .writing-breadcrumb a {
-    color: var(--color-muted);
-    text-decoration: none;
-  }
+  .writing-hero { padding: 64px 0 32px; border-bottom: 1px solid var(--color-border); }
+  .writing-breadcrumb { margin-bottom: 16px; font-size: 0.875rem; }
+  .writing-breadcrumb a { color: var(--color-muted); text-decoration: none; }
   .writing-breadcrumb a:hover { color: var(--color-accent); }
   .writing-eyebrow {
     font-size: 0.75rem;
@@ -73,20 +68,17 @@ const isKoFallback = entries.length === 0 && koEntries.length > 0;
   }
   .writing-hero h1 {
     font-size: 2rem;
-    margin: 0 0 8px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    margin: 0 0 12px;
+    line-height: 1.3;
   }
-  .writing-count {
-    font-size: 0.875rem;
+  .writing-lead {
+    font-size: 1rem;
     color: var(--color-muted);
-    margin: 0;
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 0 16px;
   }
-  .writing-list {
-    padding: 32px 0 80px;
-  }
-  .writing-empty {
-    color: var(--color-muted);
-    padding: 32px 0;
-    text-align: center;
-  }
+  .writing-count { font-size: 0.875rem; color: var(--color-muted); margin: 0; }
+  .writing-list { padding: 32px 0 80px; }
+  .writing-empty { color: var(--color-muted); padding: 32px 0; text-align: center; }
 </style>

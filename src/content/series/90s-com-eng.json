@@ -1,0 +1,13 @@
+{
+  "slug": "90s-com-eng",
+  "titles": {
+    "ko": "90년대 컴퓨터 공학 이야기",
+    "en": "A 1990s Computer Engineering Story"
+  },
+  "descriptions": {
+    "ko": "80~90년대에 컴퓨터를 처음 만나 컴퓨터공학과를 다니던 시절의 기억들.",
+    "en": "Memoir: meeting computers in the 80s and studying computer engineering in the 90s."
+  },
+  "order": 70,
+  "featured": false
+}

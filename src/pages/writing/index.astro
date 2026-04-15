@@ -1,13 +1,16 @@
 ---
 import Base from '~/layouts/Base.astro';
 import WritingCard from '~/components/WritingCard.astro';
-import { getPublishedWriting } from '~/lib/collections';
+import SeriesCard from '~/components/SeriesCard.astro';
+import { getPublishedWriting, getActiveSeriesWithMeta } from '~/lib/collections';
 
-const entries = await getPublishedWriting('en');
-// Fallback: if no English entries, show Korean ones with a notice.
-const fallbackKo = entries.length === 0 ? await getPublishedWriting('ko') : [];
-const displayEntries = entries.length > 0 ? entries : fallbackKo;
-const isKoFallback = entries.length === 0 && fallbackKo.length > 0;
+const enEntries = await getPublishedWriting('en');
+const enSeries = await getActiveSeriesWithMeta('en');
+
+const isKoFallback = enEntries.length === 0;
+const entries = isKoFallback ? await getPublishedWriting('ko') : enEntries;
+const seriesList = isKoFallback ? await getActiveSeriesWithMeta('ko') : enSeries;
+const displayLang = isKoFallback ? 'ko' : 'en';
 ---
 <Base
   title="Writing — Chaesang Jung | Ieum Tech"
@@ -34,14 +37,26 @@ const isKoFallback = entries.length === 0 && fallbackKo.length > 0;
       </div>
     </section>
 
+    {seriesList.length > 0 && (
+      <section class="writing-series">
+        <div class="container">
+          <h2 class="section-label">Series</h2>
+          <div class="series-grid">
+            {seriesList.map(({ meta, count }) => (
+              <SeriesCard series={meta} count={count} lang={displayLang} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
     <section class="writing-list">
       <div class="container">
-        {displayEntries.length === 0 ? (
+        <h2 class="section-label">Latest</h2>
+        {entries.length === 0 ? (
           <p class="writing-empty">No entries yet.</p>
         ) : (
-          displayEntries.map((entry) => (
-            <WritingCard entry={entry} lang={isKoFallback ? 'ko' : 'en'} />
-          ))
+          entries.map((entry) => <WritingCard entry={entry} lang={displayLang} />)
         )}
       </div>
     </section>
@@ -62,6 +77,7 @@ const isKoFallback = entries.length === 0 && fallbackKo.length > 0;
     color: var(--color-muted);
     line-height: 1.7;
     max-width: 640px;
+    margin: 0;
   }
   .writing-notice {
     font-size: 0.8125rem;
@@ -72,8 +88,24 @@ const isKoFallback = entries.length === 0 && fallbackKo.length > 0;
     border-radius: 4px;
     display: inline-block;
   }
+  .section-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-muted);
+    font-weight: 600;
+    margin: 0 0 20px;
+  }
+  .writing-series {
+    padding: 40px 0 16px;
+  }
+  .series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
   .writing-list {
-    padding: 32px 0 80px;
+    padding: 40px 0 80px;
   }
   .writing-empty {
     color: var(--color-muted);
