@@ -21,7 +21,7 @@ draft: true
 
 ## **준비한 내용들**
 
-![16-1.png](/writing/chaesang-138/01.png)
+![](/writing/chaesang-138/01.png)
 
 금융이 주가 되는 유명 AI 관련 학회는 없지만, AI 학회들에 꾸준히 workshop 한 세션들은 열리고 있어서 이들을 소개하는 것을 마지막 시간 소재로 이야기했다. 기말 과제들을 리뷰하며 몇 개는 진지한 논문의 형태로 가도 되지 않을까 생각도 했었지만, 여러 제약들이 가끔 아쉬울 때가 있다.
 
@@ -50,4 +50,4 @@ draft: true
 
   
 
-![IMG\_3143.jpg](/writing/chaesang-138/02.jpg)
+![](/writing/chaesang-138/02.jpg)

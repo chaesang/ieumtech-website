@@ -24,7 +24,9 @@ draft: true
 
 [AI 강의 - 3강](https://docs.google.com/presentation/d/17HJqBgP7ou_KC7E9SxVYWWxnEEo0KlGfftDnRz0jEQU/edit#slide=id.g1168ad8df56_0_7)
 
-![week2.png](/writing/chaesang-77/01.png) 9월 2주에 있었던 이슈들
+![9월 2주에 있었던 이슈들](/writing/chaesang-77/01.png)
+
+*9월 2주에 있었던 이슈들*
 
 위 업계 소식에서 하이퍼라이트 인용은 Matt Shumer의 반성문을 이야기하려 했음이다.
 

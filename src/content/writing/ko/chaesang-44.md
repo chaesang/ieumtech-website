@@ -28,7 +28,9 @@ https://okky.kr/articles/1479127](https://okky.kr/articles/1479127) 
 
   
 
-![okky.agenda.jpg](/writing/chaesang-44/01.jpg) 매니저의 시각에서 주변의 기대와 할 일들 등을 나누어 보았다.
+![매니저의 시각에서 주변의 기대와 할 일들 등을 나누어 보았다.](/writing/chaesang-44/01.jpg)
+
+*매니저의 시각에서 주변의 기대와 할 일들 등을 나누어 보았다.*
 
 타산지석, 역지사지, 동병상련 등이 전하고 싶었던 메시지이고, 내용들보다 실제 사례들을 청중들이 많이 듣고 싶어하던 거 같았고, best practice 중에서는 위임과 situational leadership 에 대해 이야기를 좀 더 듣고 싶어 하셔서 okky.kr 에 보충 자료를 올려 놓는 A/S 까지를 했었다. [https://okky.kr/articles/1482832#note-1769420](https://okky.kr/articles/1482832#note-1769420)
 

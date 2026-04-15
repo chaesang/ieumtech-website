@@ -14,7 +14,7 @@ draft: true
 
 예전에 보던 [**도라 디 익스플로러**](https://en.wikipedia.org/wiki/Dora_the_Explorer) 가 생각이 났고, AI 시대에도 여전히 2D 만화는 인기인가..? 특히 아이들한테..?
 
-![IMG\_2597.jpg](/writing/chaesang-124/01.jpg)
+![](/writing/chaesang-124/01.jpg)
 
 당연히 처음 보는 화면이어서 도통 모르겠기에 AI 들에 물어 보았는데.. 다 다르게들 답변한다. 어떤 게 정답일까 ?
 
@@ -30,13 +30,13 @@ Claude : Xavier Riddle and the Secret Museum
 
   
 
-![IMG\_2598.PNG](/writing/chaesang-124/02.png)
+![](/writing/chaesang-124/02.png)
 
-![IMG\_2599.PNG](/writing/chaesang-124/03.png)
+![](/writing/chaesang-124/03.png)
 
-![IMG\_2600.PNG](/writing/chaesang-124/04.png)
+![](/writing/chaesang-124/04.png)
 
-![IMG\_2601.PNG](/writing/chaesang-124/05.png)
+![](/writing/chaesang-124/05.png)
 
   
 
@@ -44,7 +44,7 @@ Claude : Xavier Riddle and the Secret Museum
 
 오늘의 생각 : 검색 = 인덱싱 !! 비슷한 이미지+정보를 찾아 내는 vector search 는 이럴 때 빛이 나는 듯..
 
-![molly-lens.png](/writing/chaesang-124/06.png)
+![](/writing/chaesang-124/06.png)
 
   
 
@@ -52,4 +52,4 @@ Claude : Xavier Riddle and the Secret Museum
 
 참고로 Lens 는 search by image 를 쓰지 않아서인지 아주 엉뚱한 답들이 나온다. 굳이 한글로 되어 있는 설정을 과하게 존중해서일까...
 
-![IMG\_2607.PNG](/writing/chaesang-124/07.png)
+![](/writing/chaesang-124/07.png)

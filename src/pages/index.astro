@@ -1,11 +1,11 @@
 ---
 import Base from '~/layouts/Base.astro';
-import { getRecentWriting } from '~/lib/collections';
+import { getSeriesHighlights } from '~/lib/collections';
 
-const recent = await getRecentWriting(3, 'en');
-const recentFallback = recent.length === 0 ? await getRecentWriting(3, 'ko') : [];
-const recentEntries = recent.length > 0 ? recent : recentFallback;
-const recentLang = recent.length > 0 ? 'en' : 'ko';
+const enHighlights = await getSeriesHighlights('en');
+const highlights = enHighlights.length > 0 ? enHighlights : await getSeriesHighlights('ko');
+const highlightLang: 'en' | 'ko' = enHighlights.length > 0 ? 'en' : 'ko';
+const writingBase = highlightLang === 'ko' ? '/ko/writing' : '/writing';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -38,19 +38,19 @@ const jsonLd = {
 >
   <style slot="head" is:inline>
     .recent-writing { padding: 48px 0; border-top: 1px solid var(--color-border); }
-    .recent-writing-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; }
+    .recent-writing-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 24px; }
     .recent-writing-header h2 { margin: 0; font-size: 1.25rem; }
     .recent-writing-all { font-size: 0.875rem; color: var(--color-muted); text-decoration: none; }
     .recent-writing-all:hover { color: var(--color-accent); }
-    .recent-writing-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }
-    .recent-writing-list a {
-      display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
-      padding: 12px 0; color: var(--color-text); text-decoration: none;
-      border-bottom: 1px solid var(--color-border);
-    }
-    .recent-writing-list a:hover .recent-writing-title { color: var(--color-accent); }
-    .recent-writing-title { font-size: 0.9375rem; font-weight: 500; flex: 1; }
-    .recent-writing-date { font-size: 0.8125rem; color: var(--color-muted); flex-shrink: 0; }
+    .recent-writing-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 24px; }
+    .recent-writing-item { padding: 16px 0; border-top: 1px solid var(--color-border); }
+    .recent-writing-series { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; text-decoration: none; color: var(--color-text); }
+    .recent-writing-series:hover .recent-writing-series-title { color: var(--color-accent); }
+    .recent-writing-series-title { font-size: 1rem; font-weight: 600; }
+    .recent-writing-count { font-size: 0.8125rem; color: var(--color-muted); flex-shrink: 0; }
+    .recent-writing-desc { font-size: 0.875rem; color: var(--color-muted); margin: 6px 0 10px; line-height: 1.6; }
+    .recent-writing-latest { font-size: 0.9375rem; color: var(--color-text); text-decoration: none; display: inline-block; }
+    .recent-writing-latest:hover { color: var(--color-accent); }
     .highlights-grid { display: flex; flex-direction: column; gap: 14px; }
     .highlight-card { text-align: center; }
     .highlight-text { font-size: 0.9375rem; font-weight: 500; color: var(--color-text); line-height: 1.5; }
@@ -123,23 +123,27 @@ const jsonLd = {
       </section>
     </div>
 
-    {recentEntries.length > 0 && (
+    {highlights.length > 0 && (
       <section class="recent-writing">
         <div class="container">
           <div class="recent-writing-header">
-            <h2>Recent Writing</h2>
-            <a href={recentLang === 'ko' ? '/ko/writing' : '/writing'} class="recent-writing-all">All writing →</a>
+            <h2>Writing — Three Threads</h2>
+            <a href={writingBase} class="recent-writing-all">All writing →</a>
           </div>
           <ul class="recent-writing-list">
-            {recentEntries.map((entry) => {
-              const slug = entry.slug.split('/').pop()!;
-              const href = recentLang === 'ko' ? `/ko/writing/${slug}` : `/writing/${slug}`;
-              const d = entry.data.date.toLocaleDateString(recentLang === 'ko' ? 'ko-KR' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+            {highlights.map(({ meta, count, latest }) => {
+              const latestSlug = latest.slug.split('/').pop()!;
+              const title = meta.data.titles[highlightLang] ?? meta.data.slug;
+              const desc = meta.data.descriptions[highlightLang];
               return (
-                <li>
-                  <a href={href}>
-                    <span class="recent-writing-title">{entry.data.title}</span>
-                    <span class="recent-writing-date">{d}</span>
+                <li class="recent-writing-item">
+                  <a class="recent-writing-series" href={`${writingBase}/series/${meta.data.slug}`}>
+                    <span class="recent-writing-series-title">{title}</span>
+                    <span class="recent-writing-count">{count} {count === 1 ? 'entry' : 'entries'}</span>
+                  </a>
+                  {desc && <p class="recent-writing-desc">{desc}</p>}
+                  <a class="recent-writing-latest" href={`${writingBase}/${latestSlug}`}>
+                    → {latest.data.title}
                   </a>
                 </li>
               );

@@ -12,7 +12,9 @@ draft: true
 
 얼마전부터 주말에 시간 내서 보게 되는 "성시경의 고막남친", 비슷한 옛날 음악이라서인지 음악은 음악대로 친근한데, 김조한, 성시경 두 가수들이 예전에 처음 만나 이야기하던 스토리 중 Fist Bump 가 있었다. 쌀보리 게임.. ?? 조금 더했던 기억이 나서 몇 자 적어 본다..
 
-![fist-1.png](/writing/chaesang-165/01.png) https://www.youtube.com/watch?v=Y6HuNylrSAU
+![https://www.youtube.com/watch?v=Y6HuNylrSAU](/writing/chaesang-165/01.png)
+
+*https://www.youtube.com/watch?v=Y6HuNylrSAU*
 
 [https://www.youtube.com/watch?v=Y6HuNylrSAU](https://www.youtube.com/watch?v=Y6HuNylrSAU)
 
@@ -28,6 +30,8 @@ draft: true
 
   
 
-![89a44e1b-3629-48f3-8e5a-c90be2391208.jpeg](/writing/chaesang-165/02.jpeg) by Nano-banana
+![by Nano-banana](/writing/chaesang-165/02.jpeg)
+
+*by Nano-banana*
 
 이후 프렌즈 같은 생활 미드 등을 더 열심히 보는 결심을 하게 되었고, 팬대믹 때 많이 배우기도 해서, 어색하지만 이제 저 정도 될 일은 없겠다 싶다.

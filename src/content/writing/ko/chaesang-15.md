@@ -29,7 +29,7 @@ draft: true
 
 ### [6주차 강의 업데이트](https://docs.google.com/presentation/d/1kxSyq4vc_shp1wn-pwwbZvDPu08RwnkfBN5fk8BpQbU/edit#slide=id.g1168ad8df56_0_7)
 
-![1\*Z0aLSflSNL6BOsSlm09u1w.png](/writing/chaesang-15/01.png)
+![](/writing/chaesang-15/01.png)
 
   
 

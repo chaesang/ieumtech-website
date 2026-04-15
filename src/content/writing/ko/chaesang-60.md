@@ -27,7 +27,9 @@ draft: false
 
 미국 본사의 메인 캠퍼스에 과학계 위인들의 흉상이 설치되어 있었는데, 그 중 한 분의 이름이다. 한글로는 쿠스토, 영어 이름으로는 [Jacques-Yves Cousteau](https://en.wikipedia.org/wiki/Jacques_Cousteau) 라는 분이고, 한국에서 위인들을 접한 나로서는 뒤늦게 알게 되었지만, 'deep sea explorer' 로 불리는 분이다. 2차 대전 이후 미지의 바다를 항해하고 그 중 바다 안을 집중해서 탐험하는 것으로 유명했다 하고 미국에서 자란 친구들한테는 한두번 들어본 사람이었을 테니 캠퍼스에 흉상도 있었던 것이었겠다. 검색 팀이 근처에 있어서 밥 먹고 산책 중에 자주 보던 분이긴 하다.
 
-![google-campus-paolo-vescia (1).jpg](/writing/chaesang-60/01.jpg) https://blog.travelmarx.com/2013/08/google-heads-legends-of-sea-sculptures.html
+![https://blog.travelmarx.com/2013/08/google-heads-legends-of-sea-sculptures.html](/writing/chaesang-60/01.jpg)
+
+*https://blog.travelmarx.com/2013/08/google-heads-legends-of-sea-sculptures.html*
 
   
 
@@ -41,11 +43,13 @@ draft: false
 
 약간의 논의 끝에 과제 이름은 쿠스토 선생님의 대표 배 이름인 칼립소로 정해진다. 아래 사진의 조금 평범하게 생긴 배 들의 이름이고, 연구를 주 목적으로 하던 배 이름이라 하였다.
 
-![600px-\_Calypso\_\_-\_Montreal,\_1980.jpg](/writing/chaesang-60/02.jpg) https://en.wikipedia.org/wiki/RV\_Calypso
+![https://en.wikipedia.org/wiki/RV\_Calypso](/writing/chaesang-60/02.jpg)
+
+*https://en.wikipedia.org/wiki/RV\_Calypso*
 
 그런데, 이 이름이 그리스 로마 신화때부터 나오던 여신의 이름.. 그리고 영화 캐리비안의 해적들에서 약간 무섭지만 여신으로 등장하면서 사람들의 입에 찰지게 붙게 되었고, 과제도 성공적으로 자리잡게 되었다.
 
-![220px-Calypso\_receiving\_Telemachus\_and\_Mentor\_in\_the\_Grotto\_detail.jpg](/writing/chaesang-60/03.jpg)
+![](/writing/chaesang-60/03.jpg)
 
 바다 속을 탐험하는 모선의 의미로 알려지며 검색 팀 내에서 "Calypso Team" 으로 불리게 되었고, 영광스럽게 첫번째 과제를 Calypso 라는 이름으로 세상에 내놓게 된다. 이후 3년간 검색 팀의 한쪽 최전선에서 50명의 멤버들과 함께 여러 팀들과 재미난 경험들을 하게 되었다. 팀 이름의 한정판 티셔츠, 팀원들을 위한 global workshop 등 좋은 기억들이 있었고, 이후 Calypso 의 운명처럼 3년 후 과제와 팀은 해산하며 저편으로 사라지게 된다.
 

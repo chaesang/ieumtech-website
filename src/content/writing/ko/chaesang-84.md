@@ -20,7 +20,7 @@ draft: true
 
 [**7주) 강의 update**](https://docs.google.com/presentation/d/1N_gaVJVxYT1srlAep4-36ry0V2N4dgepXZv8IzoBllE/edit#slide=id.g2897381f274_0_23)
 
-![week7.png](/writing/chaesang-84/01.png)
+![](/writing/chaesang-84/01.png)
 
 지난 주의 노벨상들의 임팩트가 너무 커서 다른 뉴스들이 초라하게 느껴지게 되었다. 제프리 힌턴과 얀르쿤은 여전히 서로 다른 시각에서 인공지능의 현재와 미래를 이야기하고 있고, 앤트로픽도 나를 잊지 말아 달라는 메시지로 읽히는 글들을 올리며 주목을 끌려 하는 상황인 거로 보인다.
 
@@ -36,7 +36,7 @@ draft: true
 
 유사 쇼핑몰이지만 잘 정의된 추천을 가지고 있는 구글 플레이스토어를 완제품으로써 리뷰하는 것의 뒷부분을 진행했다. 지난 주의 제품으로서의 챌린지와 지표들에 이어 이번 시간에는 각 제품들의 구성과 역사 약간과 함께 실제로 진행했던 과제 몇 개를 선택해서 이야기를 나누었다.
 
-![week7-1.png](/writing/chaesang-84/02.png)
+![](/writing/chaesang-84/02.png)
 
 아래 케이스 스터디로 뽑은 세 과제들은 오래 된 기억이지만, 당시 한국의 상황에서 각각 잘 정의된 문제를 풀어 나가는 과정을 이야기한 내용들이라 많이 나누고 싶은 이야기들이긴 한데, 추상적으로 다루게 되니 어떻게 전해졌을까 하는 생각도 있다.
 
@@ -50,7 +50,7 @@ draft: true
 
 아래는 이 리포트에서 이야기하는2024년의 예측
 
-![stateofai-2024.png](/writing/chaesang-84/03.png)
+![](/writing/chaesang-84/03.png)
 
 ## **마치며**
 

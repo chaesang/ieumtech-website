@@ -20,11 +20,11 @@ draft: true
 
 아래는 시간차 어긋난 곳에서 진행한 미국 서부의 명절 스케치들..
 
-![IMG\_3020.jpg](/writing/chaesang-134/01.jpg)
+![](/writing/chaesang-134/01.jpg)
 
-![IMG\_2940.jpg](/writing/chaesang-134/02.jpg)
+![](/writing/chaesang-134/02.jpg)
 
-![IMG\_3022.jpg](/writing/chaesang-134/03.jpg)
+![](/writing/chaesang-134/03.jpg)
 
   
 
@@ -33,7 +33,7 @@ draft: true
 
 [**13주) 강의 update**](https://docs.google.com/presentation/d/1g3Tflhrr8pg0wzvLO1IkkIU1X6XKoHGUS_PddZ9w75Y/edit?slide=id.g1168ad8df56_0_7#slide=id.g1168ad8df56_0_7)
 
-![11-4.png](/writing/chaesang-134/04.png)
+![](/writing/chaesang-134/04.png)
 
 알파고 이후에 알파스타가 스타크래프트 2 프로토스로 인간을 이겼다고 했는데, Grok 과 T1 과의 5:5 롤 대전은 그것대로 꽤 기대되는 게 있다.
 
@@ -51,7 +51,7 @@ draft: true
 
 학기 시작하기 전에 녹화 영상으로 미리 준비해 놓았던 내용 중 마지막으로 아껴 놓았던 ‘실무에서 만나는…” 시리즈를 나누었다. 몇년 전에 FastCampus 에서 진행했던 “현실 세상의 컴퓨터공학 지식 with 30가지 실무 시나리오 초격차 패키지” 라는 강의 셋트( [https://fastcampus.co.kr/dev\_online\_newcomputer](https://fastcampus.co.kr/dev_online_newcomputer) ) 의 한 부분으로 준비했던 내용인데, 전공자의 시각에서 생각해 보니 필요했던 내용들 위주로, 비전공자가 이거라도 꼭 배워야 한다면 이라는 시각으로 준비한 내용들이었다. 굳이 금융으로 한정짓지는 않더라도 전공자들과 비전공자들이 일터에서 이야기하게 될 때 서로를 위해 알아 두면 하는 내용들을 모았더랬다. 다 합하면 5시간이 넘는 분량이어서 마지막 하나는 수업과 상관 없이 optional 로 시청할 수 있도록 하였다.
 
-![11-4-2.png](/writing/chaesang-134/05.png)
+![](/writing/chaesang-134/05.png)
 
   
 

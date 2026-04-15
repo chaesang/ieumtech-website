@@ -44,7 +44,7 @@ draft: false
 
 ### **1\. perplexity.ai**
 
-![perplexity-1012.png](/writing/chaesang-82/01.png)
+![](/writing/chaesang-82/01.png)
 
 오늘의 1등. reference doc 들이 아슬아슬했지만, 오른쪽 screenshot image 들이 좋은 이미지 줌. 옥의 티라 한다면 오른쪽에 youtube thumbnail 이 그대로 올라오게 되는데, 아래 화학상은 유튜브 채널 주인의 얼굴이 크게 나와 불편했음.
 
@@ -52,7 +52,7 @@ draft: false
 
 ### 2\. chatgpt
 
-![chatgpt-1012.png](/writing/chaesang-82/02.png)
+![](/writing/chaesang-82/02.png)
 
 영어로 답 해 줘서 2등. 'searched' 가 아직 사용자에게 특별한 신뢰를 주지는 않고 있음. nobelprize.org 를 잘 걸어 올려서 결과가 잘 나온 듯함.
 
@@ -60,9 +60,9 @@ draft: false
 
 **3\. gemini**
 
-![gemini-1-1012.png](/writing/chaesang-82/03.png)
+![](/writing/chaesang-82/03.png)
 
-![gemini-2-1012.png](/writing/chaesang-82/04.png)
+![](/writing/chaesang-82/04.png)
 
 한글 결과를 잘 주었지만 3등.
 
@@ -72,21 +72,21 @@ draft: false
 
 ### **4\. claude.ai**
 
-![claude-1012.png](/writing/chaesang-82/05.png)
+![](/writing/chaesang-82/05.png)
 
 갑자기 품질이 떨어지는 거 같다고 의심하게 만드는 결과. 4, 5위는 "발표했는데?" 의 결과 화면으로 정해짐...
 
-![claude-2-1012.png](/writing/chaesang-82/06.png)
+![](/writing/chaesang-82/06.png)
 
   
 
 ### **5\. wrtn.ai**
 
-![wrtn-1012.png](/writing/chaesang-82/07.png)
+![](/writing/chaesang-82/07.png)
 
 오른쪽에 reference들을 가지고도 해석을 안 하는 혹은 못하는 멍청이 역할. 한편으로 한국 회사라 응원하지만, 걱정도 많음..
 
-![wrtn-2-1012.png](/writing/chaesang-82/08.png)
+![](/writing/chaesang-82/08.png)
 
 아래에 button 으로 뜨는 쿼리들도 결과가 너무 후짐. 클릭하고 후회하는 버튼은 보여 주면 안 된다고 구글에서 배웠음...
 
@@ -97,11 +97,11 @@ draft: false
 
 1\. google.com
 
-![google-1012.png](/writing/chaesang-82/09.png)
+![](/writing/chaesang-82/09.png)
 
 검색 세션을 여러 개 연결하는 건 gemini 처럼 자유롭지 않지만, 아래 검색 결과는 검색 엔진이 사용자에게 줄 수 있는 최고/최선의 화면. 위의 엔진들이랑 붙어도 전혀 꿀리지 않음.
 
-![google-2-1012.png](/writing/chaesang-82/10.png)
+![](/writing/chaesang-82/10.png)
 
   
 
@@ -109,12 +109,12 @@ draft: false
 
   
 
-![bing-1012.png](/writing/chaesang-82/11.png)
+![](/writing/chaesang-82/11.png)
 
-![duckduckgo.png](/writing/chaesang-82/12.png)
+![](/writing/chaesang-82/12.png)
 
   
 
-![brave.png](/writing/chaesang-82/13.png)
+![](/writing/chaesang-82/13.png)
 
-![naver-1012.png](/writing/chaesang-82/14.png)
+![](/writing/chaesang-82/14.png)

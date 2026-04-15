@@ -20,7 +20,9 @@ draft: false
 
 AI 들에게 물어보는 것도 오랫만이라 다들 많이 변했을 거고, 유료 무료 헷갈리는 부분들도 있을테지만, 사용자로서 나는 기존 검색에 물어 봐야 할까? 이미지 + 어떤 prompt를 써야 할까 여럿 고민이 되는 순간이었다.
 
-![IMG\_2018.jpg](/writing/chaesang-117/01.jpg) 오늘 사용한 이미지
+![오늘 사용한 이미지](/writing/chaesang-117/01.jpg)
+
+*오늘 사용한 이미지*
 
   
 
@@ -42,7 +44,9 @@ https://www.wikitree.co.kr/articles/1070066](https://www.wikitree.co.kr/articles
 
 ## **구글 렌즈 ( 10/10 )**
 
-![IMG\_2024.PNG](/writing/chaesang-117/02.png) 구글 렌즈 검색 결과
+![구글 렌즈 검색 결과](/writing/chaesang-117/02.png)
+
+*구글 렌즈 검색 결과*
 
 언젠가부터 렌즈는 엔터 버튼이 없어졌다. 대신 추가적인 입력을 받으려는 화면을 구글 **이미지로** 검색 결과를 보여 준다. 더 물어볼 거 없이 정답이 나왔고, 신문기사에 인용되는 등의 유명한 그림에 대해서는 search URLs by image 가 아주 잘 작동한다. 이미지 분석이고 뭐고 간에 이 이미지를 가지고 있는 문서들을 모아 오면서 거기서 정답을 찾았음이리라.
 
@@ -56,7 +60,7 @@ search by image 를 바로 부르고 있지만, 신문 기사들의 아슬아슬
 
 가까스로 #거룩한 밤 이 아래에 태그로 보여 아하.. 싶은 정도. 아무 거나 클릭해서 읽어 봤으면 제목을 알았겠지 ??
 
-![google-서현.png](/writing/chaesang-117/03.png)
+![](/writing/chaesang-117/03.png)
 
   
 
@@ -67,9 +71,13 @@ search by image 를 바로 부르고 있지만, 신문 기사들의 아슬아슬
 
   
 
-![clova-0805.png](/writing/chaesang-117/04.png) 클로바 결과
+![클로바 결과](/writing/chaesang-117/04.png)
 
-![IMG\_2020.PNG](/writing/chaesang-117/05.png) ChatGPT 결과
+*클로바 결과*
+
+![ChatGPT 결과](/writing/chaesang-117/05.png)
+
+*ChatGPT 결과*
 
   
 

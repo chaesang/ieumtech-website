@@ -18,7 +18,7 @@ draft: true
 
 ### [15주 강의 update](https://docs.google.com/presentation/d/1vkH00Yq3s0AFe1GV4UHGH6ywr3YSIVN5TtLqA3K4QgU/edit#slide=id.g1168ad8df56_0_7)
 
-![1\*50mwjIib7NO4qijqv1ImIA.png](/writing/chaesang-24/01.png)
+![](/writing/chaesang-24/01.png)
 
 기대를 저버리지 않고, Gemini 가 런치. 뉴스 라인이 복잡했는데, 세 가지 포인트. 1) 뭔가 비교를 끝까지 제대로 안 하고 대충 한 느낌 ? 2) PR 팀 일 열심히 했는데 ? 보는 시각 따라서는 왠지 아슬아슬한 것 같기도.. 3) 이렇게 여러 개의 blog 들이 cross-product 로 뭘 한 적이 있었던가 ?
 

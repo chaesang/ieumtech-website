@@ -22,7 +22,7 @@ draft: true
 
 ### [9주) 강의 update](https://docs.google.com/presentation/d/1qq2lUMxNGtwtuXJoM_5lEsbVyZMK1yDJUEDxKpMeq0I/edit#slide=id.g1168ad8df56_0_7)
 
-![1\*-mFpAwhf6H4ZGDIsEAbe2A.png](/writing/chaesang-18/01.png)
+![](/writing/chaesang-18/01.png)
 
 뉴스 상으로 금융 쪽에서 카카오뱅크 사건 이상의 것들이 눈에 들어오지 않았고, 금방 올 거 같았던 저작권쪽 소송이 나왔는데, 특정 회사가 특정 서비스만 콕 찍어서 내고 있는게 눈여겨 볼 지점이라 생각한다. 개인적으로 구글 검색에서의 경험으로 문서의 양보다 authority있는 문서들의 quality 등이 이슈가 계속 될텐데, 특정 사안들, 잊혀질 권리 등을 결국 아주 오래 전의 robots.txt , sitemap 등으로 거슬러 가야 할텐데, re-indexing vs re-training 에서 견적이 안 나오게 될 듯하다. LLM 앞단에 검색이 붙어 있어야 할텐데, 그건 구글이나 빙 정도나 할 수 있는 것일테여서 뭔가 또 빙빙 도는 느낌이랄까…
 

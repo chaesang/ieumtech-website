@@ -18,7 +18,7 @@ draft: true
 
 ### [13주 강의 update](https://docs.google.com/presentation/d/1hIBLp3ViW6keGTMV7x3D2xDcgbBPIXWoq0R8RYHIIOs/edit#slide=id.g1168ad8df56_0_7)
 
-![1\*9jsIYhHb08GyBoDGUy1OuA.png](/writing/chaesang-22/01.png)
+![](/writing/chaesang-22/01.png)
 
 OpenAI 쿠데타 사건으로 한 주 내내 너무 시끄러웠음. 먹고 살기 바쁜데 이런 것까지 알아야 하나 라는 생각과 내가 왜, 어디까지 알아야 하는 걸까 라는 생각.
 

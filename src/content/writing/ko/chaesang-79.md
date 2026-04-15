@@ -30,7 +30,9 @@ draft: true
 
 [추천시스템 - 2](https://docs.google.com/presentation/d/1TsfVUnPDwucslUTSouuaTBIiCAxPYv6xWcJ4E_51rvw/edit#slide=id.g1168ad8df56_0_7)
 
-![week4.png](/writing/chaesang-79/01.png) 바람 잘 날 없는 OpenAI
+![바람 잘 날 없는 OpenAI](/writing/chaesang-79/01.png)
+
+*바람 잘 날 없는 OpenAI*
 
 먼저 때마침 국가 주도의 몇몇 기사들이 있어 인용할 수 있었다. 비록 국적은 다른 상황이지만, 좋은 의지의 따뜻한 마음들이 모여 미래에 도움이 되었으면 하는 바램과 함께 너무나 많은 바람들로 인한 걱정도 많다 하겠다. 글로벌 인덱스에서는 생각 이상으로 싱가폴의 영향력이 이미 커 있다는 사실에 적잖이 놀랬고, 다시 여러 자료들을 들여다 보게 되었다.
 

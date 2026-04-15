@@ -14,7 +14,9 @@ draft: true
 
 시차 적응에 힘들게 보낸 한 주였고, 급조된 일정이 꼬이긴 했지만 새로운 phase 를 진행할 수 있었다. 여의도의 시설들은 여전히 refresh & focus 에 훌륭한 환경이었다.
 
-![1\*6M\_Jk3gIb2XYuoRUI1gk2A.jpeg](/writing/chaesang-16/01.jpeg) 여의도 강의실의 수업 시간표
+![여의도 강의실의 수업 시간표](/writing/chaesang-16/01.jpeg)
+
+*여의도 강의실의 수업 시간표*
 
 AI 파트를 어떻게 채울까와 중간에 공유할 10분짜리 비디오를 어떤 걸 놓을까 고민하던 차에 기다리던 [state of ai report 의 2023년 버젼](https://www.stateof.ai/)이 나와서 일단 요약본만 오늘 공유하게 되었다.
 
@@ -24,7 +26,7 @@ AI 파트를 어떻게 채울까와 중간에 공유할 10분짜리 비디오를
 
 ### [7주) 강의 update](https://docs.google.com/presentation/d/1YjCQ4m6ZGfX9bmuhwcEEYCLVsKNB-eCa3EeU8KQV6CA/edit#slide=id.g1168ad8df56_0_7)
 
-![1\*Fbrtk0dVTkmNSbQetb2zNA.png](/writing/chaesang-16/02.png)
+![](/writing/chaesang-16/02.png)
 
   
 
@@ -40,9 +42,13 @@ AI 쪽 update로 [huggingface](https://huggingface.co/) 를 소개하고, upstag
 
   
 
-![1\*sKBi0p9XkjYFBvSty-EQcg.png](/writing/chaesang-16/03.png) 2023년 예측과 성적표
+![2023년 예측과 성적표](/writing/chaesang-16/03.png)
 
-![1\*jYy4x4i0AD3nHrK-KVTlMA.png](/writing/chaesang-16/04.png) 이후 12개월의 예측
+*2023년 예측과 성적표*
+
+![이후 12개월의 예측](/writing/chaesang-16/04.png)
+
+*이후 12개월의 예측*
 
   
 

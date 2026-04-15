@@ -12,7 +12,9 @@ draft: true
 
 인공지능과 추천 시스템 강의의 한 축은 고전 도서인 추천 시스템 입문 책을 같이 훑어 보면서 내용을 숙지하는 것이었다. 운명처럼 만나기도 했지만, 이른바 ‘교과서’에 해당하는 내용들이었고, requirement , evaluation 쪽에 중점을 두고 해석하려 하였다.
 
-![0\*vjGa3ZZ0xA\_0diTK.jpg](/writing/chaesang-26/01.jpg) https://m.hanbit.co.kr/store/books/book\_view.html?p\_code=B7471666713
+![https://m.hanbit.co.kr/store/books/book\_view.html?p\_code=B7471666713](/writing/chaesang-26/01.jpg)
+
+*https://m.hanbit.co.kr/store/books/book\_view.html?p\_code=B7471666713*
 
   
 

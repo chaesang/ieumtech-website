@@ -30,7 +30,7 @@ draft: true
 
 연구실에서 개인용 PC 가 인터넷에 연결해서 생기기 전, 몇몇 워크스테이션이 이름이 지어져 있었는데, 그 중 내가 만졌던 녀석의 이름은 sneezy 이다. 2년간 주인 잘못 만나 고생 많이 한 불쌍한 녀석인데...백설공주에 나오는 난장이의 이름 중 하나로 코를 훌쩍거리는 녀석? 분의 이름이라 한다. 백설 공주를 요약본으로 접하고 한 번에 일곱 난장이들을 묶음으로 보아 와서 그녀석이 그녀석 같아 보여 잘 모르지만, 원전과 애니메이션에는 나름 족보도 있는 녀석이라 한다.
 
-![sneezy.jpg](/writing/chaesang-51/01.jpg)
+![](/writing/chaesang-51/01.jpg)
 
   
 
@@ -39,7 +39,9 @@ draft: true
 
 교수님께서 미처 다가올 폭풍 미래까지 보신 건지 아닌지 모르겠지만, 당시 4-5대 있던 비싼 기계들을 위해해 일곱 난장이 이름을 맡아 놓으셨다고 하셨다. 아래는 그 이름들.
 
-![seven-dwarfs.jpg](/writing/chaesang-51/02.jpg) https://www.disneyclips.com/characters/the-seven-dwarfs.html
+![https://www.disneyclips.com/characters/the-seven-dwarfs.html](/writing/chaesang-51/02.jpg)
+
+*https://www.disneyclips.com/characters/the-seven-dwarfs.html*
 
 동기들이 썼던 grumpy , sleepy , dopey 는 같은 사연이 있다는 것을 당시에도 알았는데, bashful 도 이제야 고개가 끄덕여 지고, 다시 보니 happy 도 같은 족보였구나 싶다. 연구실의 어두움과 잘 맞지 않던 이름이었다고 툴툴대던 기억이다.. doc 은 이래저래 쓰임이 없었던 거 같기도...
 

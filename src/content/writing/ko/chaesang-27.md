@@ -14,7 +14,9 @@ draft: true
 
   
 
-![0\*VR-wcJiemQSh2Ejv.jpg](/writing/chaesang-27/01.jpg) https://m.hanbit.co.kr/biz/books/book\_view.html?p\_code=B7217842958
+![https://m.hanbit.co.kr/biz/books/book\_view.html?p\_code=B7217842958](/writing/chaesang-27/01.jpg)
+
+*https://m.hanbit.co.kr/biz/books/book\_view.html?p\_code=B7217842958*
 
   
 
@@ -22,7 +24,9 @@ draft: true
 
   
 
-![0\*n3eHokFOpWMuIAL9.jpg](/writing/chaesang-27/02.jpg) https://m.hanbit.co.kr/store/books/book\_view.html?p\_code=B1673729711
+![https://m.hanbit.co.kr/store/books/book\_view.html?p\_code=B1673729711](/writing/chaesang-27/02.jpg)
+
+*https://m.hanbit.co.kr/store/books/book\_view.html?p\_code=B1673729711*
 
 명불허전 현자 박태웅 선배/선생님의 과학 커뮤니케이터 시각에서 따뜻하고 친절하게 씌여진 내용들이고, 몇몇 내용들은 내가 살을 붙일 수 있는 내용들도 있어 소개에 부담이 적었다. 직접 선수로 뛰며 겪은 일들도 있었고, 조언자 역할을 하면서 반대 시각에서 비판적인 해석을 했던 기억들도 있었으며, 몇몇 민감한 이슈들에 대해서는 금융쪽 실무 종사자들이 많은 학생들의 시각에서는 규제와 관련된 내용들도 도움이 되었으리라 생각한다.
 

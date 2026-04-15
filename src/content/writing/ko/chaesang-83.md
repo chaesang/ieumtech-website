@@ -14,11 +14,11 @@ draft: true
 
 노벨상으로 주변이 시끌벅적한 가운데, 가을의 여의도는 이제 단풍도 보이기 시작하고, 이맘때만 느낄 수 있는 아름다움이 시작된 듯하다. 지난 주의 건담과 뉴진스에 이어 오늘은 열기구가 보였다.
 
-![IMG\_9730.jpg](/writing/chaesang-83/01.jpg)
+![](/writing/chaesang-83/01.jpg)
 
-![IMG\_9732.jpg](/writing/chaesang-83/02.jpg)
+![](/writing/chaesang-83/02.jpg)
 
-![IMG\_9729.jpg](/writing/chaesang-83/03.jpg)
+![](/writing/chaesang-83/03.jpg)
 
   
 
@@ -46,7 +46,7 @@ https://www.facebook.com/events/%EC%B1%85%EA%B3%BC%EC%96%BD%ED%9E%98/%EB%B0%95%E
 
 [**6주) 강의 update**](https://docs.google.com/presentation/d/1Pg3dH6N3lH1TAbReve9VHWlgxhSoIShM4qasYoEmldc/edit#slide=id.g1168ad8df56_0_7)  
 
-![week6.png](/writing/chaesang-83/04.png)
+![](/writing/chaesang-83/04.png)
 
 현재까지 노벨상 수상한 모든 사람이 내가 아는 사람이 되는 신기한 상황에 그 중 절반은 근무 기간이 겹치는 전 직장 동료라는 게 여전히 믿기지는 않는다. 저 상의 무게, 업적의 깊이, 살아온 이력 등이 어땠을까 가늠이 가지 않으면서도 여러 가지 생각이 들게 되는 한 주였다.
 
@@ -72,7 +72,7 @@ https://www.facebook.com/events/%EC%B1%85%EA%B3%BC%EC%96%BD%ED%9E%98/%EB%B0%95%E
 
 순서 상으로는 5. 알고리즘이 먼저이지만, 이는 책 절반을 할애하게 되고, 7. 평가 부분은 이론적으로 먼저 훑고 가야 할 내용이라 이야기를 꽤 해야 했다. 아래는 대략적인 설명. 결국 셋 다 해야 한다는 이야기..
 
-![week6-1.png](/writing/chaesang-83/06.png)
+![](/writing/chaesang-83/06.png)
 
 교재는 무비렌즈 데이터들을 가지고 해 보는 것으로 이 중 오프라인 평가에 해당하고, 안에서도 아이템을 예측한 후에 판단을 어떻게 내릴 것인지에 따라 f2 score 혹은 RMSE 비교 등으로 여러 이야기를 하게 될 것이다.
 
@@ -94,7 +94,7 @@ https://www.facebook.com/events/%EC%B1%85%EA%B3%BC%EC%96%BD%ED%9E%98/%EB%B0%95%E
 
 오늘은 첫 시간으로 내용들 중에서 개요와 당시의 제품이 지니고 있던 챌린지들, 그리고 평가들을 하기 위한지표들에 대한 이야기들을 나누었다. 쇼핑몰의 성격과 닮아 있지만, 1인당 1개의 구매 제한, preinstall 등의 사연들이 있는 제품에서 여러 이야기들을 나누기 위해 지표 이야기까지는 같이 다루고 싶었다.
 
-![week6-3.png](/writing/chaesang-83/07.png)
+![](/writing/chaesang-83/07.png)
 
   
 

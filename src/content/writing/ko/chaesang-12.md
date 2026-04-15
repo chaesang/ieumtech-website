@@ -20,11 +20,13 @@ draft: true
 
 ### [2주) 강의 업데이트](https://docs.google.com/presentation/d/1ab3Wsw6pkLYQocO34KRX5jBKFYbdxdrZa--rR9MfYHo/edit#slide=id.g1168ad8df56_0_7)
 
-![1\*2Rj8GmBoWQ2XQqNv6E0R\_A.png](/writing/chaesang-12/01.png)
+![](/writing/chaesang-12/01.png)
 
 생각보다 한 주가 금방 돌아와서 마땅히 업데이트하며 이야기할 내용이 보이지 않았는데, [AI — TIME 100 AI](https://time.com/collection/time100-ai/?utm_source=roundup&utm_campaign=20230202&itm_source=taboola.&itm_version%3Achallenge=) 기사가 나와서 같이 훑어볼 수 있었다. 요새 유명해서 이름만 듣던 분들 대다수에, 구글에 다닐 때 멀리서 보던 분들도, 멋진 연구를 열심히 하고 계시는 반가운 과 후배님도 볼 수 있었다. Google Brain 계열 사람들이 안 보이고, Deepmind 쪽 사람들만 쏠려 있는 것에 대해 살짝 개인적인 투덜거림 정도 언급하였다.
 
-![1\*nUUo2XVB4XACI6LpRZ\_87Q.png](/writing/chaesang-12/02.png) https://time.com/collection/time100-ai/
+![https://time.com/collection/time100-ai/](/writing/chaesang-12/02.png)
+
+*https://time.com/collection/time100-ai/*
 
   
 

@@ -27,7 +27,9 @@ draft: true
 
 여러 기억들이 섞여 있는데, 구조 관련 수업 시간에 배운 RISC 의 태동은 매우 감동이 컸었다. 집에 있는 컴퓨터랑 다르게 저 멀리 있는 것에 대한 더 좋은 컴퓨터라는 생각과 이걸 가능하게 하기 위해 1. CPU 내에는 pipeline 이라는 것들을 집어 넣으면서 여러 개의 명령을 동시에 실행할 수 있게 자리 배치를 하고
 
-![wikipedia-risc-pipeline.jpg](/writing/chaesang-36/01.jpg) https://en.wikipedia.org/wiki/Classic\_RISC\_pipeline
+![https://en.wikipedia.org/wiki/Classic\_RISC\_pipeline](/writing/chaesang-36/01.jpg)
+
+*https://en.wikipedia.org/wiki/Classic\_RISC\_pipeline*
 
 2\. 각종 부작용(hazard)들에 대해서 필요한 조치들을 취하고, 3. 이를 가능하게 하는 향상된 컴파일러의 기술들. 4. 이를 maximize 해 주는 건 cache. 시험 문제들도 각종 hazard 들을 어떻게 대응할 건지 뭐 이런 것들을 어느 과목에서인가 적으면서, Synopsys VHDL 을 가지고 실제 회로들도 만들었던 기억들도 있는 거 보면...
 

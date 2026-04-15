@@ -18,7 +18,7 @@ draft: true
 
   
 
-![hanbitn.png](/writing/chaesang-61/01.png)
+![](/writing/chaesang-61/01.png)
 
   
 

@@ -25,7 +25,7 @@ draft: true
 
 ### [**삼성 SPC 1000**](https://namu.wiki/w/SPC-1000)
 
-![vB-PGMhAq626BqjHrjILQTq3Ij8WzmUuCiM6ljKbKey8JB645iijPCuk\_QiOmPdjx7MlLg2IQXNSNJ\_b9FSduB6JvkdTxG\_OptB\_fy8PnqiPJwKE1ITx6C52-qHufFc22PhV6ISwTIustYM5ys0pUg.webp](/writing/chaesang-30/01.webp)
+![](/writing/chaesang-30/01.webp)
 
 우리 집에서의 첫 삼성 제품은 이 컴퓨터였다. 학교에서 접하고 나서 서울 전국대회 출전권을 따고 나서 부모님을 졸라서 인연이 닿은 첫 컴퓨터. 테이프를 이용한 낯선 기계음, 그것이 끝나면서 시작되는 게임들, 흑백 화면에서 펼쳐지는 dot 의 아기자기함 등... 국민학교를 함께 했고, 각종 대회에 같이 다녔으며 아쉬움과 실패를 경험하게 했던 기억들.
 

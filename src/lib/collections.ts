@@ -85,3 +85,18 @@ export async function getRecentWriting(n: number, lang: Lang): Promise<WritingEn
   const all = await getPublishedWriting(lang);
   return all.slice(0, n);
 }
+
+/** One latest entry per featured series, in series `order`. Used for home page highlights. */
+export async function getSeriesHighlights(
+  lang: Lang,
+): Promise<Array<{ meta: SeriesEntry; count: number; latest: WritingEntry }>> {
+  const seriesWithMeta = await getActiveSeriesWithMeta(lang);
+  const featured = seriesWithMeta.filter(({ meta }) => meta.data.featured);
+  const entries = await getPublishedWriting(lang);
+  const result: Array<{ meta: SeriesEntry; count: number; latest: WritingEntry }> = [];
+  for (const { meta, count } of featured) {
+    const latest = entries.find((e) => e.data.series === meta.data.slug);
+    if (latest) result.push({ meta, count, latest });
+  }
+  return result;
+}

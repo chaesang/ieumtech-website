@@ -20,7 +20,7 @@ draft: true
 
 ### [**10주) 강의 update**](https://docs.google.com/presentation/d/1NvkEbDux6jHbpmctSX5qLS53YKG4lWO1qBYW6JJZyXA/edit#slide=id.g3014a3aac3e_0_9)
 
-![week10.png](/writing/chaesang-92/01.png)
+![](/writing/chaesang-92/01.png)
 
 Anthropic 에서 API 사용료를 올린다는 조금은 충격적인 뉴스가 있었지만, 미 대선 결과에 묻혀 버렸다.
 
@@ -30,7 +30,7 @@ Anthropic 에서 API 사용료를 올린다는 조금은 충격적인 뉴스가 
 
 지금의 시장의 절대적 지배자가 되기 전까지 구글이 이루어 냈던 여정들에 대해서 같이 했던 내용들에 대한 직간접적인 기록들에 대해 이야기를 나누기 시작했다. 지금은 업계에 표준처럼 되어 버린 여러 방식들이지만, 검색의 기본기에 대한 이야기, 검색 결과 페이지를 구성하는 요소들에 대한 내용들을 오늘 다루었고, 한발 안으로 들어가서 infrastructure 에 해당하는, software development 에 대한 이야기, 그리고 내가 직접 했던 과제들에 대한 이야기들을 다음 주와 그 다음 주에 다뤄 보려 한다.
 
-![search-1.png](/writing/chaesang-92/02.png)
+![](/writing/chaesang-92/02.png)
 
   
 

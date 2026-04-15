@@ -16,15 +16,17 @@ draft: true
 
 아래는 스크린샷 몇 개
 
-![class101-em-screen1.jpg](/writing/chaesang-43/01.jpg)
+![](/writing/chaesang-43/01.jpg)
 
-![class101-em-screen2.jpg](/writing/chaesang-43/02.jpg)
+![](/writing/chaesang-43/02.jpg)
 
   
 
 전체 강의 커리큘럼을 만드는 데 조금 거들기도 했지만, 일단 맡아서 진행한 부분은 evaluation. 종합 예술. 아래는 꽤 잘 나온 사진과 소개. 부끄럽긴 하지만, 다른 데 공유는 더더욱 곤란하고...
 
-![chaesang-class101.jpg](/writing/chaesang-43/03.jpg) 생각보다 잘 나온 사진. 역시 전문가들의 솜씨들이란...
+![생각보다 잘 나온 사진. 역시 전문가들의 솜씨들이란...](/writing/chaesang-43/03.jpg)
+
+*생각보다 잘 나온 사진. 역시 전문가들의 솜씨들이란...*
 
   
 

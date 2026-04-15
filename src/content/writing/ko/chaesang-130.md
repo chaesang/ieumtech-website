@@ -16,11 +16,11 @@ draft: true
 
 새벽에 인천공항에 도착해서 긴 하루를 보내는 일정이었는데, daylight saving이 끝나고 바람 때문에 조금 늦게 도착해서 아침 6시 넘어 공항에 도착했다. 숙소를 3시간 넘게 다녀 올 시간이 여의치 않고 여의도가 그에 비해 한편으로 공항에서 가까워서 바로 강의장으로 와서 하루를 시작했다. 갑자기 쌀쌀해 진 날씨에, 미국보다 일찍 시작하는 연말 장식 설치, 거기에 학생들 졸업 촬영까지 여러 모로 다르고 좋은 의미로 어수선하게 바쁜 도시의 주말 아침이다.
 
-![IMG\_2831.jpg](/writing/chaesang-130/01.jpg)
+![](/writing/chaesang-130/01.jpg)
 
-![week10-2.jpg](/writing/chaesang-130/02.jpg)
+![](/writing/chaesang-130/02.jpg)
 
-![IMG\_2834.jpg](/writing/chaesang-130/03.jpg)
+![](/writing/chaesang-130/03.jpg)
 
   
 
@@ -34,7 +34,7 @@ draft: true
 
 [**Lessons from Google Search - part 1.pptx**](https://docs.google.com/presentation/d/1VdZfW30MmsWgof_uN2G7_GE-0aNos8kn/edit?slide=id.p1#slide=id.p1)
 
-![week10-3.png](/writing/chaesang-130/04.png)
+![](/writing/chaesang-130/04.png)
 
   
 
@@ -42,7 +42,7 @@ draft: true
 
   
 
-![week10-2.png](/writing/chaesang-130/05.png)
+![](/writing/chaesang-130/05.png)
 
   
 

@@ -16,7 +16,9 @@ draft: false
 
 이전의 모바일, 임베디드의 때를 싹 지우고 새 마음으로 구글에 조인해서 맡게 된 첫번째 과제였고, 과제 이름은 kPrism. Prism 은 무지개처럼 펼쳐지는 그거 맞고, k 가 야심차게 붙어 있는데, Korea 의 K 맞다. 8명이서 나눠서 하던 나름 큰 규모의 과제였었고, 여기서 다양한 결과들을 모으고 붙이는 universal search, 한국어로도 유니버설 검색 과제가 있었더랬다.
 
-![image.png](/writing/chaesang-160/01.png) 2008 년 1월 런치된 한국형 유니버설 검색
+![2008 년 1월 런치된 한국형 유니버설 검색](/writing/chaesang-160/01.png)
+
+*2008 년 1월 런치된 한국형 유니버설 검색*
 
   
 
@@ -46,7 +48,9 @@ kPrism의 필요에 의해 result group에 앞서서 참가를 하였고, result
 
 당연하게 어디까지가 블로그냐에 대해 '한국에서만' 의 가치를 두다 보니 잘 안 되었더랬다. 웹의 일부로 치면서 site level cluster를 운영할 건지, 별도의 crawl / index 를 꾸릴 것인지를 고민했었다. 구글 검색 결과에서는 별도의 blog 블럭이 있으면 웹이랑 다르게 불러야 하나 말아야 하나 등의 고민들이 있었더랬다. blogger, textcube 등을 사서 어떻게 할 건지 등도 같이 고민했었고, 그 마무리 지점 즈음에는 구글판 지식인을 꿈꾸었던 놀(KNOL, [https://en.wikipedia.org/wiki/Knol](https://en.wikipedia.org/wiki/Knol))이 있다. 하지만, 네이버가 지식인과 블로그를 중심으로 꿋꿋하게 잘 버텼기에 구글 시각에서는 잘 안 되었고, 이후 모바일 세상과 유튜브 세상이 올 때까지 패배를 인정할 수밖에 없었다. 적군이었지만 박수를 보내는 한편, 요즘 소버린 시국을 맞이해서 조금 더 역할을 맡아 주면 하는 개인적인 바램도 있다.
 
-![image.png](/writing/chaesang-160/02.png) KNOL
+![KNOL](/writing/chaesang-160/02.png)
+
+*KNOL*
 
   
 

@@ -55,15 +55,21 @@ Embedded 쪽을 주력으로 쥐어 짜던(?)는 이 시기에 C 언어로는 ch
 
 **1\. 바쿠스 - X**
 
-![바쿠스.png](/writing/chaesang-53/01.png) 구글 검색 실패
+![구글 검색 실패](/writing/chaesang-53/01.png)
+
+*구글 검색 실패*
 
 **2\. "알고" - ?**
 
-![알고.png](/writing/chaesang-53/02.png) gemini. ??
+![gemini. ??](/writing/chaesang-53/02.png)
+
+*gemini. ??*
 
 **3\. 없다. - X**
 
-![nomascot.png](/writing/chaesang-53/03.png) GPT-3.5 없다고...
+![GPT-3.5 없다고...](/writing/chaesang-53/03.png)
+
+*GPT-3.5 없다고...*
 
 **4\. 영일이 - O**
 

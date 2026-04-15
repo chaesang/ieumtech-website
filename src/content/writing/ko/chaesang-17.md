@@ -14,7 +14,9 @@ draft: true
 
   
 
-![1\*uXKVX-UW\_JxVdoPTKUqGdw.jpeg](/writing/chaesang-17/01.jpeg) 마이크 설치 후 데스크
+![마이크 설치 후 데스크](/writing/chaesang-17/01.jpeg)
+
+*마이크 설치 후 데스크*
 
   
 
@@ -22,7 +24,7 @@ draft: true
 
 ### [8주) 강의 update](https://docs.google.com/presentation/d/1JCjM3mExHUaB0i8oZhyqTJNyVQw0BGg4s_QV4t2b4uE/edit#slide=id.g1168ad8df56_0_7)
 
-![1\*HM\_Jzyeo-aAPom2M7pIarw.png](/writing/chaesang-17/02.png)
+![](/writing/chaesang-17/02.png)
 
 AI 쪽은 특별한 update가 있진 않았고, Andrew Ng 선생님의 예고된 강의가 궁금한 정도이고, 금융 쪽은 핀테크 50이라는데 뱅크샐러드가 없고 다른 이름 모르는 회사들이 너무 많은 것에 대해 약간 의문이 들었다. 작년 매출 기준으로 서열이 밀리는 건 어쩔 수 없지만, 나머지 절반 모르는 회사들 보다는 그래도.. 싶은 팔이 안으로 굽은 해석과 9월의 핀테크 스타트업 투자는 토스뱅크와 토스페이먼츠로 쏠린 게 개인적으로는 물타기의 분석이긴 하지만 그래도 뭐 싶었고, 막 카카오 사법 리스크가 도마에 오른 시기였다.
 
