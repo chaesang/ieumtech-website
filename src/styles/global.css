@@ -256,7 +256,6 @@ section h2 {
 .hero {
   background: var(--color-surface);
   padding: var(--space-12) var(--container-padding) var(--space-11);
-  text-align: center;
 }
 
 .hero-inner { max-width: var(--container-max); margin: 0 auto; }
