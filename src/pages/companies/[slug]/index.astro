@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '~/layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const en = await getCollection('companies', (e) => !e.data.draft && e.data.lang === 'en');
+  const ko = await getCollection('companies', (e) => !e.data.draft && e.data.lang === 'ko');
+  const all = new Map<string, (typeof en)[number]>();
+  for (const e of ko) all.set(e.slug.split('/').pop()!, e);
+  for (const e of en) all.set(e.slug.split('/').pop()!, e); // en overrides
+  return Array.from(all.entries()).map(([slug, entry]) => ({ params: { slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const fmt = (d: Date) => `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}`;
+const start = entry.data.period.start;
+const end = entry.data.period.end;
+const period = end ? `${fmt(start)} – ${fmt(end)}` : `${fmt(start)} – Present`;
+---
+<Base
+  title={`${entry.data.name} — Places I've Worked — Chaesang Jung`}
+  description={entry.data.summary ?? `${entry.data.name} — ${entry.data.role}`}
+  lang="en"
+  path={`/companies/${entry.slug.split('/').pop()}`}
+  ogType="article"
+  altLangPath={`/ko/companies/${entry.slug.split('/').pop()}`}
+>
+  <main>
+    <article class="company-detail">
+      <div class="detail-inner">
+        <nav class="breadcrumb"><a href="/companies">← Places I've Worked</a></nav>
+        <header class="detail-header">
+          <div class="meta">
+            <span class="period">{period}</span>
+          </div>
+          <h1>{entry.data.name}</h1>
+          <p class="role">{entry.data.role}</p>
+          {entry.data.summary && <p class="summary">{entry.data.summary}</p>}
+        </header>
+        <div class="prose">
+          <Content />
+        </div>
+        {entry.data.links && entry.data.links.length > 0 && (
+          <aside class="links">
+            <h3>Links</h3>
+            <ul>
+              {entry.data.links.map((l) => (
+                <li><a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a></li>
+              ))}
+            </ul>
+          </aside>
+        )}
+      </div>
+    </article>
+  </main>
+</Base>
+
+<style>
+  .company-detail { padding: 48px 0 80px; }
+  .detail-inner { max-width: 640px; margin: 0 auto; padding: 0 24px; }
+  .breadcrumb { margin-bottom: 24px; font-size: 0.875rem; }
+  .breadcrumb a { color: var(--color-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-accent); }
+  .detail-header { margin-bottom: 32px; border-bottom: 1px solid var(--color-border); padding-bottom: 24px; }
+  .meta { font-size: 0.8125rem; color: var(--color-muted); margin-bottom: 12px; }
+  .detail-header h1 { font-size: 1.75rem; margin: 0 0 6px; }
+  .role { font-size: 1rem; color: var(--color-muted); margin: 0 0 12px; }
+  .summary { font-size: 1rem; line-height: 1.7; color: var(--color-text); margin: 0; }
+  .prose { font-size: 1rem; line-height: 1.8; color: var(--color-text); }
+  .prose :global(h2) { font-size: 1.25rem; font-weight: 600; margin: 32px 0 12px; }
+  .prose :global(p) { margin: 0 0 16px; }
+  .prose :global(ul) { padding-left: 24px; margin: 0 0 16px; }
+  .links { margin-top: 48px; padding: 16px 20px; background: var(--color-border); border-radius: 6px; }
+  .links h3 { font-size: 0.9375rem; font-weight: 600; margin: 0 0 8px; }
+  .links ul { margin: 0; padding-left: 18px; }
+  .links a { color: var(--color-accent); }
+</style>

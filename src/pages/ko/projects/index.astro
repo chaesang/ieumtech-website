@@ -1,0 +1,69 @@
+---
+import Base from '~/layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const entries = (await getCollection('projects', (e) => !e.data.draft && e.data.lang === 'ko'))
+  .sort((a, b) => b.data.period.start.valueOf() - a.data.period.start.valueOf());
+---
+<Base
+  title="함께 했던 프로젝트들 — 정채상"
+  description="혼자 또는 팀과 함께 만든 프로젝트들을 정리해 둡니다."
+  lang="ko"
+  path="/ko/projects"
+  ogType="website"
+  altLangPath="/projects"
+>
+  <main>
+    <section class="list-hero">
+      <div class="container">
+        <h1>함께 했던 프로젝트들</h1>
+        <p class="list-lead">잘 풀린 것도, 자연스레 접힌 것도 같이 기록합니다.</p>
+      </div>
+    </section>
+    <section class="list-body">
+      <div class="container">
+        {entries.length === 0 ? (
+          <p class="empty">아직 정리 중입니다.</p>
+        ) : (
+          <ol class="project-list">
+            {entries.map((e) => {
+              const slug = e.slug.split('/').pop()!;
+              const fmt = (d: Date) => `${d.getFullYear()}`;
+              const period = e.data.period.end ? `${fmt(e.data.period.start)} – ${fmt(e.data.period.end)}` : `${fmt(e.data.period.start)} –`;
+              return (
+                <li>
+                  <a href={`/ko/projects/${slug}`}>
+                    <div class="project-head">
+                      <span class="project-title">{e.data.title}</span>
+                      <span class="project-period">{period}</span>
+                    </div>
+                    {e.data.client && <div class="project-client">{e.data.client}</div>}
+                    <p class="project-summary">{e.data.summary}</p>
+                  </a>
+                </li>
+              );
+            })}
+          </ol>
+        )}
+      </div>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .list-hero { padding: 64px 0 24px; border-bottom: 1px solid var(--color-border); }
+  .list-hero h1 { font-size: 2rem; margin: 0 0 10px; }
+  .list-lead { font-size: 1rem; color: var(--color-muted); max-width: 640px; margin: 0; line-height: 1.7; }
+  .list-body { padding: 32px 0 80px; }
+  .empty { color: var(--color-muted); padding: 32px 0; text-align: center; }
+  .project-list { list-style: none; padding: 0; margin: 0; }
+  .project-list li { border-top: 1px solid var(--color-border); }
+  .project-list li:last-child { border-bottom: 1px solid var(--color-border); }
+  .project-list a { display: block; padding: 20px 0; color: inherit; text-decoration: none; }
+  .project-list a:hover .project-title { color: var(--color-accent); }
+  .project-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+  .project-title { font-size: 1.125rem; font-weight: 600; }
+  .project-period { font-size: 0.8125rem; color: var(--color-muted); flex-shrink: 0; }
+  .project-client { font-size: 0.9375rem; color: var(--color-muted); margin-bottom: 6px; }
+  .project-summary { font-size: 0.9375rem; color: var(--color-text); margin: 0; line-height: 1.6; }
+</style>

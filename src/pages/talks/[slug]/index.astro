@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '~/layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const en = await getCollection('talks', (e) => !e.data.draft && e.data.lang === 'en');
+  const ko = await getCollection('talks', (e) => !e.data.draft && e.data.lang === 'ko');
+  const all = new Map<string, (typeof en)[number]>();
+  for (const e of ko) all.set(e.slug.split('/').pop()!, e);
+  for (const e of en) all.set(e.slug.split('/').pop()!, e);
+  return Array.from(all.entries()).map(([slug, entry]) => ({ params: { slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const dateLabel = entry.data.date.toLocaleDateString('en-US', {
+  year: 'numeric', month: 'long', day: 'numeric',
+});
+---
+<Base
+  title={`${entry.data.title} — Talks & Lectures — Chaesang Jung`}
+  description={`${entry.data.venue} · ${entry.data.event}`}
+  lang="en"
+  path={`/talks/${entry.slug.split('/').pop()}`}
+  ogType="article"
+  altLangPath={`/ko/talks/${entry.slug.split('/').pop()}`}
+>
+  <main>
+    <article class="talk-detail">
+      <div class="detail-inner">
+        <nav class="breadcrumb"><a href="/talks">← Talks & Lectures</a></nav>
+        <header class="detail-header">
+          <div class="meta">
+            <span class="format">{entry.data.format}</span>
+            <time>{dateLabel}</time>
+          </div>
+          <h1>{entry.data.title}</h1>
+          <p class="venue">{entry.data.venue} · {entry.data.event}</p>
+        </header>
+        <div class="prose"><Content /></div>
+        {entry.data.links && entry.data.links.length > 0 && (
+          <aside class="links">
+            <h3>Links</h3>
+            <ul>
+              {entry.data.links.map((l) => (
+                <li><a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a></li>
+              ))}
+            </ul>
+          </aside>
+        )}
+      </div>
+    </article>
+  </main>
+</Base>
+
+<style>
+  .talk-detail { padding: 48px 0 80px; }
+  .detail-inner { max-width: 640px; margin: 0 auto; padding: 0 24px; }
+  .breadcrumb { margin-bottom: 24px; font-size: 0.875rem; }
+  .breadcrumb a { color: var(--color-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--color-accent); }
+  .detail-header { margin-bottom: 32px; border-bottom: 1px solid var(--color-border); padding-bottom: 24px; }
+  .meta { display: flex; gap: 12px; align-items: center; font-size: 0.8125rem; color: var(--color-muted); margin-bottom: 12px; }
+  .format { padding: 2px 8px; border-radius: 4px; background: var(--color-border); font-weight: 500; text-transform: capitalize; }
+  .detail-header h1 { font-size: 1.75rem; margin: 0 0 6px; line-height: 1.3; }
+  .venue { font-size: 0.9375rem; color: var(--color-muted); margin: 0; }
+  .prose { font-size: 1rem; line-height: 1.8; color: var(--color-text); }
+  .prose :global(p) { margin: 0 0 16px; }
+  .links { margin-top: 48px; padding: 16px 20px; background: var(--color-border); border-radius: 6px; }
+  .links h3 { font-size: 0.9375rem; font-weight: 600; margin: 0 0 8px; }
+  .links ul { margin: 0; padding-left: 18px; }
+  .links a { color: var(--color-accent); word-break: break-all; }
+</style>
