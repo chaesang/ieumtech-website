@@ -24,6 +24,13 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer {
+  margin-top: auto;
 }
 
 /* Korean pages get Noto Sans KR and CJK-friendly wrapping */
@@ -755,6 +762,103 @@ section h2 {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+/* Talk format badges — color variants */
+.talk-format,
+.format {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.01em;
+  background: var(--color-border);
+  color: var(--color-muted);
+}
+.talk-format[data-format="keynote"],
+.format[data-format="keynote"] {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+.talk-format[data-format="interview"],
+.format[data-format="interview"] {
+  background: #dcfce7;
+  color: #166534;
+}
+.talk-format[data-format="panel"],
+.format[data-format="panel"] {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+.talk-format[data-format="workshop"],
+.format[data-format="workshop"] {
+  background: #ffedd5;
+  color: #9a3412;
+}
+.talk-format[data-format="podcast"],
+.format[data-format="podcast"] {
+  background: #fce7f3;
+  color: #9d174d;
+}
+
+/* Company initials circle */
+.company-initial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  letter-spacing: -0.01em;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+/* "더 보기" style link list */
+.see-more-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.see-more-grid a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: border-color 0.15s, color 0.15s, transform 0.15s;
+}
+.see-more-grid a::after {
+  content: '→';
+  color: var(--color-muted);
+  font-weight: 400;
+  transition: transform 0.15s, color 0.15s;
+}
+.see-more-grid a:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.see-more-grid a:hover::after {
+  color: var(--color-accent);
+  transform: translateX(2px);
+}
+@media (max-width: 480px) {
+  .see-more-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {

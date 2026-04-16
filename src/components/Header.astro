@@ -1,6 +1,7 @@
 ---
 import type { Lang } from '~/i18n/ui';
 import { useTranslations, localizedPath } from '~/i18n/ui';
+import { getCollection } from 'astro:content';
 
 interface Props {
   lang: Lang;
@@ -17,6 +18,9 @@ const writingPath = localizedPath('/writing', lang);
 const companiesPath = localizedPath('/companies', lang);
 const projectsPath = localizedPath('/projects', lang);
 const talksPath = localizedPath('/talks', lang);
+
+const projectEntries = await getCollection('projects', (e) => !e.data.draft);
+const hasProjects = projectEntries.length > 0;
 
 const isWritingActive = currentPath === writingPath || currentPath.startsWith(`${writingPath}/`);
 const isCompaniesActive = currentPath === companiesPath || currentPath.startsWith(`${companiesPath}/`);
@@ -52,7 +56,9 @@ const secondaryLabels = lang === 'ko'
   <nav class="site-subnav" aria-label={lang === 'ko' ? '하위 내비게이션' : 'Secondary navigation'}>
     <div class="subnav-inner">
       <a href={companiesPath} class={isCompaniesActive ? 'active' : ''} aria-current={isCompaniesActive ? 'page' : undefined}>{secondaryLabels.companies}</a>
-      <a href={projectsPath} class={isProjectsActive ? 'active' : ''} aria-current={isProjectsActive ? 'page' : undefined}>{secondaryLabels.projects}</a>
+      {hasProjects && (
+        <a href={projectsPath} class={isProjectsActive ? 'active' : ''} aria-current={isProjectsActive ? 'page' : undefined}>{secondaryLabels.projects}</a>
+      )}
       <a href={talksPath} class={isTalksActive ? 'active' : ''} aria-current={isTalksActive ? 'page' : undefined}>{secondaryLabels.talks}</a>
     </div>
   </nav>

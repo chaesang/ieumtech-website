@@ -3,14 +3,17 @@ import { getCollection } from 'astro:content';
 import Base from '~/layouts/Base.astro';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('companies', (e) => !e.data.draft && e.data.lang === 'ko');
-  return entries.map((entry) => {
+  const entries = (await getCollection('companies', (e) => !e.data.draft && e.data.lang === 'ko'))
+    .sort((a, b) => b.data.period.start.valueOf() - a.data.period.start.valueOf());
+  return entries.map((entry, idx) => {
     const slug = entry.slug.split('/').pop()!;
-    return { params: { slug }, props: { entry } };
+    const prev = entries[idx - 1] ?? null;
+    const next = entries[idx + 1] ?? null;
+    return { params: { slug }, props: { entry, prev, next } };
   });
 }
 
-const { entry } = Astro.props;
+const { entry, prev, next } = Astro.props;
 const { Content } = await entry.render();
 const fmt = (d: Date) => `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}`;
 const start = entry.data.period.start;
@@ -50,6 +53,26 @@ const period = end ? `${fmt(start)} – ${fmt(end)}` : `${fmt(start)} – 현재
             </ul>
           </aside>
         )}
+        {(prev || next) && (
+          <nav class="adj-nav" aria-label="이전·다음 자리">
+            <a
+              class={`adj-nav-item ${prev ? '' : 'disabled'}`}
+              href={prev ? `/ko/companies/${prev.slug.split('/').pop()}` : undefined}
+              aria-disabled={prev ? undefined : 'true'}
+            >
+              <span class="adj-nav-dir">← 이전 자리 (더 최근)</span>
+              {prev && <span class="adj-nav-name">{prev.data.name}</span>}
+            </a>
+            <a
+              class={`adj-nav-item ${next ? '' : 'disabled'}`}
+              href={next ? `/ko/companies/${next.slug.split('/').pop()}` : undefined}
+              aria-disabled={next ? undefined : 'true'}
+            >
+              <span class="adj-nav-dir">다음 자리 (더 오래전) →</span>
+              {next && <span class="adj-nav-name">{next.data.name}</span>}
+            </a>
+          </nav>
+        )}
       </div>
     </article>
   </main>
@@ -76,4 +99,14 @@ const period = end ? `${fmt(start)} – ${fmt(end)}` : `${fmt(start)} – 현재
   .links h3 { font-size: 0.875rem; font-weight: 600; margin: 0 0 8px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.06em; }
   .links ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }
   .links a { color: var(--color-accent); }
+
+  .adj-nav { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .adj-nav-item { display: flex; flex-direction: column; gap: 6px; padding: 16px; background: #fff; border: 1px solid var(--color-border); border-radius: 8px; color: var(--color-text); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+  .adj-nav-item:last-child { text-align: right; }
+  .adj-nav-item:hover:not(.disabled) { border-color: var(--color-accent); }
+  .adj-nav-item:hover:not(.disabled) .adj-nav-name { color: var(--color-accent); }
+  .adj-nav-item.disabled { opacity: 0.4; pointer-events: none; cursor: default; }
+  .adj-nav-dir { font-size: 0.75rem; color: var(--color-muted); letter-spacing: 0.02em; }
+  .adj-nav-name { font-size: 0.9375rem; font-weight: 600; }
+  @media (max-width: 480px) { .adj-nav { grid-template-columns: 1fr; } .adj-nav-item:last-child { text-align: left; } }
 </style>

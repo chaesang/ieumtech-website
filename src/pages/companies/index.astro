@@ -46,12 +46,15 @@ const basePath = isKoFallback ? '/ko/companies' : '/companies';
               return (
                 <li>
                   <a href={`${basePath}/${slug}`}>
-                    <div class="company-head">
-                      <span class="company-name">{e.data.name}</span>
-                      <span class="company-period">{period}</span>
+                    <span class="company-initial">{e.data.name.charAt(0).toUpperCase()}</span>
+                    <div class="company-body">
+                      <div class="company-head">
+                        <span class="company-name">{e.data.name}</span>
+                        <span class="company-period">{period}</span>
+                      </div>
+                      <div class="company-role">{e.data.role}</div>
+                      {e.data.summary && <p class="company-summary">{e.data.summary}</p>}
                     </div>
-                    <div class="company-role">{e.data.role}</div>
-                    {e.data.summary && <p class="company-summary">{e.data.summary}</p>}
                   </a>
                 </li>
               );
@@ -73,8 +76,10 @@ const basePath = isKoFallback ? '/ko/companies' : '/companies';
   .company-list { list-style: none; padding: 0; margin: 0; }
   .company-list li { border-top: 1px solid var(--color-border); }
   .company-list li:last-child { border-bottom: 1px solid var(--color-border); }
-  .company-list a { display: block; padding: 20px 0; color: inherit; text-decoration: none; }
+  .company-list a { display: flex; align-items: flex-start; padding: 20px 0; color: inherit; text-decoration: none; }
   .company-list a:hover .company-name { color: var(--color-accent); }
+  .company-list a:hover .company-initial { border-color: var(--color-accent); color: var(--color-accent); }
+  .company-body { flex: 1; min-width: 0; }
   .company-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 4px; }
   .company-name { font-size: 1.125rem; font-weight: 600; }
   .company-period { font-size: 0.8125rem; color: var(--color-muted); flex-shrink: 0; }

@@ -42,7 +42,7 @@ const basePath = isKoFallback ? '/ko/talks' : '/talks';
                 <li>
                   <a href={`${basePath}/${slug}`}>
                     <div class="talk-head">
-                      <span class="talk-format">{e.data.format}</span>
+                      <span class="talk-format" data-format={e.data.format}>{e.data.format}</span>
                       <span class="talk-date">{d}</span>
                     </div>
                     <div class="talk-title">{e.data.title}</div>
@@ -71,7 +71,7 @@ const basePath = isKoFallback ? '/ko/talks' : '/talks';
   .talk-list a { display: block; padding: 20px 0; color: inherit; text-decoration: none; }
   .talk-list a:hover .talk-title { color: var(--color-accent); }
   .talk-head { display: flex; gap: 12px; align-items: center; font-size: 0.8125rem; color: var(--color-muted); margin-bottom: 6px; }
-  .talk-format { padding: 2px 8px; border-radius: 4px; background: var(--color-border); font-weight: 500; text-transform: capitalize; }
+  .talk-format { text-transform: capitalize; }
   .talk-title { font-size: 1.125rem; font-weight: 600; line-height: 1.4; margin-bottom: 6px; }
   .talk-venue { font-size: 0.875rem; color: var(--color-muted); }
 </style>
