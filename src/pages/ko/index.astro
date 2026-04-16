@@ -26,7 +26,7 @@ const jsonLd = {
     /* Hero */
     .hero {
       background: var(--color-surface);
-      padding: var(--space-9) 0 var(--space-8);
+      padding: var(--space-9) 0 var(--space-7);
       text-align: left;
     }
     .hero-inner {
@@ -38,7 +38,7 @@ const jsonLd = {
       display: flex;
       align-items: flex-start;
       gap: var(--space-5);
-      margin-bottom: var(--space-5);
+      margin-bottom: var(--space-4);
     }
     .hero-avatar img {
       width: 80px;
@@ -65,15 +65,15 @@ const jsonLd = {
     }
     .hero-bio {
       font-size: 1rem;
-      line-height: 1.75;
+      line-height: 1.7;
       color: var(--color-text);
-      margin: 0 0 var(--space-5);
+      margin: 0 0 var(--space-4);
     }
     .breadth {
       font-size: 0.8125rem;
       color: var(--color-muted);
-      line-height: 1.8;
-      margin: 0 0 var(--space-5);
+      line-height: 1.7;
+      margin: 0 0 var(--space-4);
     }
     .breadth-row {
       display: flex;
@@ -88,15 +88,15 @@ const jsonLd = {
       flex: 1;
     }
     .hero-now {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: var(--color-text);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--color-muted);
       margin: 0;
     }
 
     /* Anchor Grid */
     .anchor-grid-section {
-      padding: var(--space-10) 0;
+      padding: var(--space-9) 0 var(--space-10);
     }
     .anchor-grid-inner {
       max-width: var(--container-max);
@@ -110,7 +110,7 @@ const jsonLd = {
     }
     .anchor-card {
       display: block;
-      padding: var(--space-5);
+      padding: var(--space-6);
       border: 1px solid var(--color-border);
       border-radius: 8px;
       text-decoration: none;
@@ -138,19 +138,23 @@ const jsonLd = {
     }
 
     /* Soft Contact */
-    .cta-section {
-      background: var(--color-bg);
-    }
     .contact-tags {
       font-size: 0.875rem;
       color: var(--color-muted);
-      margin-bottom: var(--space-5);
+      margin-bottom: var(--space-4);
       letter-spacing: 0.02em;
     }
 
     @media (max-width: 639px) {
       .anchor-grid {
         grid-template-columns: 1fr;
+      }
+      .breadth-row {
+        flex-direction: column;
+        gap: 2px;
+      }
+      .breadth-label {
+        min-width: 0;
       }
     }
   </style>
@@ -207,8 +211,8 @@ const jsonLd = {
 
     <section class="cta-section" id="contact" aria-labelledby="cta-heading">
       <div class="cta-inner">
-        <p class="contact-tags">자문 · 강의 · 대화</p>
-        <h2 class="cta-heading" id="cta-heading">잇고 싶은 이야기가 있다면, 같이 이어 봐도 좋겠습니다.</h2>
+        <p class="contact-tags">자문 · 강의 · 같이 나눌 이야기</p>
+        <h2 class="cta-heading" id="cta-heading">함께 할 이야기가 있다면, 편하게 연락 주세요.</h2>
         <div class="cta-buttons">
           <a href="mailto:hello@ieumtech.net" class="btn">이메일</a>
           <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>

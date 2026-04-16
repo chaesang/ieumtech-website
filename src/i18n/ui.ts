@@ -32,7 +32,7 @@ export const ui = {
     'cta.email': '이메일',
     'cta.linkedin': '링크드인',
     'cta.langToggle': 'EN',
-    'footer.copy': '© 2026 이음 테크. All rights reserved.',
+    'footer.copy': '© 2026 이음 테크. 모든 권리 보유.',
   },
 } as const;
 
