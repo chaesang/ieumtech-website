@@ -11,15 +11,11 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const homePath = localizedPath('/', lang);
-const aboutPath = localizedPath('/about', lang);
-const writingPath = localizedPath('/writing', lang);
 ---
 <footer class="site-footer">
   <div class="footer-inner">
     <a href={homePath} class="footer-logo">{lang === 'ko' ? '이음 테크' : 'Ieum Tech'}</a>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href={aboutPath}>{t('nav.about')}</a>
-      <a href={writingPath}>{t('nav.writing')}</a>
+    <nav class="footer-nav" aria-label={lang === 'ko' ? '외부 링크' : 'External links'}>
       <a href="mailto:hello@ieumtech.net">Email</a>
       <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="https://brunch.co.kr/@chaesang" target="_blank" rel="noopener noreferrer">Brunch</a>

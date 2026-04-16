@@ -57,7 +57,7 @@ const formatLabel: Record<string, string> = {
 </Base>
 
 <style>
-  .talk-detail { padding: 48px 0 80px; }
+  .talk-detail { padding: 32px 0 56px; }
   .detail-inner { max-width: 640px; margin: 0 auto; padding: 0 24px; }
   .breadcrumb { margin-bottom: 24px; font-size: 0.875rem; }
   .breadcrumb a { color: var(--color-muted); text-decoration: none; }
@@ -65,12 +65,12 @@ const formatLabel: Record<string, string> = {
   .detail-header { margin-bottom: 32px; border-bottom: 1px solid var(--color-border); padding-bottom: 24px; }
   .meta { display: flex; gap: 12px; align-items: center; font-size: 0.8125rem; color: var(--color-muted); margin-bottom: 12px; }
   .format { padding: 2px 8px; border-radius: 4px; background: var(--color-border); font-weight: 500; }
-  .detail-header h1 { font-size: 1.75rem; margin: 0 0 6px; line-height: 1.3; }
+  .detail-header h1 { font-size: 1.875rem; margin: 0 0 8px; line-height: 1.3; letter-spacing: -0.02em; }
   .venue { font-size: 0.9375rem; color: var(--color-muted); margin: 0; }
-  .prose { font-size: 1rem; line-height: 1.9; color: var(--color-text); }
+  .prose { font-size: 1rem; line-height: 1.75; color: var(--color-text); }
   .prose :global(p) { margin: 0 0 16px; }
-  .links { margin-top: 48px; padding: 16px 20px; background: var(--color-border); border-radius: 6px; }
-  .links h3 { font-size: 0.9375rem; font-weight: 600; margin: 0 0 8px; }
-  .links ul { margin: 0; padding-left: 18px; }
+  .links { margin-top: 32px; padding: 16px 0; border-top: 1px solid var(--color-border); }
+  .links h3 { font-size: 0.875rem; font-weight: 600; margin: 0 0 8px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .links ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }
   .links a { color: var(--color-accent); word-break: break-all; }
 </style>

@@ -57,22 +57,22 @@ const period = end ? `${fmt(start)} – ${fmt(end)}` : `${fmt(start)} – Presen
 </Base>
 
 <style>
-  .company-detail { padding: 48px 0 80px; }
+  .company-detail { padding: 32px 0 56px; }
   .detail-inner { max-width: 640px; margin: 0 auto; padding: 0 24px; }
   .breadcrumb { margin-bottom: 24px; font-size: 0.875rem; }
   .breadcrumb a { color: var(--color-muted); text-decoration: none; }
   .breadcrumb a:hover { color: var(--color-accent); }
   .detail-header { margin-bottom: 32px; border-bottom: 1px solid var(--color-border); padding-bottom: 24px; }
   .meta { font-size: 0.8125rem; color: var(--color-muted); margin-bottom: 12px; }
-  .detail-header h1 { font-size: 1.75rem; margin: 0 0 6px; }
+  .detail-header h1 { font-size: 1.875rem; margin: 0 0 8px; letter-spacing: -0.02em; }
   .role { font-size: 1rem; color: var(--color-muted); margin: 0 0 12px; }
   .summary { font-size: 1rem; line-height: 1.7; color: var(--color-text); margin: 0; }
   .prose { font-size: 1rem; line-height: 1.8; color: var(--color-text); }
   .prose :global(h2) { font-size: 1.25rem; font-weight: 600; margin: 32px 0 12px; }
   .prose :global(p) { margin: 0 0 16px; }
   .prose :global(ul) { padding-left: 24px; margin: 0 0 16px; }
-  .links { margin-top: 48px; padding: 16px 20px; background: var(--color-border); border-radius: 6px; }
-  .links h3 { font-size: 0.9375rem; font-weight: 600; margin: 0 0 8px; }
-  .links ul { margin: 0; padding-left: 18px; }
+  .links { margin-top: 32px; padding: 16px 0; border-top: 1px solid var(--color-border); }
+  .links h3 { font-size: 0.875rem; font-weight: 600; margin: 0 0 8px; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .links ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }
   .links a { color: var(--color-accent); }
 </style>
