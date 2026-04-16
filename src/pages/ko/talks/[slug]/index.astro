@@ -21,7 +21,7 @@ const formatLabel: Record<string, string> = {
 };
 ---
 <Base
-  title={`${entry.data.title} — 남긴 말들 — 정채상`}
+  title={`${entry.data.title} — 남긴 말과 글들 — 정채상`}
   description={`${entry.data.venue} · ${entry.data.event}`}
   lang="ko"
   path={`/ko/talks/${entry.slug.split('/').pop()}`}
@@ -31,7 +31,7 @@ const formatLabel: Record<string, string> = {
   <main>
     <article class="talk-detail">
       <div class="detail-inner">
-        <nav class="breadcrumb"><a href="/ko/talks">← 남긴 말들</a></nav>
+        <nav class="breadcrumb"><a href="/ko/talks">← 남긴 말과 글들</a></nav>
         <header class="detail-header">
           <div class="meta">
             <span class="format">{formatLabel[entry.data.format] ?? entry.data.format}</span>
