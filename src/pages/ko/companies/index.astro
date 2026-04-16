@@ -57,21 +57,39 @@ const entries = (await getCollection('companies', (e) => !e.data.draft && e.data
 </Base>
 
 <style>
-  .list-hero { padding: 64px 0 24px; border-bottom: 1px solid var(--color-border); }
-  .list-hero h1 { font-size: 2rem; margin: 0 0 10px; }
-  .list-lead { font-size: 1rem; color: var(--color-muted); max-width: 640px; margin: 0; line-height: 1.7; }
-  .list-body { padding: 32px 0 80px; }
-  .empty { color: var(--color-muted); padding: 32px 0; text-align: center; }
-  .company-list { list-style: none; padding: 0; margin: 0; }
-  .company-list li { border-top: 1px solid var(--color-border); }
-  .company-list li:last-child { border-bottom: 1px solid var(--color-border); }
-  .company-list a { display: flex; align-items: flex-start; padding: 20px 0; color: inherit; text-decoration: none; }
+  .list-hero { padding: 96px 0 32px; }
+  .list-hero h1 { font-size: 1.875rem; margin: 0 0 12px; letter-spacing: -0.025em; line-height: 1.2; }
+  .list-lead { font-size: 1rem; color: var(--color-muted); max-width: 560px; margin: 0; line-height: 1.7; }
+  .list-body { padding: 8px 0 96px; }
+  .empty { color: var(--color-muted); padding: 48px 0; text-align: center; }
+
+  .company-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;   /* generous gap, no borders */
+  }
+  .company-list a {
+    display: flex;
+    align-items: flex-start;
+    color: inherit;
+    text-decoration: none;
+  }
   .company-list a:hover .company-name { color: var(--color-accent); }
   .company-list a:hover .company-initial { border-color: var(--color-accent); color: var(--color-accent); }
+
   .company-body { flex: 1; min-width: 0; }
   .company-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 4px; }
-  .company-name { font-size: 1.125rem; font-weight: 600; }
-  .company-period { font-size: 0.8125rem; color: var(--color-muted); flex-shrink: 0; }
-  .company-role { font-size: 0.9375rem; color: var(--color-muted); margin-bottom: 6px; }
-  .company-summary { font-size: 0.9375rem; color: var(--color-text); margin: 0; line-height: 1.6; }
+  .company-name { font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.01em; }
+  .company-period { font-size: 0.8125rem; color: var(--color-subtle); flex-shrink: 0; }
+  .company-role { font-size: 0.9375rem; color: var(--color-muted); margin-bottom: 8px; }
+  .company-summary { font-size: 0.9375rem; color: var(--color-text); margin: 0; line-height: 1.7; }
+
+  @media (max-width: 639px) {
+    .list-hero { padding: 64px 0 24px; }
+    .list-body { padding: 0 0 64px; }
+    .company-list { gap: 28px; }
+  }
 </style>

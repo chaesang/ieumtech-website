@@ -22,6 +22,8 @@ const talksPath = localizedPath('/talks', lang);
 const projectEntries = await getCollection('projects', (e) => !e.data.draft);
 const hasProjects = projectEntries.length > 0;
 
+const isHome = currentPath === homePath;
+
 const isWritingActive = currentPath === writingPath || currentPath.startsWith(`${writingPath}/`);
 const isCompaniesActive = currentPath === companiesPath || currentPath.startsWith(`${companiesPath}/`);
 const isProjectsActive = currentPath === projectsPath || currentPath.startsWith(`${projectsPath}/`);
@@ -53,15 +55,17 @@ const secondaryLabels = lang === 'ko'
       <a href={toggleHref} class="lang-toggle">{toggleLabel}</a>
     </div>
   </div>
-  <nav class="site-subnav" aria-label={lang === 'ko' ? '하위 내비게이션' : 'Secondary navigation'}>
-    <div class="subnav-inner">
-      <a href={companiesPath} class={isCompaniesActive ? 'active' : ''} aria-current={isCompaniesActive ? 'page' : undefined}>{secondaryLabels.companies}</a>
-      {hasProjects && (
-        <a href={projectsPath} class={isProjectsActive ? 'active' : ''} aria-current={isProjectsActive ? 'page' : undefined}>{secondaryLabels.projects}</a>
-      )}
-      <a href={talksPath} class={isTalksActive ? 'active' : ''} aria-current={isTalksActive ? 'page' : undefined}>{secondaryLabels.talks}</a>
-    </div>
-  </nav>
+  {!isHome && (
+    <nav class="site-subnav" aria-label={lang === 'ko' ? '하위 내비게이션' : 'Secondary navigation'}>
+      <div class="subnav-inner">
+        <a href={companiesPath} class={isCompaniesActive ? 'active' : ''} aria-current={isCompaniesActive ? 'page' : undefined}>{secondaryLabels.companies}</a>
+        {hasProjects && (
+          <a href={projectsPath} class={isProjectsActive ? 'active' : ''} aria-current={isProjectsActive ? 'page' : undefined}>{secondaryLabels.projects}</a>
+        )}
+        <a href={talksPath} class={isTalksActive ? 'active' : ''} aria-current={isTalksActive ? 'page' : undefined}>{secondaryLabels.talks}</a>
+      </div>
+    </nav>
+  )}
 </header>
 
 <style>
@@ -70,9 +74,9 @@ const secondaryLabels = lang === 'ko'
     padding: 8px 0;
   }
   .subnav-inner {
-    max-width: 960px;
+    max-width: var(--container-max);
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 var(--container-padding);
     display: flex;
     gap: 18px;
     flex-wrap: wrap;
