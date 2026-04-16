@@ -26,26 +26,24 @@ const jsonLd = {
   altLangPath="/"
 >
   <style slot="head" is:inline>
-    .hero-inner { padding: 64px 24px 48px; max-width: 640px; margin: 0 auto; }
-    .hero-profile { margin-bottom: 20px; }
-    .hero-profile img { border-radius: 50%; width: 96px; height: 96px; object-fit: cover; }
-    .hero-name { font-size: 1.75rem; font-weight: 600; margin: 0 0 4px; color: var(--color-text); }
-    .hero-name-en { font-size: 0.9375rem; color: var(--color-muted); margin: 0 0 28px; }
-    .hero-intro p { font-size: 1.0625rem; line-height: 1.8; color: var(--color-text); margin: 0 0 10px; }
+    .hero-profile { margin-bottom: 24px; }
+    .hero-profile img { border-radius: 50%; width: 112px; height: 112px; object-fit: cover; }
+    .hero-name { font-size: 2rem; font-weight: 600; margin: 0 0 4px; color: var(--color-text); letter-spacing: -0.025em; line-height: 1.15; }
+    .hero-name-en { font-size: 0.9375rem; color: var(--color-muted); margin: 0 0 32px; }
+    .hero-intro p { font-size: 1.0625rem; line-height: 1.8; color: var(--color-text); margin: 0 0 14px; max-width: 520px; margin-left: auto; margin-right: auto; }
     .hero-intro p:last-child { margin-bottom: 0; }
 
-    .recent-writing { padding: 40px 0; border-top: 1px solid var(--color-border); }
-    .recent-writing-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; }
-    .recent-writing-header h2 { margin: 0; font-size: 1.5rem; }
+    .recent-writing-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px; }
+    .recent-writing-header h2 { margin: 0; }
     .recent-writing-all { font-size: 0.875rem; color: var(--color-muted); text-decoration: none; }
     .recent-writing-all:hover { color: var(--color-accent); }
-    .recent-writing-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px; }
-    .recent-writing-item { padding: 12px 0; border-top: 1px solid var(--color-border); }
+    .recent-writing-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 32px; }
+    .recent-writing-item { padding: 0; }
     .recent-writing-series { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; text-decoration: none; color: var(--color-text); }
     .recent-writing-series:hover .recent-writing-series-title { color: var(--color-accent); }
-    .recent-writing-series-title { font-size: 1rem; font-weight: 600; }
-    .recent-writing-count { font-size: 0.8125rem; color: var(--color-muted); flex-shrink: 0; }
-    .recent-writing-desc { font-size: 0.875rem; color: var(--color-muted); margin: 6px 0 10px; line-height: 1.6; }
+    .recent-writing-series-title { font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.01em; }
+    .recent-writing-count { font-size: 0.8125rem; color: var(--color-subtle); flex-shrink: 0; }
+    .recent-writing-desc { font-size: 0.9375rem; color: var(--color-muted); margin: 8px 0 10px; line-height: 1.7; }
     .recent-writing-latest { font-size: 0.9375rem; color: var(--color-text); text-decoration: none; display: inline-block; }
     .recent-writing-latest:hover { color: var(--color-accent); }
   </style>
