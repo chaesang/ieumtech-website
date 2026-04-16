@@ -6,6 +6,7 @@ const enHighlights = await getSeriesHighlights('en');
 const highlights = enHighlights.length > 0 ? enHighlights : await getSeriesHighlights('ko');
 const highlightLang: 'en' | 'ko' = enHighlights.length > 0 ? 'en' : 'ko';
 const writingBase = highlightLang === 'ko' ? '/ko/writing' : '/writing';
+const showKoNotice = highlightLang === 'ko';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -51,6 +52,7 @@ const jsonLd = {
     .recent-writing-desc { font-size: 0.875rem; color: var(--color-muted); margin: 6px 0 10px; line-height: 1.6; }
     .recent-writing-latest { font-size: 0.9375rem; color: var(--color-text); text-decoration: none; display: inline-block; }
     .recent-writing-latest:hover { color: var(--color-accent); }
+    .ko-notice { font-size: 0.8125rem; color: var(--color-muted); margin: -8px 0 16px; padding: 8px 12px; background: var(--color-border); border-radius: 4px; display: inline-block; }
   </style>
 
   <section class="hero" id="home">
@@ -76,6 +78,9 @@ const jsonLd = {
             <h2>Writing — Several Threads</h2>
             <a href={writingBase} class="recent-writing-all">All writing →</a>
           </div>
+          {showKoNotice && (
+            <p class="ko-notice">Writing is currently in Korean. English translations are planned.</p>
+          )}
           <ul class="recent-writing-list">
             {highlights.map(({ meta, count, latest }) => {
               const latestSlug = latest.slug.split('/').pop()!;

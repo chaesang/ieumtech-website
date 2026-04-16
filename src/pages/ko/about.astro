@@ -32,9 +32,6 @@ const jsonLd = {
     .simple-list { gap: 14px; }
     .simple-list-item .label { font-weight: 600; }
     .simple-list-item .detail { font-weight: 400; }
-    .see-more { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
-    .see-more a { color: var(--color-accent); text-decoration: none; font-size: 1rem; }
-    .see-more a:hover { text-decoration: underline; }
   </style>
 
   <main>
@@ -76,11 +73,10 @@ const jsonLd = {
 
         <div class="about-block">
           <h2>더 보기</h2>
-          <ul class="see-more">
-            <li><a href="/ko/companies">거쳐 온 자리들 →</a></li>
-            <li><a href="/ko/projects">함께 했던 프로젝트들 →</a></li>
-            <li><a href="/ko/talks">남긴 말과 글들 →</a></li>
-            <li><a href="/ko/writing">글 →</a></li>
+          <ul class="see-more-grid">
+            <li><a href="/ko/companies">거쳐 온 자리들</a></li>
+            <li><a href="/ko/talks">남긴 말과 글들</a></li>
+            <li><a href="/ko/writing">글</a></li>
           </ul>
         </div>
 

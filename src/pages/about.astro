@@ -37,9 +37,6 @@ const jsonLd = {
     .simple-list { gap: 14px; }
     .simple-list-item .label { font-weight: 600; }
     .simple-list-item .detail { font-weight: 400; }
-    .see-more { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
-    .see-more a { color: var(--color-accent); text-decoration: none; font-size: 1rem; }
-    .see-more a:hover { text-decoration: underline; }
   </style>
 
   <main>
@@ -81,11 +78,10 @@ const jsonLd = {
 
         <div class="about-block">
           <h2>More</h2>
-          <ul class="see-more">
-            <li><a href="/companies">Places I've Worked →</a></li>
-            <li><a href="/projects">Projects →</a></li>
-            <li><a href="/talks">Talks & Lectures →</a></li>
-            <li><a href="/writing">Writing →</a></li>
+          <ul class="see-more-grid">
+            <li><a href="/companies">Places I've Worked</a></li>
+            <li><a href="/talks">Talks & Lectures</a></li>
+            <li><a href="/writing">Writing</a></li>
           </ul>
         </div>
 
