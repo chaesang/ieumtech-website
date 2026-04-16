@@ -28,7 +28,7 @@ export const ui = {
     'nav.speaking': '강연',
     'nav.writing': '글',
     'nav.portfolio': '포트폴리오',
-    'nav.contact': '연락',
+    'nav.contact': '문의',
     'cta.email': '이메일',
     'cta.linkedin': '링크드인',
     'cta.langToggle': 'EN',
