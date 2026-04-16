@@ -5,11 +5,11 @@ period:
   start: 2024-03-01
   end: 2025-09-30
 lang: en
-summary: "CTO. Explainable AI for industrial process optimization using Deep Temporal Neural Networks."
+summary: "Bringing explainable AI to industrial operations."
 order: 90
 tags: ["ai", "advisory", "industrial"]
 ---
 
-- Led 20+ AI/SW engineers as CTO
-- Explainable AI (XAI) for industrial process optimization using Deep Temporal Neural Networks
-- Industries: steel, cement, glass, petrochemical, power generation, transportation/logistics
+- Led an R&D organization of 20+ AI/SW engineers.
+- Applied explainable AI (XAI) to industrial process optimization.
+- Industries: steel, cement, glass, petrochemical, power, transportation/logistics.
