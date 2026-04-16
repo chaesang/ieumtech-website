@@ -1,28 +1,132 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>Chaesang Jung · 정채상 — Ieum</title><meta name="description" content="Thirty years in IT, between Korea and Silicon Valley. A place for what has been learned along the way."><link rel="canonical" href="https://ieumtech.net/"><link rel="alternate" hreflang="en" href="https://ieumtech.net/"><link rel="alternate" hreflang="ko" href="https://ieumtech.net/ko/"><link rel="alternate" hreflang="x-default" href="https://ieumtech.net/"><meta property="og:type" content="profile"><meta property="og:url" content="https://ieumtech.net/"><meta property="og:title" content="Chaesang Jung · 정채상"><meta property="og:description" content="Thirty years in IT, between Korea and Silicon Valley."><meta property="og:site_name" content="Ieum Tech"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta property="og:image" content="https://ieumtech.net/profile.jpg"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Chaesang Jung · 정채상"><meta name="twitter:description" content="Thirty years in IT, between Korea and Silicon Valley."><meta name="twitter:image" content="https://ieumtech.net/profile.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Chaesang Jung","alternateName":"정채상","url":"https://ieumtech.net/","sameAs":"https://linkedin.com/in/chaesang","description":"Thirty years in IT, between Korea and Silicon Valley."}</script><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><style>
-    .hero-inner { padding: 24px 24px 16px; max-width: 640px; margin: 0 auto; }
-    .hero-profile { margin-bottom: 20px; }
-    .hero-profile img { border-radius: 50%; width: 128px; height: 128px; object-fit: cover; }
-    .hero-name { font-size: 2.25rem; font-weight: 600; margin: 0 0 4px; color: var(--color-text); letter-spacing: -0.025em; }
-    .hero-name-en { font-size: 0.9375rem; color: var(--color-muted); margin: 0 0 24px; }
-    .hero-intro p { font-size: 1rem; line-height: 1.75; color: var(--color-text); margin: 0 0 14px; }
-    .hero-intro p:last-child { margin-bottom: 0; }
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>Chaesang Jung · 정채상 — Ieum</title><meta name="description" content="Thirty years in IT, between Korea and Silicon Valley. A place for what has been learned along the way."><link rel="canonical" href="https://ieumtech.net/"><link rel="alternate" hreflang="en" href="https://ieumtech.net/"><link rel="alternate" hreflang="ko" href="https://ieumtech.net/ko/"><link rel="alternate" hreflang="x-default" href="https://ieumtech.net/"><meta property="og:type" content="profile"><meta property="og:url" content="https://ieumtech.net/"><meta property="og:title" content="Chaesang Jung · 정채상"><meta property="og:description" content="Thirty years in IT, between Korea and Silicon Valley."><meta property="og:site_name" content="Ieum Tech"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta property="og:image" content="https://ieumtech.net/profile.jpg"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Chaesang Jung · 정채상"><meta name="twitter:description" content="Thirty years in IT, between Korea and Silicon Valley."><meta name="twitter:image" content="https://ieumtech.net/profile.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Chaesang Jung","alternateName":"정채상","url":"https://ieumtech.net/","sameAs":"https://linkedin.com/in/chaesang","description":"Thirty years — between Korea and Silicon Valley, and between people and technology."}</script><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><style>
+    /* Hero */
+    .hero {
+      background: var(--color-surface);
+      padding: var(--space-9) 0 var(--space-8);
+      text-align: left;
+    }
+    .hero-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-padding);
+    }
+    .hero-head {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-5);
+      margin-bottom: var(--space-5);
+    }
+    .hero-avatar img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .hero-name {
+      font-size: 1.875rem;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin: 0 0 2px;
+      color: var(--color-text);
+    }
+    .hero-name-en {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      margin: 0 0 var(--space-3);
+    }
+    .hero-bio {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--color-text);
+      margin: 0 0 var(--space-5);
+    }
+    .breadth {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
+      line-height: 1.8;
+      margin: 0 0 var(--space-5);
+    }
+    .breadth-row {
+      display: flex;
+      gap: var(--space-4);
+    }
+    .breadth-label {
+      color: var(--color-subtle);
+      min-width: 56px;
+      flex-shrink: 0;
+    }
+    .breadth-values {
+      flex: 1;
+    }
+    .hero-now {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--color-text);
+      margin: 0;
+    }
 
-    .recent-writing { padding: 40px 0; border-top: 1px solid var(--color-border); }
-    .recent-writing-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; }
-    .recent-writing-header h2 { margin: 0; font-size: 1.5rem; }
-    .recent-writing-all { font-size: 0.875rem; color: var(--color-muted); text-decoration: none; }
-    .recent-writing-all:hover { color: var(--color-accent); }
-    .recent-writing-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px; }
-    .recent-writing-item { padding: 12px 0; border-top: 1px solid var(--color-border); }
-    .recent-writing-series { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; text-decoration: none; color: var(--color-text); }
-    .recent-writing-series:hover .recent-writing-series-title { color: var(--color-accent); }
-    .recent-writing-series-title { font-size: 1rem; font-weight: 600; }
-    .recent-writing-count { font-size: 0.8125rem; color: var(--color-muted); flex-shrink: 0; }
-    .recent-writing-desc { font-size: 0.875rem; color: var(--color-muted); margin: 6px 0 10px; line-height: 1.6; }
-    .recent-writing-latest { font-size: 0.9375rem; color: var(--color-text); text-decoration: none; display: inline-block; }
-    .recent-writing-latest:hover { color: var(--color-accent); }
-    .ko-notice { font-size: 0.8125rem; color: var(--color-muted); margin: -8px 0 16px; padding: 8px 12px; background: var(--color-border); border-radius: 4px; display: inline-block; }
-  </style><link rel="stylesheet" href="/previews/pr-52/_astro/about.qB--LgVp.css"></head> <body> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="logo" data-astro-cid-3ef6ksr2>Ieum Tech <span class="logo-ko" data-astro-cid-3ef6ksr2>이음 테크</span></a> <div class="header-right" data-astro-cid-3ef6ksr2> <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2></span><span data-astro-cid-3ef6ksr2></span><span data-astro-cid-3ef6ksr2></span> </button> <ul class="nav-links" id="nav-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/about" class data-astro-cid-3ef6ksr2>About</a></li> <li data-astro-cid-3ef6ksr2><a href="/writing" class data-astro-cid-3ef6ksr2>Writing</a></li> </ul> <a href="/ko/" class="lang-toggle" data-astro-cid-3ef6ksr2>KO</a> </div> </div> <nav class="site-subnav" aria-label="Secondary navigation" data-astro-cid-3ef6ksr2> <div class="subnav-inner" data-astro-cid-3ef6ksr2> <a href="/companies" class data-astro-cid-3ef6ksr2>Places I&#39;ve Worked</a>  <a href="/talks" class data-astro-cid-3ef6ksr2>Talks</a> </div> </nav> </header>  <script type="module">const e=document.getElementById("hamburger"),t=document.getElementById("nav-menu");e&&t&&(e.addEventListener("click",()=>{const n=e.classList.toggle("open");t.classList.toggle("open"),e.setAttribute("aria-expanded",String(n))}),t.querySelectorAll("a").forEach(n=>{n.addEventListener("click",()=>{e.classList.remove("open"),t.classList.remove("open"),e.setAttribute("aria-expanded","false")})}));</script>   <section class="hero" id="home"> <div class="hero-inner"> <div class="hero-profile"> <img src="/profile.jpg" alt="Chaesang Jung" width="96" height="96" loading="lazy"> </div> <h1 class="hero-name">Chaesang Jung</h1> <p class="hero-name-en">정채상</p> <div class="hero-intro"> <p>Thirty years in IT, between Korea and Silicon Valley.</p> <p>Working between people and technology through the changes,</p> <p>and keeping what has been learned along the way here.</p> </div> </div> </section> <main> <section class="recent-writing"> <div class="container"> <div class="recent-writing-header"> <h2>Writing — Several Threads</h2> <a href="/ko/writing" class="recent-writing-all">All writing →</a> </div> <p class="ko-notice">Writing is currently in Korean. English translations are planned.</p> <ul class="recent-writing-list"> <li class="recent-writing-item"> <a class="recent-writing-series" href="/ko/writing/series/svc-analysis"> <span class="recent-writing-series-title">혼자 해 보는 서비스 분석</span> <span class="recent-writing-count">14 entries</span> </a> <p class="recent-writing-desc">사용자의 입장 혹은 참관인의 입장에서 &#39;내 맘대로 제품 분석&#39;한 것들을 모아 둠. 사소한 걱정과 지적에서 시작해서 가급적 제안까지.</p> <a class="recent-writing-latest" href="/ko/writing/chaesang-117">
-→ AI에게 물어 보기 - &quot;어느 영화 장면이지?&quot; </a> </li><li class="recent-writing-item"> <a class="recent-writing-series" href="/ko/writing/series/do-well-company"> <span class="recent-writing-series-title">회사에서의 기억들</span> <span class="recent-writing-count">11 entries</span> </a> <p class="recent-writing-desc">여러 회사에서 엔지니어로, 매니저로, 경영자로 일하며 본 장면들. 조직과 사람에 관한 기록.</p> <a class="recent-writing-latest" href="/ko/writing/chaesang-167">
-→ 기억 - Assessment </a> </li><li class="recent-writing-item"> <a class="recent-writing-series" href="/ko/writing/series/itterm"> <span class="recent-writing-series-title">한국 IT 용어 이야기</span> <span class="recent-writing-count">17 entries</span> </a> <p class="recent-writing-desc">한국 IT 현장에서 반복해서 듣는 단어들을 한 편씩 풀어 봄. 미국과 한국을 오가며 들어 온 것들을 정리한 기록들.</p> <a class="recent-writing-latest" href="/ko/writing/chaesang-156">
-→ 한국 IT 용어 이야기 (17) - 개인화 </a> </li> </ul> </div> </section> <section class="cta-section" id="contact" aria-labelledby="cta-heading"> <div class="cta-inner"> <h2 class="cta-heading" id="cta-heading">If there's a thread worth pulling on, let's pull on it together.</h2> <div class="cta-buttons"> <a href="mailto:hello@ieumtech.net" class="btn">Email</a> <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a> </div> </div> </section> </main>  <footer class="site-footer"> <div class="footer-inner"> <a href="/" class="footer-logo">Ieum Tech</a> <nav class="footer-nav" aria-label="External links"> <a href="mailto:hello@ieumtech.net">Email</a> <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer">LinkedIn</a> <a href="https://brunch.co.kr/@chaesang" target="_blank" rel="noopener noreferrer">Brunch</a> </nav> <p class="footer-copy">© 2026 Ieum Tech. All rights reserved.</p> </div> </footer> </body></html>
+    /* Anchor Grid */
+    .anchor-grid-section {
+      padding: var(--space-10) 0;
+    }
+    .anchor-grid-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-padding);
+    }
+    .anchor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+    .anchor-card {
+      display: block;
+      padding: var(--space-5);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color var(--transition-fast), background var(--transition-fast);
+    }
+    .anchor-card:hover {
+      border-color: var(--color-accent);
+      background: var(--color-surface);
+    }
+    .anchor-card:hover .anchor-title {
+      color: var(--color-accent);
+    }
+    .anchor-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 4px;
+      transition: color var(--transition-fast);
+    }
+    .anchor-hint {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      line-height: 1.6;
+    }
+
+    /* Soft Contact */
+    .cta-section {
+      background: var(--color-bg);
+    }
+    .contact-tags {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      margin-bottom: var(--space-5);
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 639px) {
+      .anchor-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style><link rel="stylesheet" href="/previews/pr-52/_astro/about.0gHYGDNX.css"></head> <body> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="logo" data-astro-cid-3ef6ksr2>Ieum Tech <span class="logo-ko" data-astro-cid-3ef6ksr2>이음 테크</span></a> <div class="header-right" data-astro-cid-3ef6ksr2> <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2></span><span data-astro-cid-3ef6ksr2></span><span data-astro-cid-3ef6ksr2></span> </button> <ul class="nav-links" id="nav-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/about" class data-astro-cid-3ef6ksr2>About</a></li> <li data-astro-cid-3ef6ksr2><a href="/writing" class data-astro-cid-3ef6ksr2>Writing</a></li> </ul> <a href="/ko/" class="lang-toggle" data-astro-cid-3ef6ksr2>KO</a> </div> </div>  </header>  <script type="module">const e=document.getElementById("hamburger"),t=document.getElementById("nav-menu");e&&t&&(e.addEventListener("click",()=>{const n=e.classList.toggle("open");t.classList.toggle("open"),e.setAttribute("aria-expanded",String(n))}),t.querySelectorAll("a").forEach(n=>{n.addEventListener("click",()=>{e.classList.remove("open"),t.classList.remove("open"),e.setAttribute("aria-expanded","false")})}));</script>   <section class="hero" id="home"> <div class="hero-inner"> <div class="hero-head"> <div class="hero-avatar"> <img src="/profile.jpg" alt="Chaesang Jung" width="80" height="80" loading="lazy"> </div> <div class="hero-text"> <h1 class="hero-name">Chaesang Jung</h1> <p class="hero-name-en">정채상</p> </div> </div> <p class="hero-bio">Thirty years — between Korea and Silicon Valley, and between people and technology.</p> <div class="breadth" aria-label="Career overview"> <div class="breadth-row"> <span class="breadth-label">Roles</span> <span class="breadth-values">Software engineer / Tech lead / People manager / Product manager / Technical advisor / Leadership / Adjunct Professor</span> </div> <div class="breadth-row"> <span class="breadth-label">Domains</span> <span class="breadth-values">Embedded / Smartphone / Consumer service / Tech infrastructure / Big Data / AI</span> </div> </div> <p class="hero-now">Still learning, sharing, and connecting — wherever the chance arises.</p> </div> </section> <main> <section class="anchor-grid-section" aria-label="Site navigation"> <div class="anchor-grid-inner"> <div class="anchor-grid"> <a href="/companies" class="anchor-card"> <div class="anchor-title">Places I've Worked</div> <div class="anchor-hint">A trail across thirty years</div> </a> <a href="/writing" class="anchor-card"> <div class="anchor-title">Writing</div> <div class="anchor-hint">Several series, ongoing</div> </a> <a href="/talks" class="anchor-card"> <div class="anchor-title">Talks</div> <div class="anchor-hint">Lectures, keynotes, classroom hours</div> </a> <a href="/about" class="anchor-card"> <div class="anchor-title">About</div> <div class="anchor-hint">A three-minute read</div> </a> </div> </div> </section> <section class="cta-section" id="contact" aria-labelledby="cta-heading"> <div class="cta-inner"> <p class="contact-tags">Advising · speaking · conversation</p> <h2 class="cta-heading" id="cta-heading">If there's a thread worth pulling on, let's pull on it together.</h2> <div class="cta-buttons"> <a href="mailto:hello@ieumtech.net" class="btn">Email</a> <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a> </div> </div> </section> </main>  <footer class="site-footer"> <div class="footer-inner"> <a href="/" class="footer-logo">Ieum Tech</a> <nav class="footer-nav" aria-label="External links"> <a href="mailto:hello@ieumtech.net">Email</a> <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer">LinkedIn</a> <a href="https://brunch.co.kr/@chaesang" target="_blank" rel="noopener noreferrer">Brunch</a> </nav> <p class="footer-copy">© 2026 Ieum Tech. All rights reserved.</p> </div> </footer> </body></html>
