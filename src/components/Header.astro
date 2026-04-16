@@ -14,13 +14,23 @@ const t = useTranslations(lang);
 const homePath = localizedPath('/', lang);
 const aboutPath = localizedPath('/about', lang);
 const writingPath = localizedPath('/writing', lang);
+const companiesPath = localizedPath('/companies', lang);
+const projectsPath = localizedPath('/projects', lang);
+const talksPath = localizedPath('/talks', lang);
+
 const isWritingActive = currentPath === writingPath || currentPath.startsWith(`${writingPath}/`);
+const isCompaniesActive = currentPath === companiesPath || currentPath.startsWith(`${companiesPath}/`);
+const isProjectsActive = currentPath === projectsPath || currentPath.startsWith(`${projectsPath}/`);
+const isTalksActive = currentPath === talksPath || currentPath.startsWith(`${talksPath}/`);
 
 const otherLang: Lang = lang === 'en' ? 'ko' : 'en';
 const toggleHref = altLangPath ?? (otherLang === 'ko' ? '/ko/' : '/');
 const toggleLabel = otherLang === 'ko' ? 'KO' : 'EN';
+
+const secondaryLabels = lang === 'ko'
+  ? { companies: '거쳐 온 자리들', projects: '함께 했던 프로젝트들', talks: '남긴 말들' }
+  : { companies: "Places I've Worked", projects: 'Projects', talks: 'Talks' };
 ---
-{/* Logo text order flips by language */}
 <header class="site-header">
   <div class="header-inner">
     {lang === 'ko' ? (
@@ -39,7 +49,45 @@ const toggleLabel = otherLang === 'ko' ? 'KO' : 'EN';
       <a href={toggleHref} class="lang-toggle">{toggleLabel}</a>
     </div>
   </div>
+  <nav class="site-subnav" aria-label={lang === 'ko' ? '하위 내비게이션' : 'Secondary navigation'}>
+    <div class="subnav-inner">
+      <a href={companiesPath} class={isCompaniesActive ? 'active' : ''} aria-current={isCompaniesActive ? 'page' : undefined}>{secondaryLabels.companies}</a>
+      <a href={projectsPath} class={isProjectsActive ? 'active' : ''} aria-current={isProjectsActive ? 'page' : undefined}>{secondaryLabels.projects}</a>
+      <a href={talksPath} class={isTalksActive ? 'active' : ''} aria-current={isTalksActive ? 'page' : undefined}>{secondaryLabels.talks}</a>
+    </div>
+  </nav>
 </header>
+
+<style>
+  .site-subnav {
+    border-bottom: 1px solid var(--color-border);
+    padding: 8px 0;
+  }
+  .subnav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .subnav-inner a {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .subnav-inner a:hover,
+  .subnav-inner a.active {
+    color: var(--color-accent);
+  }
+  @media (max-width: 480px) {
+    .subnav-inner {
+      gap: 14px;
+      font-size: 0.75rem;
+    }
+  }
+</style>
 
 <script>
   const hamburger = document.getElementById('hamburger');

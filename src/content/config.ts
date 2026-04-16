@@ -24,23 +24,45 @@ const writing = defineCollection({
     }),
 });
 
-const portfolio = defineCollection({
+const projects = defineCollection({
   type: 'content',
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      client: z.string(),
-      role: z.string(),
+      client: z.string().optional(),
+      role: z.string().optional(),
       period: z.object({
         start: z.coerce.date(),
         end: z.coerce.date().optional(),
       }),
       lang,
       summary: z.string(),
-      outcomes: z.array(z.string()).min(1),
+      outcomes: z.array(z.string()).default([]),
       stack: z.array(z.string()).optional(),
       tags: z.array(tag).default([]),
       confidential: z.boolean().default(false),
+      links: z
+        .array(z.object({ label: z.string(), url: z.string().url() }))
+        .optional(),
+      cover: image().optional(),
+      draft: z.boolean().default(false),
+    }),
+});
+
+const companies = defineCollection({
+  type: 'content',
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),                // e.g. "Google", "Banksalad"
+      role: z.string(),                // e.g. "VP of Engineering"
+      period: z.object({
+        start: z.coerce.date(),
+        end: z.coerce.date().optional(),
+      }),
+      lang,
+      summary: z.string().optional(),  // one-line summary shown in list
+      order: z.number().optional(),    // sort hint; newer = higher
+      tags: z.array(tag).default([]),
       links: z
         .array(z.object({ label: z.string(), url: z.string().url() }))
         .optional(),
@@ -95,4 +117,4 @@ const series = defineCollection({
   }),
 });
 
-export const collections = { writing, portfolio, talks, series };
+export const collections = { writing, projects, companies, talks, series };
