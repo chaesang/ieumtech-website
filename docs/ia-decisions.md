@@ -1,4 +1,148 @@
-# IA 결정 사항 (2026-04-14)
+# IA 결정 사항
+
+> **현재 적용 기준은 아래 "Positioning Update (2026-04-15) — PRIMARY" 섹션입니다.**
+> 그 뒤의 이전 기록(2026-04-14)은 역사·맥락 참고용.
+
+---
+
+## Positioning Update (2026-04-15) — PRIMARY
+
+### 사이트의 역할
+- **LinkedIn 프로필 대체용 전문적 정체성 페이지**
+- **실험 공간 (playground)** — 앞으로 /now, 피어 커멘터리, RAG 챗봇 등 새 형식 여지
+- **세일즈 지향 아님** — 수익(자문·강연·채용)은 이 사이트 외부(네트워크·DM·메일)에서 발생. 사이트의 역할은 "이 사람 누구냐" 에만 답함
+
+### 독자 우선순위 (5그룹)
+1. **멘토링 희망자** (최우선)
+2. **동료 개발자**
+3. 강연 섭외자
+4. 자문 발주자
+5. 채용 담당자
+
+상위 2그룹이 비상업 커뮤니티 독자라는 점이 톤·구조 전반을 좌우.
+
+### 인상 목표
+방문자가 떠날 때: *"아, 이 사람은 다양한 경험 가진 따뜻한 사람이구나. 같이 이야기 나눌 거리 많은 친절한 사람."*
+
+### 브랜드 관계 (C 선택)
+- **Chaesang Jung 전면** — 개인 브랜드
+- **"이음"은 개인 철학·테마** — 회사명에서 비롯했으나 저자의 시선
+- **Ieum Tech 법인** — 푸터·법적 정보에만. Copy에서 언급 최소
+
+### 사이트맵 (재구성)
+
+```
+/                 홈 (name + short intro + Writing + Soft Contact)
+/about            About (산문 bio 없이, headline + highlights + 추천사 + CTA)
+/companies        거쳐 온 자리들 (신설)
+/projects         함께 했던 프로젝트들 (신설, 기존 /portfolio 리네임)
+/talks            남긴 말들 (신설, 기존 /speaking 랜딩 통합)
+/writing          글 (이미 구축)
+/writing/[slug]
+/writing/series/[slug]
+
+(향후 추가 예정)
+/now              지금 하는 일
+/chat             RAG 챗봇
+
+/ko/... KO 대칭
+```
+
+### 폐지된 것
+- `/advisory` 자문 랜딩 — 판매 지향, 재포지셔닝 원칙과 충돌
+- `/speaking` 섭외 랜딩 — `/talks`에 통합
+- `/portfolio` — `/projects`로 리네임
+- `/contact` 페이지 — 폐지. 홈·About 하단 소프트 초대로 대체
+
+### 네비게이션 (C 패턴)
+
+- **Primary (상단 메인)**: `About · 글 · Now` — 3개
+- **Secondary (작은 글씨)**: `거쳐 온 자리들 · 함께 했던 프로젝트들 · 남긴 말들` — 3개 (우산 라벨 없음)
+- **푸터**: 전체 링크 반복 + LinkedIn · Brunch · 이메일
+- **Now, /projects**는 초기엔 빈 상태일 수 있음. 네비 노출 여부 구현 시 결정.
+
+### Hero 카피 (확정, Phase 4 결과)
+
+```
+정채상 (Chaesang Jung)
+
+한국과 실리콘밸리를 오가며, IT 현장에서 지내왔습니다.
+30년 가까이 격변의 한복판을 지나오며 사람과 기술 사이를 이어 왔고,
+그 동안 쌓인 배움과 경험을 여기에 모아 두고 있습니다.
+```
+
+### 홈 구조
+
+1. Hero (이름 + 위 3줄)
+2. Writing 위젯 — h2 `글 — 여러 갈래의 기록` → 시리즈 카드 바로 아래
+3. (향후) 피어 커멘터리, 축약 타임라인 토글
+4. Soft Contact — `잇고 싶은 이야기가 있다면, 같이 이어 봐도 좋겠습니다.` + 이메일 · LinkedIn
+
+**폐지된 홈 섹션**: Where I've Been, Who I'm Here For, Ways We Can Work Together, Founder 블록 일부
+
+### About 구조
+
+1. 프로필 사진 + 이름 (Chaesang Jung · 정채상)
+2. **헤드라인**: `기술이 지나온 자리에 늘 사람이 있었습니다.`
+3. **Highlights (5줄)**:
+   ```
+   임베디드, 검색, 커머스, 핀테크, 클라우드, 산업 AI
+   실리콘밸리 13년 · 한국에서의 그 앞뒤
+   엔지니어, 매니저, VP, CTO, 자문으로 옮겨 다닌 자리들
+   잘 풀린 프로젝트, 자연스레 접힌 프로젝트
+   여전히 배우는 자리에서, 가끔 먼저 본 것을 건넵니다.
+   ```
+4. 추천사 2개 (기존 유지: Jennifer Lin · Ada Kim)
+5. **CTA**: `여기 어딘가에서 질문이 생겼다면, 이쪽으로 이어 주세요. / 정리되지 않은 질문이어도 괜찮습니다.`
+6. 하단 링크: `/companies` · `/projects` · `/talks`
+
+**폐지**: 산문 bio (상세 경력은 /companies로 이관), 타임라인 전체, 특허 리스트, Teaching 하위 섹션 (→ /talks 또는 /about에서 축약)
+
+### "이음" 의미장 사용 밀도 (D4-B)
+
+- **헤드라인·버튼**: "이음 / 잇다" 제외 (슬로건화 방지)
+- **본문**: 허용 — 동사·분사로 자연스럽게 (`이어 왔습니다`, `잇는`, `이어 가며`)
+- **회사명 "이음 테크"**: 푸터에만
+
+### Soft Contact 전략
+
+- Contact 페이지 폐지
+- 홈·About 하단에 한 문장 초대 + 이메일·LinkedIn 버튼 + (향후 RAG 챗봇 링크)
+- 문의 폼 없음 — 판매 지향 회피
+
+### 브랜드 보이스
+
+- `/Users/chaesang/ieumtech/website/docs/voice-guide.md` 참조
+- 5계 (간략): 느낌표 금지 · 최상급 금지 · 주어 "저는/제가" 남발 금지 · 제언은 "~했으면 하는 바람이 있다"를 넘지 않기 · 실패·접힘 숨기지 않기
+- Display copy 추가 원칙: 비문(`독고(?)` 류) 금지 · 현재 활동 상태 노출 금지 · 겸손하되 우습게 보이지 않기
+
+### 에이전트
+- **`ieumtech-ko`**: 한국어 웹 카피 전담 (보이스 가이드 최우선)
+- **`ieumtech-en`**: 영문 웹 카피 전담
+
+### EN/KO 차이 (재확인)
+
+- **KO**: 글·에세이·생각이 핵심. 멘토링·피어 독자가 주로 옴. Writing·About 중심.
+- **EN**: 이력·경력 정보가 핵심. 섭외·자문·채용 독자가 주로 옴. About·Companies·Projects 더 상세.
+- 번역이 아닌 **언어별 재구성** — EN은 Writing 축소, Career 확장.
+
+### 수정된 Content Collections 스키마
+
+기존 `writing`, `portfolio`(→ 표시만 projects로), `talks`, `series` 유지.
+**신설 필요**: `companies` 콜렉션 — 회사명·역할·기간·요약·outcomes·링크 스키마.
+
+### 유지된 기술·인프라
+
+- 도메인: **ieumtech.net**
+- Astro 5.x SSG, Content Collections, i18n (EN 기본, `/ko/`)
+- GitHub Pages + Cloudflare (`/*.html` 301 rules)
+- canonical = ieumtech.net, hreflang, sitemap 자동 생성
+- 이미지 alt·lazy loading rehype 플러그인
+- Writing은 캐노니컬 ieumtech.net, externalUrl은 Brunch 원문 링크
+
+---
+
+# ============ 이전 기록 (2026-04-14) — 역사 참고 ============
 
 ieumtech.com Astro 전환·재구축을 위한 확정된 정보 구조(IA) 결정.
 
