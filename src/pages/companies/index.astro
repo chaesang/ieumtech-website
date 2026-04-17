@@ -5,16 +5,23 @@ import { getCollection } from 'astro:content';
 const enEntries = (await getCollection('companies', (e) => !e.data.draft && e.data.lang === 'en'))
   .sort((a, b) => b.data.period.start.valueOf() - a.data.period.start.valueOf());
 const isKoFallback = enEntries.length === 0;
-const entries = isKoFallback
+const rawEntries = isKoFallback
   ? (await getCollection('companies', (e) => !e.data.draft && e.data.lang === 'ko'))
       .sort((a, b) => b.data.period.start.valueOf() - a.data.period.start.valueOf())
   : enEntries;
-const displayLang = isKoFallback ? 'ko' : 'en';
-const basePath = isKoFallback ? '/ko/companies' : '/companies';
+
+const entries = await Promise.all(
+  rawEntries.map(async (e) => {
+    const { Content } = await e.render();
+    return { entry: e, Content };
+  })
+);
+
+const fmt = (d: Date) => `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}`;
 ---
 <Base
   title="Places I've Worked — Chaesang Jung"
-  description="A record of the companies I've been part of, from embedded systems to industrial AI."
+  description="A record of the places I've been part of, gathered on a single page. Click an entry to expand its detail."
   lang="en"
   path="/companies"
   ogType="website"
@@ -24,9 +31,10 @@ const basePath = isKoFallback ? '/ko/companies' : '/companies';
     <section class="list-hero">
       <div class="container">
         <h1>Places I've Worked</h1>
-        <p class="list-lead">From embedded firmware to industrial AI, across several roles.</p>
+        <p class="list-lead">From embedded firmware to industrial AI, across thirty years.</p>
+        <p class="list-hint">Click any entry to expand its detail.</p>
         {isKoFallback && (
-          <p class="notice">Currently in Korean. English entries will follow.</p>
+          <p class="notice">Entries currently in Korean; English versions will follow.</p>
         )}
       </div>
     </section>
@@ -37,25 +45,42 @@ const basePath = isKoFallback ? '/ko/companies' : '/companies';
           <p class="empty">No entries yet.</p>
         ) : (
           <ol class="company-list">
-            {entries.map((e) => {
-              const slug = e.slug.split('/').pop()!;
-              const start = e.data.period.start;
-              const end = e.data.period.end;
-              const fmt = (d: Date) => `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}`;
+            {entries.map(({ entry, Content }) => {
+              const start = entry.data.period.start;
+              const end = entry.data.period.end;
               const period = end ? `${fmt(start)} – ${fmt(end)}` : `${fmt(start)} – Present`;
+              const initial = entry.data.name.charAt(0).toUpperCase();
               return (
                 <li>
-                  <a href={`${basePath}/${slug}`}>
-                    <span class="company-initial">{e.data.name.charAt(0).toUpperCase()}</span>
-                    <div class="company-body">
-                      <div class="company-head">
-                        <span class="company-name">{e.data.name}</span>
-                        <span class="company-period">{period}</span>
+                  <details class="company-item">
+                    <summary>
+                      <span class="company-initial" aria-hidden="true">{initial}</span>
+                      <div class="company-body">
+                        <div class="company-head">
+                          <span class="company-name">{entry.data.name}</span>
+                          <span class="company-period">{period}</span>
+                        </div>
+                        <div class="company-role">{entry.data.role}</div>
+                        {entry.data.summary && <p class="company-summary">{entry.data.summary}</p>}
                       </div>
-                      <div class="company-role">{e.data.role}</div>
-                      {e.data.summary && <p class="company-summary">{e.data.summary}</p>}
+                      <span class="chevron" aria-hidden="true">＋</span>
+                    </summary>
+                    <div class="expanded">
+                      <div class="prose">
+                        <Content />
+                      </div>
+                      {entry.data.links && entry.data.links.length > 0 && (
+                        <aside class="links">
+                          <h3>Links</h3>
+                          <ul>
+                            {entry.data.links.map((l) => (
+                              <li><a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a></li>
+                            ))}
+                          </ul>
+                        </aside>
+                      )}
                     </div>
-                  </a>
+                  </details>
                 </li>
               );
             })}
@@ -67,22 +92,165 @@ const basePath = isKoFallback ? '/ko/companies' : '/companies';
 </Base>
 
 <style>
-  .list-hero { padding: 64px 0 24px; border-bottom: 1px solid var(--color-border); }
-  .list-hero h1 { font-size: 2rem; margin: 0 0 10px; }
-  .list-lead { font-size: 1rem; color: var(--color-muted); max-width: 640px; margin: 0; line-height: 1.7; }
-  .notice { font-size: 0.8125rem; color: var(--color-muted); margin-top: 12px; padding: 8px 12px; background: var(--color-border); border-radius: 4px; display: inline-block; }
-  .list-body { padding: 32px 0 80px; }
-  .empty { color: var(--color-muted); padding: 32px 0; text-align: center; }
-  .company-list { list-style: none; padding: 0; margin: 0; }
-  .company-list li { border-top: 1px solid var(--color-border); }
-  .company-list li:last-child { border-bottom: 1px solid var(--color-border); }
-  .company-list a { display: flex; align-items: flex-start; padding: 20px 0; color: inherit; text-decoration: none; }
-  .company-list a:hover .company-name { color: var(--color-accent); }
-  .company-list a:hover .company-initial { border-color: var(--color-accent); color: var(--color-accent); }
+  .list-hero { padding: var(--space-11) 0 var(--space-5); }
+  .list-hero h1 { font-size: 1.875rem; margin: 0 0 var(--space-3); letter-spacing: -0.025em; line-height: 1.2; }
+  .list-lead { font-size: 1rem; color: var(--color-muted); max-width: 560px; margin: 0 0 var(--space-2); line-height: 1.7; }
+  .list-hint { font-size: 0.875rem; color: var(--color-subtle); margin: 0; }
+  .notice {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    margin-top: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    background: var(--color-surface-2);
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .list-body { padding: var(--space-5) 0 var(--space-11); }
+  .empty { color: var(--color-muted); padding: var(--space-9) 0; text-align: center; }
+
+  .company-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .company-list li {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .company-list li:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .company-item summary {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-5);
+    padding: var(--space-6) 0;
+    cursor: pointer;
+    list-style: none;
+  }
+  .company-item summary::-webkit-details-marker { display: none; }
+  .company-item summary:hover .company-name { color: var(--color-accent); }
+  .company-item summary:hover .chevron { color: var(--color-accent); }
+
+  .company-initial {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-muted);
+    flex-shrink: 0;
+    transition: color var(--transition-base), border-color var(--transition-base);
+  }
+  .company-item[open] .company-initial {
+    color: var(--color-text);
+    border-color: var(--color-subtle);
+  }
+
   .company-body { flex: 1; min-width: 0; }
-  .company-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 4px; }
-  .company-name { font-size: 1.125rem; font-weight: 600; }
-  .company-period { font-size: 0.8125rem; color: var(--color-muted); flex-shrink: 0; }
-  .company-role { font-size: 0.9375rem; color: var(--color-muted); margin-bottom: 6px; }
-  .company-summary { font-size: 0.9375rem; color: var(--color-text); margin: 0; line-height: 1.6; }
+  .company-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .company-name {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    transition: color var(--transition-base);
+  }
+  .company-period {
+    font-size: 0.8125rem;
+    color: var(--color-subtle);
+    flex-shrink: 0;
+  }
+  .company-role {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    margin-bottom: var(--space-2);
+  }
+  .company-summary {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  .chevron {
+    font-size: 1.25rem;
+    color: var(--color-subtle);
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 10px;
+    transition: transform 0.25s ease, color 0.25s ease;
+  }
+  .company-item[open] .chevron {
+    transform: rotate(45deg);
+    color: var(--color-accent);
+  }
+
+  .expanded {
+    padding: 0 0 var(--space-7) calc(40px + var(--space-5));
+  }
+  .prose {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+  .prose :global(h2) {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: var(--space-5) 0 var(--space-2);
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+  }
+  .prose :global(h2:first-child) { margin-top: 0; }
+  .prose :global(h3) {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    margin: var(--space-4) 0 6px;
+  }
+  .prose :global(p) { margin: 0 0 var(--space-3); }
+  .prose :global(ul) { padding-left: var(--space-5); margin: 0 0 var(--space-3); }
+  .prose :global(li) { margin-bottom: 6px; }
+  .prose :global(strong) { font-weight: 600; }
+
+  .links {
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px dashed var(--color-border);
+  }
+  .links h3 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0 0 var(--space-2);
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.875rem;
+  }
+  .links a { color: var(--color-accent); }
+
+  @media (max-width: 639px) {
+    .list-hero { padding: var(--space-9) 0 var(--space-4); }
+    .list-body { padding: var(--space-4) 0 var(--space-9); }
+    .company-item summary { padding: var(--space-5) 0; gap: var(--space-4); }
+    .company-initial { width: 36px; height: 36px; font-size: 0.8125rem; }
+    .expanded { padding: 0 0 var(--space-6) calc(36px + var(--space-4)); }
+  }
 </style>
