@@ -58,11 +58,15 @@ const secondaryLabels = lang === 'ko'
   {!isHome && (
     <nav class="site-subnav" aria-label={lang === 'ko' ? '하위 내비게이션' : 'Secondary navigation'}>
       <div class="subnav-inner">
-        <a href={companiesPath} class={isCompaniesActive ? 'active' : ''} aria-current={isCompaniesActive ? 'page' : undefined}>{secondaryLabels.companies}</a>
-        {hasProjects && (
-          <a href={projectsPath} class={isProjectsActive ? 'active' : ''} aria-current={isProjectsActive ? 'page' : undefined}>{secondaryLabels.projects}</a>
+        {!isCompaniesActive && (
+          <a href={companiesPath}>{secondaryLabels.companies}</a>
         )}
-        <a href={talksPath} class={isTalksActive ? 'active' : ''} aria-current={isTalksActive ? 'page' : undefined}>{secondaryLabels.talks}</a>
+        {hasProjects && !isProjectsActive && (
+          <a href={projectsPath}>{secondaryLabels.projects}</a>
+        )}
+        {!isTalksActive && (
+          <a href={talksPath}>{secondaryLabels.talks}</a>
+        )}
       </div>
     </nav>
   )}

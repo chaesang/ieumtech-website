@@ -27,7 +27,6 @@ const fmt = (d: Date) => `${d.getFullYear()}.${String(d.getMonth() + 1).padStart
       <div class="container">
         <h1>거쳐 온 자리들</h1>
         <p class="list-lead">셋톱박스 펌웨어에서 산업 AI까지, 30년간 여러 자리를 지나왔습니다.</p>
-        <p class="list-hint">항목을 클릭하면 자세한 이력이 펼쳐집니다.</p>
       </div>
     </section>
 
@@ -84,11 +83,10 @@ const fmt = (d: Date) => `${d.getFullYear()}.${String(d.getMonth() + 1).padStart
 </Base>
 
 <style>
-  .list-hero { padding: var(--space-11) 0 var(--space-5); }
-  .list-hero h1 { font-size: 1.875rem; margin: 0 0 var(--space-3); letter-spacing: -0.025em; line-height: 1.2; }
-  .list-lead { font-size: 1rem; color: var(--color-muted); max-width: 560px; margin: 0 0 var(--space-2); line-height: 1.7; }
-  .list-hint { font-size: 0.875rem; color: var(--color-subtle); margin: 0; }
-  .list-body { padding: var(--space-5) 0 var(--space-11); }
+  .list-hero { padding: var(--space-8) 0 var(--space-4); }
+  .list-hero h1 { font-size: 1.875rem; margin: 0 0 var(--space-2); letter-spacing: -0.025em; line-height: 1.2; }
+  .list-lead { font-size: 1rem; color: var(--color-muted); max-width: 560px; margin: 0; line-height: 1.7; }
+  .list-body { padding: var(--space-4) 0 var(--space-11); }
   .empty { color: var(--color-muted); padding: var(--space-9) 0; text-align: center; }
 
   /* Accordion list */
@@ -236,8 +234,8 @@ const fmt = (d: Date) => `${d.getFullYear()}.${String(d.getMonth() + 1).padStart
   .links a { color: var(--color-accent); }
 
   @media (max-width: 639px) {
-    .list-hero { padding: var(--space-9) 0 var(--space-4); }
-    .list-body { padding: var(--space-4) 0 var(--space-9); }
+    .list-hero { padding: var(--space-6) 0 var(--space-3); }
+    .list-body { padding: var(--space-3) 0 var(--space-9); }
     .company-item summary { padding: var(--space-5) 0; gap: var(--space-4); }
     .company-initial { width: 36px; height: 36px; font-size: 0.8125rem; }
     .expanded { padding: 0 0 var(--space-6) calc(36px + var(--space-4)); }
