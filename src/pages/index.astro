@@ -63,17 +63,23 @@ const jsonLd = {
       color: var(--color-muted);
       margin: 0 0 var(--space-3);
     }
-    .hero-bio {
+    .hero-narration {
+      margin: 0 0 var(--space-6);
+    }
+    .hero-narration p {
       font-size: 1rem;
       line-height: 1.7;
       color: var(--color-text);
-      margin: 0 0 var(--space-4);
+      margin: 0 0 var(--space-2);
+    }
+    .hero-narration p:last-child {
+      margin-bottom: 0;
     }
     .breadth {
       font-size: 0.8125rem;
       color: var(--color-muted);
       line-height: 1.7;
-      margin: 0 0 var(--space-4);
+      margin: 0;
     }
     .breadth-row {
       display: flex;
@@ -86,12 +92,6 @@ const jsonLd = {
     }
     .breadth-values {
       flex: 1;
-    }
-    .hero-now {
-      font-size: 0.9375rem;
-      line-height: 1.6;
-      color: var(--color-muted);
-      margin: 0;
     }
 
     /* Anchor Grid */
@@ -173,7 +173,11 @@ const jsonLd = {
           <p class="hero-name-en">정채상</p>
         </div>
       </div>
-      <p class="hero-bio">Thirty years — including thirteen at Google — between Korea and Silicon Valley, and between people and technology.</p>
+      <div class="hero-narration">
+        <p>Thirty years — including thirteen at Google — between Korea and Silicon Valley, and between people and technology.</p>
+        <p>Still learning, still glad to share.</p>
+        <p>Still at it today, wherever the work leads.</p>
+      </div>
       <div class="breadth" aria-label="Career overview">
         <div class="breadth-row">
           <span class="breadth-label">Roles</span>
@@ -184,7 +188,6 @@ const jsonLd = {
           <span class="breadth-values">Embedded / Mobile / Search / Commerce / Fintech / Cloud / Industrial AI / Enterprise</span>
         </div>
       </div>
-      <p class="hero-now">Still learning, still glad to share.<br />Connecting between people and technology — wherever the work leads.</p>
     </div>
   </section>
 

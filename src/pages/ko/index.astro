@@ -63,17 +63,23 @@ const jsonLd = {
       color: var(--color-muted);
       margin: 0 0 var(--space-3);
     }
-    .hero-bio {
+    .hero-narration {
+      margin: 0 0 var(--space-6);
+    }
+    .hero-narration p {
       font-size: 1rem;
       line-height: 1.7;
       color: var(--color-text);
-      margin: 0 0 var(--space-4);
+      margin: 0 0 var(--space-2);
+    }
+    .hero-narration p:last-child {
+      margin-bottom: 0;
     }
     .breadth {
       font-size: 0.8125rem;
       color: var(--color-muted);
       line-height: 1.7;
-      margin: 0 0 var(--space-4);
+      margin: 0;
     }
     .breadth-row {
       display: flex;
@@ -86,12 +92,6 @@ const jsonLd = {
     }
     .breadth-values {
       flex: 1;
-    }
-    .hero-now {
-      font-size: 0.9375rem;
-      line-height: 1.6;
-      color: var(--color-muted);
-      margin: 0;
     }
 
     /* Anchor Grid */
@@ -173,7 +173,11 @@ const jsonLd = {
           <p class="hero-name-en">Chaesang Jung</p>
         </div>
       </div>
-      <p class="hero-bio">Google에서의 13년을 포함해, 30년간 한국과 실리콘밸리 사이, 사람과 기술 사이를 이어 왔습니다.</p>
+      <div class="hero-narration">
+        <p>Google에서의 13년을 포함해, 30년간 한국과 실리콘밸리 사이, 사람과 기술 사이를 이어&nbsp;왔습니다.</p>
+        <p>여전히 배우기를 즐기고, 나누기를 좋아합니다.</p>
+        <p>지금도 여러 자리에서 이어&nbsp;가는 중입니다.</p>
+      </div>
       <div class="breadth" aria-label="경력 개요">
         <div class="breadth-row">
           <span class="breadth-label">역할</span>
@@ -184,7 +188,6 @@ const jsonLd = {
           <span class="breadth-values">임베디드 / 모바일 / 검색 / 커머스 / 핀테크 / 클라우드 / 산업 AI / 엔터프라이즈</span>
         </div>
       </div>
-      <p class="hero-now">여전히 배우기를 즐기고, 나누기를 좋아합니다.<br />여러 자리에서 사람과 기술 사이를 이어 가고 있습니다.</p>
     </div>
   </section>
 
