@@ -9,11 +9,22 @@ const entries = isKoFallback
   ? (await getCollection('talks', (e) => !e.data.draft && e.data.lang === 'ko'))
       .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   : enEntries;
-const basePath = isKoFallback ? '/ko/talks' : '/talks';
+
+const formatLabel: Record<string, string> = {
+  keynote: 'Keynote',
+  panel: 'Panel',
+  workshop: 'Workshop',
+  interview: 'Interview',
+  podcast: 'Podcast',
+  lecture: 'Lecture',
+};
+
+const dateLabel = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
 ---
 <Base
   title="Talks & Lectures — Chaesang Jung"
-  description="Talks, interviews, podcasts, and lectures — words left along the way."
+  description="Lectures, keynotes, and interviews left along the way."
   lang="en"
   path="/talks"
   ogType="website"
@@ -23,31 +34,49 @@ const basePath = isKoFallback ? '/ko/talks' : '/talks';
     <section class="list-hero">
       <div class="container">
         <h1>Talks & Lectures</h1>
-        <p class="list-lead">Talks, interviews, podcasts, lectures — words left along the way.</p>
+        <p class="list-lead">Words left in rooms and on pages — lectures, keynotes, interviews.</p>
         {isKoFallback && (
           <p class="notice">Currently in Korean. English entries will follow.</p>
         )}
       </div>
     </section>
+
     <section class="list-body">
       <div class="container">
         {entries.length === 0 ? (
           <p class="empty">No entries yet.</p>
         ) : (
           <ol class="talk-list">
-            {entries.map((e) => {
-              const slug = e.slug.split('/').pop()!;
-              const d = e.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+            {entries.map((entry) => {
+              const firstLink = entry.data.links?.[0];
+              const href = firstLink?.url;
               return (
                 <li>
-                  <a href={`${basePath}/${slug}`}>
-                    <div class="talk-head">
-                      <span class="talk-format" data-format={e.data.format}>{e.data.format}</span>
-                      <span class="talk-date">{d}</span>
+                  <div class="talk-row">
+                    <time datetime={entry.data.date.toISOString()} class="talk-date">{dateLabel(entry.data.date)}</time>
+                    <div class="talk-body">
+                      <div class="talk-title">
+                        {href ? (
+                          <a href={href} target="_blank" rel="noopener noreferrer">{entry.data.title}</a>
+                        ) : (
+                          entry.data.title
+                        )}
+                      </div>
+                      <div class="talk-meta">
+                        <span class="talk-venue">{entry.data.venue} · {entry.data.event}</span>
+                      </div>
+                      {entry.data.links && entry.data.links.length > 1 && (
+                        <ul class="talk-links">
+                          {entry.data.links.slice(1).map((l) => (
+                            <li><a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a></li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
-                    <div class="talk-title">{e.data.title}</div>
-                    <div class="talk-venue">{e.data.venue} · {e.data.event}</div>
-                  </a>
+                    <span class="talk-format" data-format={entry.data.format}>
+                      {formatLabel[entry.data.format] ?? entry.data.format}
+                    </span>
+                  </div>
                 </li>
               );
             })}
@@ -59,19 +88,104 @@ const basePath = isKoFallback ? '/ko/talks' : '/talks';
 </Base>
 
 <style>
-  .list-hero { padding: 64px 0 24px; border-bottom: 1px solid var(--color-border); }
-  .list-hero h1 { font-size: 2rem; margin: 0 0 10px; }
-  .list-lead { font-size: 1rem; color: var(--color-muted); max-width: 640px; margin: 0; line-height: 1.7; }
-  .notice { font-size: 0.8125rem; color: var(--color-muted); margin-top: 12px; padding: 8px 12px; background: var(--color-border); border-radius: 4px; display: inline-block; }
-  .list-body { padding: 32px 0 80px; }
-  .empty { color: var(--color-muted); padding: 32px 0; text-align: center; }
-  .talk-list { list-style: none; padding: 0; margin: 0; }
-  .talk-list li { border-top: 1px solid var(--color-border); }
-  .talk-list li:last-child { border-bottom: 1px solid var(--color-border); }
-  .talk-list a { display: block; padding: 20px 0; color: inherit; text-decoration: none; }
-  .talk-list a:hover .talk-title { color: var(--color-accent); }
-  .talk-head { display: flex; gap: 12px; align-items: center; font-size: 0.8125rem; color: var(--color-muted); margin-bottom: 6px; }
-  .talk-format { text-transform: capitalize; }
-  .talk-title { font-size: 1.125rem; font-weight: 600; line-height: 1.4; margin-bottom: 6px; }
-  .talk-venue { font-size: 0.875rem; color: var(--color-muted); }
+  .list-hero { padding: var(--space-8) 0 var(--space-4); }
+  .list-hero h1 { font-size: 1.875rem; margin: 0 0 var(--space-2); letter-spacing: -0.025em; line-height: 1.2; }
+  .list-lead { font-size: 1rem; color: var(--color-muted); max-width: 560px; margin: 0; line-height: 1.7; }
+  .notice {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    margin-top: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    background: var(--color-surface-2);
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .list-body { padding: var(--space-4) 0 var(--space-11); }
+  .empty { color: var(--color-muted); padding: var(--space-9) 0; text-align: center; }
+
+  .talk-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .talk-list li {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .talk-list li:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .talk-row {
+    display: grid;
+    grid-template-columns: 96px 1fr auto;
+    gap: var(--space-4);
+    align-items: baseline;
+    padding: var(--space-5) 0;
+  }
+  .talk-date {
+    font-size: 0.8125rem;
+    color: var(--color-subtle);
+    font-variant-numeric: tabular-nums;
+    padding-top: 2px;
+  }
+  .talk-body {
+    min-width: 0;
+  }
+  .talk-title {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+  .talk-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+  .talk-title a:hover {
+    color: var(--color-accent);
+  }
+  .talk-meta {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+  .talk-links {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-2) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    font-size: 0.8125rem;
+  }
+  .talk-links a { color: var(--color-muted); }
+  .talk-links a:hover { color: var(--color-accent); }
+
+  .talk-format {
+    font-size: 0.75rem;
+    color: var(--color-subtle);
+    letter-spacing: 0.04em;
+    padding-top: 2px;
+  }
+
+  .talk-title a[target="_blank"]::after { content: none; }
+
+  @media (max-width: 639px) {
+    .list-hero { padding: var(--space-6) 0 var(--space-3); }
+    .list-body { padding: var(--space-3) 0 var(--space-9); }
+    .talk-row {
+      grid-template-columns: 80px 1fr;
+      grid-template-rows: auto auto;
+      gap: 2px var(--space-3);
+      padding: var(--space-4) 0;
+    }
+    .talk-format {
+      grid-column: 2;
+      grid-row: 2;
+      padding-top: 4px;
+    }
+  }
 </style>
