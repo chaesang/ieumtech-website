@@ -1,117 +1,316 @@
 ---
 import Base from '~/layouts/Base.astro';
-import WritingCard from '~/components/WritingCard.astro';
-import SeriesCard from '~/components/SeriesCard.astro';
-import { getPublishedWriting, getActiveSeriesWithMeta } from '~/lib/collections';
+import {
+  getPublishedWriting,
+  getActiveSeriesWithMeta,
+  getWritingBySeries,
+} from '~/lib/collections';
 
 const enEntries = await getPublishedWriting('en');
-const enSeries = await getActiveSeriesWithMeta('en');
-
 const isKoFallback = enEntries.length === 0;
-const entries = isKoFallback ? await getPublishedWriting('ko') : enEntries;
-const seriesList = isKoFallback ? await getActiveSeriesWithMeta('ko') : enSeries;
-const displayLang = isKoFallback ? 'ko' : 'en';
+const displayLang: 'ko' | 'en' = isKoFallback ? 'ko' : 'en';
+
+const seriesList = await getActiveSeriesWithMeta(displayLang);
+const seriesWithEntries = await Promise.all(
+  seriesList.map(async ({ meta, count }) => {
+    const entries = await getWritingBySeries(meta.data.slug, displayLang);
+    return { meta, count, entries };
+  })
+);
+
+const allEntries = await getPublishedWriting(displayLang);
+const uncategorized = allEntries.filter((e) => !e.data.series);
+
+const dateLabel = (d: Date) =>
+  d.toLocaleDateString(displayLang === 'ko' ? 'ko-KR' : 'en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+
+const sourceLabel = (source: string): string => {
+  if (source === 'brunch') return 'Brunch';
+  if (source === 'nia') return 'NIA';
+  if (source === 'dbr') return 'DBR';
+  if (source === 'linkedin') return 'LinkedIn';
+  return '';
+};
 ---
 <Base
   title="Writing — Chaesang Jung | Ieum Tech"
-  description="Notes from thirty years between Silicon Valley and Seoul — on products, teams, and the words Korean tech has invented. By Chaesang Jung."
+  description="Essays and contributed pieces, gathered by series. Most pieces first published on Brunch (in Korean); English translations are gradually being added."
   lang="en"
   path="/writing"
   ogType="website"
   altLangPath="/ko/writing"
 >
   <main>
-    <section class="writing-hero">
+    <section class="list-hero">
       <div class="container">
         <h1>Writing</h1>
-        <p class="writing-lead">
-          Essays on products I use, teams I've built, and the vocabulary Korean tech has
-          invented along the way. Most pieces were first published on Brunch (in Korean);
-          English translations are gradually being added.
-        </p>
+        <p class="list-lead">Essays and contributed pieces, gathered by series.</p>
         {isKoFallback && (
-          <p class="writing-notice">
+          <p class="notice">
             Currently in Korean. English translations are planned but not yet published.
           </p>
         )}
       </div>
     </section>
 
-    {seriesList.length > 0 && (
-      <section class="writing-series">
-        <div class="container">
-          <h2 class="section-label">Series</h2>
-          <div class="series-grid">
-            {seriesList.map(({ meta, count }) => (
-              <SeriesCard series={meta} count={count} lang={displayLang} />
-            ))}
-          </div>
-        </div>
-      </section>
-    )}
-
-    <section class="writing-list">
+    <section class="list-body">
       <div class="container">
-        <h2 class="section-label">Latest</h2>
-        {entries.length === 0 ? (
-          <p class="writing-empty">No entries yet.</p>
-        ) : (
-          entries.map((entry) => <WritingCard entry={entry} lang={displayLang} />)
-        )}
+        <ol class="series-list">
+          {seriesWithEntries.map(({ meta, count, entries }) => {
+            const title = meta.data.titles[displayLang] ?? meta.data.titles.ko;
+            const description = meta.data.descriptions[displayLang];
+            const initial = title.charAt(0);
+            return (
+              <li>
+                <details class="series-item">
+                  <summary>
+                    <span class="series-initial" aria-hidden="true">{initial}</span>
+                    <div class="series-body">
+                      <div class="series-head">
+                        <span class="series-name">{title}</span>
+                        <span class="series-count">
+                          {count}{displayLang === 'ko' ? '편' : ` piece${count === 1 ? '' : 's'}`}
+                        </span>
+                      </div>
+                      {description && <p class="series-description">{description}</p>}
+                    </div>
+                    <span class="chevron" aria-hidden="true">＋</span>
+                  </summary>
+                  <div class="expanded">
+                    <ul class="entries">
+                      {entries.map((entry) => {
+                        const href = entry.data.externalUrl ?? '#';
+                        const isExternal = !!entry.data.externalUrl;
+                        const src = sourceLabel(entry.data.source);
+                        return (
+                          <li class="entry">
+                            <a
+                              href={href}
+                              target={isExternal ? '_blank' : undefined}
+                              rel={isExternal ? 'noopener noreferrer' : undefined}
+                            >
+                              <time datetime={entry.data.date.toISOString()}>{dateLabel(entry.data.date)}</time>
+                              <span class="entry-title">{entry.data.title}</span>
+                              {src && <span class="entry-source">{src}</span>}
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </details>
+              </li>
+            );
+          })}
+
+          {uncategorized.length > 0 && (
+            <li>
+              <details class="series-item">
+                <summary>
+                  <span class="series-initial" aria-hidden="true">•</span>
+                  <div class="series-body">
+                    <div class="series-head">
+                      <span class="series-name">
+                        {displayLang === 'ko' ? '시리즈에 속하지 않은 글' : 'Uncategorized'}
+                      </span>
+                      <span class="series-count">
+                        {uncategorized.length}{displayLang === 'ko' ? '편' : ` piece${uncategorized.length === 1 ? '' : 's'}`}
+                      </span>
+                    </div>
+                  </div>
+                  <span class="chevron" aria-hidden="true">＋</span>
+                </summary>
+                <div class="expanded">
+                  <ul class="entries">
+                    {uncategorized.map((entry) => {
+                      const href = entry.data.externalUrl ?? '#';
+                      const isExternal = !!entry.data.externalUrl;
+                      const src = sourceLabel(entry.data.source);
+                      return (
+                        <li class="entry">
+                          <a
+                            href={href}
+                            target={isExternal ? '_blank' : undefined}
+                            rel={isExternal ? 'noopener noreferrer' : undefined}
+                          >
+                            <time datetime={entry.data.date.toISOString()}>{dateLabel(entry.data.date)}</time>
+                            <span class="entry-title">{entry.data.title}</span>
+                            {src && <span class="entry-source">{src}</span>}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </details>
+            </li>
+          )}
+        </ol>
       </div>
     </section>
   </main>
 </Base>
 
 <style>
-  .writing-hero {
-    padding: 64px 0 32px;
-    border-bottom: 1px solid var(--color-border);
-  }
-  .writing-hero h1 {
-    font-size: 2.25rem;
-    margin: 0 0 12px;
-  }
-  .writing-lead {
-    font-size: 1rem;
-    color: var(--color-muted);
-    line-height: 1.7;
-    max-width: 640px;
-    margin: 0;
-  }
-  .writing-notice {
+  .list-hero { padding: var(--space-8) 0 var(--space-4); }
+  .list-hero h1 { font-size: 1.875rem; margin: 0 0 var(--space-2); letter-spacing: -0.025em; line-height: 1.2; }
+  .list-lead { font-size: 1rem; color: var(--color-muted); max-width: 560px; margin: 0; line-height: 1.7; }
+  .notice {
     font-size: 0.8125rem;
     color: var(--color-muted);
-    margin-top: 12px;
-    padding: 8px 12px;
-    background: var(--color-border);
+    margin-top: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    background: var(--color-surface-2);
     border-radius: 4px;
     display: inline-block;
   }
-  .section-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-muted);
-    font-weight: 600;
-    margin: 0 0 20px;
+  .list-body { padding: var(--space-4) 0 var(--space-11); }
+
+  .series-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
-  .writing-series {
-    padding: 40px 0 24px;
+  .series-list li {
+    border-bottom: 1px solid var(--color-border);
   }
-  .series-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-  }
-  .writing-list {
-    padding: 40px 0 80px;
+  .series-list li:first-child {
     border-top: 1px solid var(--color-border);
-    margin-top: 24px;
   }
-  .writing-empty {
+
+  .series-item summary {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-5);
+    padding: var(--space-6) 0;
+    cursor: pointer;
+    list-style: none;
+  }
+  .series-item summary::-webkit-details-marker { display: none; }
+  .series-item summary:hover .series-name { color: var(--color-accent); }
+  .series-item summary:hover .chevron { color: var(--color-accent); }
+
+  .series-initial {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    font-size: 0.875rem;
+    font-weight: 600;
     color: var(--color-muted);
-    padding: 32px 0;
-    text-align: center;
+    flex-shrink: 0;
+    transition: color var(--transition-base), border-color var(--transition-base);
+  }
+  .series-item[open] .series-initial {
+    color: var(--color-text);
+    border-color: var(--color-subtle);
+  }
+
+  .series-body { flex: 1; min-width: 0; }
+  .series-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .series-name {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    transition: color var(--transition-base);
+  }
+  .series-count {
+    font-size: 0.8125rem;
+    color: var(--color-subtle);
+    flex-shrink: 0;
+  }
+  .series-description {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  .chevron {
+    font-size: 1.25rem;
+    color: var(--color-subtle);
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 10px;
+    transition: transform 0.25s ease, color 0.25s ease;
+  }
+  .series-item[open] .chevron {
+    transform: rotate(45deg);
+    color: var(--color-accent);
+  }
+
+  .expanded {
+    padding: 0 0 var(--space-6) calc(40px + var(--space-5));
+  }
+
+  .entries {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .entry {
+    border-top: 1px solid var(--color-border);
+  }
+  .entry:first-child { border-top: none; }
+  .entry a {
+    display: grid;
+    grid-template-columns: 96px 1fr auto;
+    gap: var(--space-4);
+    align-items: baseline;
+    padding: var(--space-3) 0;
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+  .entry a:hover { color: var(--color-accent); }
+  .entry time {
+    font-size: 0.8125rem;
+    color: var(--color-subtle);
+    font-variant-numeric: tabular-nums;
+  }
+  .entry-title {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    min-width: 0;
+  }
+  .entry-source {
+    font-size: 0.75rem;
+    color: var(--color-subtle);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .entries a[target="_blank"]::after { content: none; }
+
+  @media (max-width: 639px) {
+    .list-hero { padding: var(--space-6) 0 var(--space-3); }
+    .list-body { padding: var(--space-3) 0 var(--space-9); }
+    .series-item summary { padding: var(--space-5) 0; gap: var(--space-4); }
+    .series-initial { width: 36px; height: 36px; font-size: 0.8125rem; }
+    .expanded { padding: 0 0 var(--space-5) calc(36px + var(--space-4)); }
+    .entry a {
+      grid-template-columns: 80px 1fr;
+      grid-template-rows: auto auto;
+      gap: 2px var(--space-3);
+      padding: var(--space-3) 0;
+    }
+    .entry-source {
+      grid-column: 2;
+      grid-row: 2;
+    }
   }
 </style>

@@ -23,11 +23,14 @@ const projectEntries = await getCollection('projects', (e) => !e.data.draft);
 const hasProjects = projectEntries.length > 0;
 
 const isHome = currentPath === homePath;
-
 const isWritingActive = currentPath === writingPath || currentPath.startsWith(`${writingPath}/`);
 const isCompaniesActive = currentPath === companiesPath || currentPath.startsWith(`${companiesPath}/`);
 const isProjectsActive = currentPath === projectsPath || currentPath.startsWith(`${projectsPath}/`);
 const isTalksActive = currentPath === talksPath || currentPath.startsWith(`${talksPath}/`);
+
+// Hide subnav on pages that ARE a subnav item (Home, Companies, Talks, Projects).
+// Keep on About, Writing, and any other page where subnav aids sibling navigation.
+const hideSubnav = isHome || isCompaniesActive || isTalksActive || isProjectsActive;
 
 const otherLang: Lang = lang === 'en' ? 'ko' : 'en';
 const toggleHref = altLangPath ?? (otherLang === 'ko' ? '/ko/' : '/');
@@ -55,18 +58,14 @@ const secondaryLabels = lang === 'ko'
       <a href={toggleHref} class="lang-toggle">{toggleLabel}</a>
     </div>
   </div>
-  {!isHome && (
+  {!hideSubnav && (
     <nav class="site-subnav" aria-label={lang === 'ko' ? '하위 내비게이션' : 'Secondary navigation'}>
       <div class="subnav-inner">
-        {!isCompaniesActive && (
-          <a href={companiesPath}>{secondaryLabels.companies}</a>
-        )}
-        {hasProjects && !isProjectsActive && (
+        <a href={companiesPath}>{secondaryLabels.companies}</a>
+        {hasProjects && (
           <a href={projectsPath}>{secondaryLabels.projects}</a>
         )}
-        {!isTalksActive && (
-          <a href={talksPath}>{secondaryLabels.talks}</a>
-        )}
+        <a href={talksPath}>{secondaryLabels.talks}</a>
       </div>
     </nav>
   )}
