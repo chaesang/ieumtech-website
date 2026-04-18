@@ -1,7 +1,6 @@
 ---
 import type { Lang } from '~/i18n/ui';
 import { useTranslations, localizedPath } from '~/i18n/ui';
-import { getCollection } from 'astro:content';
 
 interface Props {
   lang: Lang;
@@ -15,30 +14,12 @@ const t = useTranslations(lang);
 const homePath = localizedPath('/', lang);
 const aboutPath = localizedPath('/about', lang);
 const writingPath = localizedPath('/writing', lang);
-const companiesPath = localizedPath('/companies', lang);
-const projectsPath = localizedPath('/projects', lang);
-const talksPath = localizedPath('/talks', lang);
 
-const projectEntries = await getCollection('projects', (e) => !e.data.draft);
-const hasProjects = projectEntries.length > 0;
-
-const isHome = currentPath === homePath;
 const isWritingActive = currentPath === writingPath || currentPath.startsWith(`${writingPath}/`);
-const isCompaniesActive = currentPath === companiesPath || currentPath.startsWith(`${companiesPath}/`);
-const isProjectsActive = currentPath === projectsPath || currentPath.startsWith(`${projectsPath}/`);
-const isTalksActive = currentPath === talksPath || currentPath.startsWith(`${talksPath}/`);
-
-// Hide subnav on pages that ARE a subnav item (Home, Companies, Talks, Projects).
-// Keep on About, Writing, and any other page where subnav aids sibling navigation.
-const hideSubnav = isHome || isCompaniesActive || isTalksActive || isProjectsActive;
 
 const otherLang: Lang = lang === 'en' ? 'ko' : 'en';
 const toggleHref = altLangPath ?? (otherLang === 'ko' ? '/ko/' : '/');
 const toggleLabel = otherLang === 'ko' ? 'KO' : 'EN';
-
-const secondaryLabels = lang === 'ko'
-  ? { companies: '거쳐 온 자리들', projects: '함께 했던 프로젝트들', talks: '남긴 말과 글들' }
-  : { companies: "Places I've Worked", projects: 'Projects', talks: 'Talks' };
 ---
 <header class="site-header">
   <div class="header-inner">
@@ -58,49 +39,7 @@ const secondaryLabels = lang === 'ko'
       <a href={toggleHref} class="lang-toggle">{toggleLabel}</a>
     </div>
   </div>
-  {!hideSubnav && (
-    <nav class="site-subnav" aria-label={lang === 'ko' ? '하위 내비게이션' : 'Secondary navigation'}>
-      <div class="subnav-inner">
-        <a href={companiesPath}>{secondaryLabels.companies}</a>
-        {hasProjects && (
-          <a href={projectsPath}>{secondaryLabels.projects}</a>
-        )}
-        <a href={talksPath}>{secondaryLabels.talks}</a>
-      </div>
-    </nav>
-  )}
 </header>
-
-<style>
-  .site-subnav {
-    border-bottom: 1px solid var(--color-border);
-    padding: 8px 0;
-  }
-  .subnav-inner {
-    max-width: var(--container-max);
-    margin: 0 auto;
-    padding: 0 var(--container-padding);
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
-  }
-  .subnav-inner a {
-    font-size: 0.8125rem;
-    color: var(--color-muted);
-    text-decoration: none;
-    transition: color 0.15s ease;
-  }
-  .subnav-inner a:hover,
-  .subnav-inner a.active {
-    color: var(--color-accent);
-  }
-  @media (max-width: 480px) {
-    .subnav-inner {
-      gap: 14px;
-      font-size: 0.75rem;
-    }
-  }
-</style>
 
 <script>
   const hamburger = document.getElementById('hamburger');
