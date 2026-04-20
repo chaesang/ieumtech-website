@@ -47,14 +47,16 @@ const jsonLd = {
           <h2>Thirteen years at Google</h2>
           <p>In 2007 I joined Google's Seoul office as one of its earliest members. I started as an engineer and became a manager, moving between Search, App Indexing, Play Store, Lens, and Cloud Logging. Some years I spent growing a single demo into an organization; other years I spent growing people inside a finished product. Some of that worked. Some of it quietly folded.</p>
 
-          <h2>Back</h2>
-          <p>In 2022 I returned to Korea as VP of Engineering at Banksalad. Since then I've served as CTO at INEEJI, Adjunct Professor at KAIST College of Business, and Distinguished Software Engineer at MegazoneCloud — and co-founded Aisle Street, an education-AI startup building exemplar.ai.</p>
+          <h2>Since then</h2>
+          <p>In 2022 I worked as VP of Engineering at Banksalad. I then served as CTO at INEEJI, Adjunct Professor at KAIST College of Business, and Distinguished Software Engineer at MegazoneCloud — and co-founded Aisle Street, an education-AI startup building exemplar.ai.</p>
 
           <h2>Now</h2>
-          <p>Advising, speaking, teaching, writing — that's most of what the days look like. Between Silicon Valley's speed and Seoul's context, between the engineer's hands and the leader's sight, still learning, still glad to share.</p>
+          <p>Building, leading, teaching, writing — and lending a hand alongside. Between Silicon Valley's speed and Korea's context, between the engineer's hands and the leader's sight, still learning, still glad to share.</p>
 
           <h2>Why</h2>
           <p>Where technology has passed, there have always been people. The editor I used alone, the colleagues in the organization, the classroom I stand in now — in the end, it was always about connecting people to people, and people to technology.</p>
+
+          <p class="background-meta">Seoul National University, M.Eng. & B.Eng. in Computer Engineering · 5 U.S. patents during Google tenure</p>
         </article>
       </div>
     </section>
@@ -75,25 +77,9 @@ const jsonLd = {
       </div>
     </section>
 
-    <section class="about-background">
-      <div class="about-inner">
-        <h2 class="section-label">Background</h2>
-        <dl class="fact-list">
-          <div class="fact-row">
-            <dt>Education</dt>
-            <dd>Seoul National University — M.Eng. & B.Eng. in Computer Engineering</dd>
-          </div>
-          <div class="fact-row">
-            <dt>Patents</dt>
-            <dd>5 U.S. patents filed during Google tenure (search and mobile apps)</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
     <section class="cta-section" id="contact" aria-labelledby="cta-heading">
       <div class="cta-inner">
-        <h2 class="cta-heading" id="cta-heading">If a question is starting to form somewhere in here, send it this way.</h2>
+        <h2 class="cta-heading" id="cta-heading">If a question has come up, send it this way.</h2>
         <p class="cta-sub">Half-formed questions are welcome.</p>
         <div class="cta-buttons">
           <a href="mailto:hello@ieumtech.net" class="btn">Email</a>
@@ -200,22 +186,14 @@ const jsonLd = {
     color: var(--color-muted);
   }
 
-  .about-background {
-    padding: var(--space-7) 0 var(--space-9);
+  .background-meta {
+    margin-top: var(--space-7);
+    padding-top: var(--space-4);
     border-top: 1px solid var(--color-border);
+    font-size: 0.8125rem;
+    color: var(--color-subtle);
+    line-height: 1.6;
   }
-  .fact-list { margin: 0; }
-  .fact-row {
-    display: grid;
-    grid-template-columns: 96px 1fr;
-    gap: var(--space-4);
-    padding: var(--space-3) 0;
-    border-bottom: 1px solid var(--color-border);
-    font-size: 0.9375rem;
-  }
-  .fact-row:first-child { border-top: 1px solid var(--color-border); }
-  .fact-row dt { color: var(--color-subtle); font-weight: 400; margin: 0; }
-  .fact-row dd { color: var(--color-text); margin: 0; }
 
   @media (max-width: 639px) {
     .about-hero { padding: var(--space-6) 0 var(--space-5); }
@@ -223,7 +201,5 @@ const jsonLd = {
     .hero-headline { font-size: 1rem; }
     .about-narrative { padding: var(--space-6) 0 var(--space-8); }
     .about-testimonials { padding: var(--space-7) 0; }
-    .about-background { padding: var(--space-6) 0 var(--space-8); }
-    .fact-row { grid-template-columns: 80px 1fr; }
   }
 </style>

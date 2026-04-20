@@ -47,14 +47,16 @@ const jsonLd = {
           <h2>실리콘밸리의 13년</h2>
           <p>2007년 Google 서울 오피스의 초기 멤버로 합류했습니다. 엔지니어로 시작해 매니저로, 검색과 앱 인덱싱과 Play Store와 Lens와 Cloud Logging 사이를 오갔습니다. 몇 해는 데모 하나를 조직으로 키우는 데 썼고, 몇 해는 완성된 제품에서 사람을 키우는 데 썼습니다. 잘 풀린 일도 있었고, 자연스레 접힌 일도 있었습니다.</p>
 
-          <h2>돌아와서</h2>
-          <p>2022년 한국으로 돌아와 Banksalad의 엔지니어링 VP로 일했습니다. 그 뒤로 INEEJI의 CTO, KAIST 경영대학의 겸임교수, MegazoneCloud의 Distinguished SWE로 지내는 한편, 교육 AI 스타트업 Aisle Street를 공동창업해 exemplar.ai를 만들고 있습니다.</p>
+          <h2>그 이후</h2>
+          <p>2022년 Banksalad의 엔지니어링 VP로 일했습니다. 그 뒤로 INEEJI의 CTO, KAIST 경영대학의 겸임교수, MegazoneCloud의 Distinguished SWE로 지내는 한편, 교육 AI 스타트업 Aisle Street를 공동창업해 exemplar.ai를 만들고 있습니다.</p>
 
           <h2>지금</h2>
-          <p>자문·강연·강의·글쓰기가 요즘의 주된 일입니다. 실리콘밸리의 속도와 서울의 맥락, 엔지니어의 손과 리더의 시야 사이를 오가며, 여전히 배우기를 즐기고 나누기를 좋아합니다.</p>
+          <p>만들고, 이끌고, 가르치고, 쓰고, 곁에서 거듭니다. 실리콘밸리의 속도와 한국의 맥락, 엔지니어의 손과 리더의 시야 사이를 오가며, 여전히 배우기를 즐기고 나누기를 좋아합니다.</p>
 
           <h2>왜</h2>
           <p>기술이 지나온 자리에는 늘 사람이 있었습니다. 혼자 쓰던 에디터도, 조직 안의 동료들도, 지금의 강단도 — 결국 사람과 사람, 사람과 기술 사이를 잇는 일이었습니다.</p>
+
+          <p class="background-meta">서울대학교 공학 석사·학사 · Google 재직 중 미국 특허 5건</p>
         </article>
       </div>
     </section>
@@ -75,25 +77,9 @@ const jsonLd = {
       </div>
     </section>
 
-    <section class="about-background">
-      <div class="about-inner">
-        <h2 class="section-label">배경</h2>
-        <dl class="fact-list">
-          <div class="fact-row">
-            <dt>학력</dt>
-            <dd>서울대학교 공학 석사·학사 (컴퓨터공학)</dd>
-          </div>
-          <div class="fact-row">
-            <dt>특허</dt>
-            <dd>Google 재직 중 출원한 검색·앱 관련 미국 특허 5건</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
     <section class="cta-section" id="contact" aria-labelledby="cta-heading">
       <div class="cta-inner">
-        <h2 class="cta-heading" id="cta-heading">여기 어딘가에서 질문이 생겼다면, 이쪽으로 이어 주세요.</h2>
+        <h2 class="cta-heading" id="cta-heading">궁금한 점이 있으시면, 이쪽으로 이어 주세요.</h2>
         <p class="cta-sub">정리되지 않은 질문이어도 괜찮습니다.</p>
         <div class="cta-buttons">
           <a href="mailto:hello@ieumtech.net" class="btn">이메일</a>
@@ -206,25 +192,15 @@ const jsonLd = {
     color: var(--color-muted);
   }
 
-  /* Background */
-  .about-background {
-    padding: var(--space-7) 0 var(--space-9);
+  /* Background meta at end of narrative */
+  .background-meta {
+    margin-top: var(--space-7);
+    padding-top: var(--space-4);
     border-top: 1px solid var(--color-border);
+    font-size: 0.8125rem;
+    color: var(--color-subtle);
+    line-height: 1.6;
   }
-  .fact-list {
-    margin: 0;
-  }
-  .fact-row {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: var(--space-4);
-    padding: var(--space-3) 0;
-    border-bottom: 1px solid var(--color-border);
-    font-size: 0.9375rem;
-  }
-  .fact-row:first-child { border-top: 1px solid var(--color-border); }
-  .fact-row dt { color: var(--color-subtle); font-weight: 400; margin: 0; }
-  .fact-row dd { color: var(--color-text); margin: 0; }
 
   @media (max-width: 639px) {
     .about-hero { padding: var(--space-6) 0 var(--space-5); }
@@ -232,7 +208,5 @@ const jsonLd = {
     .hero-headline { font-size: 1rem; }
     .about-narrative { padding: var(--space-6) 0 var(--space-8); }
     .about-testimonials { padding: var(--space-7) 0; }
-    .about-background { padding: var(--space-6) 0 var(--space-8); }
-    .fact-row { grid-template-columns: 64px 1fr; }
   }
 </style>
