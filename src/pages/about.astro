@@ -5,123 +5,225 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Chaesang Jung',
+  alternateName: '정채상',
   url: 'https://ieumtech.net/about',
   jobTitle: 'Founder, Ieum Tech',
   sameAs: 'https://linkedin.com/in/chaesang',
-  worksFor: {
-    '@type': 'Organization',
-    name: 'Ieum Tech',
-  },
-  alumniOf: [
-    { '@type': 'CollegeOrUniversity', name: 'Seoul National University' },
-  ],
+  worksFor: { '@type': 'Organization', name: 'Ieum Tech' },
+  alumniOf: [{ '@type': 'CollegeOrUniversity', name: 'Seoul National University' }],
 };
 ---
 <Base
   title="About Chaesang Jung — Ieum Tech"
-  description="Chaesang Jung — Engineering Leader. 0→1 org builder. ex-Google (13 yrs). Building structure out of chaos."
+  description="Where technology has passed, there have always been people — a short narrative of Chaesang Jung's path."
   lang="en"
   path="/about"
   ogType="profile"
   jsonLd={jsonLd}
   altLangPath="/ko/about"
 >
-  <style slot="head" is:inline>
-    .hero-label { margin-bottom: 28px; }
-    .profile-headline { line-height: inherit; margin-top: 0; }
-    .highlights-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .highlight-card { text-align: center; padding: 20px 12px; }
-    .highlight-number { font-size: 1.75rem; font-weight: 600; color: var(--color-accent); letter-spacing: -0.025em; line-height: 1.2; }
-    .highlight-label { font-size: 0.75rem; color: var(--color-muted); font-weight: 400; margin-top: 6px; line-height: 1.4; }
-    @media (max-width: 480px) { .highlights-grid { grid-template-columns: repeat(2, 1fr); } }
-    .simple-list { gap: 14px; }
-    .simple-list-item .label { font-weight: 600; }
-    .simple-list-item .detail { font-weight: 400; }
-  </style>
-
   <main>
-    <section class="about-section" id="about" style="border-top: none; padding-top: 32px;">
+    <section class="about-hero">
       <div class="about-inner">
-
-        <div class="about-profile">
-          <div class="profile-avatar"><img src="/profile.jpg" alt="Chaesang Jung" width="96" height="96" loading="lazy" /></div>
-          <div>
-            <h1 class="profile-name">Chaesang Jung</h1>
-            <p class="profile-secondary-name">정채상</p>
-            <p class="profile-headline">Behind the technology, there were always people.</p>
+        <div class="hero-head">
+          <div class="hero-avatar">
+            <img src="/profile.jpg" alt="Chaesang Jung" width="80" height="80" loading="lazy" />
+          </div>
+          <div class="hero-text">
+            <h1 class="hero-name">Chaesang Jung</h1>
+            <p class="hero-name-en">정채상</p>
           </div>
         </div>
+        <p class="hero-headline">Where technology has passed, there have always been people.</p>
+      </div>
+    </section>
 
-        <div class="about-summary">
-          <ul>
-            <li>Embedded, search, commerce, fintech, cloud, industrial AI</li>
-            <li>13 years in Silicon Valley, the years before and after in Korea</li>
-            <li>Engineer, manager, VP, CTO, advisor — a handful of roles along the way</li>
-            <li>Projects that worked, projects that quietly wound down</li>
-            <li>Still learning, and occasionally passing along what comes into view early.</li>
-          </ul>
+    <section class="about-narrative">
+      <div class="about-inner">
+        <article class="prose">
+          <h2>Start</h2>
+          <p>I met computers in Seoul in the 1980s. Through the 1990s as a computer science student, curiosity led before the major did — and that current carried me from set-top box firmware to search, mobile OSes, cloud, and industrial AI.</p>
+
+          <h2>Thirteen years at Google</h2>
+          <p>In 2007 I joined Google's Seoul office as one of its earliest members. I started as an engineer and became a manager, moving between Search, App Indexing, Play Store, Lens, and Cloud Logging. Some years I spent growing a single demo into an organization; other years I spent growing people inside a finished product. Some of that worked. Some of it quietly folded.</p>
+
+          <h2>Back</h2>
+          <p>In 2022 I returned to Korea as VP of Engineering at Banksalad. Since then I've served as CTO at INEEJI, Adjunct Professor at KAIST College of Business, and Distinguished Software Engineer at MegazoneCloud — and co-founded Aisle Street, an education-AI startup building exemplar.ai.</p>
+
+          <h2>Now</h2>
+          <p>Advising, speaking, teaching, writing — that's most of what the days look like. Between Silicon Valley's speed and Seoul's context, between the engineer's hands and the leader's sight, still learning, still glad to share.</p>
+
+          <h2>Why</h2>
+          <p>Where technology has passed, there have always been people. The editor I used alone, the colleagues in the organization, the classroom I stand in now — in the end, it was always about connecting people to people, and people to technology.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-testimonials">
+      <div class="about-inner">
+        <h2 class="section-label">From people I've worked with</h2>
+        <div class="testimonial-stack">
+          <blockquote class="testimonial">
+            <p class="testimonial-text">"Chaesang well-balances his technical expertise with the depth of his product domain knowledge, which stems from his immense care for the users he serves. His care and empathy for his reports as a manager — thinking of how to help people grow in their careers."</p>
+            <footer class="testimonial-attr">— Jennifer Lin, ex-Engineering Director, Google (managed Chaesang for 3 years)</footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p class="testimonial-text">"What sets Chaesang apart is his dedication to the learning and growth of his colleagues. His presence in the workplace provided us with a sense of psychological safety — we knew there was always someone to listen."</p>
+            <footer class="testimonial-attr">— Ada Suhkyung Kim, UX Research & AI Product Lead</footer>
+          </blockquote>
         </div>
+      </div>
+    </section>
 
-        <div class="about-block">
-          <h2>Words from Colleagues</h2>
-          <div style="display: flex; flex-direction: column; gap: 24px;">
-            <blockquote style="margin: 0; padding: 0 0 0 16px; border-left: 2px solid var(--color-accent);">
-              <p style="font-size: 0.9375rem; color: var(--color-text); font-style: italic; line-height: 1.7; margin-bottom: 8px;">"Chaesang well-balances his technical expertise with the depth of his product domain knowledge, which stems from his immense care for the users he serves. His care and empathy for his reports as a manager — thinking of how to help people grow in their careers."</p>
-              <cite style="font-size: 0.8125rem; color: var(--color-muted); font-style: normal;">— Jennifer Lin, ex-Engineering Director, Google (managed Chaesang for 3 years)</cite>
-            </blockquote>
-            <blockquote style="margin: 0; padding: 0 0 0 16px; border-left: 2px solid var(--color-accent);">
-              <p style="font-size: 0.9375rem; color: var(--color-text); font-style: italic; line-height: 1.7; margin-bottom: 8px;">"What sets Chaesang apart is his dedication to the learning and growth of his colleagues. His presence in the workplace provided us with a sense of psychological safety — we knew there was always someone to listen."</p>
-              <cite style="font-size: 0.8125rem; color: var(--color-muted); font-style: normal;">— Ada Suhkyung Kim, UX Research & AI Product Lead</cite>
-            </blockquote>
+    <section class="about-background">
+      <div class="about-inner">
+        <h2 class="section-label">Background</h2>
+        <dl class="fact-list">
+          <div class="fact-row">
+            <dt>Education</dt>
+            <dd>Seoul National University — M.Eng. & B.Eng. in Computer Engineering</dd>
           </div>
-        </div>
-
-        <div class="about-block">
-          <h2>More</h2>
-          <ul class="see-more-grid">
-            <li><a href="/companies">Places I've Worked</a></li>
-            <li><a href="/talks">Talks & Lectures</a></li>
-            <li><a href="/writing">Writing</a></li>
-          </ul>
-        </div>
-
-        <div class="about-block">
-          <h2>Education</h2>
-          <div class="simple-list">
-            <div class="simple-list-item">
-              <span class="label">Seoul National University</span>
-              <span class="detail">— MS, Computer Engineering</span>
-            </div>
-            <div class="simple-list-item">
-              <span class="label">Seoul National University</span>
-              <span class="detail">— BS, Computer Engineering</span>
-            </div>
+          <div class="fact-row">
+            <dt>Patents</dt>
+            <dd>5 U.S. patents filed during Google tenure (search and mobile apps)</dd>
           </div>
-        </div>
+        </dl>
+      </div>
+    </section>
 
-        <div class="about-block">
-          <h2>US Patents</h2>
-          <div class="simple-list">
-            <div class="simple-list-item"><span class="detail">Ranking of presentation modes for particular content (US9146972)</span></div>
-            <div class="simple-list-item"><span class="detail">Indexing application pages of native applications (US9002821B2)</span></div>
-            <div class="simple-list-item"><span class="detail">Automatically implementing an application in response to a search query (US9524347B1)</span></div>
-            <div class="simple-list-item"><span class="detail">Triggering and ranking of native applications (US9514195B2)</span></div>
-            <div class="simple-list-item"><span class="detail">Ranking of native application content (US8996520B2)</span></div>
-          </div>
+    <section class="cta-section" id="contact" aria-labelledby="cta-heading">
+      <div class="cta-inner">
+        <h2 class="cta-heading" id="cta-heading">If a question is starting to form somewhere in here, send it this way.</h2>
+        <p class="cta-sub">Half-formed questions are welcome.</p>
+        <div class="cta-buttons">
+          <a href="mailto:hello@ieumtech.net" class="btn">Email</a>
+          <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
         </div>
-
       </div>
     </section>
   </main>
-
-  <section class="cta-section" id="contact" aria-labelledby="cta-heading">
-    <div class="cta-inner">
-      <h2 class="cta-heading" id="cta-heading">If any of this resonates, let's talk.</h2>
-      <p class="cta-sub">A good question is usually enough to start.</p>
-      <div class="cta-buttons">
-        <a href="mailto:hello@ieumtech.net" class="btn">Email</a>
-        <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
-      </div>
-    </div>
-  </section>
 </Base>
+
+<style>
+  .about-inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+  }
+
+  .about-hero {
+    padding: var(--space-8) 0 var(--space-6);
+    background: var(--color-surface);
+  }
+  .hero-head {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+  .hero-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .hero-text { flex: 1; min-width: 0; }
+  .hero-name {
+    font-size: 1.875rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    margin: 0 0 2px;
+    color: var(--color-text);
+  }
+  .hero-name-en {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    margin: 0;
+  }
+  .hero-headline {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .about-narrative { padding: var(--space-7) 0 var(--space-9); }
+  .prose {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+  .prose h2 {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+    margin: var(--space-7) 0 var(--space-3);
+  }
+  .prose h2:first-child { margin-top: 0; }
+  .prose p { margin: 0; }
+
+  .section-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+    margin: 0 0 var(--space-4);
+  }
+
+  .about-testimonials {
+    padding: var(--space-8) 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .testimonial-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  .testimonial {
+    margin: 0;
+    padding: 0 0 0 var(--space-5);
+    border-left: 2px solid var(--color-subtle);
+  }
+  .testimonial-text {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin: 0 0 var(--space-3);
+  }
+  .testimonial-attr {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+  }
+
+  .about-background {
+    padding: var(--space-7) 0 var(--space-9);
+    border-top: 1px solid var(--color-border);
+  }
+  .fact-list { margin: 0; }
+  .fact-row {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: var(--space-4);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9375rem;
+  }
+  .fact-row:first-child { border-top: 1px solid var(--color-border); }
+  .fact-row dt { color: var(--color-subtle); font-weight: 400; margin: 0; }
+  .fact-row dd { color: var(--color-text); margin: 0; }
+
+  @media (max-width: 639px) {
+    .about-hero { padding: var(--space-6) 0 var(--space-5); }
+    .hero-name { font-size: 1.625rem; }
+    .hero-headline { font-size: 1rem; }
+    .about-narrative { padding: var(--space-6) 0 var(--space-8); }
+    .about-testimonials { padding: var(--space-7) 0; }
+    .about-background { padding: var(--space-6) 0 var(--space-8); }
+    .fact-row { grid-template-columns: 80px 1fr; }
+  }
+</style>

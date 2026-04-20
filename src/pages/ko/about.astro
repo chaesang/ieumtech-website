@@ -5,6 +5,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: '정채상',
+  alternateName: 'Chaesang Jung',
   url: 'https://ieumtech.net/ko/about',
   jobTitle: '대표, 이음 테크',
   sameAs: 'https://linkedin.com/in/chaesang',
@@ -14,7 +15,7 @@ const jsonLd = {
 ---
 <Base
   title="정채상 소개 — 이음 테크"
-  description="정채상 — 엔지니어링 리더. 혼돈에서 구조를 만들어 온 ex-Google 13년의 기록."
+  description="기술이 지나온 자리에 늘 사람이 있었습니다 — 정채상의 서사와 기록."
   lang="ko"
   path="/ko/about"
   ogType="profile"
@@ -22,81 +23,216 @@ const jsonLd = {
   altLangPath="/about"
 >
   <main>
-    <section class="about-section" id="about">
+    <section class="about-hero">
       <div class="about-inner">
-
-        <div class="about-profile">
-          <div class="profile-avatar"><img src="/profile.jpg" alt="정채상" width="96" height="96" loading="lazy" /></div>
-          <div>
-            <h1 class="profile-name">정채상</h1>
-            <p class="profile-secondary-name">Chaesang Jung</p>
-            <p class="profile-headline">기술이 지나온 자리에 늘 사람이 있었습니다.</p>
+        <div class="hero-head">
+          <div class="hero-avatar">
+            <img src="/profile.jpg" alt="정채상" width="80" height="80" loading="lazy" />
+          </div>
+          <div class="hero-text">
+            <h1 class="hero-name">정채상</h1>
+            <p class="hero-name-en">Chaesang Jung</p>
           </div>
         </div>
+        <p class="hero-headline">기술이 지나온 자리에 늘 사람이 있었습니다.</p>
+      </div>
+    </section>
 
-        <div class="about-summary">
-          <ul>
-            <li>임베디드, 검색, 커머스, 핀테크, 클라우드, 산업 AI</li>
-            <li>실리콘밸리 13년, 한국에서의 그 앞뒤</li>
-            <li>엔지니어, 매니저, VP, CTO, 자문으로 옮겨 다닌 자리들</li>
-            <li>잘 풀린 프로젝트, 자연스레 접힌 프로젝트</li>
-            <li>여전히 배우는 자리에서, 가끔 먼저 본 것을 건넵니다.</li>
-          </ul>
+    <section class="about-narrative">
+      <div class="about-inner">
+        <article class="prose">
+          <h2>시작</h2>
+          <p>80년대 서울에서 컴퓨터를 처음 만났습니다. 90년대 컴퓨터공학과 학생으로 지내는 동안, 전공보다 먼저 호기심이 이끌었고, 그 흐름을 따라 셋톱박스 펌웨어에서 검색 엔진, 스마트폰 운영체제, 클라우드, 산업 AI까지 여러 자리를 거쳐 왔습니다.</p>
+
+          <h2>실리콘밸리의 13년</h2>
+          <p>2007년 Google 서울 오피스의 초기 멤버로 합류했습니다. 엔지니어로 시작해 매니저로, 검색과 앱 인덱싱과 Play Store와 Lens와 Cloud Logging 사이를 오갔습니다. 몇 해는 데모 하나를 조직으로 키우는 데 썼고, 몇 해는 완성된 제품에서 사람을 키우는 데 썼습니다. 잘 풀린 일도 있었고, 자연스레 접힌 일도 있었습니다.</p>
+
+          <h2>돌아와서</h2>
+          <p>2022년 한국으로 돌아와 Banksalad의 엔지니어링 VP로 일했습니다. 그 뒤로 INEEJI의 CTO, KAIST 경영대학의 겸임교수, MegazoneCloud의 Distinguished SWE로 지내는 한편, 교육 AI 스타트업 Aisle Street를 공동창업해 exemplar.ai를 만들고 있습니다.</p>
+
+          <h2>지금</h2>
+          <p>자문·강연·강의·글쓰기가 요즘의 주된 일입니다. 실리콘밸리의 속도와 서울의 맥락, 엔지니어의 손과 리더의 시야 사이를 오가며, 여전히 배우기를 즐기고 나누기를 좋아합니다.</p>
+
+          <h2>왜</h2>
+          <p>기술이 지나온 자리에는 늘 사람이 있었습니다. 혼자 쓰던 에디터도, 조직 안의 동료들도, 지금의 강단도 — 결국 사람과 사람, 사람과 기술 사이를 잇는 일이었습니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-testimonials">
+      <div class="about-inner">
+        <h2 class="section-label">함께 일한 사람들의 말</h2>
+        <div class="testimonial-stack">
+          <blockquote class="testimonial" lang="en">
+            <p class="testimonial-text">"Chaesang well-balances his technical expertise with the depth of his product domain knowledge, which stems from his immense care for the users he serves. His care and empathy for his reports as a manager — thinking of how to help people grow in their careers."</p>
+            <footer class="testimonial-attr">— Jennifer Lin, ex-Engineering Director, Google (managed Chaesang for 3 years)</footer>
+          </blockquote>
+          <blockquote class="testimonial" lang="en">
+            <p class="testimonial-text">"What sets Chaesang apart is his dedication to the learning and growth of his colleagues. His presence in the workplace provided us with a sense of psychological safety — we knew there was always someone to listen."</p>
+            <footer class="testimonial-attr">— Ada Suhkyung Kim, UX Research & AI Product Lead</footer>
+          </blockquote>
         </div>
+      </div>
+    </section>
 
-        <div class="about-block">
-          <h2>함께 일한 사람들의 말</h2>
-          <div class="testimonial-stack">
-            <blockquote class="testimonial" lang="en">
-              <span class="badge-lang">EN</span>
-              <p class="testimonial-text">"Chaesang well-balances his technical expertise with the depth of his product domain knowledge, which stems from his immense care for the users he serves. His care and empathy for his reports as a manager — thinking of how to help people grow in their careers."</p>
-              <footer class="testimonial-attr">— Jennifer Lin, ex-Engineering Director, Google (managed Chaesang for 3 years)</footer>
-            </blockquote>
-            <blockquote class="testimonial" lang="en">
-              <span class="badge-lang">EN</span>
-              <p class="testimonial-text">"What sets Chaesang apart is his dedication to the learning and growth of his colleagues. His presence in the workplace provided us with a sense of psychological safety — we knew there was always someone to listen."</p>
-              <footer class="testimonial-attr">— Ada Suhkyung Kim, UX Research & AI Product Lead</footer>
-            </blockquote>
+    <section class="about-background">
+      <div class="about-inner">
+        <h2 class="section-label">배경</h2>
+        <dl class="fact-list">
+          <div class="fact-row">
+            <dt>학력</dt>
+            <dd>서울대학교 공학 석사·학사 (컴퓨터공학)</dd>
           </div>
-        </div>
-
-        <div class="about-block">
-          <h2>더 보기</h2>
-          <ul class="see-more-grid">
-            <li><a href="/ko/companies">거쳐 온 자리들</a></li>
-            <li><a href="/ko/talks">남긴 말과 글들</a></li>
-            <li><a href="/ko/writing">글</a></li>
-          </ul>
-        </div>
-
-        <div class="about-block">
-          <h2>배경</h2>
-          <div class="simple-list">
-            <div class="simple-list-item"><span class="label">서울대학교</span> <span class="detail">공학 석사·학사, 컴퓨터공학</span></div>
-            <div class="simple-list-item"><span class="detail">Google 재직 중 출원한 검색·앱 관련 미국 특허 5건</span></div>
+          <div class="fact-row">
+            <dt>특허</dt>
+            <dd>Google 재직 중 출원한 검색·앱 관련 미국 특허 5건</dd>
           </div>
-        </div>
+        </dl>
+      </div>
+    </section>
 
+    <section class="cta-section" id="contact" aria-labelledby="cta-heading">
+      <div class="cta-inner">
+        <h2 class="cta-heading" id="cta-heading">여기 어딘가에서 질문이 생겼다면, 이쪽으로 이어 주세요.</h2>
+        <p class="cta-sub">정리되지 않은 질문이어도 괜찮습니다.</p>
+        <div class="cta-buttons">
+          <a href="mailto:hello@ieumtech.net" class="btn">이메일</a>
+          <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
+        </div>
       </div>
     </section>
   </main>
-
-  <section class="cta-section" id="contact" aria-labelledby="cta-heading">
-    <div class="cta-inner">
-      <h2 class="cta-heading" id="cta-heading">여기 어딘가에서 질문이 생겼다면, 이쪽으로 이어 주세요.</h2>
-      <p class="cta-sub">정리되지 않은 질문이어도 괜찮습니다.</p>
-      <div class="cta-buttons">
-        <a href="mailto:hello@ieumtech.net" class="btn">이메일</a>
-        <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-
-  <style>
-    .testimonial-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-  </style>
 </Base>
+
+<style>
+  .about-inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+  }
+
+  /* Hero */
+  .about-hero {
+    padding: var(--space-8) 0 var(--space-6);
+    background: var(--color-surface);
+  }
+  .hero-head {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+  .hero-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .hero-text { flex: 1; min-width: 0; }
+  .hero-name {
+    font-size: 1.875rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    margin: 0 0 2px;
+    color: var(--color-text);
+  }
+  .hero-name-en {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    margin: 0;
+  }
+  .hero-headline {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  /* Narrative */
+  .about-narrative {
+    padding: var(--space-7) 0 var(--space-9);
+  }
+  .prose {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--color-text);
+  }
+  .prose h2 {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+    margin: var(--space-7) 0 var(--space-3);
+  }
+  .prose h2:first-child { margin-top: 0; }
+  .prose p { margin: 0; }
+
+  /* Section label (shared between testimonial and background) */
+  .section-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+    margin: 0 0 var(--space-4);
+  }
+
+  /* Testimonials */
+  .about-testimonials {
+    padding: var(--space-8) 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .testimonial-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  .testimonial {
+    margin: 0;
+    padding: 0 0 0 var(--space-5);
+    border-left: 2px solid var(--color-subtle);
+  }
+  .testimonial-text {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin: 0 0 var(--space-3);
+  }
+  .testimonial-attr {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+  }
+
+  /* Background */
+  .about-background {
+    padding: var(--space-7) 0 var(--space-9);
+    border-top: 1px solid var(--color-border);
+  }
+  .fact-list {
+    margin: 0;
+  }
+  .fact-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--space-4);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9375rem;
+  }
+  .fact-row:first-child { border-top: 1px solid var(--color-border); }
+  .fact-row dt { color: var(--color-subtle); font-weight: 400; margin: 0; }
+  .fact-row dd { color: var(--color-text); margin: 0; }
+
+  @media (max-width: 639px) {
+    .about-hero { padding: var(--space-6) 0 var(--space-5); }
+    .hero-name { font-size: 1.625rem; }
+    .hero-headline { font-size: 1rem; }
+    .about-narrative { padding: var(--space-6) 0 var(--space-8); }
+    .about-testimonials { padding: var(--space-7) 0; }
+    .about-background { padding: var(--space-6) 0 var(--space-8); }
+    .fact-row { grid-template-columns: 64px 1fr; }
+  }
+</style>
