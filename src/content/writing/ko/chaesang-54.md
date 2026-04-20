@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/54
-draft: true
+draft: false
 ---
 
 오늘의 주제는 컴퓨터 세상에서 한글에 대한 이야기.. Windows, Mac 등에 당연히 한국어 팩이 깔려 있는 요즘에 이해하기 힘든 내용들이지만, 그래서인지 여러 개의 기억들이 떠오른다. 당연하게 첫번째 기억은

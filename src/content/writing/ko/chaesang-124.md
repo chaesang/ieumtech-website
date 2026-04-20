@@ -7,7 +7,7 @@ tags: ["update", "speaking"]
 series: "chaesang-priv"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/124
-draft: true
+draft: false
 ---
 
 미국 어느 식당에서 밥 먹는 중에 화면에 보이는 만화...

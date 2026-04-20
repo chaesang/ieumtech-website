@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/35
-draft: true
+draft: false
 ---
 
 앞의 두 단어 이후에 그 뒤로도 아마 많은 이야기를 들었겠지만, 다른 류의 대학 생활과 섞이면서 오히려 뒤의 기억들은 흐릿한데, 커리어를 관통할 것으로 소개해 주신 세번째 그리고 기억 속의 마지막 단어는 **'cache'.** 첫번째 단어인 trade-off 의 연장선 상에서 아주 잘 정의된 예제이기도 하고, 담당 교수님의 전공 분야이기도 했었다. 어린 마음에 computer architecture 에 대한 매력을 느끼게 되었던 결정적인 부분이기도 하다. 아래는 연관된 몇가지 기억들.

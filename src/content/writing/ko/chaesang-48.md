@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/48
-draft: true
+draft: false
 ---
 
 전공 과목의 강렬한 기억은 2학년 때 새로 오신 [하순회 교수님](https://cse.snu.ac.kr/professor/%ED%95%98%EC%88%9C%ED%9A%8C) 과 시작한다. **회로 이론**과 **논리 설계** 두 전공 필수 과목을 동시에 가르치셔서 수업을 잘 듣는다면 1주일에 최소 6번을 듣게 되었다. 새로운 교재여서 족보 따위는 없고, 극강의 난이도였던 시험들과 딱 나누어 떨어지지 않는(?) 소수점 가득한 정답들이 기억난다.

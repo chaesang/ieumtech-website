@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "dfmba-recom"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/13
-draft: true
+draft: false
 ---
 
 ## 한 주간 있었던 일들

@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/57
-draft: true
+draft: false
 ---
 
 기억 속의 컴퓨터 공학 이야기들 중 마지막 이야기이다. 데이터베이스 과목, 그의 선수과목 개념이었던 알고리즘에 대한 기억으로 1990년대 학교에서 배웠던 전공에 대한 기억들을 마무리해 본다.

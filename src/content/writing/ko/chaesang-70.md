@@ -7,7 +7,7 @@ tags: ["update", "speaking"]
 series: "chaesang-priv"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/70
-draft: true
+draft: false
 ---
 
 지난 봄에 한국에 있던 중에 kernel360 1기에서 어떤 걸 가르치고 만들었는지 최종 발표를 보려 갔는데, 프로그램을 담당하셨던 IT 교육 관련 작가이자 유튜버이신 은종쌤과 이야기 나눌 기회가 있었습니다. (업계가 좁아서 학연, 지연, 뭐 그런 것도 맞습니다... )

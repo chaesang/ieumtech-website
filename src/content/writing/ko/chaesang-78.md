@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "kaist-dfmba-24"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/78
-draft: true
+draft: false
 ---
 
 미국에서 원격으로 새벽에 하는 수업이고, 이번 주는 추석 연휴 사이에 있는 주여서 출석 처리를 하지 않고 대신 같이 관련 클립들을 보는 것으로 수업을 대신했다. 두어 개 더 같이 보았으면 하는 내용도 있었지만, 주제를 그룹 짓기에 어색하다 생각했고, AI , Search by Google , AI by Google 의 세 그룹으로 이야기거리를 모았다. 다음 주부터 다시 조금은 딱딱한 강의 내용들로 채워 지겠다.

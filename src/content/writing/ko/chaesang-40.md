@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/40
-draft: true
+draft: false
 ---
 
 학부 때 몇 학기 동안 근로장학생을 할 수 있었다. 기숙사 다니지 않는 지방 학생이어 해당이 되었을 수도 있고, 주 업무는 공대 사무실에서 학과 사무실로 오는 우편물 배달과 연구실 별로 분배하는 일이었다. 하루에 30분 - 1시간 정도씩 학과 사무실에서 그밖에 잔심부름들을 했었고, 학과 사무실에 계셨던 분들과 대학원 선배, 교수님들이 어엿비 여겨 주셨던 좋은 기억들이 있다.

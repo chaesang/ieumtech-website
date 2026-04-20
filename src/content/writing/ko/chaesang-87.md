@@ -7,7 +7,7 @@ tags: ["update", "speaking"]
 series: "chaesang-priv"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/87
-draft: true
+draft: false
 ---
 
 이 글은 제가 **NIA \[한국지능정보사회진흥원\]의 < 디지털서비스 이슈리포트 > 2024년 10월호에 기고한 글**입니다. 원본 글 **'**[**2024년 AI 현황 보고서 리뷰**](https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?cbIdx=99863&bcIdx=27350&parentSeq=27350)**'**를 이곳 브런치에서도 공유합니다.

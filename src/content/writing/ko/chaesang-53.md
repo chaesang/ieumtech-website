@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/53
-draft: true
+draft: false
 ---
 
 요새 LLM inference 관련해서 다양한 quantization 이야기들을 공부하다 보니... 실수와 정수, fixed point vs floating point 도 거대한 주제 중 하나이겠지만, 거기에 관련해서는 구현하고 손으로 계산하느라 고생했던 기억들만 있고, 조각조각난 몇몇 기억들 중에서 비트와 버스에 대한 이야기들을 모아 본다.

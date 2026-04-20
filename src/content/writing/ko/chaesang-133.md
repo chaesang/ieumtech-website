@@ -7,7 +7,7 @@ tags: ["update", "speaking"]
 series: "chaesang-priv"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/133
-draft: true
+draft: false
 ---
 
 이 글은 제가 **NIA \[한국지능정보사회진흥원\]의 < 디지털서비스 이슈리포트 > 2025년 11월호에 기고한 글**입니다. 원본 글 **'**[**2025년 AI 현황**](https://www.nia.or.kr/site/nia_kor/ex/bbs/List.do?cbIdx=99863) [**보고서**](https://www.nia.or.kr/site/nia_kor/ex/bbs/List.do?cbIdx=99863) [**리뷰**](https://www.nia.or.kr/site/nia_kor/ex/bbs/List.do?cbIdx=99863)[**'**](https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?cbIdx=99863&bcIdx=27742&parentSeq=27742)를 이곳 브런치에서도 공유합니다.

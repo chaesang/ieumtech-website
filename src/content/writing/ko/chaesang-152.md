@@ -7,7 +7,7 @@ tags: ["essay"]
 series: "chaesang-etc"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/152
-draft: true
+draft: false
 ---
 
 IT 용어일까 살짝 고민하다 misc 로...

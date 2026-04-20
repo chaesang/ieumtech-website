@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "dfmba-recom"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/27
-draft: true
+draft: false
 ---
 
 매 주 수많은 일들이 벌어지는 현업이었지만, 과목 이름에 걸맞게 AI 라는 주제를 놓고 같은 교재를 보며 독서토론회 형식으로라도 이야기를 하고 싶었는데, 이 책보다 나은 선택지를 찾을 수가 없었다.  

@@ -7,7 +7,7 @@ tags: ["update", "speaking"]
 series: "chaesang-priv"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/69
-draft: true
+draft: false
 ---
 
 **구글 클라우드 넥스트 24와 구글 I/O 2024의 주요 발표 내용**

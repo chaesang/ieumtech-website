@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "dfmba-recom"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/20
-draft: true
+draft: false
 ---
 
 새벽에 한국에 도착해서 약간의 휴식과 준비 후에 진행한 강의. 부쩍 추워진 서울 날씨는 캘리포니아와 다른 맛이 있다고나 할까..

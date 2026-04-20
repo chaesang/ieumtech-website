@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/55
-draft: true
+draft: false
 ---
 
 Java 가 주력으로 유명해진 게 1990년대 후반이었고, HTML 이라는 게 겨우 나오고, 이후에 Python, Javascript , Golang 등이 등장하기 전, 짧으면 짧은 시간 사이에 꽤 여러 가지 언어들이 스쳐 지나갔다. 먼저 전공 과목 중에 "프로그래밍 언어 개론" 이라는 과목이 있었고, 여기저기 아르바이트들을 접하면서 지금 생각해 보면 별별 언어들이 지나간 기억이다.

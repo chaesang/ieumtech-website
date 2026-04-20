@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/42
-draft: true
+draft: false
 ---
 
 오늘 주제는 Compiler 에 해당하는 몇몇 기억 조각들. Programming = Basic 인 채로 C 언어를 배우게 되었고, 인터프리터와 컴파일러가 다르다는 정도의 기본 지식과 학과 숙제, 아르바이트 등으로 다양한 연관된 경험들을 하게 되었다. C/C++ 과 교과서 위주의 기억 몇 개.

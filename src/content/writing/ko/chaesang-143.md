@@ -7,7 +7,7 @@ tags: ["it-thought"]
 series: "chaesang-it-26"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/143
-draft: true
+draft: false
 ---
 
 Wikimedia 가 창립 25주년을 맞이하며( [https://wikimediafoundation.org/wikipedia25/](https://wikimediafoundation.org/wikipedia25/) ) 주요 BigTech 들과의 협업을 뉴스로 접하게 되었다. ( [https://news.nate.com/view/20260116n08571](https://news.nate.com/view/20260116n08571) ). 주로 위키피디아지만, 검색 현업에 있을 때, 혹은 그 이전부터 접했으니 나도 20년 정도는 열혈 사용자였던 거 같고 여러 가지 연관된 생각과 이야기들.

@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/51
-draft: true
+draft: false
 ---
 
 인터넷이 아주 열심히 도입되던 격변의 시기, 당시 집에서 인터넷은 거의 안되고, 모뎀을 이용한 PC 통신은 그래도 좀 퍼졌으며, 전용선이라는 건 공공기관에나 있던 시기. 당시 대학교들은 ac.kr 의 class B network address 를 가지고 있었고, 학교는 snu.ac.kr 에 학과별 혹은 연구실 별로 address range 와 이름을 '찜'하던 기억들이 있다. 당시 막내 대학원생이어서 심부름을 했던 것들과 각종 카더라 루머들에 대한 이야기들.  

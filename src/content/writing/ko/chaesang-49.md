@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/49
-draft: true
+draft: false
 ---
 
 학교를 한창 다니던 90년대 중반은 MS-DOS , Windows-95 등으로 바뀌어 가면서 개인용 컴퓨터를 계속 포맷하고 바꿔 끼고 했던 기억들이다. 재미 삼아(?) 리눅스라는 걸 설치해 보려 하면 플로피 디스크 20장 들고 바꿔 깔다가 bad block 맞아서 다시 하는 등의 일들이 빈번했고, 과제들 중에서는 2학년 때 System programming 이라는 과목을 접하게 되고, Microsoft Assembly 를 접하게 된다.

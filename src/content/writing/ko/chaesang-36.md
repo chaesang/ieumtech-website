@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/36
-draft: true
+draft: false
 ---
 
 기억 속의 첫 기계어는 컴퓨터학습에서 예제로 접했던 SPC-1000 에서 돌아가는 몇몇 게임용 코드들이다. 마법 주문처럼 길게 적혀 있는 16진수로 되어 있는 값들을 하나하나 집어 넣고, 마지막에 call 을 수행시키면 뭔가 되거나 아니면 껐다 켜야 하거나 둘 중 하나의 결과로 기억하고 있다. 무슨 의미인지는 몰랐고, 모눈 종이에 색칠 해 가면서 모자이크처럼 뭔가를 만졌던 기억은 있는데, 이는 생각해 보니 font, 흑백 그림일 지언정 instruction 들은 아니었던 것 같다.

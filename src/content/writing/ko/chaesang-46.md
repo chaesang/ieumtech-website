@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/46
-draft: true
+draft: false
 ---
 
 한참이 지나 뒤돌아 본 90년대는 이른바 인공지능의 두번째 겨울이 있던 시기였다. 당시에 인기 있었던 토픽들은 Hardware 와 Software 를 같이 엮는 co-design, embedded system 등이었고, PC 통신이 겨우 나오고 있으면서 인터넷이 폭발하기 직전의 상황들이었다. 야후, 구글, 네이버 등이 없던 시절, 한게임이나 스타크래프트와 Napster 가 나오기 이전의 세상이었다. 핸드폰을 학부 졸업 선물로 받았던 시절이기도 했으니...

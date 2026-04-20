@@ -7,7 +7,7 @@ tags: ["update", "speaking"]
 series: "chaesang-priv"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/61
-draft: true
+draft: false
 ---
 
 한국에 2주간 짧게 있는 스케쥴 중에, 한빛 분들께서 준비를 해 주셔서 이야기거리를 조금 모아 가 보려 한다. 오지랖 위주의 여러 경험들 중에서 어떤 내용들을 전하고 나누면 좋을까 하는 고민에서 이야기를 준비하다 보니 문득 '코딩이 제일 쉬웠어요' 라는 문장에 도달하게 되었다. 그래서 제목이 꽤 자극적으로 조금은 어그로스럽게 나오긴 했는데...

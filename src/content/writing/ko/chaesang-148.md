@@ -7,7 +7,7 @@ tags: ["update", "speaking"]
 series: "chaesang-priv"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/148
-draft: true
+draft: false
 ---
 
 이 글은 제가 **NIA \[한국지능정보사회진흥원\]의 < 디지털서비스 이슈리포트 > 2026년 1월호에 기고한 글**입니다. 원본 글 **'**[**\[디지털서비스 이슈리포트2026-1\] 피지컬 AI를 위한 플랫폼 현황 (파트1)**](https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?cbIdx=99863&bcIdx=29009&parentSeq=29009)**'**을 이곳 브런치에서도 공유합니다.

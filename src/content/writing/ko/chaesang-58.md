@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/58
-draft: true
+draft: false
 ---
 
 개인적인 여러 변화들과 함께 주변을 정리하는 상황이 생겼고, 이를 효과적으로 해 보고 싶어 브런치 매체에 여러 기억의 조각들을 모아 보았습니다. 세상을 아름답게 만든다거나 하는 거창한 의미까지는 아니어도, 의미 있는 레퍼런스를 남겨 보겠다는 생각으로 시작했는데, 시간 내어 읽어 주신 분들, 익명의 세상에서 알림 받아 주시는 분들, 기억을 고쳐 주신 분들 모두 그 인연들에 감사드리며, 앞으로 만나게 될 다른 인연들도 미리 감사의 말씀 드립니다.

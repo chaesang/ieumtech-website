@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "kaist-dfmba-24"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/77
-draft: true
+draft: false
 ---
 
 학생들의 수는 그대로 78명으로 확정되었다. 주입식 혹은 강연 위주의 수업이 예상되는 부분이라 한계도 있겠지만, 기말 과제 혹은 다양한 소통의 방식으로 생각의 폭을 넓히는 데 거들 수 있으면 한다.

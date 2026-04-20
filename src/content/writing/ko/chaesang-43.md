@@ -7,7 +7,7 @@ tags: ["update", "speaking"]
 series: "chaesang-priv"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/43
-draft: true
+draft: false
 ---
 
 한국에 돌아와서 가장 미국과 다르다고 생각한 지점 중에 가장 큰 부분은 EM 이 없다는 것이고, 미국에서 일을 거의 배운 나에게 있어서는 뭐라도 거들어야 겠다는 생각이었고, 이건 각각의 회사를 초월해서 업권에서 같이 거들 수 있으면 좋겠다는 생각이어서 취지에 공감해서 작은 역할을 맡았다. 그 결과로 아래의 강의가 만들어 졌고, 다음 주 오픈을 하게 된다.

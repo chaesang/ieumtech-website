@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "dfmba-recom"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/25
-draft: true
+draft: false
 ---
 
 마지막 수업. 밀린 발표들 때문에 1시간 여건 되는 사람들을 일찍 시작하게 만들었음. 여전히 10시 이후까지 밀릴 수 있어 따로 recap 할 시간이 여의치 않을 거 같았다. 나름 한 학기를 마무리하는 메시지를 전할 수 있으면 하는 생각에 고민들을 많이 할 수밖에 없었다.

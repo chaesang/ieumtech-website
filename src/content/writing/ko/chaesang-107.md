@@ -7,7 +7,7 @@ tags: ["update", "speaking"]
 series: "chaesang-priv"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/107
-draft: true
+draft: false
 ---
 
 패스트캠퍼스에서 진행는 **"Kernel360 프로그램 4기 : 백엔드 심화 부트캠프"**에 자그마한 도움이 되면 하는 마음으로 참여하게 되었습니다. 지난 3기까지 엣지가 있는 프로젝트들이어서 약간의 부담과 긴장이 있습니다.  

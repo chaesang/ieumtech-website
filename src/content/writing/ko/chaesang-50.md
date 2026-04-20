@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/50
-draft: true
+draft: false
 ---
 
 학부 2학년이었는지 3학년이었는지 기억이 가물가물한데, 아마도 과목 이름이 '파일 시스템' 이었고, 자료구조 과목 이후에 과목이었던 기억이다. 기말 과제로 B+ tree 를 scratch 부터 제대로 구현해서 제출하는 과제였었다. 다시 한번 이야기하지만, 넷스케이프 웹 브라우징이 가능하지 않던 시기에 외부에서의 copy.& paste 없이 구현하는 것이었다.

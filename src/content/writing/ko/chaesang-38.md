@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/38
-draft: true
+draft: false
 ---
 
 어릴 때 서예 학원을 다녔고, 한자가 섞인 신문을 보고 자라서 라는 핑계로 영어는 꽤 늦게 시작했던 기억이다. 컴퓨터 경진대회 이론반을 준비하면서 그리고 게임들을 접하면서 제대로 된(?) 영어를 받아들였던 것으로 오늘의 주제는 각종 약어들에 대한 기억들과 그 중에 "V" 는 여지 없이 Very 였던 기억들이다. 신기하기도 하고 한편으로는 허무하기도 한 내용들...

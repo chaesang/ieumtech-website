@@ -7,7 +7,7 @@ tags: ["essay"]
 series: "chaesang-etc"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/144
-draft: true
+draft: false
 ---
 
 ## **10년**

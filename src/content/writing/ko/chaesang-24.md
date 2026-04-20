@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "dfmba-recom"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/24
-draft: true
+draft: false
 ---
 
 학과 사정으로 리모트로 수업을 진행해야 했고, 발표를 해야 했는데, 모든 사람의 오디오 품질을 조절할 수 없기에 실제 지지직 거림과 관련해서 많은 어려움이 있었다.

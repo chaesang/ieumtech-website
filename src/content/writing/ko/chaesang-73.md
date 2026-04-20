@@ -7,7 +7,7 @@ tags: ["update", "speaking"]
 series: "chaesang-priv"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/73
-draft: true
+draft: false
 ---
 
 이 글은 제가 **NIA \[한국지능정보사회진흥원\]의 < 디지털서비스 이슈리포트 > 2024년 7월호에 기고한 글**입니다. 원본 글 '[**클라우드에서 서비스 스타트업 시작하기**](http://file///Users/chaesang/Downloads/%EC%9D%B4%EC%8A%88%EB%A6%AC%ED%8F%AC%ED%8A%B8_2024-07%ED%98%B8.pdf)'를 이곳 브런치에서도 공유합니다.  

@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "dfmba-recom"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/22
-draft: true
+draft: false
 ---
 
 자유로운 이야기들을 나누고 싶어 간담회를 스케쥴했고, 미국을 오가는 일정 때문에 오늘에서야 같이 간식이라도 먹으며 조금 말을 섞을 수 있었다. 학기의 초반에 했었으면 어땠을까 하는 조금 은 아쉬움이 있다. 과제 발표를 3–4팀 할 수 있으면 늦지 않게 이동할 수 있을 거 같다.

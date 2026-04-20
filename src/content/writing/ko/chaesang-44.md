@@ -7,7 +7,7 @@ tags: ["update", "speaking"]
 series: "chaesang-priv"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/44
-draft: true
+draft: false
 ---
 
 한국에서 꽤 오래된 개발자 커뮤니티 사이트인 [https://okky.kr/](https://okky.kr/) 와 인연이 닿게 되어서 한 시간 반 정도 강연을 하게 되었다. [https://okky.kr/articles/1479127](https://okky.kr/articles/1479127)

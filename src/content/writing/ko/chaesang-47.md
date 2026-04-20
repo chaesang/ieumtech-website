@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/47
-draft: true
+draft: false
 ---
 
 90년대 후반 대학원 꼬꼬마 석사 과정을 진행하면서 맡았던 주제는 WCET ( Worst Case Execution Time ) analysis 였다. Wikipedia ( [https://en.wikipedia.org/wiki/Worst-case\_execution\_time](https://en.wikipedia.org/wiki/Worst-case_execution_time) ) 에는 2008년부터 보이는데, 내가 이 과제를 연구실 선배들로부터 전해 받으면서 공부했던 게 이미 1995년이었으니.. ( [https://ieeexplore.ieee.org/document/392980](https://ieeexplore.ieee.org/document/392980) ) 그 사이의 시간대가 좀 비어 있긴 하겠다. 조금 어려운 이야기가 앞쪽에 하나에 세상 일 모른다는 일 두 가지 이벤트들..

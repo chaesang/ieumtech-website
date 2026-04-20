@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/52
-draft: true
+draft: false
 ---
 
 학부 2학년 때 전공 필수 과목으로 실험이 있었고, 당시 논리설계 과목의 실습 버젼으로 하드웨어를 만지는 시간이었었다. AND / OR / NOT 등의 [**논리 게이트**](https://namu.wiki/w/%EB%85%BC%EB%A6%AC%20%ED%9A%8C%EB%A1%9C?from=%EB%85%BC%EB%A6%AC%20%EA%B2%8C%EC%9D%B4%ED%8A%B8#s-3) 를 전선에 연결해서 되는지 안 되는지의 실습 버젼이었고, [**플립플롭**](https://namu.wiki/w/%ED%94%8C%EB%A6%BD%ED%94%8C%EB%A1%AD#s-2.4) , [**PLA / PAL**](https://testbook.com/digital-electronics/programmable-logic-devices) 등까지 cover 할 수 있었다. 컴퓨터 이외의 것으로 진행하는 실험이 처음이었어서 신기한 경험이었다. 선배들이 빵판이라 불렀고, 영어로 진짜 breadboard..

@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "dfmba-recom"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/17
-draft: true
+draft: false
 ---
 
 3번의 새벽 온라인 수업의 첫번째 시간으로, 오늘부터는 마이크를 사용할 수 있게 되었다. 뭔가 전문적인 사람들이 쓰는 물건이라 생각했지만, 나같은 초보들에게도 특히 듣는 사람들을 배려하기에 좋은 아이템인 거 같다. 피드백이 들리지는 않지만, 노트북에서의 팬 소리가 불편하게 전해 지지 않고, 확실히 집중해서 이야기할 때 도움이 되는 거 같다.

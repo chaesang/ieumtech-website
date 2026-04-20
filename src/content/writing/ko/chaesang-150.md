@@ -7,7 +7,7 @@ tags: ["essay"]
 series: "chaesang-etc"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/150
-draft: true
+draft: false
 ---
 
 ## **vs 나라정(鄭)**

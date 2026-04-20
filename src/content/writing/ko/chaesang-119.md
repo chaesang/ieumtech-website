@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "kaist-dfmba-25"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/119
-draft: true
+draft: false
 ---
 
 ## **들어가며**

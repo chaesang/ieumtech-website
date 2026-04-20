@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "dfmba-recom"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/11
-draft: true
+draft: false
 ---
 
 처음 하는 일이고 앞으로 비슷한 걸 잘 해 보자는 의미에서 반공개적인 곳에 주별로 보고 / 회고 등을 쓰리라 생각했었고, brunch 에 등록되기도 해서 정리의 의미로 남긴다.

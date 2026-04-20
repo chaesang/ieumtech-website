@@ -7,7 +7,7 @@ tags: ["update", "speaking"]
 series: "chaesang-priv"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/45
-draft: true
+draft: false
 ---
 
 시작은 2022년으로 거슬러 올라가서, 한국에 돌아와서 주변을 둘러보던 중 udemy 같은 패스트캠퍼스를 알게 되었다. [https://2022.feconf.kr/](https://2022.feconf.kr/) 라는 곳에 뱅크생러드가 스폰서로 참여하게 되었고, 옆에 있던 패스트캠퍼스에 경품 당첨을 목표로 강의 의향 있음에 클릭해서 신청한 것에 대해 2023년 초 즈음에 [정성균 PM](https://www.linkedin.com/in/%EC%84%B1%EA%B7%A0-%EC%A0%95-821b51249/) 이 연락을 주셨다, 정확한 문구는 기억이 나지 않지만, 고인물이지만 한편으로는 '정통파' 컴퓨터공학 전공자의 시각에서 도움을 줄 수 있는 부분이 있지 않을까 하는 메시지를 남겼는데, 이에 대한 반응이었다.

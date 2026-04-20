@@ -7,7 +7,7 @@ tags: ["essay"]
 series: "chaesang-etc"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/165
-draft: true
+draft: false
 ---
 
 얼마전부터 주말에 시간 내서 보게 되는 "성시경의 고막남친", 비슷한 옛날 음악이라서인지 음악은 음악대로 친근한데, 김조한, 성시경 두 가수들이 예전에 처음 만나 이야기하던 스토리 중 Fist Bump 가 있었다. 쌀보리 게임.. ?? 조금 더했던 기억이 나서 몇 자 적어 본다..

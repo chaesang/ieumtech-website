@@ -7,7 +7,7 @@ tags: ["essay"]
 series: "chaesang-etc"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/159
-draft: true
+draft: false
 ---
 
 넷플릭스에서 다큐 영화 혹은 다큐 드라마를 꽤 좋아하는 편이다. 한국과 미국을 오갈 때 보이는 리스트들이 꽤 달라지긴 하지만, 가족들이 꽤 유용하게 쓰고 있는 서비스이다. 막상 영화들은 이런 저런 다른 감정들이 들지만, 현실 기록이 중심인 다큐멘터리들은 그 자체가 주는 울림이 있어 좋아한다. 2020년에 Michael Jordan 의(?) [The Last Dance](https://www.netflix.com/watch/81002655?source=35) 도 꽤 재미나게 봤었는데, 같이 섞을 기억들이 있어서 더 끌려 하는 거 같다.

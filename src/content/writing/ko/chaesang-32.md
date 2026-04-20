@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/32
-draft: true
+draft: false
 ---
 
 ### 입학 전의 공학?

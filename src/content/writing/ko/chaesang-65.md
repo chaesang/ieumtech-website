@@ -7,7 +7,7 @@ tags: ["update", "speaking"]
 series: "chaesang-priv"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/65
-draft: true
+draft: false
 ---
 
 인프런에서 self-motivated 강의를 찍으면 좋은 reference가 될 수 있겠다는 생각으로 등록을 했고, 후배들에게 해 주고 싶은 이야기들 위주로 정리하고 싶었던 차에, 감사히 훌륭하신 콘텐츠 MD 분들(이진주(도라), 홍연의(앨리스))을 만나서 완성도 있는 강의의 형태로 만들어 질 수 있게 되었다. 시니어를 바라보며 달려가는 친구들과 역할을 부여받은 친구들을 대상으로 두 개의 이야기거리를 준비했고, 그 중 첫번째 이야기. 할인 기간이 지난 유료 상품이라 광고의 성격이 짙게 된 게 조금 아쉽긴 하다.

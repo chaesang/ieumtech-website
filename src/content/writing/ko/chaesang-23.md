@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "dfmba-recom"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/23
-draft: true
+draft: false
 ---
 
 AWS reinvent 가 일어나는 중이고, 학기 중 발표를 위해 준비한 내용을 이야기한 마지막 시간이다.

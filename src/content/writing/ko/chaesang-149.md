@@ -7,7 +7,7 @@ tags: ["essay"]
 series: "chaesang-etc"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/149
-draft: true
+draft: false
 ---
 
 2026년 1월 한국에서 최고로 유명하다는 영화 "만약에 우리"를 극장에서 보았다. 원작이 너무 오래지 않은 중국 영화가 넷플릭스에서 "먼 훗날 우리(Us and Them)"로 있어서 이후에 보았고, 몇 가지 드는 생각들. 본의 아니게 스포일이 될 수 있어 주의해 주시길...

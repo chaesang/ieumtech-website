@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "dfmba-recom"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/19
-draft: true
+draft: false
 ---
 
 7개의 과제 발표가 있는 시간이어서 중간 고사 본다는 셈으로 . 상대적으로 준비하는 데에 시간을 많이 쓰지 않을 수 있었고, 남은 코딩 부분도 일단은 뒤로 미루어 두었다. break 없이 진행하였고, 피드백들을 주느라 주중에 시간을 더 들였다.

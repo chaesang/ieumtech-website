@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "dfmba-recom"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/21
-draft: true
+draft: false
 ---
 
 이번 주는 7개의 발표 거리가 있는 주. 주중에 피드백을 주고 받느라 수업에 들이는 에너지를 조금 당겨 쓴 느낌이긴 하다. 많은 것들을 배울 수 있었던 시간이었다. 부디 학생들도 그러했기를..

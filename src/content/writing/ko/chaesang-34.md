@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/34
-draft: true
+draft: false
 ---
 
 앞 주제에 말씀을 주셨던 [민상렬 교수](https://cse.snu.ac.kr/professor/%EB%AF%BC%EC%83%81%EB%A0%AC)님께서 전공 수업 시간에 하나씩 단어를 이야기해 주셨는데, 기억에는 두 개 더 남아 있다. 처음 듣는 단어들이어서 기억에 강렬하게 남아 있고, 서울 생활을 처음 하던 지방 출신인 나에게는 하루하루가 새로운 소식의 연속이었다. 그 단어들을 이야기하기 전에 먼저 그 즈음에 들려 주셨던 컴퓨터 세상에서 breakthrough 두가지 이야기들부터. 인터넷이 (거의) 없던 시절에 학회지와 각종 뉴스와 잡지들을 통해 정보들이 유통되던 시기였던 걸 생각하면 대단하다 싶다.

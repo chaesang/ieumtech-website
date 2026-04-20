@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "kaist-dfmba-24"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/103
-draft: true
+draft: false
 ---
 
 한 학기 동안 기말 과제로 아래의 방식으로 학생들에게 발표를 내어 주었다. 대부분 회사 업무와 병행하기에 각각의 일정이 있을 것이라 생각해서 16번의 수업 중 편한 시간에 발표하기를 기대했고, 자유 주제이지만 과목의 취지와 맞게 금융 / 공학 / AI 가 포함된 키워드를 가지고 이야기 나누기를 바랬고, 한 학기가 지나며 다양한 이야기들을 모아 주었다.

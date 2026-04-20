@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/30
-draft: true
+draft: false
 ---
 
 90년대 컴퓨터공학과를 다니면서 모은 에피소드들이지만, 기억은 80년대의 몇몇 단어들에서 시작한다.

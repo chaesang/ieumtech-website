@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "dfmba-recom"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/18
-draft: true
+draft: false
 ---
 
 3번의 새벽 온라인 수업의 두번째 시간으로, 시차 적응에 난이도가 생겨 버렸다. 과제로 내어 준 내용들을 주중에 심각하게 읽고 의미 있는 피드백을 주기 위해 시간을 들였는데, 시간이 많이 들긴 하지만, 다양한 현장의 snapshot들을 모을 수 있는 기회가 되기를 기대한다.

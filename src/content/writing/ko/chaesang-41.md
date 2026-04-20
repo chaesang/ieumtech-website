@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/41
-draft: true
+draft: false
 ---
 
 학부 생활을 하며 수업에서 혹은 바깥에서 별별 언어들이 생겨났고, 자의반 타의반으로 배워야 했었다. 당시 기준으로 오래전부터 있던 것들은 다른 글에서 하도록 하고, 오늘 이야기는 Java.

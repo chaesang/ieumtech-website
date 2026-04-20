@@ -7,7 +7,7 @@ tags: ["kaist", "lecture"]
 series: "dfmba-recom"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/29
-draft: true
+draft: false
 ---
 
 KAIST 경영대학원에서 Digital Finance MBA 과정에서 개설된 ‘인공지능과 추천시스템' 강의를 마쳤다. 3학점 15주의 일정이 끝났고, 개발의 현장보다는 제품의 관점에서 접근하는 학생들이었고, literacy 를 서로 맞추고, requirement들을 조율하는 그것들을 고민하는 과정들을 담아 내기를 기대했다.

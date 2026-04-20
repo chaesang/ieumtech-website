@@ -7,7 +7,7 @@ tags: ["memoir", "retrospective"]
 series: "90s-com-eng"
 source: brunch
 externalUrl: https://brunch.co.kr/@chaesang/31
-draft: true
+draft: false
 ---
 
 다행히 수험생 시절 공부를 꽤 열심히 해서 과를 골라서 지원할 수 있는 상황이 되었고, 자연스럽게 컴퓨터가 들어가는 과를 찾아 지원하였는데, 관련된 이야기 몇 가지...
