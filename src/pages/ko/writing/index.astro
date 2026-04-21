@@ -29,6 +29,19 @@ const sourceLabel = (source: string): string => {
   if (source === 'linkedin') return 'LinkedIn';
   return '';
 };
+
+const seriesIcons: Record<string, string> = {
+  'svc-analysis': 'search',
+  'do-well-company': 'building-2',
+  'itterm': 'book-open',
+  '90s-com-eng': 'floppy-disk',
+  'chaesang-priv': 'pen-line',
+  'dfmba-recom': 'graduation-cap',
+  'kaist-dfmba-24': 'graduation-cap',
+  'kaist-dfmba-25': 'graduation-cap',
+  'chaesang-etc': 'sparkles',
+  'chaesang-it-26': 'lightbulb',
+};
 ---
 <Base
   title="글 — 정채상 | 이음 테크"
@@ -52,11 +65,18 @@ const sourceLabel = (source: string): string => {
           {seriesWithEntries.map(({ meta, count, entries }) => {
             const initial = meta.data.titles.ko.charAt(0);
             const description = meta.data.descriptions.ko;
+            const iconName = seriesIcons[meta.data.slug];
             return (
               <li>
                 <details class="series-item">
                   <summary>
-                    <span class="series-initial" aria-hidden="true">{initial}</span>
+                    <span class="series-initial" aria-hidden="true">
+                      {iconName ? (
+                        <img src={`/logos/series/${iconName}.svg`} alt="" width="20" height="20" />
+                      ) : (
+                        initial
+                      )}
+                    </span>
                     <div class="series-body">
                       <div class="series-head">
                         <span class="series-name">{meta.data.titles.ko}</span>
@@ -181,9 +201,18 @@ const sourceLabel = (source: string): string => {
     flex-shrink: 0;
     transition: color var(--transition-base), border-color var(--transition-base);
   }
+  .series-initial img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    transition: opacity var(--transition-base);
+  }
   .series-item[open] .series-initial {
     color: var(--color-text);
     border-color: var(--color-subtle);
+  }
+  .series-item[open] .series-initial img {
+    opacity: 1;
   }
 
   .series-body { flex: 1; min-width: 0; }

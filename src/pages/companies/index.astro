@@ -18,6 +18,11 @@ const entries = await Promise.all(
 );
 
 const fmt = (d: Date) => `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}`;
+
+const companyLogos: Record<string, string> = {
+  'google': 'google.svg',
+  'samsung-semiconductor': 'samsung-semiconductor.svg',
+};
 ---
 <Base
   title="Places I've Worked — Chaesang Jung"
@@ -49,11 +54,19 @@ const fmt = (d: Date) => `${d.getFullYear()}.${String(d.getMonth() + 1).padStart
               const end = entry.data.period.end;
               const period = end ? `${fmt(start)} – ${fmt(end)}` : `${fmt(start)} – Present`;
               const initial = entry.data.name.charAt(0).toUpperCase();
+              const slug = entry.slug.split('/').pop()!;
+              const logoFile = companyLogos[slug];
               return (
                 <li>
                   <details class="company-item">
                     <summary>
-                      <span class="company-initial" aria-hidden="true">{initial}</span>
+                      <span class="company-initial" aria-hidden="true">
+                        {logoFile ? (
+                          <img src={`/logos/companies/${logoFile}`} alt="" width="20" height="20" />
+                        ) : (
+                          initial
+                        )}
+                      </span>
                       <div class="company-body">
                         <div class="company-head">
                           <span class="company-name">{entry.data.name}</span>
@@ -144,9 +157,18 @@ const fmt = (d: Date) => `${d.getFullYear()}.${String(d.getMonth() + 1).padStart
     flex-shrink: 0;
     transition: color var(--transition-base), border-color var(--transition-base);
   }
+  .company-initial img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    transition: opacity var(--transition-base);
+  }
   .company-item[open] .company-initial {
     color: var(--color-text);
     border-color: var(--color-subtle);
+  }
+  .company-item[open] .company-initial img {
+    opacity: 1;
   }
 
   .company-body { flex: 1; min-width: 0; }
