@@ -16,7 +16,7 @@ export const ui = {
     'nav.writing': 'Writing',
     'nav.portfolio': 'Portfolio',
     'nav.contact': 'Say Hello',
-    'cta.email': 'Email Me',
+    'cta.email': 'Say Hello',
     'cta.linkedin': 'LinkedIn',
     'cta.langToggle': 'KO',
     'footer.copy': '© 2026 Ieum Tech. All rights reserved.',
