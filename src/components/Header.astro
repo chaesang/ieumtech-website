@@ -35,6 +35,7 @@ const toggleLabel = otherLang === 'ko' ? 'KO' : 'EN';
       <ul class="nav-links" id="nav-menu">
         <li><a href={aboutPath} class={currentPath === aboutPath ? 'active' : ''} aria-current={currentPath === aboutPath ? 'page' : undefined}>{t('nav.about')}</a></li>
         <li><a href={writingPath} class={isWritingActive ? 'active' : ''} aria-current={isWritingActive ? 'page' : undefined}>{t('nav.writing')}</a></li>
+        <li><a href={lang === 'ko' ? '/ko/#contact' : '/#contact'}>{t('nav.contact')}</a></li>
       </ul>
       <a href={toggleHref} class="lang-toggle">{toggleLabel}</a>
     </div>
