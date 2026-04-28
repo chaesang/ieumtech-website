@@ -103,6 +103,10 @@ const ACCESS_KEY = 'fb98ecd5-455b-459f-b876-9eb7c9911118';
         });
         const data = await res.json().catch(() => ({}));
         if (res.ok && data.success) {
+          if (submitBtn && labelEl) {
+            submitBtn.disabled = false;
+            labelEl.textContent = labelEl.dataset.defaultLabel ?? 'Send';
+          }
           form.hidden = true;
           success.hidden = false;
           success.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -127,6 +131,7 @@ const ACCESS_KEY = 'fb98ecd5-455b-459f-b876-9eb7c9911118';
     gap: var(--space-5);
     max-width: 560px;
   }
+  .contact-form[hidden] { display: none; }
 
   .contact-honeypot {
     position: absolute;
