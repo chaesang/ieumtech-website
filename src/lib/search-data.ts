@@ -26,6 +26,20 @@ const sourceLabel = (source: string): string => {
   return '';
 };
 
+/** Strip markdown noise to a flat searchable string. Kept lossy on purpose — we just want tokens. */
+function stripMarkdown(md: string): string {
+  return md
+    .replace(/```[\s\S]*?```/g, ' ')           // fenced code blocks
+    .replace(/`[^`]*`/g, ' ')                  // inline code
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, ' ')     // images
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')   // links → keep label
+    .replace(/<[^>]+>/g, ' ')                  // html tags
+    .replace(/^[#>\-*+\s]{1,6}/gm, '')         // heading/list/quote markers at line start
+    .replace(/\*+|_+|~+/g, ' ')                // emphasis markers
+    .replace(/\s+/g, ' ')                      // collapse whitespace
+    .trim();
+}
+
 const aboutContent: Record<Lang, { title: string; summary: string; body: string }> = {
   ko: {
     title: '정채상 소개',
@@ -63,6 +77,7 @@ export async function buildSearchItems(lang: Lang): Promise<SearchItem[]> {
       type: 'writing',
       title: e.data.title,
       summary: e.data.summary,
+      body: stripMarkdown(e.body),
       tags: e.data.tags,
       date: e.data.date.toISOString().slice(0, 10),
       url,
@@ -126,6 +141,7 @@ export async function buildSearchItems(lang: Lang): Promise<SearchItem[]> {
       type: 'companies',
       title: e.data.name,
       summary: summaryParts.join(' — '),
+      body: stripMarkdown(e.body),
       tags: e.data.tags,
       date: e.data.period.start.toISOString().slice(0, 10),
       url,
