@@ -35,7 +35,7 @@ const toggleLabel = otherLang === 'ko' ? 'KO' : 'EN';
       <ul class="nav-links" id="nav-menu">
         <li><a href={aboutPath} class={currentPath === aboutPath ? 'active' : ''} aria-current={currentPath === aboutPath ? 'page' : undefined}>{t('nav.about')}</a></li>
         <li><a href={writingPath} class={isWritingActive ? 'active' : ''} aria-current={isWritingActive ? 'page' : undefined}>{t('nav.writing')}</a></li>
-        <li><a href={lang === 'ko' ? '/ko/#contact' : '/#contact'}>{t('nav.contact')}</a></li>
+        <li><a href={localizedPath('/contact', lang)} class={currentPath === localizedPath('/contact', lang) ? 'active' : ''} aria-current={currentPath === localizedPath('/contact', lang) ? 'page' : undefined}>{t('nav.contact')}</a></li>
       </ul>
       <button type="button" class="search-trigger" id="search-trigger" aria-label={t('search.label')} title={t('search.label')}>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>

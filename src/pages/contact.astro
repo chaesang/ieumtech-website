@@ -1,0 +1,44 @@
+---
+import Base from '~/layouts/Base.astro';
+import ContactForm from '~/components/ContactForm.astro';
+import { useTranslations } from '~/i18n/ui';
+
+const lang = 'en' as const;
+const t = useTranslations(lang);
+---
+<Base
+  title={t('contact.pageTitle')}
+  description="Reach out to Chaesang Jung at Ieum Tech — for advisory, talks, or just to say hello."
+  lang={lang}
+  path="/contact"
+  altLangPath="/ko/contact"
+>
+  <main>
+    <section class="contact-page">
+      <div class="container">
+        <h1>{t('contact.title')}</h1>
+        <p class="contact-intro">{t('contact.intro')}</p>
+        <ContactForm lang={lang} />
+      </div>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .contact-page {
+    padding: var(--space-7) 0 var(--space-9);
+  }
+  .contact-page h1 {
+    font-size: 1.875rem;
+    margin: 0 0 var(--space-3);
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+  .contact-intro {
+    font-size: 1.0625rem;
+    color: var(--color-muted);
+    max-width: 560px;
+    margin: 0 0 var(--space-7);
+    line-height: 1.7;
+  }
+</style>
