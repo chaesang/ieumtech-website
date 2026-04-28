@@ -37,6 +37,10 @@ const toggleLabel = otherLang === 'ko' ? 'KO' : 'EN';
         <li><a href={writingPath} class={isWritingActive ? 'active' : ''} aria-current={isWritingActive ? 'page' : undefined}>{t('nav.writing')}</a></li>
         <li><a href={lang === 'ko' ? '/ko/#contact' : '/#contact'}>{t('nav.contact')}</a></li>
       </ul>
+      <button type="button" class="search-trigger" id="search-trigger" aria-label={t('search.label')} title={t('search.label')}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        <span class="search-trigger-kbd" aria-hidden="true">⌘K</span>
+      </button>
       <a href={toggleHref} class="lang-toggle">{toggleLabel}</a>
     </div>
   </div>
@@ -59,4 +63,43 @@ const toggleLabel = otherLang === 'ko' ? 'KO' : 'EN';
       });
     });
   }
+
+  const searchTrigger = document.getElementById('search-trigger');
+  if (searchTrigger) {
+    searchTrigger.addEventListener('click', () => {
+      const open = (window as any).__ieumOpenSearch;
+      if (typeof open === 'function') open(searchTrigger);
+    });
+  }
 </script>
+
+<style>
+  .search-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    color: var(--color-muted);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.8125rem;
+    transition: color var(--transition-base), border-color var(--transition-base), background var(--transition-base);
+  }
+  .search-trigger:hover {
+    color: var(--color-text);
+    border-color: var(--color-subtle);
+  }
+  .search-trigger svg { flex-shrink: 0; }
+  .search-trigger-kbd {
+    font-size: 0.7rem;
+    color: var(--color-subtle);
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 639px) {
+    .search-trigger { padding: 6px 8px; }
+    .search-trigger-kbd { display: none; }
+  }
+</style>

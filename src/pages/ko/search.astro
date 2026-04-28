@@ -1,0 +1,174 @@
+---
+import Base from '~/layouts/Base.astro';
+import { useTranslations } from '~/i18n/ui';
+
+const lang = 'ko' as const;
+const t = useTranslations(lang);
+
+const indexUrl = '/ko/search-index.json';
+
+const groupLabels = {
+  writing: t('search.group.writing'),
+  talks: t('search.group.talks'),
+  projects: t('search.group.projects'),
+  companies: t('search.group.companies'),
+  about: t('search.group.about'),
+};
+---
+<Base
+  title="검색 — 이음 테크"
+  description="이음 테크의 글·강연·프로젝트·이력에서 검색합니다."
+  lang={lang}
+  path="/ko/search"
+  altLangPath="/search"
+>
+  <main>
+    <section class="search-page">
+      <div class="container">
+        <h1>{t('search.title')}</h1>
+        <div
+          class="search-page-host"
+          data-index-url={indexUrl}
+          data-label-writing={groupLabels.writing}
+          data-label-talks={groupLabels.talks}
+          data-label-projects={groupLabels.projects}
+          data-label-companies={groupLabels.companies}
+          data-label-about={groupLabels.about}
+          data-label-empty={t('search.empty')}
+          data-label-no-results={t('search.noResults')}
+          data-label-results-for={t('search.resultsFor')}
+        >
+          <div class="search-page-input-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+            <input
+              type="search"
+              id="search-page-input"
+              placeholder={t('search.placeholder')}
+              autocomplete="off"
+              spellcheck="false"
+              aria-label={t('search.placeholder')}
+            />
+          </div>
+          <div class="search-page-meta" id="search-page-meta"></div>
+          <div class="search-page-results" id="search-page-results"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>
+
+<script>
+  import '~/scripts/search-page.ts';
+</script>
+
+<style is:global>
+  .search-page { padding: var(--space-7) 0 var(--space-9); }
+  .search-page h1 {
+    font-size: 1.875rem;
+    margin: 0 0 var(--space-5);
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  .search-page-input-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+    color: var(--color-subtle);
+  }
+  .search-page-input-row input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font: inherit;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--color-text);
+    min-width: 0;
+  }
+  .search-page-input-row input::-webkit-search-cancel-button { display: none; }
+
+  .search-page-meta {
+    margin-top: var(--space-3);
+    font-size: 0.8125rem;
+    color: var(--color-subtle);
+  }
+  .search-page-meta:empty { display: none; }
+
+  .search-page-state {
+    padding: var(--space-5) 0;
+    color: var(--color-subtle);
+    font-size: 0.95rem;
+  }
+
+  .search-page-group {
+    margin-top: var(--space-4);
+  }
+  .search-page-group:first-of-type {
+    margin-top: var(--space-3);
+  }
+  .search-page-group h2 {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+    margin: 0 0 var(--space-3);
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .search-page-group h2 .count {
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-subtle);
+  }
+  .search-page-group ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .search-page-group li {
+    border-top: 1px solid var(--color-border);
+  }
+  .search-page-group li:last-child { border-bottom: 1px solid var(--color-border); }
+
+  .search-page-group a {
+    display: block;
+    padding: var(--space-3) 0;
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+  .search-page-group a[target="_blank"]::after { content: none; }
+  .search-page-group a:hover .title { color: var(--color-accent); }
+  .search-page-group .title {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--color-text);
+  }
+  .search-page-group .ext {
+    font-size: 0.8rem;
+    color: var(--color-subtle);
+    margin-left: 4px;
+  }
+  .search-page-group .summary {
+    margin: 4px 0 0;
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+  .search-page-group .meta {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: var(--color-subtle);
+  }
+</style>

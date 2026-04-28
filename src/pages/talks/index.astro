@@ -50,8 +50,9 @@ const dateLabel = (d: Date) =>
             {entries.map((entry) => {
               const firstLink = entry.data.links?.[0];
               const href = firstLink?.url;
+              const slug = entry.slug.split('/').pop()!;
               return (
-                <li>
+                <li id={`talk-${slug}`}>
                   <div class="talk-row">
                     <time datetime={entry.data.date.toISOString()} class="talk-date">{dateLabel(entry.data.date)}</time>
                     <div class="talk-body">

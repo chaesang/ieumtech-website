@@ -80,7 +80,7 @@ const seriesIcons: Record<string, string> = {
             const iconName = seriesIcons[meta.data.slug];
             return (
               <li>
-                <details class="series-item">
+                <details class="series-item" id={`series-${meta.data.slug}`}>
                   <summary>
                     <span class="series-initial" aria-hidden="true">
                       {iconName ? (

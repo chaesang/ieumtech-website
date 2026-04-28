@@ -58,7 +58,7 @@ const companyLogos: Record<string, string> = {
               const logoFile = companyLogos[slug];
               return (
                 <li>
-                  <details class="company-item">
+                  <details class="company-item" id={`co-${slug}`}>
                     <summary>
                       <span class="company-initial" aria-hidden="true">
                         {logoFile ? (

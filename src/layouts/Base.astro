@@ -4,6 +4,7 @@ import type { Lang } from '~/i18n/ui';
 import SEO from '~/components/SEO.astro';
 import Header from '~/components/Header.astro';
 import Footer from '~/components/Footer.astro';
+import SearchModal from '~/components/SearchModal.astro';
 
 interface Props {
   title: string;
@@ -62,5 +63,41 @@ const {
     <Header lang={lang} currentPath={path} altLangPath={altLangPath} />
     <slot />
     <Footer lang={lang} currentPath={path} />
+    <SearchModal lang={lang} />
+    <script>
+      const HASH_PREFIXES = ['#series-', '#co-', '#talk-', '#project-'];
+
+      function revealHashTarget() {
+        const hash = window.location.hash;
+        if (!hash || !HASH_PREFIXES.some((p) => hash.startsWith(p))) return;
+        const el = document.querySelector(hash) as HTMLElement | null;
+        if (!el) return;
+
+        const details = el.tagName === 'DETAILS' ? (el as HTMLDetailsElement) : el.closest('details');
+        if (details) details.open = true;
+
+        requestAnimationFrame(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          el.classList.add('hash-highlight');
+          window.setTimeout(() => el.classList.remove('hash-highlight'), 1800);
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', revealHashTarget);
+      } else {
+        revealHashTarget();
+      }
+      window.addEventListener('hashchange', revealHashTarget);
+    </script>
+    <style is:global>
+      .hash-highlight {
+        animation: hashHighlight 1.6s ease-out;
+      }
+      @keyframes hashHighlight {
+        0%   { background-color: var(--color-accent-soft, #e0e7ff); }
+        100% { background-color: transparent; }
+      }
+    </style>
   </body>
 </html>
