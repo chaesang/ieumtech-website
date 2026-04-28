@@ -32,7 +32,7 @@ export default defineConfig({
         defaultLocale: 'en',
         locales: {
           en: 'en',
-          ko: 'ko-KR',
+          ko: 'ko',
         },
       },
       filter: (page) => !page.includes('/draft/'),
