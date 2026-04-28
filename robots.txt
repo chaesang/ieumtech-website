@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ieumtech.net/sitemap.xml
+Sitemap: https://ieumtech.net/sitemap-index.xml
