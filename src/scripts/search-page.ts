@@ -46,6 +46,10 @@ if (host) {
       .replace(/'/g, '&#039;');
   }
 
+  function formatCount(query: string, count: number): string {
+    return labels.resultsFor.replace('{q}', query).replace('{count}', String(count));
+  }
+
   function renderResults(query: string, hits: SearchItem[]) {
     if (!query.trim()) {
       resultsEl.innerHTML = `<div class="search-page-state">${escapeHtml(labels.empty)}</div>`;
@@ -54,7 +58,7 @@ if (host) {
     }
     if (hits.length === 0) {
       resultsEl.innerHTML = `<div class="search-page-state">${escapeHtml(labels.noResults)}</div>`;
-      metaEl.textContent = `${labels.resultsFor}: "${query}" — 0`;
+      metaEl.textContent = formatCount(query, 0);
       return;
     }
     const grouped = new Map<SearchItem['type'], SearchItem[]>();
@@ -87,7 +91,7 @@ if (host) {
       html.push('</ol></div>');
     }
     resultsEl.innerHTML = html.join('');
-    metaEl.textContent = `${labels.resultsFor}: "${query}" — ${hits.length}`;
+    metaEl.textContent = formatCount(query, hits.length);
   }
 
   function runQuery(q: string) {
