@@ -15,8 +15,22 @@ export interface SearchItem {
   source?: string;
   series?: string;
   seriesTitle?: string;
+  /** Searchable variants — title with spaces removed, brand aliases, etc. Helps Korean compound-word queries. */
+  aliases?: string;
   lang: Lang;
 }
+
+/** Generate a Korean-friendly aliases string. Joins compound forms (no-space title) and given extras. */
+function buildAliases(title: string, extras: string[] = []): string {
+  const parts = new Set<string>();
+  const noSpace = title.replace(/\s+/g, '');
+  if (noSpace !== title) parts.add(noSpace);
+  for (const e of extras) parts.add(e);
+  return Array.from(parts).join(' ');
+}
+
+/** Brand aliases — applied to about and select items so brand searches work without exact spacing. */
+const BRAND_ALIASES = ['이음테크', '이음 테크', 'ieumtech', 'Ieum Tech', 'IeumTech'];
 
 const sourceLabel = (source: string): string => {
   if (source === 'brunch') return 'Brunch';
@@ -72,6 +86,7 @@ export async function buildSearchItems(lang: Lang): Promise<SearchItem[]> {
   for (const e of writing) {
     const seriesAnchor = e.data.series ? `#series-${e.data.series}` : '';
     const url = e.data.externalUrl ?? `${basePath('/writing')}${seriesAnchor}`;
+    const seriesTitle = e.data.series ? seriesTitleBySlug.get(e.data.series) : undefined;
     items.push({
       id: `writing:${e.id}`,
       type: 'writing',
@@ -84,7 +99,8 @@ export async function buildSearchItems(lang: Lang): Promise<SearchItem[]> {
       external: !!e.data.externalUrl,
       source: sourceLabel(e.data.source),
       series: e.data.series,
-      seriesTitle: e.data.series ? seriesTitleBySlug.get(e.data.series) : undefined,
+      seriesTitle,
+      aliases: buildAliases(e.data.title, seriesTitle ? [seriesTitle.replace(/\s+/g, '')] : []),
       lang,
     });
   }
@@ -106,6 +122,7 @@ export async function buildSearchItems(lang: Lang): Promise<SearchItem[]> {
       date: e.data.date.toISOString().slice(0, 10),
       url,
       external: !!firstLink,
+      aliases: buildAliases(e.data.title),
       lang,
     });
   }
@@ -125,6 +142,7 @@ export async function buildSearchItems(lang: Lang): Promise<SearchItem[]> {
       date: e.data.period.start.toISOString().slice(0, 10),
       url,
       external: false,
+      aliases: buildAliases(e.data.title),
       lang,
     });
   }
@@ -146,6 +164,7 @@ export async function buildSearchItems(lang: Lang): Promise<SearchItem[]> {
       date: e.data.period.start.toISOString().slice(0, 10),
       url,
       external: false,
+      aliases: buildAliases(e.data.name),
       lang,
     });
   }
@@ -159,6 +178,7 @@ export async function buildSearchItems(lang: Lang): Promise<SearchItem[]> {
     body: about.body,
     url: lang === 'ko' ? '/ko/about' : '/about',
     external: false,
+    aliases: buildAliases(about.title, BRAND_ALIASES),
     lang,
   });
 

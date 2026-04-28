@@ -110,10 +110,10 @@ if (host) {
     const res = await fetch(indexUrl);
     items = (await res.json()) as SearchItem[];
     mini = new MiniSearch<SearchItem>({
-      fields: ['title', 'summary', 'body', 'tags', 'seriesTitle', 'source'],
+      fields: ['title', 'summary', 'body', 'tags', 'seriesTitle', 'source', 'aliases'],
       storeFields: ['id'],
       searchOptions: {
-        boost: { title: 3, seriesTitle: 1.5, summary: 1.2 },
+        boost: { title: 3, aliases: 2, seriesTitle: 1.5, summary: 1.2 },
         prefix: true,
         fuzzy: 0.2,
         combineWith: 'AND',
