@@ -3,19 +3,32 @@ import Base from '~/layouts/Base.astro';
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Chaesang Jung',
-  alternateName: '정채상',
-  url: 'https://ieumtech.net/',
-  sameAs: 'https://linkedin.com/in/chaesang',
-  description: 'Thirty years — between Korea and Silicon Valley, and between people and technology.',
+  '@graph': [
+    {
+      '@type': 'Person',
+      name: 'Chaesang Jung',
+      alternateName: '정채상',
+      url: 'https://ieumtech.net/',
+      sameAs: 'https://linkedin.com/in/chaesang',
+      description: 'Thirty years — between Korea and Silicon Valley, and between people and technology.',
+    },
+    {
+      '@type': 'Organization',
+      name: 'Ieum Tech',
+      alternateName: '이음 테크',
+      url: 'https://ieumtech.net',
+      logo: 'https://ieumtech.net/favicon.svg',
+      founder: { '@type': 'Person', name: 'Chaesang Jung' },
+      sameAs: ['https://linkedin.com/in/chaesang'],
+    },
+  ],
 };
 ---
 <Base
-  title="Chaesang Jung · 정채상 — Ieum"
-  description="Thirty years in IT, between Korea and Silicon Valley. A place for what has been learned along the way."
-  ogTitle="Chaesang Jung · 정채상"
-  ogDescription="Thirty years in IT, between Korea and Silicon Valley."
+  title="Chaesang Jung — Ieum Tech | Writing, Advisory, Talks"
+  description="Ieum Tech is Chaesang Jung's solo practice — advisory, lectures, and writing from 30 years between Silicon Valley and Korea."
+  ogTitle="Chaesang Jung — Ieum Tech"
+  ogDescription="Solo practice — advisory, lectures, writing. Thirty years between Silicon Valley and Korea."
   lang="en"
   path="/"
   ogType="profile"

@@ -3,19 +3,32 @@ import Base from '~/layouts/Base.astro';
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: '정채상',
-  alternateName: 'Chaesang Jung',
-  url: 'https://ieumtech.net/ko/',
-  sameAs: 'https://linkedin.com/in/chaesang',
-  description: '30년간, 한국과 실리콘밸리 사이, 사람과 기술 사이를 이어 왔습니다.',
+  '@graph': [
+    {
+      '@type': 'Person',
+      name: '정채상',
+      alternateName: 'Chaesang Jung',
+      url: 'https://ieumtech.net/ko/',
+      sameAs: 'https://linkedin.com/in/chaesang',
+      description: '30년간, 한국과 실리콘밸리 사이, 사람과 기술 사이를 이어 왔습니다.',
+    },
+    {
+      '@type': 'Organization',
+      name: '이음 테크',
+      alternateName: 'Ieum Tech',
+      url: 'https://ieumtech.net',
+      logo: 'https://ieumtech.net/favicon.svg',
+      founder: { '@type': 'Person', name: '정채상' },
+      sameAs: ['https://linkedin.com/in/chaesang'],
+    },
+  ],
 };
 ---
 <Base
-  title="정채상 · Chaesang Jung — 이음"
-  description="한국과 실리콘밸리를 오가며 IT 현장에서 지내왔습니다. 지나온 자리들과 쌓인 배움을 여기에 모아 둡니다."
-  ogTitle="정채상 · Chaesang Jung"
-  ogDescription="한국과 실리콘밸리를 오가며 IT 현장에서 지내온 시간을 모아 두는 자리."
+  title="정채상 — 이음 테크 | 자문·강의·기록"
+  description="정채상이 한국과 실리콘밸리를 오가며 거쳐 온 자리들, 그리고 이음 테크에서 이어 가는 자문·강의·기록을 한자리에 모아 둡니다."
+  ogTitle="정채상 — 이음 테크"
+  ogDescription="이음 테크에서 이어 가는 자문·강의·기록 — 30년 IT 현장의 시간을 모아 둡니다."
   lang="ko"
   path="/ko/"
   ogType="profile"
