@@ -43,7 +43,7 @@ const SERIES_META: Record<string, SeriesMeta> = {
   'itterm':          { slug: 'itterm',          kind: 'magazine',   title: '한국 IT 용어 이야기',        tags: ['it-term','language'], published: true  },
 
   // Drafts (review before publish)
-  'chaesang-priv':   { slug: 'chaesang-priv',   kind: 'magazine',   title: '일과 관련한 업데이트들',    tags: ['update','speaking'], published: false },
+  'chaesang-priv':   { slug: 'chaesang-priv',   kind: 'magazine',   title: '일과 관련한 업데이트들',    tags: ['update','speaking'], published: true  },
   'chaesang-etc':    { slug: 'chaesang-etc',    kind: 'magazine',   title: '사소한 이야기들',           tags: ['essay'], published: false },
   'chaesang-it-26':  { slug: 'chaesang-it-26',  kind: 'magazine',   title: '2026년 IT 관련 생각들',     tags: ['it-thought'], published: false },
   'kaist-dfmba-25':  { slug: 'kaist-dfmba-25',  kind: 'magazine',   title: 'KAIST DFMBA 2025',          tags: ['kaist','lecture'], published: false },
