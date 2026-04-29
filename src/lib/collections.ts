@@ -46,13 +46,26 @@ export async function getActiveSeriesWithMeta(
       result.push({ meta: s, count, latestDate: latest.get(s.data.slug) });
     }
   }
+  const RECENT_MS = 30 * 24 * 60 * 60 * 1000;
+  const now = Date.now();
+  const tierOf = (x: { meta: SeriesEntry; count: number; latestDate?: Date }): number => {
+    if (x.count < MINI_THRESHOLD) return 6;
+    const isRecent =
+      x.meta.data.status !== 'completed' &&
+      x.latestDate !== undefined &&
+      now - x.latestDate.valueOf() < RECENT_MS;
+    if (isRecent) return 1;
+    if (x.meta.data.featured) return 2;
+    const catEn = x.meta.data.category?.en;
+    if (catEn === 'Memoir') return 3;
+    if (catEn === 'Lectures') return 4;
+    return 5;
+  };
   result.sort((a, b) => {
-    const tierA = a.count < MINI_THRESHOLD ? 3 : a.meta.data.featured ? 1 : 2;
-    const tierB = b.count < MINI_THRESHOLD ? 3 : b.meta.data.featured ? 1 : 2;
-    if (tierA !== tierB) return tierA - tierB;
-    const da = a.latestDate?.valueOf() ?? 0;
-    const db = b.latestDate?.valueOf() ?? 0;
-    return db - da;
+    const ta = tierOf(a);
+    const tb = tierOf(b);
+    if (ta !== tb) return ta - tb;
+    return (b.latestDate?.valueOf() ?? 0) - (a.latestDate?.valueOf() ?? 0);
   });
   return result;
 }
