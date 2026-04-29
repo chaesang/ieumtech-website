@@ -112,8 +112,13 @@ const series = defineCollection({
       en: z.string().optional(),
       ko: z.string().optional(),
     }).default({}),
-    order: z.number().default(100), // display order on /writing
+    order: z.number().default(100), // fallback display order; primary sort is featured + latest article date
     featured: z.boolean().default(false),
+    status: z.enum(['ongoing', 'completed']).default('ongoing'),
+    category: z.object({
+      ko: z.string(),
+      en: z.string(),
+    }).optional(),
   }),
 });
 

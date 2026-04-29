@@ -9,5 +9,7 @@
     "en": "One term at a time, observed from working between Silicon Valley and Seoul."
   },
   "order": 30,
-  "featured": true
+  "featured": true,
+  "status": "ongoing",
+  "category": { "ko": "언어", "en": "Language" }
 }

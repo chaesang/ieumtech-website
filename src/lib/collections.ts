@@ -21,22 +21,39 @@ export async function getAllSeries(): Promise<SeriesEntry[]> {
   return all.sort((a, b) => a.data.order - b.data.order);
 }
 
-/** Active series that have at least one published entry in the given language. */
+/**
+ * Active series that have at least one published entry in the given language.
+ * Sort: featured + count>=3 → non-featured + count>=3 → count<3 (mini), each tier by latest article date desc.
+ */
 export async function getActiveSeriesWithMeta(
   lang: Lang,
-): Promise<Array<{ meta: SeriesEntry; count: number }>> {
+): Promise<Array<{ meta: SeriesEntry; count: number; latestDate?: Date }>> {
   const entries = await getPublishedWriting(lang);
   const counts = new Map<string, number>();
+  const latest = new Map<string, Date>();
   for (const e of entries) {
     if (!e.data.series) continue;
     counts.set(e.data.series, (counts.get(e.data.series) ?? 0) + 1);
+    const cur = latest.get(e.data.series);
+    if (!cur || e.data.date.valueOf() > cur.valueOf()) latest.set(e.data.series, e.data.date);
   }
   const allSeries = await getAllSeries();
-  const result: Array<{ meta: SeriesEntry; count: number }> = [];
+  const MINI_THRESHOLD = 3;
+  const result: Array<{ meta: SeriesEntry; count: number; latestDate?: Date }> = [];
   for (const s of allSeries) {
     const count = counts.get(s.data.slug) ?? 0;
-    if (count > 0) result.push({ meta: s, count });
+    if (count > 0) {
+      result.push({ meta: s, count, latestDate: latest.get(s.data.slug) });
+    }
   }
+  result.sort((a, b) => {
+    const tierA = a.count < MINI_THRESHOLD ? 3 : a.meta.data.featured ? 1 : 2;
+    const tierB = b.count < MINI_THRESHOLD ? 3 : b.meta.data.featured ? 1 : 2;
+    if (tierA !== tierB) return tierA - tierB;
+    const da = a.latestDate?.valueOf() ?? 0;
+    const db = b.latestDate?.valueOf() ?? 0;
+    return db - da;
+  });
   return result;
 }
 

@@ -12,9 +12,9 @@ const displayLang: 'ko' | 'en' = isKoFallback ? 'ko' : 'en';
 
 const seriesList = await getActiveSeriesWithMeta(displayLang);
 const seriesWithEntries = await Promise.all(
-  seriesList.map(async ({ meta, count }) => {
+  seriesList.map(async ({ meta, count, latestDate }) => {
     const entries = await getWritingBySeries(meta.data.slug, displayLang);
-    return { meta, count, entries };
+    return { meta, count, entries, latestDate };
   })
 );
 
@@ -73,11 +73,17 @@ const seriesIcons: Record<string, string> = {
     <section class="list-body">
       <div class="container">
         <ol class="series-list">
-          {seriesWithEntries.map(({ meta, count, entries }) => {
+          {seriesWithEntries.map(({ meta, count, entries, latestDate }) => {
             const title = meta.data.titles[displayLang] ?? meta.data.titles.ko;
             const description = meta.data.descriptions[displayLang];
             const initial = title.charAt(0);
             const iconName = seriesIcons[meta.data.slug];
+            const category = meta.data.category?.[displayLang];
+            const isCompleted = meta.data.status === 'completed';
+            const statusLabel = displayLang === 'ko' ? (isCompleted ? '마무리' : '진행 중') : (isCompleted ? 'Wrapped' : 'Ongoing');
+            const latestLabel = latestDate
+              ? `${displayLang === 'ko' ? '최신' : 'Latest'} ${latestDate.getFullYear()}-${String(latestDate.getMonth() + 1).padStart(2, '0')}`
+              : '';
             return (
               <li>
                 <details class="series-item" id={`series-${meta.data.slug}`}>
@@ -95,6 +101,11 @@ const seriesIcons: Record<string, string> = {
                         <span class="series-count">
                           {count}{displayLang === 'ko' ? '편' : ` piece${count === 1 ? '' : 's'}`}
                         </span>
+                      </div>
+                      <div class="series-tags">
+                        {category && <span class="series-tag series-tag-category">{category}</span>}
+                        <span class={`series-tag series-tag-status ${isCompleted ? 'is-completed' : 'is-ongoing'}`}>{statusLabel}</span>
+                        {latestLabel && <span class="series-latest">{latestLabel}</span>}
                       </div>
                       {description && <p class="series-description">{description}</p>}
                     </div>
@@ -276,8 +287,43 @@ const seriesIcons: Record<string, string> = {
   .series-description {
     font-size: 0.9375rem;
     color: var(--color-muted);
-    margin: 0;
+    margin: 6px 0 0;
     line-height: 1.7;
+  }
+
+  .series-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .series-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+  }
+  .series-tag-category {
+    color: var(--color-muted);
+    background: var(--color-surface-2);
+  }
+  .series-tag-status.is-ongoing {
+    color: var(--color-accent);
+    background: var(--color-accent-soft);
+  }
+  .series-tag-status.is-completed {
+    color: var(--color-subtle);
+    background: var(--color-surface-2);
+  }
+  .series-latest {
+    font-size: 0.75rem;
+    color: var(--color-subtle);
+    margin-left: 2px;
+    font-variant-numeric: tabular-nums;
   }
 
   .chevron {

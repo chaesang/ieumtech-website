@@ -9,5 +9,7 @@
     "en": "Memoir: meeting computers in the 80s and studying computer engineering in the 90s."
   },
   "order": 70,
-  "featured": false
+  "featured": false,
+  "status": "completed",
+  "category": { "ko": "회고", "en": "Memoir" }
 }

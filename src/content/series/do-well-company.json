@@ -9,5 +9,7 @@
     "en": "Scenes from working as an engineer, manager, and executive across several companies — about organizations and the people in them."
   },
   "order": 20,
-  "featured": true
+  "featured": true,
+  "status": "ongoing",
+  "category": { "ko": "리더십", "en": "Leadership" }
 }

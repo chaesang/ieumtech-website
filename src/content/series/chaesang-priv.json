@@ -9,5 +9,7 @@
     "en": "Updates on lectures, talks, and ongoing projects."
   },
   "order": 40,
-  "featured": false
+  "featured": false,
+  "status": "ongoing",
+  "category": { "ko": "업데이트", "en": "Updates" }
 }

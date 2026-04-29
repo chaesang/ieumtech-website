@@ -9,5 +9,7 @@
     "en": "Product reviews from a user's or bystander's vantage point — small worries and critiques, usually with a concrete suggestion."
   },
   "order": 10,
-  "featured": true
+  "featured": true,
+  "status": "ongoing",
+  "category": { "ko": "분석", "en": "Analysis" }
 }
