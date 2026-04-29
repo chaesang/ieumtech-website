@@ -36,20 +36,19 @@ interface SeriesMeta {
   published: boolean; // draft=false when true
 }
 
+// Default published=true for all known series. Flip individual entries to false in their .md
+// frontmatter when a specific piece needs to stay hidden.
 const SERIES_META: Record<string, SeriesMeta> = {
-  // Published (draft=false)
-  'svc-analysis':    { slug: 'svc-analysis',    kind: 'magazine',   title: '혼자 해 보는 서비스 분석', tags: ['service-analysis'], published: true  },
-  'do-well-company': { slug: 'do-well-company', kind: 'magazine',   title: '회사에서의 기억들',         tags: ['organization','leadership'], published: true  },
-  'itterm':          { slug: 'itterm',          kind: 'magazine',   title: '한국 IT 용어 이야기',        tags: ['it-term','language'], published: true  },
-
-  // Drafts (review before publish)
-  'chaesang-priv':   { slug: 'chaesang-priv',   kind: 'magazine',   title: '일과 관련한 업데이트들',    tags: ['update','speaking'], published: true  },
-  'chaesang-etc':    { slug: 'chaesang-etc',    kind: 'magazine',   title: '사소한 이야기들',           tags: ['essay'], published: false },
-  'chaesang-it-26':  { slug: 'chaesang-it-26',  kind: 'magazine',   title: '2026년 IT 관련 생각들',     tags: ['it-thought'], published: false },
-  'kaist-dfmba-25':  { slug: 'kaist-dfmba-25',  kind: 'magazine',   title: 'KAIST DFMBA 2025',          tags: ['kaist','lecture'], published: false },
-  'kaist-dfmba-24':  { slug: 'kaist-dfmba-24',  kind: 'magazine',   title: 'KAIST DFMBA 2024',          tags: ['kaist','lecture'], published: false },
-  'dfmba-recom':     { slug: 'dfmba-recom',     kind: 'magazine',   title: 'KAIST DFMBA 2023',          tags: ['kaist','lecture'], published: false },
-  '90s-com-eng':     { slug: '90s-com-eng',     kind: 'brunchbook', title: '90년대 컴퓨터 공학 이야기', tags: ['memoir','retrospective'], published: false },
+  'svc-analysis':    { slug: 'svc-analysis',    kind: 'magazine',   title: '혼자 해 보는 서비스 분석', tags: ['service-analysis'], published: true },
+  'do-well-company': { slug: 'do-well-company', kind: 'magazine',   title: '회사에서의 기억들',         tags: ['organization','leadership'], published: true },
+  'itterm':          { slug: 'itterm',          kind: 'magazine',   title: '한국 IT 용어 이야기',        tags: ['it-term','language'], published: true },
+  'chaesang-priv':   { slug: 'chaesang-priv',   kind: 'magazine',   title: '일과 관련한 업데이트들',    tags: ['update','speaking'], published: true },
+  'chaesang-etc':    { slug: 'chaesang-etc',    kind: 'magazine',   title: '사소한 이야기들',           tags: ['essay'], published: true },
+  'chaesang-it-26':  { slug: 'chaesang-it-26',  kind: 'magazine',   title: '2026년 IT 관련 생각들',     tags: ['it-thought'], published: true },
+  'kaist-dfmba-25':  { slug: 'kaist-dfmba-25',  kind: 'magazine',   title: 'KAIST DFMBA 2025',          tags: ['kaist','lecture'], published: true },
+  'kaist-dfmba-24':  { slug: 'kaist-dfmba-24',  kind: 'magazine',   title: 'KAIST DFMBA 2024',          tags: ['kaist','lecture'], published: true },
+  'dfmba-recom':     { slug: 'dfmba-recom',     kind: 'magazine',   title: 'KAIST DFMBA 2023',          tags: ['kaist','lecture'], published: true },
+  '90s-com-eng':     { slug: '90s-com-eng',     kind: 'brunchbook', title: '90년대 컴퓨터 공학 이야기', tags: ['memoir','retrospective'], published: true },
   'uncategorized':   { slug: 'uncategorized',   kind: 'uncategorized', title: '기타',                 tags: [],                    published: false },
 };
 
