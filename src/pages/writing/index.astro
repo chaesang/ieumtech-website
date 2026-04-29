@@ -80,7 +80,9 @@ const seriesIcons: Record<string, string> = {
             const iconName = seriesIcons[meta.data.slug];
             const category = meta.data.category?.[displayLang];
             const isCompleted = meta.data.status === 'completed';
-            const statusLabel = displayLang === 'ko' ? (isCompleted ? '마무리' : '진행 중') : (isCompleted ? 'Wrapped' : 'Ongoing');
+            const RECENT_MS = 30 * 24 * 60 * 60 * 1000;
+            const isRecentlyUpdated = !isCompleted && !!latestDate
+              && (Date.now() - latestDate.valueOf() < RECENT_MS);
             const latestLabel = latestDate
               ? `${displayLang === 'ko' ? '최신' : 'Latest'} ${latestDate.getFullYear()}-${String(latestDate.getMonth() + 1).padStart(2, '0')}`
               : '';
@@ -104,7 +106,8 @@ const seriesIcons: Record<string, string> = {
                       </div>
                       <div class="series-tags">
                         {category && <span class="series-tag series-tag-category">{category}</span>}
-                        <span class={`series-tag series-tag-status ${isCompleted ? 'is-completed' : 'is-ongoing'}`}>{statusLabel}</span>
+                        {isCompleted && <span class="series-tag series-tag-status is-completed">{displayLang === 'ko' ? '마무리' : 'Wrapped'}</span>}
+                        {isRecentlyUpdated && <span class="series-tag series-tag-status is-updated">Updated</span>}
                         {latestLabel && <span class="series-latest">{latestLabel}</span>}
                       </div>
                       {description && <p class="series-description">{description}</p>}
@@ -311,7 +314,7 @@ const seriesIcons: Record<string, string> = {
     color: var(--color-muted);
     background: var(--color-surface-2);
   }
-  .series-tag-status.is-ongoing {
+  .series-tag-status.is-updated {
     color: var(--color-accent);
     background: var(--color-accent-soft);
   }
