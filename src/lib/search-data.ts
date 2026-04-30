@@ -78,14 +78,18 @@ export async function buildSearchItems(lang: Lang): Promise<SearchItem[]> {
 
   const slugOf = (id: string) => id.split('/').pop()!.replace(/\.md$/, '');
   const basePath = (p: string) => (lang === 'ko' ? `/ko${p}` : p);
+  const writingPathFor = (entryLang: Lang, p: string) => (entryLang === 'ko' ? `/ko${p}` : p);
 
+  // Writing: EN search includes KO entries too. Most posts are KO-original (Brunch),
+  // and EN users searching by name/keyword should still discover them. KO search keeps
+  // KO-only to avoid duplicating the EN copies once they exist.
   const writing = await getCollection(
     'writing',
-    (e) => !e.data.draft && e.data.lang === lang,
+    (e) => !e.data.draft && (lang === 'en' ? true : e.data.lang === lang),
   );
   for (const e of writing) {
     const seriesAnchor = e.data.series ? `#series-${e.data.series}` : '';
-    const url = e.data.externalUrl ?? `${basePath('/writing')}${seriesAnchor}`;
+    const url = e.data.externalUrl ?? `${writingPathFor(e.data.lang, '/writing')}${seriesAnchor}`;
     const seriesTitle = e.data.series ? seriesTitleBySlug.get(e.data.series) : undefined;
     items.push({
       id: `writing:${e.id}`,
