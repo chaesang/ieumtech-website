@@ -1,5 +1,17 @@
 ---
 import Base from '~/layouts/Base.astro';
+import { getPublishedWriting, seriesDisplayTitle } from '~/lib/collections';
+
+const allWriting = await getPublishedWriting('en');
+const recentWriting = allWriting.slice(0, 3);
+const recentWithSeries = await Promise.all(
+  recentWriting.map(async (entry) => ({
+    entry,
+    seriesTitle: entry.data.series ? await seriesDisplayTitle(entry.data.series, 'en') : '',
+  })),
+);
+const dateLabel = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -107,9 +119,73 @@ const jsonLd = {
       flex: 1;
     }
 
+    /* Recent Writing Widget */
+    .recent-writing-section {
+      padding: var(--space-8) 0 var(--space-4);
+    }
+    .recent-writing-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-padding);
+    }
+    .recent-writing-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: var(--space-4);
+    }
+    .recent-writing-head h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 0;
+      color: var(--color-text);
+    }
+    .recent-writing-more {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      text-decoration: none;
+    }
+    .recent-writing-more:hover {
+      color: var(--color-accent);
+    }
+    .recent-writing-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    .recent-writing-item a {
+      display: block;
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid var(--color-border);
+      text-decoration: none;
+      color: inherit;
+    }
+    .recent-writing-item:last-child a {
+      border-bottom: none;
+    }
+    .recent-writing-meta {
+      font-size: 0.8125rem;
+      color: var(--color-subtle);
+      margin-bottom: 4px;
+    }
+    .recent-writing-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-text);
+      line-height: 1.5;
+      transition: color var(--transition-fast);
+    }
+    .recent-writing-item a:hover .recent-writing-title {
+      color: var(--color-accent);
+    }
+
     /* Anchor Grid */
     .anchor-grid-section {
-      padding: var(--space-8) 0 var(--space-8);
+      padding: var(--space-6) 0 var(--space-8);
     }
     .anchor-grid-inner {
       max-width: var(--container-max);
@@ -118,8 +194,11 @@ const jsonLd = {
     }
     .anchor-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--space-4);
+    }
+    .anchor-grid-4 {
+      grid-template-columns: repeat(2, 1fr);
     }
     .anchor-card {
       display: block;
@@ -205,17 +284,50 @@ const jsonLd = {
   </section>
 
   <main>
+    {recentWithSeries.length > 0 && (
+      <section class="recent-writing-section" aria-labelledby="recent-writing-heading">
+        <div class="recent-writing-inner">
+          <div class="recent-writing-head">
+            <h2 id="recent-writing-heading">Recent writing</h2>
+            <a href="/writing" class="recent-writing-more">All writing →</a>
+          </div>
+          <ul class="recent-writing-list">
+            {recentWithSeries.map(({ entry, seriesTitle }) => {
+              const href = entry.data.externalUrl ?? `/writing/${entry.id}`;
+              const isExternal = !!entry.data.externalUrl;
+              return (
+                <li class="recent-writing-item">
+                  <a
+                    href={href}
+                    target={isExternal ? '_blank' : undefined}
+                    rel={isExternal ? 'noopener noreferrer' : undefined}
+                  >
+                    <div class="recent-writing-meta">
+                      {dateLabel(entry.data.date)}{seriesTitle ? ` · ${seriesTitle}` : ''}
+                    </div>
+                    <div class="recent-writing-title">{entry.data.title}</div>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+    )}
+
     <section class="anchor-grid-section" aria-label="Site navigation">
       <div class="anchor-grid-inner">
-        <div class="anchor-grid">
+        <div class={recentWithSeries.length > 0 ? 'anchor-grid' : 'anchor-grid anchor-grid-4'}>
           <a href="/companies" class="anchor-card">
             <div class="anchor-title">Places I've Worked</div>
             <div class="anchor-hint">A trail across thirty years</div>
           </a>
-          <a href="/writing" class="anchor-card">
-            <div class="anchor-title">Writing</div>
-            <div class="anchor-hint">Several series, ongoing</div>
-          </a>
+          {recentWithSeries.length === 0 && (
+            <a href="/writing" class="anchor-card">
+              <div class="anchor-title">Writing</div>
+              <div class="anchor-hint">Several series, ongoing</div>
+            </a>
+          )}
           <a href="/talks" class="anchor-card">
             <div class="anchor-title">Talks</div>
             <div class="anchor-hint">Lectures, keynotes, classroom hours</div>
