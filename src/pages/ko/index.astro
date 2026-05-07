@@ -77,6 +77,7 @@ const jsonLd = {
       margin: 0 0 var(--space-3);
     }
     .hero-narration {
+      max-width: 420px;
       margin: 0 0 var(--space-6);
     }
     .hero-narration p {
@@ -107,6 +108,9 @@ const jsonLd = {
     }
     .breadth-values {
       flex: 1;
+    }
+    .breadth-values .nowrap {
+      white-space: nowrap;
     }
 
     /* Anchor Grid */
@@ -194,11 +198,11 @@ const jsonLd = {
       <div class="breadth" aria-label="경력 개요">
         <div class="breadth-row">
           <span class="breadth-label">역할</span>
-          <span class="breadth-values">소프트웨어 엔지니어 / 테크 리드 / 피플 매니저 / 프로덕트 매니저 / 기술 자문 / VPE · CTO / 겸임교수</span>
+          <span class="breadth-values"><span class="nowrap">소프트웨어 엔지니어</span>, <span class="nowrap">테크 리드</span>, <span class="nowrap">프로덕트 매니저·오너</span>, <span class="nowrap">피플 매니저</span>, <span class="nowrap">VPE·CTO</span>, 자문, 겸임교수</span>
         </div>
         <div class="breadth-row">
           <span class="breadth-label">도메인</span>
-          <span class="breadth-values">임베디드 / 모바일 / 검색 / 커머스 / 핀테크 / 클라우드 / 산업 AI / 엔터프라이즈</span>
+          <span class="breadth-values">임베디드, 모바일, 검색, 커머스, 핀테크, 클라우드, <span class="nowrap">산업 AI</span>, 엔터프라이즈</span>
         </div>
       </div>
     </div>
