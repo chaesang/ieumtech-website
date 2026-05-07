@@ -57,7 +57,7 @@ function stripMarkdown(md: string): string {
 const aboutContent: Record<Lang, { title: string; summary: string; body: string }> = {
   ko: {
     title: '정채상 소개',
-    summary: '이음 테크 대표. Google 13년, Banksalad VP, INEEJI CTO, KAIST 겸임교수, MegazoneCloud Distinguished SWE, Aisle Street 공동창업.',
+    summary: '이음테크 대표. Google 13년, Banksalad VP, INEEJI CTO, KAIST 겸임교수, MegazoneCloud Distinguished SWE, Aisle Street 공동창업.',
     body: '80년대 서울에서 컴퓨터를 처음 만났습니다. 90년대에는 컴퓨터공학과에 적을 두고 지냈고, 전공 수업보다 호기심이 먼저였던 거 같습니다. 그 흐름을 따라 셋톱박스 펌웨어, 검색 엔진, 스마트폰 운영체제, 클라우드, 산업 AI 사이를 거쳐 왔습니다. 2007년 Google 서울 오피스의 초기 멤버로 합류했습니다. 엔지니어로 시작해 매니저로, 검색, 앱 인덱싱, Play Store, Lens, Cloud Logging 사이를 오갔습니다. 2022년 Banksalad에서 엔지니어링 VP로 일했습니다. 그 뒤로는 INEEJI의 CTO, KAIST 경영대학 겸임교수, MegazoneCloud의 Distinguished SWE로 지내 왔습니다. 그 한편으로 교육 AI 스타트업 Aisle Street를 공동 창업해 exemplar.ai를 만들고 있습니다. 서울대학교 공학 석사·학사. Google 재직 중 미국 특허 5건.',
   },
   en: {
