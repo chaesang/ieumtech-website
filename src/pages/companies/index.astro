@@ -22,6 +22,7 @@ const fmt = (d: Date) => `${d.getFullYear()}.${String(d.getMonth() + 1).padStart
 const companyLogos: Record<string, string> = {
   'google': 'google.svg',
   'samsung-semiconductor': 'samsung-semiconductor.svg',
+  'banksalad': 'banksalad.png',
 };
 ---
 <Base
@@ -231,12 +232,12 @@ const companyLogos: Record<string, string> = {
     padding: 0 0 var(--space-7) calc(40px + var(--space-5));
   }
   .prose {
-    font-size: 0.9375rem;
-    line-height: 1.8;
-    color: var(--color-text);
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: var(--color-muted);
   }
   .prose :global(h2) {
-    font-size: 1rem;
+    font-size: 0.9375rem;
     font-weight: 600;
     margin: var(--space-5) 0 var(--space-2);
     letter-spacing: -0.01em;
