@@ -12,7 +12,7 @@ links:
     url: "https://exemplar.ai"
 ---
 
-교실에서 LLM이 어떻게 쓰일 수 있을지 함께 풀어 보고 싶었습니다. 공동창업자들과 Aisle Street를 시작해, exemplar.ai를 만들고 있습니다.
+교실에서 LLM이 어떻게 쓰일 수 있을지 함께 풀어 보고 싶었습니다. 공동창업자와 Aisle Street를 시작해, exemplar.ai를 만들고 있습니다.
 
 ## 제품
 - exemplar.ai — 학교 선생님과 학생을 위한 closed chatting 서비스
