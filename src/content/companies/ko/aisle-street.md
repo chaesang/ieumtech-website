@@ -24,3 +24,5 @@ links:
 
 ## 기술 스택
 - React, AWS, Pinecone, RAG, LLM 연동
+
+현재는 non-profit / portfolio project로 운영하고 있습니다.
