@@ -10,6 +10,12 @@ order: 100
 tags: ["cloud", "advisory"]
 ---
 
-- CEO Office at Korea's largest cloud MSP (~2,000 employees). Multi-cloud: AWS, GCP, Azure
-- Reviewed ongoing projects for technical gaps and validated requirements across the organization
-- Established SDLC guidelines and engineering management practices for "by Megazone" products
+I joined as a strategic technical advisor reporting directly to the CEO Office. Korea's largest cloud MSP — about 2,000 employees, multi-cloud (AWS · GCP · Azure) — with a seat at most company-wide decisions.
+
+## Technical Advisory
+- Reviewed ongoing projects for technical gaps; validated requirements across the organization
+- Cross-functional advisory across multi-CSP environments
+
+## 'by Megazone' Product Guidelines
+- Established SDLC (Software Development Life Cycle) guidelines
+- Codified engineering management practices

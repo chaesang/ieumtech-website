@@ -12,6 +12,17 @@ links:
     url: "https://exemplar.ai"
 ---
 
-- Education AI startup, exemplar.ai
-- RAG-based private chatting service for teachers and students
-- Tech: React, AWS, Pinecone, RAG, LLM integration
+I wanted to explore how LLMs can fit into a classroom. I started Aisle Street with a co-founder and we're building exemplar.ai.
+
+## Product
+- exemplar.ai — a closed chatting service for teachers and students
+- RAG-based, supports the use of AI inside lessons
+- Teacher–student chat with content governance over course material
+
+## Role
+- Co-Founder, tech lead — backend architecture and full-stack development
+
+## Tech Stack
+- React, AWS, Pinecone, RAG, LLM integration
+
+Currently operated as a non-profit / portfolio project.
