@@ -10,5 +10,9 @@ order: 60
 tags: ["embedded", "mobile"]
 ---
 
-- Symbian/Series 60 base-porting
-- Samsung Z600
+A step deeper into mobile operating systems.
+
+- Symbian / Series 60 base-porting
+- Notable product: Samsung Z600
+
+A close look at how Korean handset platform code reaches global standards.

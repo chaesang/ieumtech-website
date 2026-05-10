@@ -10,4 +10,8 @@ order: 45
 tags: ["web", "early-career"]
 ---
 
-- Developed and distributed packaged applications including CGI Builder (web-to-database integration tool)
+The first place I worked, part-time, during my student years.
+
+- Developed and shipped packaged applications including CGI Builder (a web–database integration tool)
+
+Some of the first code I wrote, at the early days of the Korean web in the 1990s.
