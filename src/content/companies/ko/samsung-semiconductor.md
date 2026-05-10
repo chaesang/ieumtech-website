@@ -1,6 +1,6 @@
 ---
 name: "Samsung Semiconductor"
-role: "Principal SWE / 기술 자문"
+role: "Principal SWE / Technical Advisor"
 period:
   start: 2019-12-01
   end: 2020-12-31

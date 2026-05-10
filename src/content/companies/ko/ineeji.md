@@ -1,6 +1,6 @@
 ---
 name: "INEEJI"
-role: "CTO / 연구소장"
+role: "CTO / Director of Research Institute"
 period:
   start: 2024-03-01
   end: 2025-09-30
@@ -10,7 +10,7 @@ order: 90
 tags: ["ai", "advisory", "industrial"]
 ---
 
-자문으로 시작해 CTO·연구소장 역할로 옮겨 갔습니다. AI 개발자와 소프트웨어 엔지니어 20여 명으로 구성된 연구·개발 조직을 운영했습니다.
+Advisor로 시작해 CTO · Director of Research Institute로 옮겨 갔습니다. AI Developer와 Software Engineer 20여 명으로 구성된 연구·개발 조직을 운영했습니다.
 
 ## 핵심 기술
 - Deep Temporal Neural Networks 기반 설명 가능 AI(XAI)
@@ -22,4 +22,4 @@ tags: ["ai", "advisory", "industrial"]
 
 ## 엔지니어링 운영
 - State-of-the-art 절차 도입 — 배포 효율성과 모델 신뢰성 개선
-- 20+ AI/SW 엔지니어 관리
+- 20+ AI Developer · Software Engineer 관리

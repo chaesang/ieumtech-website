@@ -29,12 +29,12 @@ tags: ["google", "search", "android", "leadership"]
 - **Google 최초 subscription SKU 운영**을 포함한 결제·구독·BNPL 도메인 실무 경험 획득
 - 새 도메인(e-commerce, AWS) 학습을 위해 의도적으로 매니저에서 IC로 돌아온 자리
 
-## TLM / 프로덕트 오너 — Play Store 한국 및 일본 (2016.03 – 2017.12) · Mountain View
+## TLM / Product Owner — Play Store Korea & Japan (2016.03 – 2017.12) · Mountain View
 - SWE 8명. 한국·일본이 글로벌 Play Store 매출의 약 70% — **Google 최초의 지역 소비자 제품**
 - 지역 맞춤 검색·추천 알고리즘, 사전 등록 캠페인 도입
 - 주요 게임 타이틀의 경쟁 스토어 이탈 방어 — 사용자 신뢰와 매출 회복
 
-## Head of Engineering / 프로덕트 오너 — Search App Indexing (2012.09 – 2016.03) · Mountain View
+## Head of Engineering / Product Owner — Search App Indexing (2012.09 – 2016.03) · Mountain View
 - 단일 데모에서 글로벌 스케일까지 앱 인덱싱 프로젝트를 **0→1로 발의**하고 이끔
 - **50명 헤드카운트 확보** — Indexing 20명, Search feature 12명, 팀 지원 8명, Operation·Partner 10명의 4개 팀 구성
 - 50명을 직접 관리할 수 없어 **본인의 매니저를 직접 면접·채용**, 본인은 TLM과 engineering representative 역할 병행

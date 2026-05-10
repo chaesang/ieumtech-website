@@ -1,6 +1,6 @@
 ---
 name: "KAIST 경영대학"
-role: "겸임교수"
+role: "Adjunct Professor"
 period:
   start: 2023-08-01
   end: 2026-03-31
