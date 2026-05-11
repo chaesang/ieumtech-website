@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1d1d1f">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet">
+<title>Active 면접 트랙</title>
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    background: #f2f2f7;
+    color: #1d1d1f;
+    line-height: 1.5;
+    font-size: 16px;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  header {
+    background: #1d1d1f;
+    color: #fff;
+    padding: 20px 16px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #38383a;
+  }
+  header h1 {
+    margin: 0 0 4px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  header .sub {
+    font-size: 13px;
+    color: #a1a1a6;
+  }
+  header .legend {
+    font-size: 12px;
+    margin-top: 8px;
+    color: #d1d1d6;
+  }
+  header .legend span {
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 12px;
+  }
+  section.track {
+    background: #fff;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  section.track > .track-header {
+    padding: 14px 16px 10px;
+    border-bottom: 1px solid #f2f2f7;
+    background: #fafafa;
+  }
+  section.track > .track-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  section.track > .track-header .role {
+    font-size: 13.5px;
+    color: #6e6e73;
+    margin-top: 4px;
+  }
+  section.track > .track-header .status {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin-left: auto;
+  }
+  .status.confirmed { background: #d1f7d6; color: #248a3d; }
+  .status.pending { background: #fff3cf; color: #b25000; }
+  .status.in-progress { background: #e1e7ff; color: #3f48cc; }
+  .track-body {
+    padding: 12px 16px;
+  }
+  .track-body .row {
+    display: flex;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid #f5f5f7;
+    font-size: 14px;
+  }
+  .track-body .row:last-child { border-bottom: none; }
+  .track-body .row .key {
+    flex: 0 0 80px;
+    color: #8e8e93;
+    font-size: 13px;
+  }
+  .track-body .row .val {
+    flex: 1;
+    min-width: 0;
+  }
+  .track-body .row .val ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+  .track-body .row .val li {
+    margin: 2px 0;
+  }
+  .track-body .row .val .note {
+    font-size: 12.5px;
+    color: #6e6e73;
+    margin-top: 3px;
+  }
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: #8e8e93;
+    margin: 8px 0 16px;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background: #000; color: #f2f2f7; }
+    header { background: #000; border-bottom-color: #1c1c1e; }
+    section.track { background: #1c1c1e; box-shadow: none; }
+    section.track > .track-header { background: #2c2c2e; border-bottom-color: #1c1c1e; }
+    section.track > .track-header .role { color: #98989d; }
+    .track-body .row { border-bottom-color: #2c2c2e; }
+    .track-body .row .key { color: #8e8e93; }
+    .track-body .row .val .note { color: #98989d; }
+    .status.confirmed { background: #1e4222; color: #30d158; }
+    .status.pending { background: #3a2a10; color: #ffd60a; }
+    .status.in-progress { background: #1a1f3d; color: #6e8aff; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Active 면접 트랙</h1>
+  <div class="sub">5건 진행 중 · 마지막 업데이트 2026-05-10</div>
+  <div class="legend">
+    <span>★ 확정</span>
+    <span>🟡 회신 대기</span>
+    <span>● 진행 중</span>
+  </div>
+</header>
+
+<div class="container">
+
+<section class="track">
+  <div class="track-header">
+    <h2>friendli.ai <span class="status confirmed">★ 인터뷰</span></h2>
+    <div class="role">Backend hands-on (3개월 trial → 핏 시 풀타임)</div>
+  </div>
+  <div class="track-body">
+    <div class="row"><div class="key">단계</div><div class="val">5/12(화) 14:00–15:00 정식 인터뷰</div></div>
+    <div class="row"><div class="key">장소</div><div class="val">AMC 타워 5층 (서울 강남구 봉은사로 222)</div></div>
+    <div class="row"><div class="key">상대</div><div class="val">CTO 유경인 + Backend Lead 서장호 / 코디 이우진 CoS</div></div>
+    <div class="row"><div class="key">다음</div><div class="val"><ul>
+      <li>backend 워밍업 (exemplar.ai / Banksalad / Google)</li>
+      <li>Friendli engine 사전 학습 (Orca · FP8 · vLLM/TensorRT-LLM/SGLang)</li>
+      <li>trial 보수·계약 확인 (USD · ieumtech invoice · 월 $40–48K)</li>
+    </ul></div></div>
+    <div class="row"><div class="key">원칙</div><div class="val"><span class="note">낮은 우선순위 — 양방향 평가 결, 회사 평가 시각 유지</span></div></div>
+  </div>
+</section>
+
+<section class="track">
+  <div class="track-header">
+    <h2>에누마 — 김형진 <span class="status confirmed">★ 모닝커피</span></h2>
+    <div class="role">탐색적 미팅</div>
+  </div>
+  <div class="track-body">
+    <div class="row"><div class="key">단계</div><div class="val">5/14(목) 08:30</div></div>
+    <div class="row"><div class="key">장소</div><div class="val">성수동 헤이그라운드 성수시작점</div></div>
+    <div class="row"><div class="key">다음</div><div class="val">미팅 후 결 판단 (CTO/임원 트랙 가능성 / 네트워킹)</div></div>
+  </div>
+</section>
+
+<section class="track">
+  <div class="track-header">
+    <h2>MarqVision (마크비전) <span class="status pending">🟡 회신 대기</span></h2>
+    <div class="role">CTO / VPE — engineering leadership</div>
+  </div>
+  <div class="track-body">
+    <div class="row"><div class="key">소개</div><div class="val">후배 구현서(올리브영) → 이인섭 대표 (Mark Lee, CEO)</div></div>
+    <div class="row"><div class="key">단계</div><div class="val"><ul>
+      <li>5/1 첫 미팅 완료 (14:30 PT). 핏 긍정</li>
+      <li>한국 출장 중 서울 팀 미팅 약속 (회사 측 주선)</li>
+      <li>사용자 follow-up 2회 발송 (5/7, 5/8) — 무응답</li>
+    </ul></div></div>
+    <div class="row"><div class="key">다음</div><div class="val"><ul>
+      <li>5/12(화) 한국 도착 후 오전 ping</li>
+      <li>회신 시 빈 슬롯에 배치 (5/15 금 오후 / 5/16 토 / 5/18 월)</li>
+      <li>미팅 후 — 공식 프로세스 전환 검토</li>
+    </ul></div></div>
+    <div class="row"><div class="key">메모</div><div class="val"><span class="note">서울 기반 엔지니어링 / Bay Area 거주 — 원격·서울 이동 변수 핵심</span></div></div>
+  </div>
+</section>
+
+<section class="track">
+  <div class="track-header">
+    <h2>CJ올리브영 <span class="status pending">🟡 CJAT 대기</span></h2>
+    <div class="role">Product Lead — Search & AI</div>
+  </div>
+  <div class="track-body">
+    <div class="row"><div class="key">단계</div><div class="val">1차 인터뷰 완료 (5/8 KST 10:30, Zoom) · 3명 패널</div></div>
+    <div class="row"><div class="key">반응</div><div class="val">사용자 product thesis 대체로 동의 · "조언 구하는 느낌" (시니어리티 인지)</div></div>
+    <div class="row"><div class="key">thesis</div><div class="val"><span class="note">"자산을 팔 수 있게 만드는 것이 product 중심" · "AI는 means, destination 아님"</span></div></div>
+    <div class="row"><div class="key">다음</div><div class="val">CJAT (인성·적성 검사) 안내 대기 → 출장 중 처리 또는 귀국 후 판단</div></div>
+    <div class="row"><div class="key">연락</div><div class="val">김수민 (채용팀, 02-6990-9555)</div></div>
+  </div>
+</section>
+
+<section class="track">
+  <div class="track-header">
+    <h2>OpenAI — Sean <span class="status pending">🟡 HM ping 대기</span></h2>
+    <div class="role">Engineering leadership (Search EM filled, 다른 opening 탐색)</div>
+  </div>
+  <div class="track-body">
+    <div class="row"><div class="key">소개</div><div class="val">Kyounghoon Kim (Korea Country Director) referral</div></div>
+    <div class="row"><div class="key">단계</div><div class="val"><ul>
+      <li>4/29: Sean 1차 콜 완료. 톤 중립~긍정. HM ping 약속</li>
+      <li>5/9: 사용자 follow-up ping 발송 (HM 결과 + Korea 5/12–18 + PST meetings 가능)</li>
+    </ul></div></div>
+    <div class="row"><div class="key">다음</div><div class="val">Sean 회신 대기 — HM ping 결과 + 다음 콜·인터뷰 일정</div></div>
+  </div>
+</section>
+
+<div class="footer">active-interviews.html · 마지막 업데이트 2026-05-10</div>
+</div>
+
+</body>
+</html>
