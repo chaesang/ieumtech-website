@@ -71,6 +71,7 @@
     display: flex;
     align-items: baseline;
     gap: 8px;
+    flex-wrap: wrap;
   }
   section.track > .track-header .role {
     font-size: 13.5px;
@@ -87,6 +88,7 @@
   .status.confirmed { background: #d1f7d6; color: #248a3d; }
   .status.pending { background: #fff3cf; color: #b25000; }
   .status.in-progress { background: #e1e7ff; color: #3f48cc; }
+  .status.action { background: #ffe1e1; color: #c12c2c; }
   .track-body {
     padding: 12px 16px;
   }
@@ -137,13 +139,14 @@
     .status.confirmed { background: #1e4222; color: #30d158; }
     .status.pending { background: #3a2a10; color: #ffd60a; }
     .status.in-progress { background: #1a1f3d; color: #6e8aff; }
+    .status.action { background: #3a1010; color: #ff6b6b; }
   }
 </style>
 </head>
 <body>
 <header>
   <h1>Active 면접 트랙</h1>
-  <div class="sub">5건 진행 중 · 마지막 업데이트 2026-05-12</div>
+  <div class="sub">5건 진행 중 · 마지막 업데이트 2026-05-17</div>
   <div class="legend">
     <span>★ 확정</span>
     <span>✓ 완료</span>
@@ -156,65 +159,79 @@
 
 <section class="track">
   <div class="track-header">
-    <h2>friendli.ai <span class="status in-progress">● 후속</span></h2>
-    <div class="role">Backend hands-on (3개월 trial → 핏 시 풀타임)</div>
+    <h2>friendli.ai <span class="status action">● 발송 대기</span></h2>
+    <div class="role">Backend hands-on + 첫 프로젝트 2~3개월 trial → long-term 옵션</div>
   </div>
   <div class="track-body">
-    <div class="row"><div class="key">단계</div><div class="val">✓ 5/12(화) 14:00–15:00 정식 인터뷰 완료</div></div>
-    <div class="row"><div class="key">상대</div><div class="val">CTO 유경인 + Backend Lead 서장호 (코디 이우진 CoS)</div></div>
-    <div class="row"><div class="key">다음</div><div class="val"><ul>
-      <li>인터뷰 결 정리 / 회사 측 follow-up 회신 대기</li>
-      <li>trial 보수·계약 확인 (USD · ieumtech invoice · 월 $40–48K)</li>
-      <li>역할 결·3개월 후 시나리오 정리</li>
+    <div class="row"><div class="key">단계</div><div class="val"><ul>
+      <li>✓ 4/23 CBO 점심 + 5/3 전병곤 대표 1차 미팅</li>
+      <li>✓ 5/12(화) 14:00 AMC 인터뷰 (유경인 CTO + 서장호 Backend Lead, 이우진 부재)</li>
+      <li>✓ 5/15(금) 오전 백창현 사담 (기술 해자)</li>
     </ul></div></div>
-    <div class="row"><div class="key">원칙</div><div class="val"><span class="note">낮은 우선순위 — 양방향 평가 결, 회사 평가 시각 유지</span></div></div>
+    <div class="row"><div class="key">다음</div><div class="val"><ul>
+      <li><b>사용자 발송</b>: proposal 메일 (To bgchun · Cc gyeongin + 이우진) + Brian 카톡</li>
+      <li>회신 후 — trial 보수·계약 형태 (월 $40K × 2 + 왕복 reimbursement 2회 협상 후보)</li>
+    </ul></div></div>
+    <div class="row"><div class="key">제안</div><div class="val"><span class="note">첫 프로젝트: 주 3일 full day · 한국 2달 + SFO 1달 · long-term 3옵션 (advisor / part-time / full-time)</span></div></div>
   </div>
 </section>
 
 <section class="track">
   <div class="track-header">
-    <h2>에누마 — 김형진 <span class="status confirmed">★ 모닝커피</span></h2>
-    <div class="role">탐색적 미팅</div>
+    <h2>에누마 — 김형진 <span class="status in-progress">● "마지막 커리어"</span></h2>
+    <div class="role">CPO 라인 sync-up → 사용자의 "마지막 커리어" 후보</div>
   </div>
   <div class="track-body">
-    <div class="row"><div class="key">단계</div><div class="val">5/14(목) 08:30</div></div>
-    <div class="row"><div class="key">장소</div><div class="val">성수동 헤이그라운드 성수시작점</div></div>
-    <div class="row"><div class="key">다음</div><div class="val">미팅 후 결 판단 (CTO/임원 트랙 가능성 / 네트워킹)</div></div>
+    <div class="row"><div class="key">단계</div><div class="val">✓ 5/14(목) 김형진 CPO 티타임 완료</div></div>
+    <div class="row"><div class="key">사용자</div><div class="val"><ul>
+      <li>"마지막 회사의 보스가 이건호 / 김형진 / 이수인이면 좋은 이유" — 학교 2년 후배, 존경하는 vision</li>
+      <li>다른 회사 advisor + 에누마에서 CTO/CPO 시키는 일 나누어 하는 구조 선호</li>
+      <li>이력서 마지막 줄에 에누마가 찍히기를 희망</li>
+    </ul></div></div>
+    <div class="row"><div class="key">다음</div><div class="val"><ul>
+      <li>귀국 후 이건호 미팅 + proposal 전달</li>
+      <li><b>OliveYoung resolution이 baseline 변수</b> — "이번 사이클 OliveYoung vs 에누마" 갈림길</li>
+    </ul></div></div>
   </div>
 </section>
 
 <section class="track">
   <div class="track-header">
-    <h2>MarqVision (마크비전) <span class="status pending">🟡 회신 대기</span></h2>
+    <h2>MarqVision (마크비전) <span class="status confirmed">★ 5/18 확정</span></h2>
     <div class="role">CTO / VPE — engineering leadership</div>
   </div>
   <div class="track-body">
     <div class="row"><div class="key">소개</div><div class="val">후배 구현서(올리브영) → 이인섭 대표 (Mark Lee, CEO)</div></div>
     <div class="row"><div class="key">단계</div><div class="val"><ul>
-      <li>5/1 첫 미팅 완료 (14:30 PT). 핏 긍정</li>
-      <li>한국 출장 중 서울 팀 미팅 약속 (회사 측 주선)</li>
-      <li>사용자 follow-up 2회 발송 (5/7, 5/8) — 무응답</li>
-      <li>✓ 5/12(화) 11:00 구현서 미팅 완료 (서울역 부근) — 소개자 직접 면담</li>
+      <li>✓ 5/1 14:30 PT 1차 미팅 — 핏 긍정</li>
+      <li>✓ 5/12(화) 11:00 구현서 미팅 (서울역 부근)</li>
+      <li>★ <b>5/18(월) 10:30–12:00 서울 엔지니어링 팀 미팅</b></li>
     </ul></div></div>
+    <div class="row"><div class="key">장소</div><div class="val">강남구 서초대로 77길 55 8층</div></div>
+    <div class="row"><div class="key">참석</div><div class="val">Engineering 리드 다니엘 + 케니, 제품 리더십 빛나</div></div>
     <div class="row"><div class="key">다음</div><div class="val"><ul>
-      <li>5/12 구현서 미팅 결 정리 → 이인섭 대표 측 push 가능성 협의</li>
-      <li>회신 시 빈 슬롯에 배치 (5/15 금 오후 / 5/16 토 / 5/18 월)</li>
+      <li>다니엘 회신 (장소·도착 안내 확인)</li>
+      <li>사전 리서치 (다니엘 Lim / 케니 / 빛나)</li>
       <li>미팅 후 — 공식 프로세스 전환 검토</li>
     </ul></div></div>
-    <div class="row"><div class="key">메모</div><div class="val"><span class="note">서울 기반 엔지니어링 / Bay Area 거주 — 원격·서울 이동 변수 핵심</span></div></div>
+    <div class="row"><div class="key">메모</div><div class="val"><span class="note">서울 기반 엔지니어링 / Bay Area 거주 — 원격·서울 이동 변수가 핵심</span></div></div>
   </div>
 </section>
 
 <section class="track">
   <div class="track-header">
-    <h2>CJ올리브영 <span class="status pending">🟡 CJAT 대기</span></h2>
-    <div class="role">Product Lead — Search & AI</div>
+    <h2>CJ올리브영 <span class="status pending">🟡 자리 조정 중</span></h2>
+    <div class="role">Product Lead Search & AI → <b>Engineering Leader</b> 쪽 조정 중</div>
   </div>
   <div class="track-body">
-    <div class="row"><div class="key">단계</div><div class="val">1차 인터뷰 완료 (5/8 KST 10:30, Zoom) · 3명 패널</div></div>
+    <div class="row"><div class="key">단계</div><div class="val"><ul>
+      <li>✓ 1차 인터뷰 완료 (5/8 KST 10:30, Zoom) · 3명 패널 · 핏 맞음</li>
+      <li>✓ 5/14(목) 구현서 점심 — 회사 자리 두고 고민, Engineering Leader 쪽 조정 중 (비공식)</li>
+    </ul></div></div>
     <div class="row"><div class="key">반응</div><div class="val">사용자 product thesis 대체로 동의 · "조언 구하는 느낌" (시니어리티 인지)</div></div>
     <div class="row"><div class="key">thesis</div><div class="val"><span class="note">"자산을 팔 수 있게 만드는 것이 product 중심" · "AI는 means, destination 아님"</span></div></div>
-    <div class="row"><div class="key">다음</div><div class="val">CJAT (인성·적성 검사) 안내 대기 → 출장 중 처리 또는 귀국 후 판단</div></div>
+    <div class="row"><div class="key">다음</div><div class="val">회사 회신 대기 (Engineering Leader 쪽으로 자리 다듬는 중)</div></div>
+    <div class="row"><div class="key">★</div><div class="val"><b>OliveYoung resolution이 main FTE 결정의 baseline 변수</b></div></div>
     <div class="row"><div class="key">연락</div><div class="val">김수민 (채용팀, 02-6990-9555)</div></div>
   </div>
 </section>
@@ -234,7 +251,7 @@
   </div>
 </section>
 
-<div class="footer">active-interviews.html · 마지막 업데이트 2026-05-10</div>
+<div class="footer">active-interviews.html · 마지막 업데이트 2026-05-17</div>
 </div>
 
 </body>
