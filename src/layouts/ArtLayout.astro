@@ -1,0 +1,58 @@
+---
+import '~/styles/art.css';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;            // e.g. "/hyunhwa" or "/hyunhwa/untitled-01"
+  ogImage?: string;        // absolute or site-relative URL
+  active?: 'works' | 'about';
+}
+
+const { title, description, path, ogImage, active } = Astro.props;
+const site = 'https://ieumtech.net';
+const canonical = new URL(path, site).href;
+const ogImageAbs = ogImage ? new URL(ogImage, site).href : undefined;
+const year = new Date().getFullYear();
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {ogImageAbs && <meta property="og:image" content={ogImageAbs} />}
+    <meta name="twitter:card" content={ogImageAbs ? 'summary_large_image' : 'summary'} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body class="art">
+    <header class="art-header">
+      <div class="art-wrap art-header-inner">
+        <a href="/hyunhwa" class="art-name">Hyunhwa Jung<span>Selected Works</span></a>
+        <nav class="art-nav">
+          <a href="/hyunhwa" aria-current={active === 'works' ? 'page' : undefined}>Works</a>
+          <a href="mailto:hello@ieumtech.net">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="art-footer">
+      <div class="art-wrap art-header-inner">
+        <span>© {year} Hyunhwa Jung</span>
+        <span><a href="https://ieumtech.net">ieumtech.net</a></span>
+      </div>
+    </footer>
+  </body>
+</html>

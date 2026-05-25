@@ -122,4 +122,26 @@ const series = defineCollection({
   }),
 });
 
-export const collections = { writing, projects, companies, talks, series };
+// Standalone art portfolio for Hyunhwa Jung — lives under /hyunhwa with its own
+// layout, independent of the main (person-first) site. English-primary.
+const artworks = defineCollection({
+  type: 'content',
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      year: z.union([z.number(), z.string()]).optional(), // 2025 or "2024–25"
+      medium: z.string().optional(),                       // e.g. "Oil on canvas"
+      dimensions: z.string().optional(),                   // e.g. "60 × 90 cm"
+      image: image(),                                      // clean crop — used on index + detail
+      installImage: image().optional(),                    // original "as exhibited" photo
+      exhibition: z.string().optional(),                   // e.g. "AAPI Multimedia Art Exhibition, 2024"
+      series: z.string().optional(),                       // optional grouping for later
+      order: z.number().optional(),                        // manual sort; lower shows first
+      featured: z.boolean().default(false),                // surfaced first on the index
+      caption: z.string().optional(),                      // short one-liner under the work
+      placeholder: z.boolean().default(false),             // demo entry; remove once real art lands
+      draft: z.boolean().default(false),
+    }),
+});
+
+export const collections = { writing, projects, companies, talks, series, artworks };
