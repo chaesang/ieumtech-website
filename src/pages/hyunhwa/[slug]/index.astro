@@ -8,11 +8,13 @@ export async function getStaticPaths() {
   const yearNum = (y: number | string | undefined) =>
     Number(String(y ?? '').slice(0, 4)) || 0;
   const works = all.sort((a, b) => {
+    const ya = yearNum(a.data.year);
+    const yb = yearNum(b.data.year);
+    if (ya !== yb) return yb - ya;            // newest year first
+    if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
     const oa = a.data.order ?? 9999;
     const ob = b.data.order ?? 9999;
-    if (oa !== ob) return oa - ob;
-    if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
-    return yearNum(b.data.year) - yearNum(a.data.year);
+    return oa - ob;
   });
 
   return works.map((entry, i) => {

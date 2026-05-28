@@ -1,5 +1,6 @@
 ---
 title: The Future Before Me
+year: 2024
 medium: Ink on paper
 image: ./images/the-future-before-me.jpg
 installImage: ./images/IMG_7610.jpg
