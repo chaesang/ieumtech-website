@@ -4,6 +4,7 @@ date: 2026-05-27
 lang: en
 summary: "Becoming an engineering manager at Google — the near-absolute authority, the rights that check it, and why the role barely exists in Korea."
 tags: []
+series: "do-well-company"
 source: medium
 externalUrl: https://chaesangjung.medium.com/was-i-a-good-manager-267282a11bc2
 draft: false

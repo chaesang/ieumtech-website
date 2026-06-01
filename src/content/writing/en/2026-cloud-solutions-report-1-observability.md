@@ -4,6 +4,7 @@ date: 2026-05-25
 lang: en
 summary: "Monitoring is dead. What replaced it isn’t a tool — it’s a cost structure."
 tags: []
+series: "chaesang-priv"
 source: medium
 externalUrl: https://chaesangjung.medium.com/2026-cloud-solutions-report-1-observability-88ad8a798e03
 draft: false

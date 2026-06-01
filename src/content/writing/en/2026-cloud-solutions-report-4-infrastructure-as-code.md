@@ -4,6 +4,7 @@ date: 2026-05-25
 lang: en
 summary: "Terraform’s BSL flip in 2023 redrew the IaC map. AI agents are about to redraw it again."
 tags: []
+series: "chaesang-priv"
 source: medium
 externalUrl: https://chaesangjung.medium.com/2026-cloud-solutions-report-4-infrastructure-as-code-06cacc99b861
 draft: false

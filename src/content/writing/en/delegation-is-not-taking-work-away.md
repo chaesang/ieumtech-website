@@ -4,6 +4,7 @@ date: 2026-05-28
 lang: en
 summary: "The one management class that stuck — situational leadership, the four boxes, and what it might mean for working with agents."
 tags: []
+series: "do-well-company"
 source: medium
 externalUrl: https://chaesangjung.medium.com/delegation-is-not-taking-work-away-ae3130290a54
 draft: false

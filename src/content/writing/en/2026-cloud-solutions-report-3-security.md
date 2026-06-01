@@ -4,6 +4,7 @@ date: 2026-05-25
 lang: en
 summary: "Six platforms in a market reshaping itself — CrowdStrike, Palo Alto Networks, Wiz, Zscaler, Fortinet, SentinelOne."
 tags: []
+series: "chaesang-priv"
 source: medium
 externalUrl: https://chaesangjung.medium.com/2026-cloud-solutions-report-3-security-f364eaacf2bc
 draft: false

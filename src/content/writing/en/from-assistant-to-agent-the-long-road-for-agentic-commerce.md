@@ -4,6 +4,7 @@ date: 2026-05-26
 lang: en
 summary: "Part 1. The Protocol Wars: The Language of Assistants vs. the Language of Agents"
 tags: []
+series: "chaesang-it-26"
 source: medium
 externalUrl: https://chaesangjung.medium.com/from-assistant-to-agent-the-long-road-for-agentic-commerce-8a3457cef23c
 draft: false

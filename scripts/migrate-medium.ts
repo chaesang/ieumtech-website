@@ -213,22 +213,49 @@ function cleanMarkdown(md: string): string {
   return out.trim();
 }
 
+// Best-effort series mapping from title — mirrors the Brunch series buckets so
+// the same author voice surfaces under the same series across languages.
+function detectSeries(title: string): string | null {
+  const t = title.toLowerCase();
+  if (/^20\d{2}\s+cloud solutions? report/.test(t)) return 'chaesang-priv';
+  // Management / leadership / engineering-org pieces — the "회사에서의 기억들" bucket.
+  const mgmt = [
+    'manager', 'management', 'feedback', 'delegation',
+    'one-on-one', 'one on one', 'brag sheet', 'promotion',
+    'recogni', 'calibration', 'evaluation', 'assessment',
+    'fist bump', 'all-hands', 'all hands', 'kids/parents', 'job ladder',
+  ];
+  if (mgmt.some((k) => t.includes(k))) return 'do-well-company';
+  // Broader tech opinions — IT Thoughts.
+  const it = [
+    'agent', 'llm', 'model', 'infrastructure', 'cloud',
+    'kubernetes', 'container', 'paradigm', 'benchmark',
+  ];
+  if (it.some((k) => t.includes(k))) return 'chaesang-it-26';
+  return null;
+}
+
 function frontmatter(article: ArticleMeta): string {
   const rawSummary = article.summary || article.title;
   const summary = rawSummary.slice(0, 260).replace(/\n/g, ' ').trim();
-  return [
+  const series = detectSeries(article.title);
+  const lines = [
     '---',
     `title: ${JSON.stringify(article.title)}`,
     `date: ${article.date}`,
     `lang: en`,
     `summary: ${JSON.stringify(summary)}`,
     `tags: []`,
+  ];
+  if (series) lines.push(`series: ${JSON.stringify(series)}`);
+  lines.push(
     `source: medium`,
     `externalUrl: ${article.url}`,
     `draft: false`,
     '---',
     '',
-  ].join('\n');
+  );
+  return lines.join('\n');
 }
 
 async function writeArticle(article: ArticleMeta): Promise<string> {

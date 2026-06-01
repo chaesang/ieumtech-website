@@ -30,11 +30,15 @@ const dateLabel = (d: Date) =>
 
 const sourceLabel = (source: string): string => {
   if (source === 'brunch') return 'Brunch';
+  if (source === 'medium') return 'Medium';
   if (source === 'nia') return 'NIA';
   if (source === 'dbr') return 'DBR';
   if (source === 'linkedin') return 'LinkedIn';
   return '';
 };
+
+// Count Korean pieces for the cross-language pointer.
+const koEntries = await getPublishedWriting('ko');
 
 const seriesIcons: Record<string, string> = {
   'svc-analysis': 'search',
@@ -65,6 +69,11 @@ const seriesIcons: Record<string, string> = {
         {isKoFallback && (
           <p class="notice">
             Currently in Korean. English translations are planned but not yet published.
+          </p>
+        )}
+        {!isKoFallback && koEntries.length > 0 && (
+          <p class="notice">
+            English pieces below. A larger Korean archive ({koEntries.length} pieces) is available at <a href="/ko/writing">/ko/writing</a>.
           </p>
         )}
       </div>

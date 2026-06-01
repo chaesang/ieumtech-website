@@ -4,6 +4,7 @@ date: 2026-05-30
 lang: en
 summary: "Once calibration is behind you, the last homework left is delivering the feedback. After review season, when an off-cycle one-on-one shows…"
 tags: []
+series: "do-well-company"
 source: medium
 externalUrl: https://chaesangjung.medium.com/what-good-feedback-has-ever-existed-at-a-company-6b21316a142c
 draft: false
@@ -22,7 +23,7 @@ draft: false
 
 ·
 
-1 day ago
+2 days ago
 
 [
 

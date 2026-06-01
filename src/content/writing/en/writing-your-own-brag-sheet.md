@@ -4,6 +4,7 @@ date: 2026-06-01
 lang: en
 summary: "Across my long run at Google there were two reviews a year, and I remember almost every one running on a different method, a different…"
 tags: []
+series: "do-well-company"
 source: medium
 externalUrl: https://chaesangjung.medium.com/writing-your-own-brag-sheet-35a70a3c15a2
 draft: false
@@ -22,7 +23,7 @@ draft: false
 
 ·
 
-2 hours ago
+3 hours ago
 
 [
 

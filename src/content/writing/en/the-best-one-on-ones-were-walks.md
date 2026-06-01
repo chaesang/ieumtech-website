@@ -4,6 +4,7 @@ date: 2026-05-27
 lang: en
 summary: "What a big company taught me about the one-on-one — rolling notes, walks at headquarters, and what I worry we lose in a remote-and-agent…"
 tags: []
+series: "do-well-company"
 source: medium
 externalUrl: https://chaesangjung.medium.com/the-best-one-on-ones-were-walks-fb9ec9cbd9d3
 draft: false

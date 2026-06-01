@@ -4,6 +4,7 @@ date: 2026-05-25
 lang: en
 summary: "# 2026 Cloud Solutions Report, #2: Networking and the Edge"
 tags: []
+series: "chaesang-priv"
 source: medium
 externalUrl: https://chaesangjung.medium.com/2026-cloud-solutions-report-2-networking-and-the-edge-6ca84999b2f8
 draft: false
