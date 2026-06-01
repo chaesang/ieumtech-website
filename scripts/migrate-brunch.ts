@@ -8,9 +8,10 @@
  *   3. Set draft=false only for series in PUBLISH_SERIES; everything else draft=true.
  *
  * Usage:
- *   tsx scripts/migrate-brunch.ts            # full run (2..167)
- *   tsx scripts/migrate-brunch.ts --only 33  # single article
+ *   tsx scripts/migrate-brunch.ts --auto         # fetch IDs in mapping but not yet local
+ *   tsx scripts/migrate-brunch.ts --only 33      # single article
  *   tsx scripts/migrate-brunch.ts --range 100-167
+ *   tsx scripts/migrate-brunch.ts                # full run (2..MAX_ID)
  */
 
 import { chromium, type Browser, type Page } from 'playwright';
@@ -277,21 +278,34 @@ async function buildIdToSeriesMap(page: Page): Promise<Map<string, string>> {
   return map;
 }
 
-function parseArgs(): { ids: string[] | null } {
+function parseArgs(): { ids: string[] | null; auto: boolean } {
   const argv = process.argv.slice(2);
-  if (argv.length === 0) return { ids: null };
-  if (argv[0] === '--only') return { ids: [argv[1]] };
+  if (argv.length === 0) return { ids: null, auto: false };
+  if (argv[0] === '--auto') return { ids: null, auto: true };
+  if (argv[0] === '--only') return { ids: [argv[1]], auto: false };
   if (argv[0] === '--range') {
     const [a, b] = argv[1].split('-').map((n) => parseInt(n, 10));
     const ids: string[] = [];
     for (let i = a; i <= b; i++) ids.push(String(i));
-    return { ids };
+    return { ids, auto: false };
   }
-  return { ids: argv };
+  return { ids: argv, auto: false };
+}
+
+async function listExistingIds(): Promise<Set<string>> {
+  const out = new Set<string>();
+  try {
+    const entries = await fs.readdir(OUT_DIR);
+    for (const f of entries) {
+      const m = f.match(/^chaesang-(\d+)\.md$/);
+      if (m) out.add(m[1]);
+    }
+  } catch { /* directory missing — empty set */ }
+  return out;
 }
 
 async function main() {
-  const { ids } = parseArgs();
+  const { ids, auto } = parseArgs();
   const browser = await chromium.launch({ headless: true });
   const page = await openPage(browser);
 
@@ -300,7 +314,20 @@ async function main() {
     const idToSeries = await buildIdToSeriesMap(page);
     console.log(`   total mapped: ${idToSeries.size}`);
 
-    const targets: string[] = ids ?? Array.from({ length: MAX_ID - MIN_ID + 1 }, (_, i) => String(MIN_ID + i));
+    let targets: string[];
+    if (auto) {
+      const existing = await listExistingIds();
+      const mapped = Array.from(idToSeries.keys());
+      targets = mapped.filter((id) => !existing.has(id))
+                      .sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+      console.log(`== auto: existing=${existing.size} mapped=${mapped.length} new=${targets.length} ==`);
+      if (targets.length === 0) {
+        console.log('nothing to sync.');
+        return;
+      }
+    } else {
+      targets = ids ?? Array.from({ length: MAX_ID - MIN_ID + 1 }, (_, i) => String(MIN_ID + i));
+    }
     console.log(`== fetching ${targets.length} articles ==`);
 
     let success = 0, skipped = 0, failed = 0;
