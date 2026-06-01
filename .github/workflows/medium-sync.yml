@@ -1,0 +1,46 @@
+name: Sync Medium articles
+
+on:
+  schedule:
+    - cron: '30 21 * * *'   # 06:30 KST daily (offset from brunch-sync)
+  workflow_dispatch:
+
+concurrency:
+  group: medium-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Sync new Medium articles
+        run: npx tsx scripts/migrate-medium.ts --auto
+
+      - name: Commit and push if changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "medium-sync[bot]"
+            git config user.email "medium-sync[bot]@users.noreply.github.com"
+            git add -A src/content/writing/en public/writing
+            git commit -m "chore(medium): auto-sync new articles ($(date -u +%Y-%m-%d))" \
+              -m "via .github/workflows/medium-sync.yml"
+            git push
+          else
+            echo "No new articles."
+          fi
