@@ -215,17 +215,21 @@ function cleanMarkdown(md: string): string {
 
 // Best-effort series mapping from title — mirrors the Brunch series buckets so
 // the same author voice surfaces under the same series across languages.
-function detectSeries(title: string): string | null {
+function detectSeries(title: string, summary: string = ''): string | null {
   const t = title.toLowerCase();
+  const s = summary.toLowerCase();
   if (/^20\d{2}\s+cloud solutions? report/.test(t)) return 'chaesang-priv';
   // Management / leadership / engineering-org pieces — the "회사에서의 기억들" bucket.
-  const mgmt = [
+  // Strong keywords also matched in summary; weak ones only in title.
+  const mgmtAny = [
     'manager', 'management', 'feedback', 'delegation',
     'one-on-one', 'one on one', 'brag sheet', 'promotion',
     'recogni', 'calibration', 'evaluation', 'assessment',
     'fist bump', 'all-hands', 'all hands', 'kids/parents', 'job ladder',
+    'engineering org', 'low-score', 'grades', 'visibility',
+    'situational leadership', 'tech lead', 'staff engineer',
   ];
-  if (mgmt.some((k) => t.includes(k))) return 'do-well-company';
+  if (mgmtAny.some((k) => t.includes(k) || s.includes(k))) return 'do-well-company';
   // Broader tech opinions — IT Thoughts.
   const it = [
     'agent', 'llm', 'model', 'infrastructure', 'cloud',
@@ -238,7 +242,7 @@ function detectSeries(title: string): string | null {
 function frontmatter(article: ArticleMeta): string {
   const rawSummary = article.summary || article.title;
   const summary = rawSummary.slice(0, 260).replace(/\n/g, ' ').trim();
-  const series = detectSeries(article.title);
+  const series = detectSeries(article.title, article.summary);
   const lines = [
     '---',
     `title: ${JSON.stringify(article.title)}`,
