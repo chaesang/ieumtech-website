@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#1a3a5c">
+<title>2026년 7월 한국 방문 일정</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#191c23; --line:#2a2e38; --muted:#8b93a7; --text:#e8ebf2;
+    --hoe:#4a90e2; --ga:#34c77b; --gae:#f0a84b; --geul:#a978e0; --geon:#2fb6b6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI",sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.5;padding:0 0 80px;-webkit-text-size-adjust:100%}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+  header{background:linear-gradient(135deg,#1a3a5c,#2d1f4a);padding:40px 16px 36px;border-bottom:1px solid var(--line)}
+  h1{font-size:26px;font-weight:700;letter-spacing:-.5px}
+  .sub{color:#b9c2d6;margin-top:8px;font-size:14px}
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:22px}
+  .fact{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px 14px}
+  .fact .k{font-size:11px;color:#9fb0cc;text-transform:uppercase;letter-spacing:.4px}
+  .fact .v{font-size:14px;margin-top:4px;font-weight:600}
+  .fact .v small{font-weight:400;color:#c6cee0}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin:24px 0 8px;font-size:13px;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .dot{width:10px;height:10px;border-radius:3px;display:inline-block}
+  .d-hoe{background:var(--hoe)} .d-ga{background:var(--ga)} .d-gae{background:var(--gae)}
+  .week{margin-top:32px}
+  .week-h{font-size:14px;color:var(--muted);font-weight:600;letter-spacing:.3px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:16px}
+  .days{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .day h3{font-size:16px;font-weight:700;display:flex;align-items:baseline;gap:8px}
+  .day h3 .dow{font-size:13px;color:var(--muted);font-weight:500}
+  .day .tag-line{font-size:12px;color:var(--gae);margin-top:2px;font-weight:600}
+  .slots{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+  .slot{display:grid;grid-template-columns:52px 1fr;gap:10px;align-items:start;font-size:14px}
+  .slot .t{color:var(--muted);font-variant-numeric:tabular-nums;font-size:12.5px;padding-top:2px}
+  .slot .e{display:flex;flex-direction:column;gap:3px}
+  .ev{padding:5px 9px;border-radius:7px;background:rgba(255,255,255,.04);border-left:3px solid var(--line)}
+  .ev.hoe{border-left-color:var(--hoe)} .ev.ga{border-left-color:var(--ga)}
+  .ev.gae{border-left-color:var(--gae)}
+  .ev b{font-weight:600}
+  .note{background:rgba(240,168,75,.1);border:1px solid rgba(240,168,75,.25);border-radius:8px;
+    padding:8px 12px;font-size:13px;color:#f3c486;margin-bottom:12px}
+  footer{color:var(--muted);font-size:12px;text-align:center;margin-top:44px;line-height:1.7}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>🇰🇷 2026년 7월 한국 방문 일정</h1>
+    <div class="sub">7/2(목) 출국 ~ 7/20(월) 귀국 · 현지 KST 기준 (출입국 비행편은 시각 병기)</div>
+    <div class="facts">
+      <div class="fact"><div class="k">출국</div><div class="v">7/2 11:10 PT <small>SFO→KIX→ICN</small></div></div>
+      <div class="fact"><div class="k">한국 도착</div><div class="v">7/3 21:40 KST <small>인천</small></div></div>
+      <div class="fact"><div class="k">귀국</div><div class="v">7/20 06:30 PT <small>ICN→SFO 직항</small></div></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="legend">
+    <span><i class="dot d-ga"></i>가족</span>
+    <span><i class="dot d-hoe"></i>회사·강의</span>
+    <span><i class="dot d-gae"></i>개인·이동</span>
+    <span style="margin-left:auto">📌 가족 여행 3회 · DBR 강의 · 외환 송금</span>
+  </div>
+  <div id="app"></div>
+  <footer>비공개 페이지 · 보기용 스냅샷<br>일정 변경 시 재생성</footer>
+</div>
+
+<script>
+const TAG={ "회":"hoe","가":"ga","개":"gae" };
+function ev(text){
+  const m=text.match(/^\[(.)\]\s*(.*)$/);
+  if(m){ return `<div class="ev ${TAG[m[1]]||''}">${m[2]}</div>`; }
+  return `<div class="ev">${text}</div>`;
+}
+const WEEKS=[
+ {h:"W27 · 6/29(월)~7/5(일) — 출국·가족 여행 1",
+  note:"7/2는 PT 기준, 7/3 도착 이후는 KST. <b>KTX 예매 대기</b> (7/4 서울→전주 / 7/5 남원→서울).",
+  days:[
+   {d:"7/2", dow:"목 · 출국일", tag:"한국 출국", slots:[
+     ["06-08","[개] <b>SFO 출발</b> 07:00 → ~08:00 공항 도착"],
+     ["08-10","[개] 공항 체크인"],
+     ["10-12","[개] <b>11:10 PT 출국</b> → 오사카 경유"]]},
+   {d:"7/3", dow:"금 · 한국 도착", tag:"오사카(KIX) 경유", slots:[
+     ["저녁","[개] KIX 14:50 → 환승 → <b>인천 21:40 KST 도착</b>"]]},
+   {d:"7/4", dow:"토 · 가족 여행 1", tag:"서울→전주→남원", slots:[
+     ["08-10","[가] 서울 출발 → 전주 이동 (KTX)"],
+     ["10-12","[가] 전주 도착 · 한옥마을 관광"],
+     ["12-14","[가] 전주 점심 · 관광"],
+     ["14-16","[가] 전주→남원 · <b>리조트 체크인 15:00</b>"],
+     ["16-18","[가] 남원 관광 (광한루원 등)"],
+     ["18-20","[가] 저녁 · 리조트 휴식"],
+     ["20-22","[가] 남원 숙박"]]},
+   {d:"7/5", dow:"일 · 가족 여행 1", tag:"남원→서울", slots:[
+     ["08-10","[가] 조식"],
+     ["10-12","[가] <b>체크아웃 11:00</b> · 출발 준비"],
+     ["12-14","[가] 점심 · 남원→서울 (KTX)"],
+     ["14-16","[가] 이동"],
+     ["16-18","[가] 서울 도착"],
+     ["18-20","[가] 가족 여행 1 종료 (귀가)"]]}
+  ]},
+ {h:"W28 · 7/6(월)~7/12(일) — DBR 강의·가족 여행 2",
+  note:"<b>7/7(화) DBR School 강의</b> (서울 충정로).",
+  days:[
+   {d:"7/7", dow:"화 · DBR School", tag:"에이전트 경제의 판세 읽기", slots:[
+     ["12-14","[회] 이동·도착 (13:00 도착 권장 → 13:30 시작)"],
+     ["14-16","[회] 강의 진행 (세션 1·종합토의 1)"],
+     ["16-18","[회] <b>본인 세션 15:30–17:10 '에이전틱 커머스'</b> · 종합토의 2"]]},
+   {d:"7/11", dow:"토 · 가족 여행 2", tag:"목적지 미정", slots:[
+     ["종일","[가] 가족 여행 2"]]},
+   {d:"7/12", dow:"일 · 가족 여행 2", tag:"목적지 미정", slots:[
+     ["종일","[가] 가족 여행 2"],
+     ["18-20","[가] 귀가"]]}
+  ]},
+ {h:"W29 · 7/13(월)~7/19(일) — 외환 송금·가족 여행 3",
+  note:"<b>외환 송금 (은행 방문)</b>: 7/13(월)~7/17(금) 중 택일 — 날짜 미정.",
+  days:[
+   {d:"7/18", dow:"토 · 가족 여행 3", tag:"목적지 미정", slots:[
+     ["종일","[가] 가족 여행 3"]]},
+   {d:"7/19", dow:"일 · 가족 여행 3", tag:"목적지 미정", slots:[
+     ["종일","[가] 가족 여행 3"],
+     ["18-20","[가] 귀가"]]}
+  ]},
+ {h:"W30 · 7/20(월) — 귀국",
+  note:"",
+  days:[
+   {d:"7/20", dow:"월 · 귀국일", tag:"한국 귀국", slots:[
+     ["06-08","[개] <b>06:30 PT SFO 도착</b> · 입국심사·수하물"],
+     ["08-10","[개] 출구 ~07:30-08:00 · 귀가"]]}
+  ]}
+];
+
+const app=document.getElementById('app');
+app.innerHTML=WEEKS.map(w=>`
+  <section class="week">
+    <div class="week-h">${w.h}</div>
+    ${w.note?`<div class="note">${w.note}</div>`:''}
+    <div class="days">
+      ${w.days.map(d=>`
+        <div class="day">
+          <h3>${d.d} <span class="dow">${d.dow}</span></h3>
+          ${d.tag?`<div class="tag-line">${d.tag}</div>`:''}
+          <div class="slots">
+            ${d.slots.map(s=>`
+              <div class="slot"><div class="t">${s[0]}</div>
+              <div class="e">${ev(s[1])}</div></div>`).join('')}
+          </div>
+        </div>`).join('')}
+    </div>
+  </section>`).join('');
+</script>
+</body>
+</html>
