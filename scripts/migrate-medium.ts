@@ -226,7 +226,8 @@ function detectSeries(title: string, summary: string = ''): string | null {
     'one-on-one', 'one on one', 'brag sheet', 'promotion',
     'recogni', 'calibration', 'evaluation', 'assessment',
     'fist bump', 'all-hands', 'all hands', 'kids/parents', 'job ladder',
-    'engineering org', 'low-score', 'grades', 'visibility',
+    'engineering org', 'engineering level', 'career level',
+    'low-score', 'grades', 'visibility', 'ladder',
     'situational leadership', 'tech lead', 'staff engineer',
   ];
   if (mgmtAny.some((k) => t.includes(k) || s.includes(k))) return 'do-well-company';
