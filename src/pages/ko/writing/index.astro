@@ -60,16 +60,16 @@ const seriesIcons: Record<string, string> = {
       <div class="container">
         <h1>글</h1>
         <p class="list-lead">생각을 정리하고 경험을 나누며, 지나온 시간 속에서 배운 것들을 기록합니다.</p>
-        {enEntries.length > 0 && (
-          <p class="notice">
-            한국어 글입니다. 영문 글 {enEntries.length}편은 <a href="/writing">/writing</a>에 있습니다.
-          </p>
-        )}
       </div>
     </section>
 
     <section class="list-body">
       <div class="container">
+        {enEntries.length > 0 && (
+          <p class="cross-lang">
+            <a href="/writing">영문으로 쓴 글</a>도 따로 있습니다.
+          </p>
+        )}
         <ol class="series-list">
           {seriesWithEntries.map(({ meta, count, entries, latestDate }) => {
             const initial = meta.data.titles.ko.charAt(0);
@@ -195,14 +195,21 @@ const seriesIcons: Record<string, string> = {
   .list-hero { padding: var(--space-8) 0 var(--space-4); }
   .list-hero h1 { font-size: 1.875rem; margin: 0 0 var(--space-2); letter-spacing: -0.025em; line-height: 1.2; }
   .list-lead { font-size: 1rem; color: var(--color-muted); max-width: 560px; margin: 0; line-height: 1.7; }
-  .notice {
+  .cross-lang {
     font-size: 0.8125rem;
-    color: var(--color-muted);
-    margin-top: var(--space-3);
-    padding: var(--space-2) var(--space-3);
-    background: var(--color-surface-2);
-    border-radius: 4px;
-    display: inline-block;
+    color: var(--color-subtle);
+    text-align: right;
+    margin: 0 0 var(--space-3);
+  }
+  .cross-lang a {
+    color: var(--color-subtle);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+  .cross-lang a:hover { color: var(--color-text); }
+  @media (max-width: 639px) {
+    .cross-lang { text-align: left; }
   }
   .list-body { padding: var(--space-4) 0 var(--space-11); }
 

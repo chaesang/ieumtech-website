@@ -71,16 +71,16 @@ const seriesIcons: Record<string, string> = {
             Currently in Korean. English translations are planned but not yet published.
           </p>
         )}
-        {!isKoFallback && koEntries.length > 0 && (
-          <p class="notice">
-            English pieces below. A larger Korean archive ({koEntries.length} pieces) is available at <a href="/ko/writing">/ko/writing</a>.
-          </p>
-        )}
       </div>
     </section>
 
     <section class="list-body">
       <div class="container">
+        {!isKoFallback && koEntries.length > 0 && (
+          <p class="cross-lang">
+            More writing in the <a href="/ko/writing">Korean archive</a> ({koEntries.length} pieces).
+          </p>
+        )}
         <ol class="series-list">
           {seriesWithEntries.map(({ meta, count, entries, latestDate }) => {
             const title = meta.data.titles[displayLang] ?? meta.data.titles.ko;
@@ -221,6 +221,22 @@ const seriesIcons: Record<string, string> = {
     background: var(--color-surface-2);
     border-radius: 4px;
     display: inline-block;
+  }
+  .cross-lang {
+    font-size: 0.8125rem;
+    color: var(--color-subtle);
+    text-align: right;
+    margin: 0 0 var(--space-3);
+  }
+  .cross-lang a {
+    color: var(--color-subtle);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+  .cross-lang a:hover { color: var(--color-text); }
+  @media (max-width: 639px) {
+    .cross-lang { text-align: left; }
   }
   .list-body { padding: var(--space-4) 0 var(--space-11); }
 
