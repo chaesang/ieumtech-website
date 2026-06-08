@@ -103,6 +103,34 @@ async function collectArticleUrls(page: Page): Promise<string[]> {
   return Array.from(seen);
 }
 
+// The profile scroll-crawl is flaky in headless/bot contexts — Medium's infinite
+// scroll sometimes loads only a partial window, dropping even freshly published
+// posts. The RSS feed is the canonical, bot-friendly source for the latest posts,
+// so we union it in. RSS covers recency; the scroll covers history.
+async function collectFromRss(): Promise<string[]> {
+  const feedUrl = `https://${USER}.medium.com/feed`;
+  try {
+    const res = await fetch(feedUrl, { headers: { 'User-Agent': UA } });
+    if (!res.ok) {
+      console.error(`  [rss] ${res.status} ${feedUrl}`);
+      return [];
+    }
+    const xml = await res.text();
+    const urls = new Set<string>();
+    const items = xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
+    for (const item of items) {
+      const link = item.match(/<link>\s*([^<]+?)\s*<\/link>/)?.[1]?.trim();
+      if (link && urlToSlug(link)) {
+        urls.add(link.split('?')[0].split('#')[0]);
+      }
+    }
+    return Array.from(urls);
+  } catch (err) {
+    console.error('  [rss] fail:', err);
+    return [];
+  }
+}
+
 async function fetchArticle(browser: Browser, articleUrl: string): Promise<ArticleMeta | null> {
   const page = await openPage(browser);
   try {
@@ -305,8 +333,12 @@ async function main() {
       urls = [only.startsWith('http') ? only : `https://${USER}.medium.com/${only}`];
     } else {
       console.log('== collecting article urls ==');
-      urls = await collectArticleUrls(page);
-      console.log(`   total found: ${urls.length}`);
+      const [scrolled, rss] = await Promise.all([
+        collectArticleUrls(page),
+        collectFromRss(),
+      ]);
+      urls = Array.from(new Set([...scrolled, ...rss]));
+      console.log(`   scroll: ${scrolled.length}, rss: ${rss.length}, total unique: ${urls.length}`);
     }
 
     if (auto) {
