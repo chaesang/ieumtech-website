@@ -16,10 +16,12 @@ const aboutPath = localizedPath('/about', lang);
 const writingPath = localizedPath('/writing', lang);
 const talksPath = localizedPath('/talks', lang);
 const companiesPath = localizedPath('/companies', lang);
+const hireMePath = localizedPath('/hire-me', lang);
 
 const isWritingActive = currentPath === writingPath || currentPath.startsWith(`${writingPath}/`);
 const isTalksActive = currentPath === talksPath || currentPath.startsWith(`${talksPath}/`);
 const isCompaniesActive = currentPath === companiesPath || currentPath.startsWith(`${companiesPath}/`);
+const isHireMeActive = currentPath === hireMePath;
 
 const otherLang: Lang = lang === 'en' ? 'ko' : 'en';
 const toggleHref = altLangPath ?? (otherLang === 'ko' ? '/ko/' : '/');
@@ -41,6 +43,7 @@ const toggleLabel = otherLang === 'ko' ? 'KO' : 'EN';
         <li><a href={writingPath} class={isWritingActive ? 'active' : ''} aria-current={isWritingActive ? 'page' : undefined}>{t('nav.writing')}</a></li>
         <li><a href={talksPath} class={isTalksActive ? 'active' : ''} aria-current={isTalksActive ? 'page' : undefined}>{t('nav.talks')}</a></li>
         <li><a href={companiesPath} class={isCompaniesActive ? 'active' : ''} aria-current={isCompaniesActive ? 'page' : undefined}>{t('nav.companies')}</a></li>
+        <li><a href={hireMePath} class={`hire-me-link${isHireMeActive ? ' active' : ''}`} aria-current={isHireMeActive ? 'page' : undefined}>{t('nav.hireMe')}</a></li>
       </ul>
       <button type="button" class="search-trigger" id="search-trigger" aria-label={t('search.label')} title={t('search.label')}>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
@@ -79,6 +82,14 @@ const toggleLabel = otherLang === 'ko' ? 'KO' : 'EN';
 </script>
 
 <style>
+  .hire-me-link {
+    color: var(--color-accent) !important;
+  }
+  .hire-me-link:hover,
+  .hire-me-link.active {
+    color: var(--color-accent-hover) !important;
+  }
+
   .search-trigger {
     display: inline-flex;
     align-items: center;

@@ -59,7 +59,7 @@ website/
 /contact         /ko/contact          (not yet implemented)
 ```
 
-**No `/hire-me` page.** Full-time recruitment is handled via LinkedIn Open to Work only.
+**`/hire-me` page exists** (`src/pages/hire-me.astro` + `src/pages/ko/hire-me.astro`). Lists availability, roles considered, and a contact form. Linked from the global nav. Full-time recruitment is centralized here.
 
 ## Content Management Rules
 - New article: add `src/content/writing/{en|ko}/<slug>.md` with frontmatter per `docs/content-guides/writing.md`.

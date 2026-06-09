@@ -1,0 +1,442 @@
+---
+import Base from '~/layouts/Base.astro';
+
+const lang = 'ko' as const;
+
+const ACCESS_KEY = 'fb98ecd5-455b-459f-b876-9eb7c9911118';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: '정채상',
+  alternateName: 'Chaesang Jung',
+  url: 'https://ieumtech.net/ko/hire-me',
+  jobTitle: '대표, 이음테크',
+  sameAs: 'https://linkedin.com/in/chaesang',
+};
+---
+<Base
+  title="채용 문의 — 정채상 · 이음테크"
+  description="정채상은 현재 엔지니어링 리더십 포지션을 선별적으로 검토하고 있습니다. 현재 상황과 고려하는 역할, 연락 방법을 확인하세요."
+  lang={lang}
+  path="/ko/hire-me"
+  altLangPath="/hire-me"
+  jsonLd={jsonLd}
+>
+  <main>
+    <section class="hire-hero">
+      <div class="hire-inner">
+        <p class="hire-label">풀타임 채용 문의</p>
+        <h1 class="hire-heading">채용 문의</h1>
+        <p class="hire-sub">적합한 기회라면 선별적으로 검토하고 있습니다. 맞는다고 생각하신다면, 이야기 들어보겠습니다.</p>
+      </div>
+    </section>
+
+    <section class="hire-body">
+      <div class="hire-inner">
+
+        <div class="hire-block">
+          <h2 class="block-label">현재 상황</h2>
+          <div class="availability-row">
+            <span class="availability-dot" aria-hidden="true"></span>
+            <span class="availability-status">오픈 — 2026년 중반 기준</span>
+          </div>
+          <p class="block-text">현재 풀타임 포지션을 검토할 수 있는 상황입니다. 공식적인 절차 전에 짧은 대화로 먼저 맞는지 확인하는 방식을 선호합니다.</p>
+        </div>
+
+        <div class="hire-block">
+          <h2 class="block-label">고려하는 역할</h2>
+          <ul class="roles-list">
+            <li>
+              <strong>VP of Engineering</strong>
+              <span>엔지니어링 조직을 확장하거나 새롭게 만드는 역할 — 기술적 신뢰와 리더십 깊이가 모두 필요한 자리.</span>
+            </li>
+            <li>
+              <strong>CTO</strong>
+              <span>기술 전략과 팀 빌딩이 함께 중요한 초기~중기 스타트업.</span>
+            </li>
+            <li>
+              <strong>Distinguished / Staff+ Engineer</strong>
+              <span>실질적인 범위가 있는 개인 기여자 역할 — 유지보수가 아닌, 조직을 가로지르는 기술 문제.</span>
+            </li>
+            <li>
+              <strong>파트타임 CTO (Fractional)</strong>
+              <span>적합한 회사라면 풀타임을 검토하는 동안 구조화된 파트타임 협력도 가능합니다.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hire-block">
+          <h2 class="block-label">중요하게 보는 것들</h2>
+          <ul class="criteria-list">
+            <li>기술이 비용 센터가 아닌 제품의 핵심인 곳</li>
+            <li>일의 퀄리티와 함께 일하는 사람을 모두 중요하게 여기는 팀</li>
+            <li>아직 풀어보지 않은 문제 — 새로운 도메인 환영</li>
+            <li>서울 또는 Bay Area 기반; 하이브리드 가능; 적합한 경우 원격도 검토</li>
+          </ul>
+        </div>
+
+        <div class="hire-block">
+          <h2 class="block-label">짧은 이력 소개</h2>
+          <p class="block-text">임베디드, 검색, 커머스, 핀테크, 클라우드, 산업 AI까지 30년 가까이 다양한 도메인을 지나왔습니다. 구글 서울·실리콘밸리에서 13년 이상, 이후 뱅크샐러드 VPE, INEEJI CTO, KAIST 겸임교수, 메가존클라우드 Distinguished SE를 거쳤습니다. 0명에서 50명 조직을 만들어 본 경험도, 6만 명 규모 조직 안에서 팀을 이끈 경험도 있습니다.</p>
+          <p class="block-links">
+            <a href="/ko/about">전체 소개</a>
+            <a href="/ko/companies">거쳐 온 자리들</a>
+            <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </p>
+        </div>
+
+        <div class="hire-block" id="contact">
+          <h2 class="block-label">연락하기</h2>
+          <p class="block-text">역할과 조직에 대해 알려주세요. 덱 필요 없습니다 — 어떤 문제를 풀고 있는지, 왜 맞을 것 같은지 몇 문장이면 충분합니다.</p>
+
+          <form id="hire-form" class="hire-form">
+            <input type="hidden" name="access_key" value={ACCESS_KEY} />
+            <input type="hidden" name="from_name" value="ieumtech.net" />
+            <input type="hidden" name="subject" value="채용 문의 — ieumtech.net" />
+            <input type="text" name="botcheck" tabindex="-1" autocomplete="off" class="hire-honeypot" aria-hidden="true" />
+
+            <div class="hire-field">
+              <label for="hf-name">이름 <span class="req" aria-hidden="true">*</span></label>
+              <input id="hf-name" type="text" name="name" required autocomplete="name" />
+            </div>
+
+            <div class="hire-field">
+              <label for="hf-email">이메일 <span class="req" aria-hidden="true">*</span></label>
+              <input id="hf-email" type="email" name="email" required autocomplete="email" />
+              <small>이쪽으로 답장 드리겠습니다.</small>
+            </div>
+
+            <div class="hire-field">
+              <label for="hf-company">회사 · 소속</label>
+              <input id="hf-company" type="text" name="company" autocomplete="organization" />
+            </div>
+
+            <div class="hire-field">
+              <label for="hf-role">생각하시는 역할</label>
+              <input id="hf-role" type="text" name="role" placeholder="예: VP Engineering, CTO…" />
+            </div>
+
+            <div class="hire-field">
+              <label for="hf-message">기회에 대해 알려주세요 <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="hf-message" name="message" required rows="6" placeholder="조직, 풀고 있는 문제, 왜 맞을 것 같은지 — 맥락을 파악하는 데 도움이 되는 내용이면 무엇이든 좋습니다."></textarea>
+            </div>
+
+            <div class="hire-submit-row">
+              <button type="submit" class="btn hire-submit">
+                <span class="hire-submit-label" data-default="보내기" data-loading="보내는 중…">보내기</span>
+              </button>
+              <span class="hire-error" id="hire-error" role="alert" hidden>전송에 실패했습니다. 다시 시도해 주시거나 hello@ieumtech.net으로 직접 보내주세요.</span>
+            </div>
+          </form>
+
+          <div id="hire-success" class="hire-success" hidden>
+            <h3>잘 받았습니다.</h3>
+            <p>며칠 안에 적어주신 이메일로 답장 드리겠습니다.</p>
+            <p class="hire-signoff">— 정채상, 이음테크</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</Base>
+
+<script>
+  const form = document.getElementById('hire-form') as HTMLFormElement | null;
+  const success = document.getElementById('hire-success') as HTMLElement | null;
+  const errorEl = document.getElementById('hire-error') as HTMLElement | null;
+
+  if (form && success && errorEl) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.hidden = true;
+
+      const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      const labelEl = form.querySelector<HTMLElement>('.hire-submit-label');
+      if (submitBtn && labelEl) {
+        submitBtn.disabled = true;
+        labelEl.textContent = labelEl.dataset.loading ?? '보내는 중…';
+      }
+
+      const formData = new FormData(form);
+      const role = formData.get('role');
+      if (role) {
+        formData.set('subject', `채용 문의 — ${role}`);
+      }
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData,
+          headers: { Accept: 'application/json' },
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.success) {
+          form.hidden = true;
+          success.hidden = false;
+          success.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          throw new Error(data.message ?? 'request failed');
+        }
+      } catch {
+        errorEl.hidden = false;
+        if (submitBtn && labelEl) {
+          submitBtn.disabled = false;
+          labelEl.textContent = labelEl.dataset.default ?? '보내기';
+        }
+      }
+    });
+  }
+</script>
+
+<style>
+  .hire-inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+  }
+
+  .hire-hero {
+    padding: var(--space-8) 0 var(--space-6);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .hire-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin: 0 0 var(--space-3);
+  }
+  .hire-heading {
+    font-size: 1.875rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    margin: 0 0 var(--space-4);
+    color: var(--color-text);
+  }
+  .hire-sub {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-muted);
+    margin: 0;
+    max-width: 500px;
+  }
+
+  .hire-body {
+    padding: var(--space-8) 0 var(--space-11);
+  }
+
+  .hire-block {
+    padding: var(--space-7) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .hire-block:last-child {
+    border-bottom: none;
+  }
+
+  .block-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+    margin: 0 0 var(--space-5);
+  }
+
+  .availability-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+  .availability-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #22c55e;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+  }
+  .availability-status {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .block-text {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin: 0 0 var(--space-4);
+  }
+  .block-text:last-child { margin-bottom: 0; }
+
+  .block-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+  }
+  .block-links a {
+    font-size: 0.875rem;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .block-links a:hover { text-decoration: underline; }
+
+  .roles-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .roles-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: var(--space-4) var(--space-5);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+  }
+  .roles-list strong {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .roles-list span {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+
+  .criteria-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .criteria-list li {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    padding-left: var(--space-5);
+    position: relative;
+    line-height: 1.6;
+  }
+  .criteria-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-subtle);
+  }
+
+  /* Form */
+  .hire-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    margin-top: var(--space-6);
+  }
+  .hire-form[hidden] { display: none; }
+
+  .hire-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  .hire-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .hire-field label {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: -0.005em;
+  }
+  .hire-field .req {
+    color: var(--color-accent);
+    font-weight: 400;
+  }
+  .hire-field small {
+    font-size: 0.8125rem;
+    color: var(--color-subtle);
+    line-height: 1.5;
+  }
+  .hire-field input[type="text"],
+  .hire-field input[type="email"],
+  .hire-field textarea {
+    font: inherit;
+    font-size: 0.9375rem;
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: var(--color-surface);
+    color: var(--color-text);
+    transition: border-color var(--transition-base);
+  }
+  .hire-field input:focus,
+  .hire-field textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+  .hire-field textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+  }
+
+  .hire-submit-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-top: var(--space-2);
+  }
+  .hire-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .hire-error {
+    font-size: 0.875rem;
+    color: #c2410c;
+    line-height: 1.5;
+  }
+
+  .hire-success {
+    margin-top: var(--space-6);
+    padding: var(--space-6);
+    border-left: 3px solid var(--color-accent);
+    background: var(--color-surface);
+  }
+  .hire-success h3 {
+    font-size: 1.125rem;
+    margin: 0 0 var(--space-3);
+    letter-spacing: -0.01em;
+  }
+  .hire-success p {
+    margin: 0 0 var(--space-2);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+  .hire-signoff {
+    margin-top: var(--space-3) !important;
+    color: var(--color-muted) !important;
+    font-size: 0.9375rem !important;
+  }
+
+  @media (max-width: 639px) {
+    .hire-hero { padding: var(--space-7) 0 var(--space-5); }
+    .hire-heading { font-size: 1.625rem; }
+    .hire-body { padding: var(--space-6) 0 var(--space-9); }
+  }
+</style>
