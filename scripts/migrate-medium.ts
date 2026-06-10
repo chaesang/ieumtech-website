@@ -249,6 +249,7 @@ function cleanMarkdown(md: string): string {
 // takes precedence so a footer-tagged piece never lands seriesless on a keyword miss.
 const SERIES_LIST_IDS: Record<string, string> = {
   'lessons-from-the-company-b3e2f00e0614': 'do-well-company',
+  '90s-computer-science-stories-b03ed4ac8520': '90s-com-eng',
 };
 
 function detectSeries(title: string, summary: string = '', body: string = ''): string | null {
