@@ -243,7 +243,18 @@ function cleanMarkdown(md: string): string {
 
 // Best-effort series mapping from title — mirrors the Brunch series buckets so
 // the same author voice surfaces under the same series across languages.
-function detectSeries(title: string, summary: string = ''): string | null {
+// Medium "list" (series) URLs are stable identifiers. When an essay's footer links
+// back to its series list, that's an authoritative signal — far more reliable than
+// guessing from title keywords. Map the known list IDs to local series slugs; this
+// takes precedence so a footer-tagged piece never lands seriesless on a keyword miss.
+const SERIES_LIST_IDS: Record<string, string> = {
+  'lessons-from-the-company-b3e2f00e0614': 'do-well-company',
+};
+
+function detectSeries(title: string, summary: string = '', body: string = ''): string | null {
+  for (const [listId, slug] of Object.entries(SERIES_LIST_IDS)) {
+    if (body.includes(listId)) return slug;
+  }
   const t = title.toLowerCase();
   const s = summary.toLowerCase();
   if (/^20\d{2}\s+cloud solutions? report/.test(t)) return 'chaesang-priv';
@@ -271,7 +282,7 @@ function detectSeries(title: string, summary: string = ''): string | null {
 function frontmatter(article: ArticleMeta): string {
   const rawSummary = article.summary || article.title;
   const summary = rawSummary.slice(0, 260).replace(/\n/g, ' ').trim();
-  const series = detectSeries(article.title, article.summary);
+  const series = detectSeries(article.title, article.summary, article.bodyHtml);
   const lines = [
     '---',
     `title: ${JSON.stringify(article.title)}`,
