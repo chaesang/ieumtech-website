@@ -1,0 +1,16 @@
+name: Idea or request
+description: Suggest something for the site, the writing, or how it's built.
+labels: ["type:idea", "status:triage"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it would help (optional)
+    validations:
+      required: false
