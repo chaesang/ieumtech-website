@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /t/
+Disallow: /private/
+
+Sitemap: https://ieumtech.net/sitemap-index.xml

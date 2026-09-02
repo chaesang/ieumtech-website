@@ -1,415 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ieum Tech LLC</title>
-  <meta name="description" content="Ieum Tech — Tech Consulting, Technical Writing, Speaking, and Digital Content.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>Chaesang Jung — Ieum Tech | Writing, Advisory, Talks</title><meta name="description" content="Ieum Tech is Chaesang Jung's solo practice — advisory, lectures, and writing from 30 years between Silicon Valley and Korea."><link rel="canonical" href="https://ieumtech.net/"><link rel="alternate" hreflang="en" href="https://ieumtech.net/"><link rel="alternate" hreflang="ko" href="https://ieumtech.net/ko/"><link rel="alternate" hreflang="x-default" href="https://ieumtech.net/"><meta property="og:type" content="profile"><meta property="og:url" content="https://ieumtech.net/"><meta property="og:title" content="Chaesang Jung — Ieum Tech"><meta property="og:description" content="Solo practice — advisory, lectures, writing. Thirty years between Silicon Valley and Korea."><meta property="og:site_name" content="Ieum Tech"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ko_KR"><meta property="og:image" content="https://ieumtech.net/chaesang-old-professional.jpg"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Chaesang Jung — Ieum Tech"><meta name="twitter:description" content="Solo practice — advisory, lectures, writing. Thirty years between Silicon Valley and Korea."><meta name="twitter:image" content="https://ieumtech.net/chaesang-old-professional.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","name":"Chaesang Jung","alternateName":"정채상","url":"https://ieumtech.net/","sameAs":["https://linkedin.com/in/chaesang","https://github.com/chaesang","https://chaesangjung.medium.com","https://brunch.co.kr/@chaesang"],"description":"Thirty years — between Korea and Silicon Valley, and between people and technology."},{"@type":"Organization","name":"Ieum Tech","alternateName":"이음테크","url":"https://ieumtech.net","logo":"https://ieumtech.net/favicon.svg","founder":{"@type":"Person","name":"Chaesang Jung"},"sameAs":["https://linkedin.com/in/chaesang"]}]}</script><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><!-- Privacy-friendly analytics (GoatCounter). Bot-filtered, dedups reloads per visitor. --><script data-goatcounter="https://ieumtech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script><style>
+    .wide { max-width: var(--container-wide); margin: 0 auto; padding: 0 var(--container-padding); }
+
+    /* Masthead */
+    .masthead { padding: var(--space-11) 0 var(--space-8); }
+    .masthead-rule { border-top: 2px solid var(--color-text); }
+    .masthead-top {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: var(--space-6); padding-bottom: var(--space-5);
+    }
+    .masthead-name {
+      font-family: var(--font-display); font-size: var(--fs-display);
+      font-weight: 500; line-height: 0.95; letter-spacing: -0.03em; margin: 0;
+    }
+    .masthead-ko { font-size: var(--fs-small); color: var(--color-muted); margin: var(--space-3) 0 0; letter-spacing: 0.04em; }
+    .masthead-portrait img { width: 108px; height: 108px; border-radius: 2px; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+
+    .standfirst {
+      font-family: var(--font-display); font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.625rem);
+      line-height: 1.45; margin: var(--space-6) 0 0; max-width: 30em; color: var(--color-text);
+    }
+    .kicker {
+      font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--color-subtle); margin: 0 0 var(--space-3);
     }
 
-    :root {
-      --color-bg: #fafafa;
-      --color-text: #1a1a1a;
-      --color-muted: #6b6b6b;
-      --color-accent: #2563eb;
-      --color-border: #e5e5e5;
-      --header-height: 56px;
+    /* Front page grid */
+    .front { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: var(--space-11); padding: var(--space-9) 0 var(--space-11); align-items: start; }
+    .col-rule { border-top: 1px solid var(--color-border); padding-top: var(--space-6); }
+
+    .lead-piece a { text-decoration: none; color: inherit; display: block; }
+    .lead-title { font-family: var(--font-display); font-size: var(--fs-h1); line-height: 1.15; margin: var(--space-2) 0 var(--space-3); }
+    .lead-piece a:hover .lead-title { color: var(--color-accent); }
+    .lead-summary { color: var(--color-muted); line-height: 1.65; max-width: 34em; margin: 0; }
+
+    .piece-list { list-style: none; margin: var(--space-8) 0 0; }
+    .piece { border-top: 1px solid var(--color-border); }
+    .piece a { display: block; padding: var(--space-5) 0; text-decoration: none; color: inherit; }
+    .piece a:hover .piece-title { color: var(--color-accent); }
+    .piece time { font-size: var(--fs-micro); color: var(--color-subtle); font-variant-numeric: tabular-nums; }
+    .piece-title { font-family: var(--font-display); font-size: 1.25rem; line-height: 1.3; margin: 4px 0 0; }
+
+    .more-link { display: inline-block; margin-top: var(--space-6); font-size: var(--fs-small); color: var(--color-accent); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+
+    /* Sidebar */
+    .aside-block { margin-bottom: var(--space-9); }
+    .aside-title { font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-subtle); margin: 0 0 var(--space-4); font-family: inherit; font-weight: 500; }
+    .aside-body { font-size: var(--fs-small); line-height: 1.7; color: var(--color-muted); margin: 0; }
+    .aside-body strong { color: var(--color-text); font-weight: 500; }
+    .aside-links { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--fs-small); }
+    .aside-links a { color: var(--color-text); text-decoration: none; border-bottom: 1px solid var(--color-border); padding-bottom: 3px; display: block; }
+    .aside-links a:hover { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+    .figure { font-family: var(--font-display); font-size: 1.75rem; line-height: 1; color: var(--color-text); }
+
+    .cta-section { border-top: 2px solid var(--color-text); padding: var(--space-10) var(--container-padding) var(--space-11); }
+    .contact-tags { font-size: var(--fs-small); color: var(--color-muted); margin-bottom: var(--space-4); letter-spacing: 0.02em; }
+
+    @media (max-width: 899px) {
+      .front { grid-template-columns: 1fr; gap: var(--space-9); }
+      .masthead-portrait img { width: 76px; height: 76px; }
     }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: var(--header-height);
+    @media (max-width: 639px) {
+      .masthead { padding: var(--space-9) 0 var(--space-7); }
+      .masthead-top { align-items: flex-start; }
     }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--color-bg);
-      color: var(--color-text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Sticky site header */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--color-bg);
-      border-bottom: 1px solid var(--color-border);
-      height: var(--header-height);
-    }
-
-    .header-inner {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--color-text);
-      text-decoration: none;
-      letter-spacing: -0.01em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.875rem;
-      font-weight: 400;
-      color: var(--color-muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--color-text);
-    }
-
-    /* Hamburger button */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 32px;
-      height: 32px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 100%;
-      height: 1.5px;
-      background: var(--color-text);
-      transition: transform 0.25s, opacity 0.25s;
-    }
-
-    .hamburger.open span:nth-child(1) {
-      transform: translateY(6.5px) rotate(45deg);
-    }
-
-    .hamburger.open span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.open span:nth-child(3) {
-      transform: translateY(-6.5px) rotate(-45deg);
-    }
-
-    /* Mobile nav overlay */
-    @media (max-width: 480px) {
-      .hamburger {
-        display: flex;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: var(--header-height);
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        background: var(--color-bg);
-        border-bottom: 1px solid var(--color-border);
-        padding: 8px 24px 16px;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links li {
-        width: 100%;
-      }
-
-      .nav-links a {
-        display: block;
-        padding: 10px 0;
-        font-size: 0.9375rem;
-        border-bottom: 1px solid var(--color-border);
-      }
-
-      .nav-links li:last-child a {
-        border-bottom: none;
-      }
-    }
-
-    /* Main content */
-    .container {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Hero section */
-    .hero {
-      background: #fff;
-      border-bottom: 1px solid var(--color-border);
-      padding: 88px 24px 80px;
-      text-align: center;
-    }
-
-    .hero-inner {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .hero-label {
-      font-size: 0.8125rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--color-muted);
-      margin-bottom: 28px;
-    }
-
-    .connecting-list {
-      margin-bottom: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .connecting-item {
-      font-size: 1.75rem;
-      font-weight: 600;
-      letter-spacing: -0.025em;
-      line-height: 1.4;
-      color: var(--color-text);
-    }
-
-    .connecting-item:not(:first-child) {
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: var(--color-muted);
-      margin-top: 6px;
-    }
-
-    .connecting-word {
-      color: var(--color-accent);
-    }
-
-    .hero-sub {
-      font-size: 1rem;
-      color: var(--color-muted);
-      font-weight: 300;
-      line-height: 1.7;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-
-    section {
-      padding: 40px 0;
-    }
-
-    section h2 {
-      font-size: 0.75rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--color-muted);
-      margin-bottom: 24px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .service-card {
-      background: #fff;
-      border: 1px solid var(--color-border);
-      border-radius: 12px;
-      padding: 24px;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-
-    .service-card:hover {
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-      transform: translateY(-2px);
-    }
-
-    .service-card h3 {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-      letter-spacing: -0.01em;
-    }
-
-    .service-card p {
-      font-size: 0.8125rem;
-      color: var(--color-muted);
-      font-weight: 300;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 480px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .contact-links a {
-      font-size: 0.9375rem;
-      color: var(--color-text);
-      text-decoration: none;
-      font-weight: 400;
-      transition: color 0.2s;
-    }
-
-    .contact-links a:hover {
-      color: var(--color-accent);
-    }
-
-    .contact-links span {
-      color: var(--color-muted);
-      font-size: 0.8125rem;
-      margin-left: 8px;
-    }
-
-    footer {
-      padding: 60px 0 40px;
-      border-top: 1px solid var(--color-border);
-      margin-top: 40px;
-    }
-
-    footer p {
-      font-size: 0.8125rem;
-      color: var(--color-muted);
-      font-weight: 300;
-    }
-
-    @media (max-width: 480px) {
-      .hero {
-        padding: 60px 24px 52px;
-      }
-
-      .connecting-item {
-        font-size: 1.375rem;
-      }
-
-      .connecting-item:not(:first-child) {
-        font-size: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="site-header">
-    <div class="header-inner">
-      <a href="#home" class="logo">Ieum Tech</a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-links" id="nav-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <section class="hero" id="home">
-    <div class="hero-inner">
-      <p class="hero-label">Ieum Tech · 이음 테크</p>
-      <div class="connecting-list">
-        <h1 class="connecting-item"><span class="connecting-word">Connecting</span> ideas with technology.</h1>
-        <p class="connecting-item"><span class="connecting-word">Connecting</span> people.</p>
-        <p class="connecting-item"><span class="connecting-word">Connecting</span> history and future.</p>
-        <p class="connecting-item"><span class="connecting-word">Connecting</span> generations.</p>
-      </div>
-      <p class="hero-sub">Tech consulting, technical writing, and digital education.<br>Based in the US, serving teams worldwide.</p>
-    </div>
-  </section>
-
-  <div class="container">
-    <section>
-      <h2>Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Tech Consulting</h3>
-          <p>기술 전략, 아키텍처, 클라우드</p>
-        </div>
-        <div class="service-card">
-          <h3>Leadership Consulting</h3>
-          <p>엔지니어링 리더십, 조직 구성, 팀 빌딩</p>
-        </div>
-        <div class="service-card">
-          <h3>Technical Writing</h3>
-          <p>기술 문서, 블로그, 콘텐츠 작성</p>
-        </div>
-        <div class="service-card">
-          <h3>교육 Contents</h3>
-          <p>Inflearn 강의, YouTube, 세미나/워크숍</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-links">
-        <span style="font-size: 0.9375rem; font-weight: 500;">Chaesang Jung</span>
-        <a href="mailto:hello@ieumtech.net">hello@ieumtech.net</a>
-        <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer">LinkedIn<span>linkedin.com/in/chaesang</span></a>
-        <a href="https://www.inflearn.com/en/users/1292051" target="_blank" rel="noopener noreferrer">Inflearn<span>inflearn.com/en/users/1292051</span></a>
-      </div>
-    </section>
-
-    <footer>
-      <p>&copy; 2026 Ieum Tech. All rights reserved.</p>
-    </footer>
-  </div>
-
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-      const isOpen = hamburger.classList.toggle('open');
-      navMenu.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', isOpen);
-    });
-
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        navMenu.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
-  </script>
-</body>
-</html>
+  </style><link rel="stylesheet" href="/previews/pr-19/_astro/about.CxVffOC2.css"></head> <body> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="logo" data-astro-cid-3ef6ksr2>Ieum Tech <span class="logo-ko" data-astro-cid-3ef6ksr2>이음테크</span></a> <div class="header-right" data-astro-cid-3ef6ksr2> <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2></span><span data-astro-cid-3ef6ksr2></span><span data-astro-cid-3ef6ksr2></span> </button> <ul class="nav-links" id="nav-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/about" class data-astro-cid-3ef6ksr2>About</a></li> <li data-astro-cid-3ef6ksr2><a href="/writing" class data-astro-cid-3ef6ksr2>Writing</a></li> <li data-astro-cid-3ef6ksr2><a href="/talks" class data-astro-cid-3ef6ksr2>Talks</a></li> <li data-astro-cid-3ef6ksr2><a href="/companies" class data-astro-cid-3ef6ksr2>Companies</a></li> </ul> <button type="button" class="search-trigger" id="search-trigger" aria-label="Search" title="Search" data-astro-cid-3ef6ksr2> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-astro-cid-3ef6ksr2><circle cx="11" cy="11" r="8" data-astro-cid-3ef6ksr2></circle><path d="m21 21-4.3-4.3" data-astro-cid-3ef6ksr2></path></svg> <span class="search-trigger-kbd" aria-hidden="true" data-astro-cid-3ef6ksr2>⌘K</span> </button> <a href="/ko/" class="lang-toggle" data-astro-cid-3ef6ksr2>KO</a> </div> </div> </header> <script type="module">const t=document.getElementById("hamburger"),n=document.getElementById("nav-menu");t&&n&&(t.addEventListener("click",()=>{const e=t.classList.toggle("open");n.classList.toggle("open"),t.setAttribute("aria-expanded",String(e))}),n.querySelectorAll("a").forEach(e=>{e.addEventListener("click",()=>{t.classList.remove("open"),n.classList.remove("open"),t.setAttribute("aria-expanded","false")})}));const s=document.getElementById("search-trigger");s&&s.addEventListener("click",()=>{const e=window.__ieumOpenSearch;typeof e=="function"&&e(s)});</script>    <header class="masthead"> <div class="wide"> <div class="masthead-top"> <div> <p class="kicker">Ieum Tech · Solo practice</p> <h1 class="masthead-name">Chaesang Jung</h1> <p class="masthead-ko">정채상 — Palo Alto · Seoul</p> </div> <div class="masthead-portrait"> <img src="/chaesang-old-professional.jpg" alt="Chaesang Jung" width="108" height="108"> </div> </div> <div class="masthead-rule"></div> <p class="standfirst">Thirty years — including thirteen at Google — bridging Korea and Silicon Valley, and connecting people with the heart of technology.</p> </div> </header> <main> <div class="wide"> <div class="front"> <div> <div class="col-rule"> <p class="kicker">Latest</p> <article class="lead-piece"> <a href="/writing/2026-cloud-solutions-report-8-ai-agent-platforms"> <time datetime="2026-09-02T00:00:00.000Z">Sep 2, 2026</time> <h2 class="lead-title">2026 Cloud Solutions Report, #8: AI Agent Platforms</h2> <p class="lead-summary">Building agents got easy. Controlling them didn&#39;t. Six platforms, four adoption paths, and one question underneath: who holds governance?</p> </a> </article> <ul class="piece-list"> <li class="piece"> <a href="/writing/my-first-encyclopedia"> <time datetime="2026-08-27T00:00:00.000Z">Aug 27, 2026</time> <h3 class="piece-title">My First Encyclopedia</h3> </a> </li><li class="piece"> <a href="/writing/the-dream-i-buried"> <time datetime="2026-08-25T00:00:00.000Z">Aug 25, 2026</time> <h3 class="piece-title">The Dream I Buried</h3> </a> </li><li class="piece"> <a href="/writing/the-detour-through-english"> <time datetime="2026-08-23T00:00:00.000Z">Aug 23, 2026</time> <h3 class="piece-title">The Detour Through English</h3> </a> </li><li class="piece"> <a href="/writing/google-goes-gaga"> <time datetime="2026-08-21T00:00:00.000Z">Aug 21, 2026</time> <h3 class="piece-title">Google Goes Gaga</h3> </a> </li><li class="piece"> <a href="/writing/ten-blue-links"> <time datetime="2026-08-20T00:00:00.000Z">Aug 20, 2026</time> <h3 class="piece-title">Ten Blue Links</h3> </a> </li><li class="piece"> <a href="/writing/sawing-through-the-logs"> <time datetime="2026-08-14T00:00:00.000Z">Aug 14, 2026</time> <h3 class="piece-title">Sawing Through the Logs</h3> </a> </li><li class="piece"> <a href="/writing/who-wrote-this"> <time datetime="2026-08-12T00:00:00.000Z">Aug 12, 2026</time> <h3 class="piece-title">Who Wrote This?</h3> </a> </li> </ul> <a class="more-link" href="/writing">All writing →</a> </div> </div> <aside> <div class="aside-block col-rule"> <p class="aside-title">The practice</p> <p class="aside-body">Advisory, lectures, and writing. <strong>Software engineer / Tech lead / People manager / Product manager / Technical advisor / VPE · CTO / Adjunct Professor</strong> across embedded, mobile, search, commerce, fintech, cloud, industrial AI, and enterprise.</p> </div> <div class="aside-block"> <p class="aside-title">Most recent talk</p> <p class="aside-body"><strong>Reading the Agent Economy</strong><br>Dong-A Business Review (DBR) · Jul 7, 2026</p> <a class="more-link" href="/talks">All talks →</a> </div> <div class="aside-block"> <p class="aside-title">Archive</p> <p class="aside-body"><span class="figure">53</span> pieces in English<br><span class="figure">196</span> in Korean</p> </div> <div class="aside-block"> <p class="aside-title">Read on</p> <ul class="aside-links"> <li><a href="/about">About</a></li> <li><a href="/companies">Places I've worked</a></li> <li><a href="/ko/">한국어로 읽기</a></li> </ul> </div> </aside> </div> </div> <section class="cta-section" id="contact" aria-labelledby="cta-heading"> <div class="cta-inner"> <p class="contact-tags">Advising · speaking · coffee chats · a conversation we could share</p> <h2 class="cta-heading" id="cta-heading">If there's a problem you're solving or a story to connect,<br>I'd love to hear from you.</h2> <div class="cta-buttons"> <a href="/contact" class="btn">Say Hello</a> <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a> </div> </div> </section> </main>  <footer class="site-footer"> <div class="footer-inner"> <nav class="footer-nav" aria-label="External links"> <a href="/contact">Contact</a> <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer">LinkedIn</a> <a href="https://brunch.co.kr/@chaesang" target="_blank" rel="noopener noreferrer">Brunch</a> <a href="https://chaesangjung.medium.com/" target="_blank" rel="noopener noreferrer">Medium</a> </nav> <p class="footer-copy">© 2026 Ieum Tech. All rights reserved.</p> </div> </footer> <div class="search-modal" id="search-modal" data-index-url="/search-index.json" data-search-page="/search" data-lang="en" data-label-writing="Writing" data-label-talks="Talks" data-label-projects="Projects" data-label-companies="Career" data-label-about="About" data-label-empty="Start typing — writing, talks, projects, career." data-label-no-results="Nothing found for that." data-label-see-all="See all matches" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search"> <div class="search-backdrop" data-search-close></div> <div class="search-card" role="document"> <div class="search-input-row"> <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg> <input type="search" id="search-input" class="search-input" placeholder="Search writing, talks, projects…" autocomplete="off" spellcheck="false" aria-label="Search writing, talks, projects…"> <button type="button" class="search-close-btn" data-search-close aria-label="Close"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> </button> </div> <div class="search-results" id="search-results" role="listbox"></div> <div class="search-footer"> <span><kbd>↑</kbd><kbd>↓</kbd> Navigate</span> <span><kbd>↵</kbd> Open</span> <span><kbd>Esc</kbd> Close</span> </div> </div> </div> <script type="module" src="/previews/pr-19/_astro/SearchModal.astro_astro_type_script_index_0_lang.BpA2ETEw.js"></script>  <script type="module">const i=["#series-","#co-","#talk-","#project-"];function s(){const t=window.location.hash;if(!t||!i.some(a=>t.startsWith(a)))return;const e=document.querySelector(t);if(!e)return;const o=e.tagName==="DETAILS"?e:e.closest("details");o&&(o.open=!0),requestAnimationFrame(()=>{e.scrollIntoView({behavior:"smooth",block:"start"}),e.classList.add("hash-highlight"),window.setTimeout(()=>e.classList.remove("hash-highlight"),1800)})}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",s):s();window.addEventListener("hashchange",s);</script>  </body> </html>
