@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>정채상 — 이음테크 | 글·책·강연</title><meta name="description" content="정채상이 엔지니어로, 매니저로 30년을 지나며 적어 둔 글을 시리즈별로 모았습니다. 회사에서의 기억들, 한국 IT 용어 이야기, 책 『커밋 로그』와 강연 기록도 함께 있습니다."><link rel="canonical" href="https://ieumtech.net/ko/"><link rel="alternate" hreflang="en" href="https://ieumtech.net/"><link rel="alternate" hreflang="ko" href="https://ieumtech.net/ko/"><link rel="alternate" hreflang="x-default" href="https://ieumtech.net/"><meta property="og:type" content="profile"><meta property="og:url" content="https://ieumtech.net/ko/"><meta property="og:title" content="정채상 — 이음테크"><meta property="og:description" content="회사에서의 기억들, 한국 IT 용어 이야기, 책 『커밋 로그』까지. 30년의 기록을 차례로 모아 두었습니다."><meta property="og:site_name" content="이음테크"><meta property="og:locale" content="ko_KR"><meta property="og:locale:alternate" content="en_US"><meta property="og:image" content="https://ieumtech.net/chaesang-old-professional.jpg"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="정채상 — 이음테크"><meta name="twitter:description" content="회사에서의 기억들, 한국 IT 용어 이야기, 책 『커밋 로그』까지. 30년의 기록을 차례로 모아 두었습니다."><meta name="twitter:image" content="https://ieumtech.net/chaesang-old-professional.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","name":"정채상","alternateName":"Chaesang Jung","url":"https://ieumtech.net/ko/","sameAs":["https://linkedin.com/in/chaesang","https://github.com/chaesang","https://chaesangjung.medium.com","https://brunch.co.kr/@chaesang"],"description":"30년간, 한국과 실리콘밸리 사이, 사람과 기술 사이를 이어 왔습니다."},{"@type":"Organization","name":"이음테크","alternateName":"Ieum Tech","url":"https://ieumtech.net","logo":"https://ieumtech.net/favicon.svg","founder":{"@type":"Person","name":"정채상"},"sameAs":["https://linkedin.com/in/chaesang"]}]}</script><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><!-- Privacy-friendly analytics (GoatCounter). Bot-filtered, dedups reloads per visitor. --><script data-goatcounter="https://ieumtech.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script><style>
+    .wide { max-width: var(--container-wide); margin: 0 auto; padding: 0 var(--container-padding); }
+
+    .statement { padding: var(--space-11) 0 var(--space-10); }
+    .identity { display: flex; align-items: center; gap: var(--space-6); margin: 0 0 var(--space-7); }
+    .identity img {
+      width: 96px; height: 96px; flex-shrink: 0; border-radius: 50%; object-fit: cover;
+      border: 1px solid var(--color-border);
+    }
+    .statement h1 {
+      font-size: var(--fs-h1); font-weight: 600; line-height: 1.2;
+      letter-spacing: -0.025em; margin: 0; min-width: 0;
+    }
+    .lead {
+      font-size: clamp(1.5rem, 1.25rem + 1.2vw, 2.25rem); font-weight: 600; line-height: 1.3;
+      letter-spacing: -0.025em; margin: 0 0 var(--space-7);
+    }
+    .intro { margin: 0; color: var(--color-text); font-size: var(--fs-body); line-height: 1.75; max-width: 56ch; }
+
+    .section-title { font-size: var(--fs-section); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 var(--space-6); }
+    .more-link { margin: var(--space-6) 0 0; font-size: var(--fs-small); }
+    .more-link a { color: var(--color-accent); text-decoration: none; }
+
+    /* Record block: recent writing + book */
+    .record { padding-bottom: var(--space-10); }
+    .record section { padding: 0; }
+    .record-grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: var(--space-9); align-items: start; }
+    .post-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--color-border); }
+    .post-list li { border-bottom: 1px solid var(--color-border); }
+    .post-list a {
+      display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: var(--space-4);
+      padding: var(--space-4) 0; text-decoration: none; color: inherit; align-items: baseline;
+    }
+    .post-list time { font-size: var(--fs-small); color: var(--color-subtle); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .post-title { font-weight: 600; line-height: 1.5; letter-spacing: -0.01em; }
+    .post-list a[target="_blank"]::after { content: none; }
+    .post-list a[target="_blank"] .post-title::after { content: '\2197'; margin-left: 0.3em; font-size: 0.85em; color: var(--color-muted); }
+    .post-list a:hover .post-title { color: var(--color-accent); }
+
+    .book-card { display: flex; gap: var(--space-5); align-items: flex-start; text-decoration: none; color: inherit; }
+    .book-card img { width: 120px; height: 180px; flex-shrink: 0; border: 1px solid var(--color-border); object-fit: cover; }
+    .book-title { font-size: 1.125rem; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+    .book-sub { margin: var(--space-2) 0 0; color: var(--color-text); line-height: 1.6; font-size: var(--fs-small); }
+    .book-meta { margin: var(--space-3) 0 0; color: var(--color-subtle); font-size: var(--fs-small); font-variant-numeric: tabular-nums; }
+    .book-card:hover .book-title { color: var(--color-accent); }
+
+    /* Series index */
+    .series-block { padding-top: 0; padding-bottom: var(--space-10); }
+    .series-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-6); }
+    .series-list a { display: block; text-decoration: none; color: inherit; border-top: 1px solid var(--color-border); padding-top: var(--space-4); }
+    .series-name { display: block; font-weight: 600; line-height: 1.45; letter-spacing: -0.01em; }
+    .series-count { display: block; margin-top: var(--space-2); font-size: var(--fs-small); color: var(--color-subtle); font-variant-numeric: tabular-nums; }
+    .series-list a:hover .series-name { color: var(--color-accent); }
+
+    .band { background: var(--color-band); color: var(--color-band-text); padding: var(--space-9) 0; margin-top: var(--space-10); }
+    .band h2 { color: var(--color-band-text); margin: 0 0 var(--space-6); }
+    .logo-strip { display: grid; grid-template-columns: repeat(7, 1fr); gap: var(--space-6); }
+    .logo-strip a {
+      display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+      text-decoration: none; color: #4a433d; transition: color var(--transition-base);
+    }
+    .logo-strip img {
+      width: 48px; height: 48px; object-fit: contain;
+      filter: grayscale(1); transition: filter var(--transition-base);
+    }
+    .logo-name { font-size: var(--fs-micro); line-height: 1.35; text-align: center; overflow-wrap: anywhere; }
+    .logo-strip a:hover { color: var(--color-band-text); }
+    .logo-strip a:hover img { filter: none; }
+    .band-current { margin: var(--space-7) 0 0; font-size: var(--fs-small); color: #4a433d; }
+    .band-current a { color: #4a433d; text-decoration: none; }
+    .band-current a:hover { color: var(--color-band-text); text-decoration: underline; }
+    .band-note { margin: var(--space-3) 0 0; font-size: var(--fs-small); color: #6b6259; }
+    .band-note a { color: var(--color-band-text); }
+
+    /* Talks */
+    .talks-block { padding-top: var(--space-10); padding-bottom: 0; }
+    .talk-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--color-border); }
+    .talk-list li { border-bottom: 1px solid var(--color-border); }
+    .talk-list a {
+      display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) auto; gap: var(--space-4);
+      padding: var(--space-4) 0; text-decoration: none; color: inherit; align-items: baseline;
+    }
+    .talk-list time, .talk-venue { font-size: var(--fs-small); color: var(--color-subtle); font-variant-numeric: tabular-nums; }
+    .talk-title { font-weight: 600; line-height: 1.5; letter-spacing: -0.01em; }
+    .talk-list a:hover .talk-title { color: var(--color-accent); }
+
+    .cta-section { padding: var(--space-11) var(--container-padding); }
+    .contact-tags { font-size: var(--fs-small); color: var(--color-muted); margin-bottom: var(--space-4); letter-spacing: 0.02em; }
+
+    @media (max-width: 1100px) {
+      .series-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 900px) {
+      .logo-strip { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 899px) {
+      .record-grid { grid-template-columns: 1fr; gap: var(--space-9); }
+    }
+    @media (max-width: 639px) {
+      .statement { padding: var(--space-10) 0 var(--space-9); }
+      /* Name below the photo — side by side the h1 breaks into three lines next to a 96px circle */
+      .identity { flex-direction: column; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-6); }
+      .identity img { width: 80px; height: 80px; }
+      .post-list a, .talk-list a { grid-template-columns: 1fr; gap: var(--space-1); }
+      .series-list { grid-template-columns: 1fr; gap: var(--space-4); }
+      .series-list a { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-4); }
+      .series-count { margin-top: 0; }
+      .cta-section { padding: var(--space-10) var(--container-padding); }
+    }
+    @media (max-width: 480px) {
+      .logo-strip { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style><link rel="stylesheet" href="/previews/pr-28/_astro/about.Cog_0SXv.css"></head> <body> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/ko/" class="logo" data-astro-cid-3ef6ksr2>이음테크 <span class="logo-ko" data-astro-cid-3ef6ksr2>Ieum Tech</span></a> <div class="header-right" data-astro-cid-3ef6ksr2> <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2></span><span data-astro-cid-3ef6ksr2></span><span data-astro-cid-3ef6ksr2></span> </button> <ul class="nav-links" id="nav-menu" data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2><a href="/ko/about" class data-astro-cid-3ef6ksr2>소개</a></li> <li data-astro-cid-3ef6ksr2><a href="/ko/writing" class data-astro-cid-3ef6ksr2>글</a></li> <li data-astro-cid-3ef6ksr2><a href="/ko/talks" class data-astro-cid-3ef6ksr2>강연</a></li> <li data-astro-cid-3ef6ksr2><a href="/ko/companies" class data-astro-cid-3ef6ksr2>자리들</a></li> <li data-astro-cid-3ef6ksr2><a href="/ko/books" class data-astro-cid-3ef6ksr2>책</a></li> </ul> <button type="button" class="search-trigger" id="search-trigger" aria-label="검색" title="검색" data-astro-cid-3ef6ksr2> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-astro-cid-3ef6ksr2><circle cx="11" cy="11" r="8" data-astro-cid-3ef6ksr2></circle><path d="m21 21-4.3-4.3" data-astro-cid-3ef6ksr2></path></svg> <span class="search-trigger-kbd" aria-hidden="true" data-astro-cid-3ef6ksr2>⌘K</span> </button> <a href="/" class="lang-toggle" data-astro-cid-3ef6ksr2>EN</a> </div> </div> </header> <script type="module">const t=document.getElementById("hamburger"),n=document.getElementById("nav-menu");t&&n&&(t.addEventListener("click",()=>{const e=t.classList.toggle("open");n.classList.toggle("open"),t.setAttribute("aria-expanded",String(e))}),n.querySelectorAll("a").forEach(e=>{e.addEventListener("click",()=>{t.classList.remove("open"),n.classList.remove("open"),t.setAttribute("aria-expanded","false")})}));const s=document.getElementById("search-trigger");s&&s.addEventListener("click",()=>{const e=window.__ieumOpenSearch;typeof e=="function"&&e(s)});</script>    <section class="statement"> <div class="wide"> <div class="identity"> <img src="/chaesang-old-professional.jpg" alt="정채상" width="96" height="96"> <h1>정채상 · Chaesang Jung</h1> </div> <p class="lead">엔지니어링, 서울에서 실리콘밸리까지.</p> <p class="intro">Google에서의 13년을 포함해 30년간, 한국과 실리콘밸리, 그리고 사람과 기술 사이를 이어 왔습니다. 일터에서 마주친 장면과 단어들을 한 편씩 적어 두었습니다.</p> </div> </section> <main> <div class="record wide"> <div class="record-grid"> <section aria-labelledby="recent-writing"> <h2 class="section-title" id="recent-writing">최근 글</h2> <ul class="post-list"> <li> <a href="https://brunch.co.kr/@chaesang/210" target="_blank" rel="noopener noreferrer"> <time datetime="2026-11-21T00:00:00.000Z">2026.11.21</time> <span class="post-title">locale (21) — 한국에서 화면은 빽빽해야 했을까?</span> </a> </li><li> <a href="https://brunch.co.kr/@chaesang/209" target="_blank" rel="noopener noreferrer"> <time datetime="2026-11-01T00:00:00.000Z">2026.11.01</time> <span class="post-title">2026 클라우드 솔루션 리포트 (10) — 추론 인프라 (2) 토큰 공급</span> </a> </li><li> <a href="https://brunch.co.kr/@chaesang/207" target="_blank" rel="noopener noreferrer"> <time datetime="2026-10-11T00:00:00.000Z">2026.10.11</time> <span class="post-title">Commit Log v1.0</span> </a> </li> </ul> <p class="more-link"><a href="/ko/writing">글 전체 보기 →</a></p> </section> <section aria-labelledby="book-heading"> <h2 class="section-title" id="book-heading">책</h2> <a class="book-card" href="/ko/books/commit-log"> <img src="/books/commit-log/cover-sm.jpg" alt="『커밋 로그』 표지" width="120" height="180" loading="lazy"> <div> <p class="book-title">커밋 로그</p> <p class="book-sub">지나온 자리는 지워지지 않는다</p> <p class="book-meta">2026 · 산문 72편</p> </div> </a> </section> </div> </div> <section class="series-block wide" aria-labelledby="series-heading"> <h2 class="section-title" id="series-heading">시리즈</h2> <ul class="series-list"> <li> <a href="/ko/writing/series/svc-analysis"> <span class="series-name">혼자 해 보는 서비스 분석</span> <span class="series-count">15편</span> </a> </li><li> <a href="/ko/writing/series/do-well-company"> <span class="series-name">회사에서의 기억들</span> <span class="series-count">21편</span> </a> </li><li> <a href="/ko/writing/series/itterm"> <span class="series-name">한국 IT 용어 이야기</span> <span class="series-count">17편</span> </a> </li><li> <a href="/ko/writing/series/locale"> <span class="series-name">locale</span> <span class="series-count">21편</span> </a> </li><li> <a href="/ko/writing/series/cloud-solutions-report"> <span class="series-name">2026 클라우드 솔루션 리포트</span> <span class="series-count">10편</span> </a> </li> </ul> <p class="more-link"><a href="/ko/writing">시리즈 전체 보기 →</a></p> </section> <section class="band" aria-labelledby="worked"> <div class="wide"> <h2 id="worked">거쳐 온 자리들</h2> <div class="logo-strip"> <a href="/ko/companies" aria-label="Google"> <img src="/logos/companies/google.svg" alt="Google" width="48" height="48" loading="lazy"> <span class="logo-name">Google</span> </a><a href="/ko/companies" aria-label="Samsung Semiconductor"> <img src="/logos/companies/samsung-semiconductor.svg" alt="Samsung Semiconductor" width="48" height="48" loading="lazy"> <span class="logo-name">Samsung Semiconductor</span> </a><a href="/ko/companies" aria-label="Banksalad"> <img src="/logos/companies/banksalad.png" alt="Banksalad" width="48" height="48" loading="lazy"> <span class="logo-name">Banksalad</span> </a><a href="/ko/companies" aria-label="MegazoneCloud"> <img src="/logos/companies/megazonecloud.jpeg" alt="MegazoneCloud" width="48" height="48" loading="lazy"> <span class="logo-name">MegazoneCloud</span> </a><a href="/ko/companies" aria-label="INEEJI"> <img src="/logos/companies/ineeji.jpeg" alt="INEEJI" width="48" height="48" loading="lazy"> <span class="logo-name">INEEJI</span> </a><a href="/ko/companies" aria-label="KAIST"> <img src="/logos/companies/kaist.jpeg" alt="KAIST" width="48" height="48" loading="lazy"> <span class="logo-name">KAIST</span> </a><a href="/ko/companies" aria-label="Aisle Street"> <img src="/logos/companies/aisle-street.jpeg" alt="Aisle Street" width="48" height="48" loading="lazy"> <span class="logo-name">Aisle Street</span> </a> </div> <p class="band-current"> <a href="/ko/companies#co-megazonecloud-pbu">MegazoneCloud · Head of Technology, Product Build Unit · 2026.10 – 현재</a> </p> <p class="band-note">Embedded · Mobile · Search · Commerce · Fintech · Cloud · Industrial AI · Enterprise — <a href="/ko/companies">전체 자취 보기</a></p> </div> </section> <section class="talks-block wide" aria-labelledby="talks-heading"> <h2 class="section-title" id="talks-heading">강연과 강의</h2> <ul class="talk-list"> <li> <a href="/ko/talks#talk-dbr-assistant-to-agent"> <time datetime="2026-07-07T00:00:00.000Z">2026.07</time> <span class="talk-title">Agent 경제의 판세 읽기</span> <span class="talk-venue">동아비즈니스리뷰(DBR)</span> </a> </li><li> <a href="/ko/talks#talk-kaist-dfmba-2025"> <time datetime="2025-09-01T00:00:00.000Z">2025.09</time> <span class="talk-title">인공지능과 추천시스템 (2025)</span> <span class="talk-venue">KAIST 경영대학</span> </a> </li><li> <a href="/ko/talks#talk-kaist-dfmba-2024"> <time datetime="2024-09-01T00:00:00.000Z">2024.09</time> <span class="talk-title">인공지능과 추천시스템 (2024)</span> <span class="talk-venue">KAIST 경영대학</span> </a> </li> </ul> <p class="more-link"><a href="/ko/talks">강연 전체 보기 →</a></p> </section> <section class="cta-section" id="contact" aria-labelledby="cta-heading"> <div class="cta-inner"> <p class="contact-tags">강연 · 커피챗 · 무엇이든 좋습니다</p> <h2 class="cta-heading" id="cta-heading">함께 고민하고 잇고 싶은 이야기가 있다면,<br>언제든 편하게 말을 건네주세요.</h2> <div class="cta-buttons"> <a href="/ko/contact" class="btn">Say Hello</a> <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer" class="btn btn-outline">LinkedIn</a> </div> </div> </section> </main>  <footer class="site-footer"> <div class="footer-inner"> <nav class="footer-nav" aria-label="외부 링크"> <a href="/ko/contact">연락하기</a> <a href="https://linkedin.com/in/chaesang" target="_blank" rel="noopener noreferrer">LinkedIn</a> <a href="https://brunch.co.kr/@chaesang" target="_blank" rel="noopener noreferrer">Brunch</a> <a href="https://chaesangjung.medium.com/" target="_blank" rel="noopener noreferrer">Medium</a> </nav> <p class="footer-copy">© 2026 이음테크. 모든 권리 보유.</p> </div> </footer> <div class="search-modal" id="search-modal" data-index-url="/ko/search-index.json" data-search-page="/ko/search" data-lang="ko" data-label-writing="글" data-label-talks="강연" data-label-projects="프로젝트" data-label-companies="이력" data-label-about="소개" data-label-empty="글·강연·프로젝트·거쳐 온 자리에서 찾아 봅니다." data-label-no-results="이 키워드로는 찾지 못했습니다." data-label-see-all="전체 결과 살펴보기" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="검색"> <div class="search-backdrop" data-search-close></div> <div class="search-card" role="document"> <div class="search-input-row"> <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg> <input type="search" id="search-input" class="search-input" placeholder="이음 안에서 찾기" autocomplete="off" spellcheck="false" aria-label="이음 안에서 찾기"> <button type="button" class="search-close-btn" data-search-close aria-label="Close"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> </button> </div> <div class="search-results" id="search-results" role="listbox"></div> <div class="search-footer"> <span><kbd>↑</kbd><kbd>↓</kbd> 이동</span> <span><kbd>↵</kbd> 열기</span> <span><kbd>Esc</kbd> 닫기</span> </div> </div> </div> <script type="module" src="/previews/pr-28/_astro/SearchModal.astro_astro_type_script_index_0_lang.BpA2ETEw.js"></script>  <script type="module">const i=["#series-","#co-","#talk-","#project-"];function s(){const t=window.location.hash;if(!t||!i.some(a=>t.startsWith(a)))return;const e=document.querySelector(t);if(!e)return;const o=e.tagName==="DETAILS"?e:e.closest("details");o&&(o.open=!0),requestAnimationFrame(()=>{e.scrollIntoView({behavior:"smooth",block:"start"}),e.classList.add("hash-highlight"),window.setTimeout(()=>e.classList.remove("hash-highlight"),1800)})}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",s):s();window.addEventListener("hashchange",s);</script>  </body> </html>
