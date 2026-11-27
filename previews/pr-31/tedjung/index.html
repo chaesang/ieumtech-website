@@ -1,0 +1,8 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-2amfvm7z> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex, nofollow"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>Ted Jung — Portfolio</title><style>html,body{margin:0;height:100%;background:#fff}iframe[data-astro-cid-2amfvm7z]{display:block;width:100%;height:100%;border:0}.fallback[data-astro-cid-2amfvm7z]{position:fixed;inset:0;display:none;align-items:center;justify-content:center;font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;color:#333;text-align:center;padding:24px}.fallback[data-astro-cid-2amfvm7z] a[data-astro-cid-2amfvm7z]{color:#1a56db}body.blocked iframe[data-astro-cid-2amfvm7z]{display:none}body.blocked .fallback[data-astro-cid-2amfvm7z]{display:flex}
+</style></head> <body data-astro-cid-2amfvm7z> <iframe id="pf" src="https://tjung967.wixsite.com/portfolio" title="Ted Jung — Portfolio" allow="fullscreen" referrerpolicy="no-referrer-when-downgrade" loading="eager" data-astro-cid-2amfvm7z></iframe> <div class="fallback" data-astro-cid-2amfvm7z> <p data-astro-cid-2amfvm7z>The portfolio could not be embedded here.<br data-astro-cid-2amfvm7z><a href="https://tjung967.wixsite.com/portfolio" data-astro-cid-2amfvm7z>Open it directly →</a></p> </div> <script>
+      // 프레임이 막히거나(빈 화면) 원본이 응답하지 않으면 직접 열기 안내로 대체
+      const f = document.getElementById('pf');
+      let loaded = false;
+      f.addEventListener('load', () => { loaded = true; });
+      setTimeout(() => { if (!loaded) document.body.classList.add('blocked'); }, 12000);
+    </script> </body> </html>
